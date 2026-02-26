@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Inter:wght@300;400;500&display=swap');
 
 :root {
@@ -8,15 +12,15 @@
   --color-gold-dim: #BD9732;
   --color-charcoal: #2C2C2C;
   --color-white-soft: #FCFBF9;
-  
+
   /* Semantic Tokens */
   --bg-primary: var(--color-beige-light);
   --text-primary: var(--color-charcoal);
   --border-gold: var(--color-gold-primary);
-  
+
   --font-serif: 'Crimson Pro', serif;
   --font-sans: 'Inter', sans-serif;
-  
+
   line-height: 1.5;
   font-weight: 400;
   font-family: var(--font-sans);
@@ -38,7 +42,10 @@ body {
   background-image: radial-gradient(circle at top, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-serif);
   color: var(--text-primary);
   letter-spacing: -0.02em;
