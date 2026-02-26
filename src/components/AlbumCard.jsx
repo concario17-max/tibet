@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Info, MoreHorizontal } from 'lucide-react';
+import { Play, Info, MoreHorizontal, Music } from 'lucide-react';
 
 const AlbumCard = ({ album, onSelect }) => {
     return (

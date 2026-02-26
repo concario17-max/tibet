@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Pause, SkipForward, SkipBack, Volume2, X } from 'lucide-react';
+import { Play, Pause, SkipForward, SkipBack, Volume2, X, Music } from 'lucide-react';
 
 const Player = ({ track, isPlaying, progress, onToggle, onNext, onPrev, onSeek, onClose }) => {
     if (!track) return null;
