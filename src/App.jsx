@@ -1,18 +1,26 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Header from './components/Header';
 import AlbumCard from './components/AlbumCard';
-import Player from './components/Player';
-import { useAudioPlayer } from './hooks/useAudioPlayer';
+import PlayerContainer from './components/PlayerContainer';
+import AlbumDetail from './components/AlbumDetail';
 import { ALBUMS } from './utils/constants';
-import { BookOpen } from 'lucide-react'; // Assuming lucide-react is installed for the BookOpen icon
+import { BookOpen } from 'lucide-react';
 
 function App() {
-    const [selectedAlbum, setSelectedAlbum] = useState(null);
-    const audio = useAudioPlayer(selectedAlbum?.tracks || []);
+    const [viewingAlbum, setViewingAlbum] = useState(null);
+    const [playbackRequest, setPlaybackRequest] = useState(null);
 
-    const handleAlbumSelect = (album) => {
-        setSelectedAlbum(album);
-    };
+    const handleAlbumSelect = useCallback((album) => {
+        setViewingAlbum(album);
+    }, []);
+
+    const handlePlayTrack = useCallback((trackIndex) => {
+        setPlaybackRequest({
+            album: viewingAlbum,
+            trackIndex,
+            timestamp: Date.now()
+        });
+    }, [viewingAlbum]);
 
     return (
         <div className="min-h-screen selection:bg-gold-primary/20 bg-bg-primary">
@@ -80,19 +88,19 @@ function App() {
                 </div>
             </section>
 
+            {/* Album Detail Overlay */}
+            <AlbumDetail
+                album={viewingAlbum}
+                isOpen={!!viewingAlbum}
+                onClose={() => setViewingAlbum(null)}
+                onPlayTrack={handlePlayTrack}
+            />
+
             {/* Audio Player Overlay */}
-            {selectedAlbum && (
-                <Player
-                    track={audio.currentTrack}
-                    isPlaying={audio.isPlaying}
-                    progress={audio.progress}
-                    onToggle={audio.togglePlay}
-                    onNext={audio.next}
-                    onPrev={audio.prev}
-                    onSeek={audio.seek}
-                    onClose={() => setSelectedAlbum(null)}
-                />
-            )}
+            <PlayerContainer
+                request={playbackRequest}
+                onClose={() => setPlaybackRequest(null)}
+            />
         </div>
     );
 }

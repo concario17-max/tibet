@@ -4,7 +4,7 @@ export const useAudioPlayer = (playlist) => {
     const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
-    const audioRef = useRef(new Audio());
+    const audioRef = useRef(null);
 
     const currentTrack = playlist[currentTrackIndex];
 
@@ -19,15 +19,32 @@ export const useAudioPlayer = (playlist) => {
 
     const loadTrack = useCallback((index) => {
         const track = playlist[index];
-        if (track) {
+        if (track && audioRef.current) {
             audioRef.current.src = track.url;
             audioRef.current.load();
-            if (isPlaying) audioRef.current.play();
+            if (isPlaying) {
+                audioRef.current.play().catch(e => console.warn('Audio play prevented:', e));
+            }
             setCurrentTrackIndex(index);
         }
     }, [playlist, isPlaying]);
 
+    const playTrack = useCallback((index) => {
+        if (index >= 0 && index < playlist.length) {
+            loadTrack(index);
+            if (!isPlaying) {
+                setIsPlaying(true);
+                if (audioRef.current) {
+                    audioRef.current.play().catch(e => console.warn('Audio play prevented:', e));
+                }
+            }
+        }
+    }, [playlist, loadTrack, isPlaying]);
+
     useEffect(() => {
+        if (!audioRef.current) {
+            audioRef.current = new Audio();
+        }
         const audio = audioRef.current;
 
         const updateProgress = () => {
@@ -52,11 +69,21 @@ export const useAudioPlayer = (playlist) => {
         };
     }, [currentTrackIndex, playlist.length, loadTrack]);
 
+    useEffect(() => {
+        return () => {
+            if (audioRef.current) {
+                audioRef.current.pause();
+                audioRef.current.src = '';
+            }
+        };
+    }, []);
+
     return {
         currentTrack,
         isPlaying,
         progress,
         togglePlay,
+        playTrack,
         next: () => loadTrack((currentTrackIndex + 1) % playlist.length),
         prev: () => loadTrack((currentTrackIndex - 1 + playlist.length) % playlist.length),
         seek: (p) => {
