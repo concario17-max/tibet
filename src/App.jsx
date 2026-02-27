@@ -58,9 +58,11 @@ function App() {
             </section>
 
             {/* Album Selection Section */}
-            <section id="gallery" className="py-40 px-8 bg-white-soft relative">
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-primary/20 to-transparent"></div>
-                <div className="max-w-7xl mx-auto space-y-32">
+            <section id="gallery" className="py-40 px-8 relative">
+                <div className="absolute inset-0 bg-bg-primary"></div>
+                {/* Subtle top border in dark mode */}
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-primary/10 to-transparent"></div>
+                <div className="relative max-w-7xl mx-auto space-y-32">
                     <div className="text-center space-y-6">
                         <p className="text-gold-primary text-[10px] tracking-[0.4em] uppercase">Sacred Collections</p>
                         <h2 className="text-5xl md:text-6xl font-serif text-text-primary">Ritual Library</h2>
@@ -80,11 +82,12 @@ function App() {
             </section>
 
             {/* Philosophy Section Preview */}
-            <section className="py-40 px-8 bg-charcoal text-white-soft text-center space-y-12">
-                <div className="max-w-2xl mx-auto space-y-8 opacity-80">
+            <section className="py-40 px-8 relative text-text-primary text-center space-y-12">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544923246-77307dd654ca?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-5 mix-blend-screen"></div>
+                <div className="relative max-w-2xl mx-auto space-y-8 opacity-80">
                     <BookOpen className="w-8 h-8 mx-auto text-gold-primary stroke-[1]" />
-                    <h3 className="text-3xl font-serif tracking-wide italic">"That which is called death is a middle ground between one state and another."</h3>
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-gold-primary/60">— The Great Liberation by Hearing</p>
+                    <h3 className="text-3xl font-serif tracking-wide italic text-white-soft">"That which is called death is a middle ground between one state and another."</h3>
+                    <p className="text-[10px] tracking-[0.4em] uppercase text-gold-primary/80">— The Great Liberation by Hearing</p>
                 </div>
             </section>
 

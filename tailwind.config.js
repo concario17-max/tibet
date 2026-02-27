@@ -7,15 +7,14 @@ export default {
     theme: {
         extend: {
             colors: {
-                'gold-primary': '#D4AF37',
-                'gold-dim': '#BD9732',
-                'beige-base': '#F5F5DC',
-                'bg-primary': '#FDFCF0',
-                'charcoal': '#2C2C2C',
-                'white-soft': '#FCFBF9',
+                'gold-primary': '#c5a059',
+                'gold-dim': '#8B703B',
+                'bg-primary': '#080808',
+                'charcoal': '#1a1a1a',
+                'white-soft': '#cbd5e1',
             },
             fontFamily: {
-                serif: ['Crimson Pro', 'serif'],
+                serif: ['Cinzel', 'serif'],
                 sans: ['Inter', 'sans-serif'],
             },
         },

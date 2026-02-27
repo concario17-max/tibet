@@ -2,26 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Inter:wght@300;400;500&display=swap');
-
 :root {
-  /* Premium Beige & Gold Palette */
-  --color-beige-light: #FDFCF0;
-  --color-beige-base: #F5F5DC;
-  --color-gold-primary: #D4AF37;
-  --color-gold-dim: #BD9732;
-  --color-charcoal: #2C2C2C;
-  --color-white-soft: #FCFBF9;
+  /* Simsang Archive Dark Aesthetics */
+  --color-rich-black: #080808;
+  --color-slate-slate: #1e293b;
+  --color-slate-light: #cbd5e1;
+  --color-gold-accent: #c5a059;
+  --color-gold-dim: #8B703B;
 
   /* Semantic Tokens */
-  --bg-primary: var(--color-beige-light);
-  --text-primary: var(--color-charcoal);
-  --border-gold: var(--color-gold-primary);
+  --bg-primary: var(--color-rich-black);
+  --text-primary: var(--color-slate-light);
+  --border-gold: var(--color-gold-accent);
 
-  --font-serif: 'Crimson Pro', serif;
+  --font-serif: 'Cinzel', serif;
   --font-sans: 'Inter', sans-serif;
 
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 400;
   font-family: var(--font-sans);
 
@@ -39,39 +36,48 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--bg-primary);
-  background-image: radial-gradient(circle at top, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+  /* Subdued noise or subtle gradient for depth instead of white radial */
+  background-image: radial-gradient(circle at top, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
 }
 
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
+  color: #e2e8f0;
+  /* Slightly brighter for headings */
+  letter-spacing: 0.02em;
 }
 
 .gold-gradient-text {
-  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  background: linear-gradient(135deg, #E6C875 0%, #c5a059 50%, #8B703B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Glassmorphism Classes */
+/* Glassmorphism Classes (Simsang Depth) */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  border-radius: 12px;
+  background: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.08);
+  /* Extremely subtle border */
+  border-radius: 4px;
+  /* Sharper edges */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 40px -10px;
 }
 
 .premium-card {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  background: rgba(15, 15, 15, 0.3);
+  border: 1px solid rgba(197, 160, 89, 0.1);
 }
 
 .premium-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-  border-color: var(--color-gold-primary);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+  border-color: rgba(197, 160, 89, 0.4);
 }
