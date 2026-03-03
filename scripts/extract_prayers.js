@@ -22,6 +22,14 @@ const isEnglish = (text) => /[a-zA-Z]/.test(text) && !isTibetan(text) && !isKore
 
 const results = [];
 
+const titleMap = {
+    '1.txt': '붓다의 세 몸인 스승에 대한 기도 (ka)',
+    '2.txt': '붓다와 보살들께 도움을 청하는 기도 (nga)',
+    '3.txt': '중간계의 곤경에서 구원을 청하는 기도 (cha)',
+    '4.txt': '중간계 여행의 두려움으로부터 구원을 청하는 기도 (ta)',
+    '5.txt': '여섯 중간계에 들어가기 전에 드리는 기도 (ca)'
+};
+
 const parseFile = (fileName) => {
     const fullPath = path.join(inputDir, fileName);
     if (!fs.existsSync(fullPath)) return null;
@@ -75,7 +83,7 @@ files.forEach(file => {
         }
         results.push({
             id: 'prayer-' + file.replace('.txt', ''),
-            chapterName: `Prayer ${file.replace('.txt', '')}`,
+            chapterName: titleMap[file] || `Prayer ${file.replace('.txt', '')}`,
             verses: sections.map(s => ({
                 id: s.id,
                 title: s.title,

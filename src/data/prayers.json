@@ -1,7 +1,7 @@
 [
   {
     "id": "prayer-1",
-    "chapterName": "Prayer 1",
+    "chapterName": "붓다의 세 몸인 스승에 대한 기도 (ka)",
     "verses": [
       {
         "id": "1-1",
@@ -87,12 +87,12 @@
   },
   {
     "id": "prayer-2",
-    "chapterName": "Prayer 2",
+    "chapterName": "붓다와 보살들께 도움을 청하는 기도 (nga)",
     "verses": []
   },
   {
     "id": "prayer-3",
-    "chapterName": "Prayer 3",
+    "chapterName": "중간계의 곤경에서 구원을 청하는 기도 (cha)",
     "verses": [
       {
         "id": "3-1",
@@ -218,12 +218,12 @@
   },
   {
     "id": "prayer-4",
-    "chapterName": "Prayer 4",
+    "chapterName": "중간계 여행의 두려움으로부터 구원을 청하는 기도 (ta)",
     "verses": []
   },
   {
     "id": "prayer-5",
-    "chapterName": "Prayer 5",
+    "chapterName": "여섯 중간계에 들어가기 전에 드리는 기도 (ca)",
     "verses": [
       {
         "id": "5-1",
