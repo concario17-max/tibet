@@ -28,66 +28,61 @@ const ReadingPanel = ({ verse }) => {
 
     return (
         <main className="flex-1 max-w-3xl mx-auto px-6 lg:px-12 py-10 min-h-screen pb-32">
-            <div className="flex items-center space-x-2 text-xs text-charcoal-muted font-medium mb-12">
-                <span>The Bardo Thodol</span>
-                <span>/</span>
-                <span>Prayers</span>
-                <span>/</span>
-                <span>{verse.id}</span>
+            <div className="flex items-center justify-center space-x-2 text-xs text-charcoal-muted font-medium mb-12">
+                <span>Chapter {verse.id.split('.')[0]}</span>
+                <span className="text-sand-tertiary">›</span>
+                <span className="font-bold text-charcoal-main">Sutra {verse.id.split('.')[1]}</span>
             </div>
 
-            <article className="prose prose-slate max-w-none">
-                <h1 className="serif-title text-4xl mb-12 text-charcoal-main font-serif whitespace-pre-line leading-tight">{verse.title}</h1>
+            <article className="prose prose-slate max-w-none text-center">
+                <div className="w-8 h-8 rounded-full border border-gold-primary mx-auto mb-10 flex items-center justify-center text-gold-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 2a10 10 0 0110 10" />
+                        <path d="M12 22a10 10 0 01-10-10" />
+                        <path d="M2 12h20" />
+                        <path d="M12 2v20" />
+                        <path d="M4.93 4.93l14.14 14.14" />
+                        <path d="M4.93 19.07L19.07 4.93" />
+                    </svg>
+                </div>
 
-                <div className="flex flex-col gap-12 mb-16">
+                <div className="flex flex-col gap-8 mb-20 max-w-3xl mx-auto">
                     {verse.text.tibetan && (
-                        <div className="flex-1 bg-sand-secondary/50 p-6 rounded-lg border border-sand-tertiary/50">
-                            <h4 className="text-[10px] uppercase tracking-[0.2em] text-gold-dim mb-4 font-bold">Tibetan</h4>
-                            <p className="text-[15px] leading-9 text-charcoal-main font-serif whitespace-pre-line">
-                                {verse.text.tibetan}
-                            </p>
-                        </div>
+                        <h1 className="text-3xl md:text-5xl text-charcoal-main font-serif whitespace-pre-line leading-[1.4] font-bold">
+                            {verse.text.tibetan}
+                        </h1>
                     )}
 
-                    <div className="flex flex-col md:flex-row gap-8">
+                    <div className="flex flex-col gap-6 mt-4">
                         {verse.text.english && (
-                            <div className="flex-1">
-                                <h4 className="text-[10px] uppercase tracking-[0.2em] text-gold-dim mb-4 font-bold">English</h4>
-                                <p className="text-[14px] leading-8 text-charcoal-muted font-serif whitespace-pre-line">
-                                    {verse.text.english}
-                                </p>
-                            </div>
+                            <p className="text-[15px] leading-8 text-charcoal-muted font-serif italic whitespace-pre-line">
+                                {verse.text.english}
+                            </p>
+                        )}
+                        {(verse.text.english && verse.text.korean) && (
+                            <div className="w-12 h-px bg-sand-tertiary mx-auto my-2"></div>
                         )}
                         {verse.text.korean && (
-                            <div className="flex-1">
-                                <h4 className="text-[10px] uppercase tracking-[0.2em] text-gold-dim mb-4 font-bold">Korean</h4>
-                                <p className="text-[14px] leading-8 text-charcoal-main font-serif whitespace-pre-line">
-                                    {verse.text.korean}
-                                </p>
-                            </div>
+                            <p className="text-[14px] leading-8 text-charcoal-muted font-serif italic whitespace-pre-line">
+                                {verse.text.korean}
+                            </p>
                         )}
                     </div>
                 </div>
 
                 {verse.audioUrl && (
-                    <div className="mt-16 bg-sand-secondary border border-sand-tertiary rounded-lg p-6 flex items-center justify-between shadow-sm">
-                        {/* Inline Audio Player Wrapper */}
-                        <div className="flex items-center space-x-4">
-                            <button
-                                onClick={togglePlay}
-                                className="w-12 h-12 rounded-full bg-gold-primary text-white flex items-center justify-center hover:bg-charcoal-main transition-colors shadow-md"
-                            >
-                                {isPlaying ? <Pause size={18} fill="currentColor" /> : <Play size={18} fill="currentColor" className="ml-1" />}
-                            </button>
-                            <div>
-                                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-charcoal-muted">Vocal Instruction</p>
-                                <p className="text-sm text-charcoal-main font-medium mt-1">{verse.title}</p>
-                            </div>
-                        </div>
-                        <div className="hidden md:flex flex-1 mx-8 items-center space-x-4">
-                            <span className="text-xs text-charcoal-muted w-10 text-right">{Math.floor(progress)}%</span>
+                    <div className="mt-16 max-w-md mx-auto flex items-center justify-between border border-sand-tertiary rounded-full px-6 py-3 bg-white shadow-sm">
+                        <button
+                            onClick={togglePlay}
+                            className="text-gold-primary hover:text-charcoal-main transition-colors mr-4"
+                        >
+                            {isPlaying ? <Pause size={18} fill="currentColor" /> : <Play size={18} fill="currentColor" className="ml-1" />}
+                        </button>
+                        <div className="flex-1 flex items-center space-x-4">
+                            <span className="text-[10px] text-charcoal-muted font-medium w-8 text-right">0:00</span>
                             <div
-                                className="h-1.5 flex-1 bg-sand-tertiary rounded-full overflow-hidden cursor-pointer relative group"
+                                className="h-1 flex-1 bg-sand-secondary rounded-full overflow-hidden cursor-pointer relative group"
                                 onClick={(e) => {
                                     const rect = e.currentTarget.getBoundingClientRect();
                                     const p = ((e.clientX - rect.left) / rect.width) * 100;
@@ -95,12 +90,11 @@ const ReadingPanel = ({ verse }) => {
                                 }}
                             >
                                 <div
-                                    className="h-full bg-gold-primary transition-all duration-300 relative"
+                                    className="h-full bg-gold-primary opacity-50 transition-all duration-300 relative"
                                     style={{ width: `${progress}%` }}
-                                >
-                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-charcoal-main opacity-0 group-hover:opacity-100 scale-150 transition-all"></div>
-                                </div>
+                                ></div>
                             </div>
+                            <span className="text-[10px] text-charcoal-muted font-medium w-8">0:37</span>
                         </div>
                     </div>
                 )}

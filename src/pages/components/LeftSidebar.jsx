@@ -10,19 +10,24 @@ const LeftSidebar = ({ onSelectVerse, activeVerseId, prayers }) => {
                 {prayers && prayers.map((prayer, pIndex) => (
                     <li key={prayer.id} className="relative">
                         <div
-                            className={`cursor-pointer border border-sand-tertiary rounded-lg p-4 bg-white shadow-sm transition-colors ${openChapter === prayer.id ? 'border-gold-primary ring-1 ring-gold-primary/20' : 'hover:border-gold-primary/50'}`}
+                            className={`cursor-pointer rounded-xl p-4 transition-colors flex justify-between items-start ${openChapter === prayer.id ? 'border border-sand-tertiary bg-white shadow-sm' : 'hover:bg-sand-secondary/50 text-charcoal-muted'}`}
                             onClick={() => setOpenChapter(openChapter === prayer.id ? null : prayer.id)}
                         >
-                            <h4 className="text-[15px] font-bold text-charcoal-main font-serif">
-                                {pIndex + 1}. {prayer.chapterName}
-                            </h4>
+                            <div>
+                                <h4 className={`text-[15px] font-bold font-serif ${openChapter === prayer.id ? 'text-charcoal-main' : ''}`}>
+                                    {pIndex + 1}. {prayer.chapterName}
+                                </h4>
+                            </div>
+                            <span className="text-[11px] font-bold text-gold-dim pt-1">
+                                {prayer.verses.length}
+                            </span>
                         </div>
                         {openChapter === prayer.id && prayer.verses.length > 0 && (
                             <ul className="mt-2 space-y-1">
                                 {prayer.verses.map(v => (
                                     <li
                                         key={v.id}
-                                        className={`cursor-pointer transition-colors p-3 rounded-md text-[13px] flex items-start gap-4 ${activeVerseId === v.id ? 'border border-gold-primary bg-sand-secondary/50 font-medium' : 'hover:bg-sand-secondary text-charcoal-muted'}`}
+                                        className={`cursor-pointer transition-colors p-4 rounded-xl text-[13px] flex items-start gap-4 ${activeVerseId === v.id ? 'border border-sand-tertiary bg-white shadow-sm font-medium' : 'hover:bg-sand-secondary/50 text-charcoal-muted'}`}
                                         onClick={() => onSelectVerse(v)}
                                     >
                                         <span className="font-bold text-gold-dim min-w-[30px]">{v.id}</span>
