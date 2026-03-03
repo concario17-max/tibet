@@ -23,11 +23,11 @@ const isEnglish = (text) => /[a-zA-Z]/.test(text) && !isTibetan(text) && !isKore
 const results = [];
 
 const titleMap = {
-    '1.txt': '붓다의 세 몸인 스승에 대한 기도 (ka)',
-    '2.txt': '붓다와 보살들께 도움을 청하는 기도 (nga)',
-    '3.txt': '중간계의 곤경에서 구원을 청하는 기도 (cha)',
-    '4.txt': '중간계 여행의 두려움으로부터 구원을 청하는 기도 (ta)',
-    '5.txt': '여섯 중간계에 들어가기 전에 드리는 기도 (ca)'
+    '1.txt': '붓다의 세 몸인 스승에 대한 기도',
+    '2.txt': '붓다와 보살들께 도움을 청하는 기도',
+    '3.txt': '중간계의 곤경에서 구원을 청하는 기도',
+    '4.txt': '중간계 여행의 두려움으로부터 구원을 청하는 기도',
+    '5.txt': '여섯 중간계에 들어가기 전에 드리는 기도'
 };
 
 const parseFile = (fileName) => {
@@ -48,7 +48,7 @@ const parseFile = (fileName) => {
             }
             const trimmedLine = line.trim();
             currentSection = {
-                id: fileName.replace('.txt', '') + '-' + trimmedLine.match(/^(\d+)/)[1],
+                id: fileName.replace('.txt', '') + '.' + trimmedLine.match(/^(\d+)/)[1],
                 title: trimmedLine.replace(/^\d+\.\s*/, '').trim(),
                 tibetan: [],
                 english: [],
@@ -77,23 +77,30 @@ files.forEach(file => {
         // Add specific mp3 paths for File 3
         if (file === '3.txt') {
             sections.forEach((sec, idx) => {
-                sec.audioUrl = `/mp3/Prayer/3/${sec.id.split('-')[1]}.mp3`; // Changed slightly to match filename if needed, wait files are 3-1.mp3... so 3-X.mp3. Which is file name "3-" + id[1]. But `sec.id` is `3-X`. So just `/mp3/Prayer/${sec.id}.mp3`.
-                sec.audioUrl = `/mp3/Prayer/${sec.id}.mp3`;
+                const num = sec.id.split('.')[1];
+                sec.audioUrl = `/mp3/Prayer/3-${num}.mp3`;
             });
         }
         results.push({
             id: 'prayer-' + file.replace('.txt', ''),
             chapterName: titleMap[file] || `Prayer ${file.replace('.txt', '')}`,
-            verses: sections.map(s => ({
-                id: s.id,
-                title: s.title,
-                text: {
-                    tibetan: s.tibetan.join('\n'),
-                    english: s.english.join('\n'),
-                    korean: s.korean.join('\n')
-                },
-                audioUrl: s.audioUrl || null
-            }))
+            verses: sections.map((s, index) => {
+                // Use the first Tibetan line as the excerpt/title, fallback to original if none
+                const tibetanExcerpt = s.tibetan.length > 0 ? s.tibetan[0].substring(0, 40) + '...' : s.title;
+                const titleWithIndex = `${s.id} ${tibetanExcerpt}`;
+
+                return {
+                    id: s.id,
+                    title: titleWithIndex,
+                    chapterTitle: s.title, // Keep original title just in case it's needed for reading panel
+                    text: {
+                        tibetan: s.tibetan.join('\n'),
+                        english: s.english.join('\n'),
+                        korean: s.korean.join('\n')
+                    },
+                    audioUrl: s.audioUrl || null
+                };
+            })
         });
     }
 });
