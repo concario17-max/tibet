@@ -8,19 +8,19 @@ const LeftSidebar = ({ onSelectVerse, activeVerseId, prayers }) => {
     return (
         <aside className="w-64 flex-shrink-0 h-[calc(100vh-80px)] border-r border-sand-tertiary bg-sand-primary px-6 py-8 hidden lg:flex flex-col sticky top-20">
             <h3 className="flex-shrink-0 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-muted mb-8">Chapters</h3>
-            <ul className="flex-shrink-0 space-y-6">
+            <ul className="flex-shrink-0 space-y-2">
                 {prayers && prayers.map((prayer, pIndex) => (
                     <li key={prayer.id} className="relative">
                         <div
-                            className={`cursor-pointer rounded-xl p-4 transition-colors flex justify-between items-start ${openChapter === prayer.id ? 'border border-sand-tertiary bg-white shadow-sm' : 'hover:bg-sand-secondary/50 text-charcoal-muted'}`}
+                            className={`cursor-pointer rounded-xl py-2.5 px-4 transition-colors flex justify-between items-start ${openChapter === prayer.id ? 'border border-sand-tertiary bg-white shadow-sm' : 'hover:bg-sand-secondary/50 text-charcoal-muted'}`}
                             onClick={() => setOpenChapter(openChapter === prayer.id ? null : prayer.id)}
                         >
-                            <div>
-                                <h4 className={`text-[15px] font-bold font-serif ${openChapter === prayer.id ? 'text-charcoal-main' : ''}`}>
+                            <div className="flex-1 mt-0.5">
+                                <h4 className={`text-[14px] font-sans font-semibold tracking-tight leading-snug ${openChapter === prayer.id ? 'text-charcoal-main' : ''}`}>
                                     {pIndex + 1}. {prayer.chapterName}
                                 </h4>
                             </div>
-                            <span className="text-[11px] font-bold text-gold-dim pt-1">
+                            <span className="text-[11px] font-bold text-gold-dim pt-1 ml-3">
                                 {prayer.verses.length}
                             </span>
                         </div>
