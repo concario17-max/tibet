@@ -6,9 +6,9 @@ const LeftSidebar = ({ onSelectVerse, activeVerseId, prayers }) => {
     const activePrayer = prayers?.find(p => p.id === openChapter);
 
     return (
-        <aside className="w-64 flex-shrink-0 h-[calc(100vh-80px)] overflow-y-auto border-r border-sand-tertiary bg-sand-primary px-6 py-8 hidden lg:block sticky top-20 scrollbar-hide">
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-charcoal-muted mb-8">Chapters</h3>
-            <ul className="space-y-6">
+        <aside className="w-64 flex-shrink-0 h-[calc(100vh-80px)] border-r border-sand-tertiary bg-sand-primary px-6 py-8 hidden lg:flex flex-col sticky top-20">
+            <h3 className="flex-shrink-0 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-muted mb-8">Chapters</h3>
+            <ul className="flex-shrink-0 space-y-6">
                 {prayers && prayers.map((prayer, pIndex) => (
                     <li key={prayer.id} className="relative">
                         <div
@@ -29,7 +29,7 @@ const LeftSidebar = ({ onSelectVerse, activeVerseId, prayers }) => {
             </ul>
 
             {activePrayer && activePrayer.verses.length > 0 && (
-                <div className="mt-8 pt-6 border-t border-sand-tertiary">
+                <div className="mt-8 pt-6 border-t border-sand-tertiary flex-1 overflow-y-auto scrollbar-hide pb-10">
                     <ul className="space-y-1">
                         {activePrayer.verses.map(v => (
                             <li
