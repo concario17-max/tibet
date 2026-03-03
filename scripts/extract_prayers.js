@@ -42,14 +42,21 @@ const parseFile = (fileName) => {
     let currentSection = null;
 
     for (const line of lines) {
-        if (/^\d+\.\s/.test(line.trim())) {
+        // Match standard "1. Title", or "1 Title", or "[제 1연] Title"
+        const sectionMatch = line.trim().match(/^(?:\[제\s*(\d+)연\]|(\d+)\.|\s*(\d+)\s+)\s*(.*)/);
+
+        if (sectionMatch && sectionMatch[0].trim().length > 0) {
             if (currentSection) {
                 sections.push(currentSection);
             }
             const trimmedLine = line.trim();
+            // Find which group captured the number
+            const num = sectionMatch[1] || sectionMatch[2] || sectionMatch[3];
+            const titlePart = sectionMatch[4] ? sectionMatch[4].trim() : '';
+
             currentSection = {
-                id: fileName.replace('.txt', '') + '.' + trimmedLine.match(/^(\d+)/)[1],
-                title: trimmedLine.replace(/^\d+\.\s*/, '').trim(),
+                id: fileName.replace('.txt', '') + '.' + num,
+                title: titlePart,
                 tibetan: [],
                 english: [],
                 korean: []

@@ -96,7 +96,129 @@
   {
     "id": "prayer-2",
     "chapterName": "붓다와 보살들께 도움을 청하는 기도",
-    "verses": []
+    "verses": [
+      {
+        "id": "2.1",
+        "title": "2.1 ཕྱོགས་བཅུ་ན་བཞུགས་པའི་སངས་རྒྱས་དང་བྱང་ཆུ...",
+        "chapterTitle": "자비로운 붓다와 보살들을 향한 초대",
+        "text": {
+          "tibetan": "ཕྱོགས་བཅུ་ན་བཞུགས་པའི་སངས་རྒྱས་དང་བྱང་ཆུབ་སེམས་དཔའ།\nཐུགས་རྗེ་དང་ལྡན་པ། མཁྱེན་པ་དང་ལྡན་པ། སྤྱན་དང་ལྡན་པ།\nབརྩེ་བ་དང་ལྡན་པ། འགྲོ་བའི་སྐྱབས་སུ་གྱུར་པ་རྣམས།\nཐུགས་རྗེའི་དབང་གིས་གནས་འདིར་བྱོན་ཅིག\nདངོས་སུ་འབྱོར་པ་དང་ཡིད་ཀྱིས་སྤྲུལ་པའི་མཆོད་པ་བཞེས་ཤིག",
+          "english": "O, buddhas and bodhisattvas, abiding in the ten directions, refuge of living beings, imbued with compassion, imbued with knowledge, imbued with clear vision and imbued with love, come to this place, by the power of your compassion and accept these displayed and visualised offerings!",
+          "korean": "오, 시방위(十方位)에 거하시는 붓다와 보살들이시여! 한없는 자비로, 모든 것을 보고, 모든 것을 아시는 분들이시여! 모든 중생을 사랑으로 감싸주시며 중생들의 피난처 되는 분들이시여! 자비를 베푸사, 이곳으로 오시어 제물을 받으시옵소서. 실제로 드리는 이 제물과 마음 속으로 드리는 제물을 받으시옵소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "2.2",
+        "title": "2.2 ཀྱེ་མ་ཐུགས་རྗེ་ཅན་རྣམས། ཁྱེད་རྣམས་ནི་མཁྱ...",
+        "chapterTitle": "무한한 지혜와 구원의 능력을 향한 찬양",
+        "text": {
+          "tibetan": "ཀྱེ་མ་ཐུགས་རྗེ་ཅན་རྣམས། ཁྱེད་རྣམས་ནི་མཁྱེན་པའི་ཡེ་ཤེས་དང་། བརྩེ་བའི་ཐུགས་རྗེ་དང་། མཛད་པའི་ཕྲིན་ལས་དང་། སྐྱོབ་པའི་ནུས་མཐུ་བསམ་གྱིས་མི་ཁྱབ་པའི་འབྱུང་གནས་ལགས་པས། གནས་འདིར་བྱོན་ཅིག",
+          "english": "O, Compassionate Ones, as you are the fountain of all-knowing pristine cognition, of loving compassion, of effective activity, and of a power to grant refuge, beyond conception, [come to this place!]",
+          "korean": "오, 모든 것을 이해하는 무한한 지혜를 지니신 자비로운 분들이시여! 자비와 능력으로 놀라운 일을 성취하시며, 중생들의 피난처 되는 분들이시여! 오, 자비로운 분들이시여!"
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "2.3",
+        "title": "2.3 ཀྱེ་མ་ཐུགས་རྗེ་ཅན་རྣམས། མི་འདི་(ཆེ་གེ་མོ...",
+        "chapterTitle": "이승을 떠나는 고독하고 고통스러운 순간",
+        "text": {
+          "tibetan": "ཀྱེ་མ་ཐུགས་རྗེ་ཅན་རྣམས། མི་འདི་(ཆེ་གེ་མོ་ཞེས་བྱ་བ་)འཇིག་རྟེན་འདི་ནས་ཕ་རོལ་ཏུ་འགྲོ་བར་གྱུར། འཇིག་རྟེན་འདི་ནས་འཕོས་ཏེ་འཆི་བའི་འཕྲང་ཆེན་པོར་སླེབས་པར་གྱུར། སྡུག་བསྔལ་ཆེན་པོས་མནར་ཞིང་གྲོགས་མེད་པ། སྐྱབས་མེད་པ། མགོན་མེད་པ། དཔུང་གཉེན་མེད་པར་གྱུར། ཚེ་འདིའི་སྣང་བ་ནི་ནུབ་པར་གྱུར།",
+          "english": "O, Compassionate Ones, this human being, (say the name), is leaving this world and journeying to another shore. He is being cast off from this world and approaching the great transition of death. Suffering deeply, he is without a friend, without a refuge, without a protector and without a companion. His perception of this life is fading away.",
+          "korean": "지금 아무개가 이 세상을 떠나 저 세상으로 떠나려 하고 있습니다. 그는 친구도 없이 혼자입니다. 피할 곳도 없고, 보호해 주는 사람도 없고, 동반자도 없이 혼자서 어려움을 겪고 있습니다. 그의 현생(現生)의 인식은 이미 사라졌습니다."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "2.4",
+        "title": "2.4 འཇིག་རྟེན་གཞན་དུ་འགྲོ་ཞིང་མུན་པ་སྟུག་པོར...",
+        "chapterTitle": "까르마에 휩쓸려 미지의 흑암으로 향하는 길",
+        "text": {
+          "tibetan": "འཇིག་རྟེན་གཞན་དུ་འགྲོ་ཞིང་མུན་པ་སྟུག་པོར་འཇུག གཡང་ས་ཆེན་པོར་ལྟུང་། ཐེ་ཚོམ་གྱི་ནགས་ཚལ་སྟུག་པོར་འཇུག་ཅིང་ལས་ཀྱི་ཤུགས་ཀྱིས་དེད་པར་གྱུར། དགོན་པ་ཆེན་པོར་འཇུག་ཅིང་རྒྱ་མཚོ་ཆེན་པོར་ཁྱེར། ལས་ཀྱི་རླུང་དམར་གྱིས་དེད་པར་གྱུར།",
+          "english": "He is moving on to another world, entering a dense darkness and falling into an unfathomable abyss. Entering the thick forest of doubt, he will be driven on by the potency of past actions. He will be entering a great wilderness, borne away on a great ocean, and driven on by the vital winds of past actions.",
+          "korean": "그는 지금 생명의 다른 영역을 향해 흑암 속으로 들어가고 있습니다. 깊은 구덩이 속으로 빠져들어 가고 있습니다. 어두운 숲 속으로 들어가고 있습니다. 그는 자기가 쌓은 진화의 추진력[까르마]에 이끌려 거대한 광야로, 망망한 대해로 휩쓸려 들어가고 있습니다."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "2.5",
+        "title": "2.5 བརྟན་པའི་ས་གཞི་མེད་པའི་ཕྱོགས་སུ་འགྲོ་ཞིང...",
+        "chapterTitle": "야마의 사자들과 마주한 극심한 공포",
+        "text": {
+          "tibetan": "བརྟན་པའི་ས་གཞི་མེད་པའི་ཕྱོགས་སུ་འགྲོ་ཞིང་། གཡུལ་ངོ་ཆེན་པོར་འཇུག བདུད་ཀྱི་དཔུང་ཆེན་པོས་བཟུང་ཞིང་། ལས་རྒྱུ་འབྲས་བསླུ་བ་མེད་པའི་ཕོ་ཉ་དང་ཕྲད་དེ་འཇིགས་ཤིང་སྐྲག་པར་གྱུར།",
+          "english": "He will be moving in a direction where there is no firm ground, entering a great battlefield, being seized by great malevolent forces and becoming overwhelmed by fear and terror upon meeting the executors of the unfailing laws of cause and effect.",
+          "korean": "어느 한 곳에 안주하지 못하고, 진화의 추진력이 밀어붙이는 대로 큰 싸움터로 들어가고 있습니다. 그는 악마의 손에 붙들려 있으며, 죽음의 신 야마의 사자들로 인해 공포에 떨고 있습니다."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "2.6",
+        "title": "2.6 རང་གིས་བྱས་པའི་ལས་དང་མཐུན་པར་རང་དབང་མེད་...",
+        "chapterTitle": "홀로 감당해야 하는 저항할 수 없는 운명",
+        "text": {
+          "tibetan": "རང་གིས་བྱས་པའི་ལས་དང་མཐུན་པར་རང་དབང་མེད་པར་ཡང་སྐྱར་སྐྱེ་གནས་སུ་འཇུག་པར་གྱུར། མཛའ་བའི་གཉེན་བཤེས་རྣམས་ཤུལ་དུ་བཞག་ནས་གཅིག་པུར་འགྲོ་དགོས་པའི་དུས་ལ་བབས།",
+          "english": "In accord with his past actions, powerless [to resist], he may even, yet again, be entering the realms of rebirth. The time has come when he has no choice but to move on, alone, leaving his dear friends behind.",
+          "korean": "진화의 추진력이 이리 저리 끌고 다녀도 그에게는 저항할 힘이 없습니다. 그는 혼자서 가야만 하는 길을 가야 할 때를 맞이했습니다."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "2.7",
+        "title": "2.7 ཀྱེ་མ་ཐུགས་རྗེ་ཅན་རྣམས། སྐྱབས་མེད་པའི་མི...",
+        "chapterTitle": "중간계의 짙은 어둠 속 피난처를 구하는 간청",
+        "text": {
+          "tibetan": "ཀྱེ་མ་ཐུགས་རྗེ་ཅན་རྣམས། སྐྱབས་མེད་པའི་མི་འདི་(ཆེ་གེ་མོ་ཞེས་བྱ་བ་)ལ་ད་ལྟ་སྐྱབས་མཛོད་ཅིག མགོན་མཛོད་ཅིག དཔུང་གཉེན་མཛོད་ཅིག བར་དོའི་མུན་པ་ཆེན་པོ་ལས་བསྐྱབ་ཏུ་གསོལ།",
+          "english": "O, Compassionate Ones, grant refuge now to this person (say the name), who has no refuge! Protect him! Be his companion! Defend him from the great darkness of the intermediate state!",
+          "korean": "오, 자비로운 분들이시여! 이 가련한 아무개를 보호해 주소서. 그의 동반자가 되시어, 중간계의 깊은 어둠에서 그를 건져 주소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "2.8",
+        "title": "2.8 ལས་ཀྱི་རླུང་དམར་ཆེན་པོ་བཟློག་ཏུ་གསོལ། ལས...",
+        "chapterTitle": "까르마의 폭풍을 잠재우고 험로에서 구원해 주기를 비는 호소",
+        "text": {
+          "tibetan": "ལས་ཀྱི་རླུང་དམར་ཆེན་པོ་བཟློག་ཏུ་གསོལ། ལས་རྒྱུ་འབྲས་བསླུ་བ་མེད་པའི་འཇིགས་སྐྲག་ཆེན་པོ་ལས་བསྐྱབ་ཏུ་གསོལ། བར་དོའི་འཕྲང་རིང་པོ་དང་ཉམ་ང་བ་ལས་བསྒྲལ་དུ་གསོལ།",
+          "english": "Turn back the great hurricane of past actions! Protect him from the great fear and terror of the unfailing laws of cause and effect! Rescue him from the long and dangerous pathways of the intermediate state!",
+          "korean": "거세게 불어닥치는 까르마의 폭풍에서 그를 지켜 주소서. 죽음의 신 야마로 인한 두려움에서 벗어나게 하소서. 길고 좁은 중간계 나그네 길에서 그를 구원해 주시옵소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "2.9",
+        "title": "2.9 ཀྱེ་མ་ཐུགས་རྗེ་ཅན་རྣམས། ཐུགས་རྗེ་མ་ཆུང་ཞ...",
+        "chapterTitle": "세 가지 비참한 차원(삼악도)으로의 추락을 막아달라는 기도",
+        "text": {
+          "tibetan": "ཀྱེ་མ་ཐུགས་རྗེ་ཅན་རྣམས། ཐུགས་རྗེ་མ་ཆུང་ཞིག འདི་ལ་གྲོགས་མཛོད་ཅིག ངན་སོང་གསུམ་དུ་ལྟུང་བར་མ་གནང་ཞིག",
+          "english": "O, Compassionate Ones, be unsparing in your compassion! Grant assistance to him! Do not allow him to be expelled into the three kinds of inferior existence.",
+          "korean": "오, 자비로운 분들이시여! 자비의 손길을 거두지 마시고, 그를 도와주소서. 3가지 비참한 존재 차원[三惡道]에 떨어지지 않도록 그를 붙들어 주소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "2.10",
+        "title": "2.10 སྔོན་གྱི་དམ་བཅའ་ལས་མི་གཡོ་བར་ཐུགས་རྗེའི་...",
+        "chapterTitle": "고대의 서원을 일깨우며 자비를 촉구하는 부름",
+        "text": {
+          "tibetan": "སྔོན་གྱི་དམ་བཅའ་ལས་མི་གཡོ་བར་ཐུགས་རྗེའི་ཤུགས་མྱུར་དུ་ཕྱུང་ཞིག ཀྱེ་སངས་རྒྱས་དང་བྱང་ཆུབ་སེམས་དཔའ་རྣམས། མི་འདི་(ཆེ་གེ་མོ་ཞེས་བྱ་བ་)ལ་ཐུགས་རྗེ་དང་ཐབས་མཁས་པའི་ནུས་མཐུ་མ་ཆུང་ཞིག",
+          "english": "Without wavering from your ancient vows, swiftly release the power of your compassion. O, buddhas and bodhisattvas, for the sake of this person (say the name), be unsparing in your compassion, skilful means and ability!",
+          "korean": "당신들이 오래 전에 맹세한 서원을 잊지 말고, 부디 자비를 베풀어 주시옵소서. 오, 붓다와 보살들이시여. 자비와 구원의 능력으로 아무개를 품어 주소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "2.11",
+        "title": "2.11 ཐུགས་རྗེས་ཟུངས་ཤིག སེམས་ཅན་འདི་ལས་ངན་པའི...",
+        "chapterTitle": "삼보(三寶)의 품에 안겨 구원받기를 바라는 마지막 기원",
+        "text": {
+          "tibetan": "ཐུགས་རྗེས་ཟུངས་ཤིག སེམས་ཅན་འདི་ལས་ངན་པའི་དབང་དུ་འགྲོ་བར་མ་གནང་ཞིག ཀྱེ་དཀོན་མཆོག་གསུམ། བར་དོའི་སྡུག་བསྔལ་ལས་བསྐྱབ་ཏུ་གསོལ།",
+          "english": "Seize him with your compassion! Do not allow [this] sentient being to fall under the power of negative past actions! O, Three Precious Jewels, protect us from the sufferings of the intermediate state!",
+          "korean": "부정적인 진화의 힘에 굴복하지 않도록 견고하게 잡아 주소서. 3가지 보물이 중간계의 어려움에서 그의 피난처가 되어 주실 것을 간절히 기원하옵나이다."
+        },
+        "audioUrl": null
+      }
+    ]
   },
   {
     "id": "prayer-3",
@@ -239,7 +361,162 @@
   {
     "id": "prayer-4",
     "chapterName": "중간계 여행의 두려움으로부터 구원을 청하는 기도",
-    "verses": []
+    "verses": [
+      {
+        "id": "4.1",
+        "title": "4.1 ཀྱེ་མ་ཚེ་ཡི་འཕེན་པ་ཟད་ནས་འཁྱམས་པའི་ཚེ༔...",
+        "chapterTitle": "간계(바르도) 진입의 공포와 구원 요청",
+        "text": {
+          "tibetan": "ཀྱེ་མ་ཚེ་ཡི་འཕེན་པ་ཟད་ནས་འཁྱམས་པའི་ཚེ༔\nའཇིག་རྟེན་གཉེན་གྱིས་བསྐྱབ་ཏུ་མེད་པ་དང་༔\nརྒྱལ་བ་ཞི་ཁྲོས་ཐུགས་རྗེའི་ཤུགས་ཕྱུང་ནས༔\nམ་རིག་མུན་པ་སྟུག་པོ་སངས་བར་ཤོག༔",
+          "english": "When my life’s course is ended,\nAnd I roam alone in the intermediate states,\nThe loved ones of this world can no longer help me.\nSo, [at this critical time], may the Conquerors, the Peaceful and Wrathful Deities,\n[Quickly] release the power of their compassion,\nAnd may the deep darkness of my ignorance be dispelled.",
+          "korean": "오, 자애로운 모습과 무서운 모습의 붓다들이시여!\n내 생명의 추진력이 고갈되어 버릴 때,\n사랑하는 가족이 더 이상 나를 도울 수 없을 때,\n중간계를 홀로 방황하지 않을 수 없을 때, 자비를 베풀어주소서.\n무지의 짙은 안개를 걷어 주소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.2",
+        "title": "4.2 དགའ་བའི་གྲོགས་དང་བྲལ་ནས་གཅིག་པུར་འཁྱམས༔...",
+        "chapterTitle": "홀로 남겨진 고독과 공허한 환영의 등장",
+        "text": {
+          "tibetan": "དགའ་བའི་གྲོགས་དང་བྲལ་ནས་གཅིག་པུར་འཁྱམས༔\nརང་སྣང་སྟོང་པའི་གཟུགས་བརྙན་འཆར་དུས་དེར༔\nསངས་རྒྱས་རྣམས་ཀྱིས་ཐུགས་རྗེའི་ཤུགས་ཕྱུང་ནས༔\nསྔངས་སྐྲག་བར་དོའི་འཇིགས་པ་མི་འབྱུང་ཤོག༔",
+          "english": "When I roam alone, separated from my loved ones,\nAnd [myriad] images of emptiness arise, naturally manifesting,\nMay the buddhas [quickly] release the power of their compassion,\nAnd may the fear of the awesome and terrifying intermediate states be annulled.",
+          "korean": "오, 붓다들이시여!\n사랑하는 친구들과 이별하고 홀로 방황할 때,\n공허한 환상만이 눈에 보일 때, 자비를 베풀어주소서.\n중간계의 두려움을 제거해 주소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.3",
+        "title": "4.3 ཡེ་ཤེས་གསལ་བའི་འོད་ལྔ་འཆར་དུས་དེར༔...",
+        "chapterTitle": "다섯 가지 지혜의 빛과 수호존의 명확한 인식",
+        "text": {
+          "tibetan": "ཡེ་ཤེས་གསལ་བའི་འོད་ལྔ་འཆར་དུས་དེར༔\nམི་འཇིགས་མི་སྐྲག་རང་ངོ་ཤེས་པར་ཤོག༔\nཞི་དང་ཁྲོ་བོའི་སྐུ་གཟུགས་འཆར་དུས་དེར༔\nམི་འཇིགས་གདེང་ཐོབ་བར་དོ་ངོ་ཤེས་ཤོག༔",
+          "english": "When the five radiant lights of pristine cognition dawn,\nMay I recognise them as my own [nature], without awe and without terror,\nAnd as the [manifold] forms of the Peaceful and Wrathful Deities arise,\nMay I be fearlessly confident and recognise [the characteristics of] the intermediate states.",
+          "korean": "5가지 지혜의 빛이 비칠 때, 두려워하지 않게 하소서.\n그 빛이 곧 저 자신이라는 것을 알게 하소서.\n자애로운 모습과 무서운 모습의 주님들이 모습이 나타날 때,\n제가 중간계에 들어 왔다는 것을 두려움 없이 담대하게 인식하게 하소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.4",
+        "title": "4.4 ལས་ངན་དྲག་པོས་སྡུག་བསྔལ་མྱོང་བའི་ཚེ༔...",
+        "chapterTitle": "업보의 고통 소멸과 진리의 소리(다르마)로의 승화",
+        "text": {
+          "tibetan": "ལས་ངན་དྲག་པོས་སྡུག་བསྔལ་མྱོང་བའི་ཚེ༔\nཡི་དམ་ལྷ་ཡིས་སྡུག་བསྔལ་སེལ་བར་ཤོག༔\nཆོས་ཉིད་རང་སྒྲ་འབྲུག་སྟོང་ལྡིར་བའི་ཚེ༔\nཐེག་པ་ཆེན་པོའི་ཆོས་སྒྲར་འགྱུར་བར་ཤོག༔",
+          "english": "When I experience suffering, as the result of negative past actions,\nMay the Great Compassionate One dispel all such misery,\nAnd as the natural sound of reality reverberates like a thousand peals of thunder,\nMay all sounds be heard as the teachings of the Greater Vehicle.",
+          "korean": "오, 수호 붓다들이시여!\n부정적인 진화의 추진력 때문에 어려움을 겪을 때, 고통에서 건져 주소서.\n실체 세계가 밀려오는 소리가 하늘이 무너지는 천둥 소리처럼 들릴 때,\n그 소리가 ‘옴 마니 파드메 훔’의 진동으로 바뀌게 하소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.5",
+        "title": "4.5 སྐྱབས་མེད་ལས་ཀྱིས་རྗེས་སུ་འབྲང་དུས་དེར༔...",
+        "chapterTitle": "카르마의 맹목적 끌림으로부터의 해방과 사마디(삼매)",
+        "text": {
+          "tibetan": "སྐྱབས་མེད་ལས་ཀྱིས་རྗེས་སུ་འབྲང་དུས་དེར༔\nརྒྱལ་བ་ཞི་ཁྲོས་བདག་སོགས་བསྐྱབ་ཏུ་གསོལ༔\nབག་ཆགས་ལས་ཀྱི་སྡུག་བསྔལ་མྱོང་ཙ་ན༔\nའོད་གསལ་བདེ་བའི་ཏིང་འཛིན་འཆར་བར་ཤོག༔",
+          "english": "When I am driven on by past actions, unable to find a refuge,\nMay the meditational deities dispel all such misery,\nAnd as I experience the suffering of habitual tendencies and past actions,\nMay the meditative stabilities of inner radiance and bliss [naturally] arise.",
+          "korean": "자애로운 모습과 무서운 모습의 주님들이시여!\n제가 진화의 힘에 질질 끌려 다닐 때, 고통에서 건져 주소서.\n제가 그 동안 쌓아 온 본능의 힘 때문에 고통 당할 때,\n투명하게 빛나는 사마디의 희열을 허락하소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.6",
+        "title": "4.6 སྲིད་པ་བར་དོར་བརྫུས་ཏེ་སྐྱེས་ཙ་ན༔...",
+        "chapterTitle": "환생의 문턱과 악마(마라)의 유혹 차단",
+        "text": {
+          "tibetan": "སྲིད་པ་བར་དོར་བརྫུས་ཏེ་སྐྱེས་ཙ་ན༔\nཕྱིར་ལོག་བདུད་ཀྱི་ལུང་བསྟན་མི་འབྱུང་ཤོག༔\nགང་དུ་བསམ་པའི་དབང་གིས་སླེབས་ཙ་ན༔\nལས་ངན་འཁྲུལ་པའི་འཇིགས་སྐྲག་མི་འབྱུང་ཤོག༔",
+          "english": "When I am miraculously born into the intermediate state of rebirth,\nMay I not be beguiled by the perverse prophecies of Māra,\nAnd as I [freely] arrive at every place that I think of,\nMay the bewildering fear and terror, generated by my negative past actions, not arise.",
+          "korean": "제가 새로 태어나기 위해 탄생 중간계로 접어들 때,\n악마의 유혹에 빠져 헛된 길로 들어서지 않게 하소서.\n부정적인 진화의 추진력에 영향을 받지 않고,\n제가 원하는 곳에 도달하게 하소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.7",
+        "title": "4.7 གཅན་གཟན་ཁྲོ་བོའི་ངར་སྐད་འདོན་པའི་ཚེ༔...",
+        "chapterTitle": "외부의 공포스러운 환경을 평화로운 진동으로 변환",
+        "text": {
+          "tibetan": "གཅན་གཟན་ཁྲོ་བོའི་ངར་སྐད་འདོན་པའི་ཚེ༔\nཡི་གེ་དྲུག་པའི་ཆོས་སྒྲར་འགྱུར་བར་ཤོག༔\nཁ་ཆར་རླུང་དང་མུན་པས་བདའ་བའི་ཚེ༔\nཡེ་ཤེས་གསལ་བའི་ལྷ་མིག་ཐོབ་པར་ཤོག༔",
+          "english": "When the roars of savage wild beasts echo around me,\nMay their cries be transformed into the sound of the sacred teachings, the Six Syllables,\nAnd as I am engulfed by snow, rain, wind and darkness,\nMay I achieve the pure clairvoyance of radiant pristine cognition.",
+          "korean": "무섭게 울부짖는 맹수들의 포효가 들릴 때,\n그 소리가 다르마의 울림으로 바뀌게 하소서. ‘옴 마니 파드메 훔’의 진동으로 바뀌게 하소서.\n제가 눈, 비, 바람, 흑암에 쫓겨다닐 때,\n밝게 빛나는 지혜의 눈을 뜨게 하소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.8",
+        "title": "4.8 རིགས་མཐུན་བར་དོའི་སེམས་ཅན་ཐམས་ཅད་ཀྱང་༔...",
+        "chapterTitle": "중간계를 헤매는 타자(중생)를 위한 연민과 고통 종식",
+        "text": {
+          "tibetan": "རིགས་མཐུན་བར་དོའི་སེམས་ཅན་ཐམས་ཅད་ཀྱང་༔\nམིག་སེར་མེད་པར་མཐོ་རིས་སྐྱེ་བར་ཤོག༔\nཉོན་མོངས་དྲག་པོས་བཀྲེས་སྐོམ་བྱུང་བའི་ཚེ༔\nབཀྲེས་སྐོམ་ཚ་གྲང་སྡུག་བསྔལ་མི་འབྱུང་ཤོག༔",
+          "english": "May sentient beings in the intermediate state, similar in kind to myself,\nBe born into the higher realms, free from rivalry,\nAnd as severe dissonant mental states generate insatiable hunger and thirst,\nMay the afflictions of hunger, thirst, heat and cold, be annulled.",
+          "korean": "중간계를 여행하는 모든 중생들이 서로 미워하지 않고,\n모두 좋은 세계에 다시 태어나기를 바라나이다.\n저로 하여금, 탐욕에서 비롯되는 배고픔과 추위와 더위의 고통을 당하지 않게 하소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.9",
+        "title": "4.9 ཕྱི་མའི་ཕ་མ་འདུས་པར་མཐོང་བའི་ཚེ༔...",
+        "chapterTitle": "새로운 부모의 선택과 주체적인 탄생의 권리",
+        "text": {
+          "tibetan": "ཕྱི་མའི་ཕ་མ་འདུས་པར་མཐོང་བའི་ཚེ༔\nཐུགས་རྗེ་ཆེན་པོ་ཡབ་ཡུམ་མཐོང་བར་ཤོག༔\nགཞན་དོན་སྐྱེ་གནས་འདམས་པའི་དབང་ཐོབ་ནས༔\nམཚན་དང་དཔེ་བྱད་ལྡན་པའི་སྐུ་ཐོབ་ཤོག༔",
+          "english": "When I see my future parents in union,\nMay I perceive them as Mahākāruṇika and consort,\nAnd for the sake of others, being blessed with the power to choose a birthplace,\nMay I achieve an exalted body, adorned with the auspicious major and minor marks.",
+          "korean": "제가 몸을 섞고 있는 미래의 부모를 보게 될 때,\n그들은 자비로운 주님과 그의 배우자로 보게 하소서.\n제 자신이 태어날 곳을 스스로 선택할 수 있게 하소서.\n상서로운 표징을 지니고, 중생들에게 도움이 되는 존재로 태어나게 하소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.10",
+        "title": "4.10 བདག་གིས་མི་ལུས་མཆོག་ཏུ་ཐོབ་གྱུར་ནས༔...",
+        "chapterTitle": "이타행(타인 구원)을 위한 최상의 인간 몸 획득",
+        "text": {
+          "tibetan": "བདག་གིས་མི་ལུས་མཆོག་ཏུ་ཐོབ་གྱུར་ནས༔\nམཐོང་ཐོས་དག་གིས་འགྲོ་ཀུན་མགྱོགས་གྲོལ་ཤོག༔\nལས་ངན་དང་ནི་རྗེས་སུ་མི་འབྲང་ཞིང་༔\nབསོད་ནམས་གང་བྱས་འཕེལ་ཞིང་མཐུད་པར་ཤོག༔",
+          "english": "Once I have achieved birth in a supreme human form,\nMay I act so as to swiftly liberate all who see and hear me.\nAnd may I not be influenced by my negative past actions,\nBut multiply and emulate my past merits.",
+          "korean": "제가 뛰어난 인간의 몸을 입고 태어남으로써,\n저를 보는 모든 사람이 즉시 구원받게 하소서.\n제 말을 듣는 모든 사람이 그 자리에서 절대 자유의 경지로 들어가게 하소서.\n부정적인 진화의 힘을 거부하고, 긍정적인 진화의 힘만 따르며 키우게 하소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.11",
+        "title": "4.11 གང་དུ་སྐྱེས་པའི་ཡུལ་ཕྱོགས་དེ་དག་ཏུ༔...",
+        "chapterTitle": "전생의 완벽한 기억 유지와 영적 스승과의 재회",
+        "text": {
+          "tibetan": "གང་དུ་སྐྱེས་པའི་ཡུལ་ཕྱོགས་དེ་དག་ཏུ༔\nཚེ་རབས་ཡི་དམ་ལྷ་དང་མགྱོགས་ཕྲད་ཤོག༔\nསྐྱེས་མ་ཐག་ཏུ་སྨྲ་དང་ཤེས་པ་དང་༔\nསྐྱེ་གནས་དྲན་ཅིང་མི་བརྗེད་གཟུངས་ཐོབ་ཤོག༔",
+          "english": "Wherever I may be born, in whatever land it may be,\nMay I quickly encounter the meditational deity of my past lives.\nKnowing, from immediately after birth, how to speak and walk,\nMay I remember my past lives and attain the power of non-forgetfulness.",
+          "korean": "제가 어디에서 태어나든지, 이 생에서의 수호 붓다를 다시 만나게 하소서.\n태어나자마자 말하고 이해할 수 있게 하시고,\n전생의 일을 잊지 않고 기억하게 하소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.12",
+        "title": "4.12 ཡོན་ཏན་ཆེ་ཆུང་འབྲིང་གི་རིགས་རྣམས་ཀུན༔...",
+        "chapterTitle": "모든 배움의 즉각적인 통달과 세상에 대한 축복",
+        "text": {
+          "tibetan": "ཡོན་ཏན་ཆེ་ཆུང་འབྲིང་གི་རིགས་རྣམས་ཀུན༔\nམཐོང་དང་ཐོས་དང་བསམ་པས་ཤེས་པར་ཤོག༔\nགང་དུ་སྐྱེས་པའི་ཡུལ་ཕྱོགས་བཀྲ་ཤིས་ཤིང་༔\nསེམས་ཅན་ཐམས་ཅད་བདེ་དང་ལྡན་པར་ཤོག༔",
+          "english": "May I easily come to master by study and reflection,\nThe manifold stages of learning - small, intermediate and great.\nMay the country into which I am born be auspicious,\nAnd may all sentient beings be blessed with happiness.",
+          "korean": "높고, 낮고, 평범한 모든 가르침을 듣고 보는 순간 즉시 깨닫게 하소서.\n제가 태어난 땅을 축복하시어,\n모든 중생이 행복을 누리게 하소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.13",
+        "title": "4.13 རྒྱལ་བ་ཞི་ཁྲོས་ཁྱེད་སྐུ་ཅི་འདྲ་དང་༔...",
+        "chapterTitle": "붓다(수호존)들과의 완전한 합일과 동기화",
+        "text": {
+          "tibetan": "རྒྱལ་བ་ཞི་ཁྲོས་ཁྱེད་སྐུ་ཅི་འདྲ་དང་༔\nའཁོར་དང་སྐུ་ཚེའི་ཚད་དང་ཞིང་ཁམས་དང་༔\nཁྱེད་ཀྱི་མཚན་མཆོག་བཟང་པོ་ཅི་འདྲ་བ༔\nདེ་འདྲ་ཁོ་ནར་བདག་སོགས་འགྱུར་བར་ཤོག༔",
+          "english": "O, Peaceful and Wrathful Conquerors, may I and all others\nBecome entirely at one with you, and come to resemble you,\nIn all your forms, your retinues, your lifespan and your buddha fields,\nAnd in every quality of your supreme auspicious marks.",
+          "korean": "오, 자애로운 모습과 무서운 모습의 승리자들이시여!\n저와 다른 모든 중생들을 당신들과 똑같게 변화시켜 주소서.\n당신들과 똑같이 수많은 수행자를 거느리고, 당신들과 똑같이 장수하며,\n당신들과 똑같이 순수한 땅에서 살며, 당신들과 똑같이 상서로운 표징을 지니게 하소서."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "4.14",
+        "title": "4.14 ཀུན་ཏུ་བཟང་དང་ཞི་ཁྲོའི་ཐུགས་རྗེ་དང་༔...",
+        "chapterTitle": "진리와 축복의 힘으로 완성되는 기도의 성취",
+        "text": {
+          "tibetan": "ཀུན་ཏུ་བཟང་དང་ཞི་ཁྲོའི་ཐུགས་རྗེ་དང་༔\nཆོས་ཉིད་རྣམ་པར་དག་པའི་བདེན་སྟོབས་དང་༔\nསྔགས་འཆང་རྩེ་གཅིག་བསྒྲུབས་པའི་བྱིན་རླབས་ཀྱིས༔\nསྨོན་ལམ་བཏབ་པ་བཞིན་དུ་འགྲུབ་པར་ཤོག༔",
+          "english": "Through the compassion of Samantabhadra and the infinite Peaceful and Wrathful Deities,\nBy the power of the truth of pure reality,\nAnd by the blessing of the mantrins who practise one-pointedly,\nMay [every wish of] this aspirational prayer be fulfilled.",
+          "korean": "오, 무한히 자비로운 분이시여!\n자애로운 모습과 무서운 모습으로 나타나는 사만타바드라(普賢菩薩)시여!\n완성된 실체의 진리의 힘으로, 그리고 집중을 성취한 탄트라 성자의 축복으로,\n제 모든 기도를 이루어 주소서."
+        },
+        "audioUrl": null
+      }
+    ]
   },
   {
     "id": "prayer-5",
