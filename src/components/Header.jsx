@@ -19,10 +19,11 @@ const Header = () => {
 
     return (
         <header className={`fixed top-0 left-0 w-full z-50 px-8 flex justify-center text-center items-center transition-all duration-500 border-b border-sand-tertiary ${scrolled ? 'glass-panel py-4' : 'bg-transparent py-6'} ${isChapter ? 'bg-white' : ''}`}>
-            <nav className="flex justify-center flex-col items-center">
-                <div className={`mb-4 transition-all duration-500 ${isChapter ? 'scale-75' : 'scale-100'}`}>
-                    <Link to="/">
-                        <span className="material-symbols-outlined text-gold-primary text-4xl hover:text-charcoal-main transition-colors">temple_buddhist</span>
+            <nav className={`flex ${isChapter ? 'justify-between w-full px-4' : 'justify-center flex-col items-center'}`}>
+                <div className={`mb-4 transition-all duration-500 flex items-center gap-3 ${isChapter ? 'scale-90 mb-0' : 'scale-100'}`}>
+                    <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                        <span className="material-symbols-outlined text-gold-primary text-3xl">auto_stories</span>
+                        <span className="serif-title text-base tracking-widest text-charcoal-main font-bold">The Bardo Thodol</span>
                     </Link>
                 </div>
 

@@ -9,7 +9,7 @@ const Chapter = () => {
     const [selectedVerse, setSelectedVerse] = useState(prayersData[2].verses[0]);
 
     return (
-        <div className="flex w-full min-h-screen bg-sand-primary mt-20">
+        <div className="flex w-full min-h-screen h-screen overflow-hidden bg-sand-primary relative z-10">
             <LeftSidebar onSelectVerse={setSelectedVerse} activeVerseId={selectedVerse.id} prayers={prayersData} />
             <ReadingPanel key={selectedVerse.id} verse={selectedVerse} />
             <RightSidebar />

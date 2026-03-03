@@ -2,7 +2,7 @@ import React from 'react';
 
 const RightSidebar = () => {
     return (
-        <aside className="w-80 flex-shrink-0 h-[calc(100vh-80px)] overflow-y-auto border-l border-sand-tertiary bg-white px-6 py-8 hidden xl:block sticky top-20">
+        <aside className="w-80 flex-shrink-0 h-screen overflow-y-auto border-l border-sand-tertiary bg-white px-6 pt-24 hidden xl:block sticky top-0">
             <h3 className="serif-title text-xl text-charcoal-main mb-6">Reflections</h3>
 
             <div className="mb-8 relative">

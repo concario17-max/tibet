@@ -6,7 +6,7 @@ const LeftSidebar = ({ onSelectVerse, activeVerseId, prayers }) => {
     const activePrayer = prayers?.find(p => p.id === openChapter);
 
     return (
-        <aside className="w-[300px] flex-shrink-0 h-[calc(100vh-80px)] border-r border-sand-tertiary bg-sand-primary px-6 pt-8 hidden lg:flex flex-col sticky top-20">
+        <aside className="w-[300px] flex-shrink-0 h-screen border-r border-sand-tertiary bg-sand-primary px-6 pt-24 hidden lg:flex flex-col sticky top-0">
             <h3 className="flex-shrink-0 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-muted mb-6">Chapters</h3>
             <ul className="flex-shrink-0 space-y-1">
                 {prayers && prayers.map((prayer, pIndex) => (

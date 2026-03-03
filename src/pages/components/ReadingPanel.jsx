@@ -27,7 +27,7 @@ const ReadingPanel = ({ verse }) => {
     }, [progress]);
 
     return (
-        <main className="flex-1 max-w-3xl mx-auto px-6 lg:px-12 py-10 min-h-screen pb-32">
+        <main className="flex-1 max-w-3xl mx-auto px-6 lg:px-12 pt-24 pb-20 h-screen overflow-y-auto scrollbar-hide">
             <div className="flex items-center justify-center space-x-2 text-xs text-charcoal-muted font-medium mb-12">
                 <span>Chapter {verse.id.split('.')[0]}</span>
                 <span className="text-sand-tertiary">›</span>
