@@ -5,17 +5,8 @@ const LeftSidebar = ({ onSelectVerse, activeVerseId, prayers }) => {
 
     const activePrayer = prayers?.find(p => p.id === openChapter);
 
-    const formatChapterName = (name) => {
-        if (name.includes('몸인 스승')) return name.replace('몸인 스승', '몸인\n스승');
-        if (name.includes('보살들께 도움')) return name.replace('보살들께 도움', '보살들께\n도움');
-        if (name.includes('곤경에서 구원')) return name.replace('곤경에서 구원', '곤경에서\n구원');
-        if (name.includes('두려움으로부터 구원')) return name.replace('두려움으로부터 구원', '두려움으로부터\n구원');
-        if (name.includes('전에 드리는')) return name.replace('전에 드리는', '전에\n드리는');
-        return name;
-    };
-
     return (
-        <aside className="w-[330px] flex-shrink-0 h-[calc(100vh-80px)] border-r border-sand-tertiary bg-sand-primary px-6 py-8 hidden lg:flex flex-col sticky top-20">
+        <aside className="w-[300px] flex-shrink-0 h-[calc(100vh-80px)] border-r border-sand-tertiary bg-sand-primary px-6 py-8 hidden lg:flex flex-col sticky top-20">
             <h3 className="flex-shrink-0 text-xs font-bold uppercase tracking-[0.2em] text-charcoal-muted mb-6">Chapters</h3>
             <ul className="flex-shrink-0 space-y-1">
                 {prayers && prayers.map((prayer, pIndex) => (
@@ -25,8 +16,8 @@ const LeftSidebar = ({ onSelectVerse, activeVerseId, prayers }) => {
                             onClick={() => setOpenChapter(openChapter === prayer.id ? null : prayer.id)}
                         >
                             <div className="flex-1 mt-0.5">
-                                <h4 className={`text-[14px] font-sans font-semibold tracking-tight whitespace-pre-line leading-relaxed ${openChapter === prayer.id ? 'text-charcoal-main' : ''}`}>
-                                    {pIndex + 1}. {formatChapterName(prayer.chapterName)}
+                                <h4 className={`text-[14px] font-sans font-semibold tracking-tight leading-relaxed break-keep pr-2 ${openChapter === prayer.id ? 'text-charcoal-main' : ''}`}>
+                                    {pIndex + 1}. {prayer.chapterName}
                                 </h4>
                             </div>
                             <span className="text-[11px] font-bold text-gold-dim pt-1 ml-3">
@@ -38,7 +29,7 @@ const LeftSidebar = ({ onSelectVerse, activeVerseId, prayers }) => {
             </ul>
 
             {activePrayer && activePrayer.verses.length > 0 && (
-                <div className="mt-6 pt-4 border-t border-sand-tertiary flex-1 overflow-y-auto scrollbar-hide pb-2">
+                <div className="mt-6 pt-4 border-t border-sand-tertiary flex-1 overflow-y-auto scrollbar-hide pb-32">
                     <ul className="space-y-1">
                         {activePrayer.verses.map(v => (
                             <li
