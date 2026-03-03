@@ -4,14 +4,14 @@
 
 @layer utilities {
   .serif-title {
-    font-family: 'Crimson Pro', serif;
-    letter-spacing: 0.15em;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.1em;
   }
 
   .nav-divider::after {
     content: "•";
     margin: 0 1rem;
-    color: #9c8749;
+    color: #B29A62;
     opacity: 0.5;
   }
 
@@ -23,7 +23,7 @@
 :root {
   line-height: 1.6;
   font-weight: 400;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Inter', sans-serif;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -35,9 +35,11 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--bg-primary);
-  /* Subdued noise or subtle gradient for depth instead of white radial */
-  background-image: radial-gradient(circle at top, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+  background-color: #F9F7F2;
+  /* sand-primary */
+  color: #1A1A1A;
+  /* charcoal-main */
+  /* Remove old radial gradient and keep solid sophisticated sand background */
 }
 
 h1,
@@ -46,14 +48,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-serif);
-  color: #e2e8f0;
-  /* Slightly brighter for headings */
+  font-family: 'Playfair Display', serif;
+  color: #1A1A1A;
   letter-spacing: 0.02em;
 }
 
 .gold-gradient-text {
-  background: linear-gradient(135deg, #E6C875 0%, #c5a059 50%, #8B703B 100%);
+  background: linear-gradient(135deg, #D6C7A2 0%, #B29A62 50%, #9c8749 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
