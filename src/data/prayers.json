@@ -1,0 +1,300 @@
+[
+  {
+    "id": "prayer-1",
+    "chapterName": "Prayer 1",
+    "verses": [
+      {
+        "id": "1-1",
+        "title": "법신(진리의 몸)에 대한 기도",
+        "text": {
+          "tibetan": "རྣམ་དག་ཆོས་དབྱིངས་ཁྱབ་གདལ་ཕོ་བྲང་ནས༔\nསྐྱེ་མེད་སྤྲོས་བྲལ་ཆོས་སྐུའི་བླ་མ་ལ༔\nབདག་ཉིད་མོས་གུས་གདུང་བས་གསོལ་བ་འདེབས༔\nམ་རིག་གཏི་མུག་མ་སྤངས་རང་གྲོལ་ནས༔\nརང་བྱུང་ཡེ་ཤེས་བཅོས་མེད་ལྷུན་གྲུབ་ཏུ༔\nཆོས་སྐུའི་དགོངས་པའི་བྱིན་རླབས་འཇུག་པར་ཤོག༔",
+          "english": "In the palace of reality's expanse, pure and pervasive,\nIs my spiritual teacher, the Buddha-body of Reality —\nUncreated and free from conceptual elaboration.\nTo you, I pray with fervent devotion.\nI request the primordially pure self-empowerment,\nThe blessings of the Buddha-body of Reality,\nSo that naturally arising pristine cognition\nIs uncontrived and spontaneously present,\nThrough natural liberation,\nWithout renunciation of ignorance and delusion.",
+          "korean": "우주 속에 충만한 완전한 진리의 궁전에서,\n태어나지도 않고 성장하지도 않는 진리의 몸 스승께 한없는 경배와 기도를 드리나이다.\n무지와 망상이 완전히 사라지지 않았어도, 지금 이대로 자유롭게 해 주소서.\n당신의 진리의 몸에서 흘러나오는 완전한 축복을 충만하게 누리게 하소서!\n스스로 존재하는 근원적인 지혜를 밝혀 주소서!"
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "1-2",
+        "title": "보신(깨달은 몸)에 대한 기도",
+        "text": {
+          "tibetan": "བདེ་ཆེན་ཡེ་ཤེས་འོད་གསལ་ཕོ་བྲང་ནས༔\nའགག་མེད་བདེ་ཆེན་ལོངས་སྐུའི་བླ་མ་ལ༔\nབདག་ཉིད་མོས་གུས་གདུང་བས་གསོལ་བ་འདེབས༔\nའདོད་ཆགས་ཞེན་འཛིན་མ་སྤངས་རང་གྲོལ་ནས༔\nརིག་པ་ཡེ་ཤེས་བདེ་ཆེན་རང་གྲོལ་དུ༔\nལོངས་སྐུའི་དགོངས་པའི་བྱིན་རླབས་འཇུག་པར་ཤོག༔",
+          "english": "In the palace of great bliss, which is pristine cognition, radiant and pure,\nIs my spiritual teacher, the Buddha-body of Perfect Resource —\nUnimpeded and supremely blissful.\nTo you, I pray with fervent devotion.\nI request the spontaneously present self-empowerment,\nThe blessings of the Buddha-body of Perfect Resource,\nSo that intrinsic awareness, which is pristine cognition,\nIs naturally liberated in supreme bliss,\nThrough natural liberation,\nWithout renunciation of desire and clinging.",
+          "korean": "순수한 지혜의 기쁨이 충만한 빛의 궁전에서,\n죽음을 모르는 깨달은 몸 스승께 한없는 경배와 기도를 드리나이다.\n탐욕과 정욕이 완전히 사라지지 않았어도, 지금 이대로 자유롭게 해 주소서.\n당신의 깨달은 몸에서 흘러나오는 은총을 충만하게 누리게 하소서!\n절대 자유의 경지로 인도하는, 내적인 지혜의 기쁨을 채워 주소서!"
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "1-3",
+        "title": "화신(나투는 몸)에 대한 기도",
+        "text": {
+          "tibetan": "སྐྱོན་བྲལ་རྣམ་དག་པདྨའི་ཕོ་བྲང་ནས༔\nམ་ངེས་ཅིར་ཡང་འཆར་བའི་སྤྲུལ་སྐུའི་བླ་མ་ལ༔\nབདག་ཉིད་མོས་གུས་གདུང་བས་གསོལ་བ་འདེབས༔\nཞེ་སྡང་ལོག་ལྟ་མ་སྤངས་རང་གྲོལ་ནས༔\nརིག་པ་རང་སྣང་ཡེ་ཤེས་འོད་གསལ་དུ༔\nསྤྲུལ་སྐུའི་དགོངས་པའི་བྱིན་རླབས་འཇུག་པར་ཤོག༔",
+          "english": "In the palace of the lotus, untainted and pure,\nIs my spiritual teacher, the Buddha-body of Emanation —\nNaturally arising in unlimited forms, beyond determination.\nTo you, I pray with fervent devotion.\nI request the naturally liberating self-empowerment,\nThe blessings of the Buddha-body of Emanation,\nSo that intrinsic awareness, which is naturally manifesting\nPristine cognition, naturally radiates,\nThrough natural liberation,\nWithout renunciation of discordant views and aversion.",
+          "korean": "흠없이 완전한 연꽃 궁전에서,\n스스로 나타나신 신성한 나투는 몸 스승께 한없는 경배와 기도를 드리나이다.\n잘못된 생각에서 비롯되는 증오심이 사라지지 않았어도, 지금 이대로 자유롭게 해 주소서.\n당신의 나투는 몸에서 흘러나오는 은총을 충만하게 누리게 하소서!\n마음을 밝히는 투명한 빛을 비추어 주소서!"
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "1-4",
+        "title": "세 몸(Trikaya)의 통합에 대한 기도",
+        "text": {
+          "tibetan": "རང་རིག་འོད་གསལ་དོན་གྱི་ཕོ་བྲང་ནས༔\nཕྱོགས་ལྷུང་བྲལ་བ་བདེ་ཆེན་སྐུ་གསུམ་བླ་མ་ལ༔\nབདག་ཉིད་མོས་གུས་གདུང་བས་གསོལ་བ་འདེབས༔\nགཟུང་འཛིན་གཉིས་ཆོས་མ་སྤངས་རང་གྲོལ་ནས༔\nརང་བྱུང་ཡེ་ཤེས་སྐུ་གསུམ་ལྷུན་གྲུབ་ཏུ༔\nསྐུ་གསུམ་དགོངས་པའི་བྱིན་རླབས་འཇུག་པར་ཤོག༔",
+          "english": "In the palace of intrinsic awareness, the genuine inner radiance,\nIs my spiritual teacher, the unity of the three buddha-bodies —\nBeyond spatial delineation, and supremely blissful.\nTo you, I pray with fervent devotion.\nI request the supremely blissful self-empowerment,\nThe blessings of the Three Buddha-bodies,\nSo that naturally arising pristine cognition\nIs spontaneously present as the three buddha-bodies,\nThrough natural liberation,\nWithout renunciation of the subject-object dichotomy.",
+          "korean": "내면을 관통하는 투명한 빛의 궁전에서,\n만물에 고루 축복을 베푸는 세 몸이신 스승께 한없는 경배와 기도를 드리나이다.\n나와 너의 분별이 완전히 사라지지 않았어도, 지금 이대로 자유롭게 해 주소서.\n당신의 세 몸에서 흘러나오는 지극한 축복을 충만하게 누리게 하소서!\n근원적 지혜의 세 몸이 이루어지게 하소서!"
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "1-5",
+        "title": "무지와 망상에 대한 자비의 기도",
+        "text": {
+          "tibetan": "ཀྱེ་མ་འདིར་སྣང་འཁོར་བར་འཁྱམས་པའི་སེམས་ཅན་རྣམས༔\nམ་རིག་འཁྲུལ་པའི་དབང་གིས་འཁོར་བར་འཁྱམས༔\nརང་སེམས་མཐའ་བྲལ་ཆོས་སྐུར་མ་ཤེས་པས༔\nའགྲོ་དྲུག་སེམས་ཅན་ཆོས་སྐུར་མངོན་གྱུར་ཤོག༔",
+          "english": "How needing of compassion are suffering sentient beings, right here,\nWho are driven on through cyclic existence by delusion and confusion —\nBecause they do not understand that their own mind\nIs the Buddha-body of Reality, free from extremes!\nMay they all actualise the Buddha-body of Reality!",
+          "korean": "오, 무지와 망상의 어둠 속에서 윤회하며 고통 당하는 중생들이여!\n그대들의 마음이 곧 무한한 진리의 몸임을 알지 못하는 이들이여!\n그대들 모두가 붓다의 진리의 몸을 이룰지어다!"
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "1-6",
+        "title": "정욕과 집착에 대한 자비의 기도",
+        "text": {
+          "tibetan": "ཀྱེ་མ་འདིར་སྣང་འཁོར་བར་འཁྱམས་པའི་སེམས་ཅན་རྣམས༔\nའདོད་ཆགས་ཞེན་འཛིན་དབང་གིས་འཁོར་བར་འཁྱམས༔\nརང་རིག་བདེ་ཆེན་ལོངས་སྐུར་མ་ཤེས་པས༔\nའགྲོ་དྲུག་སེམས་ཅན་ལོངས་སྐུར་མངོན་གྱུར་ཤོག༔",
+          "english": "How needing of compassion are mistakenly prejudiced sentient beings, right here,\nWho are driven on through cyclic existence by attachment and craving —\nBecause they do not understand that their own awareness\nIs the Buddha-body of Perfect Resource, imbued with supreme bliss!\nMay they all actualise the Buddha-body of Perfect Resource!",
+          "korean": "오, 정욕과 집착의 그릇된 길에서 윤회하며 방황하는 중생들이여!\n그대들의 마음이 곧 기쁨이 넘치는 깨달은 몸임을 알지 못하는 이들이여!\n그대들 모두가 붓다의 깨달은 몸을 이룰지어다!"
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "1-7",
+        "title": "증오와 분별심에 대한 자비의 기도",
+        "text": {
+          "tibetan": "ཀྱེ་མ་འདིར་སྣང་འཁོར་བར་འཁྱམས་པའི་སེམས་ཅན་རྣམས༔\nཞེ་སྡང་ལོག་ལྟའི་དབང་གིས་འཁོར་བར་འཁྱམས༔\nརང་སེམས་འགག་མེད་སྤྲུལ་སྐུར་མ་ཤེས་པས༔\nའགྲོ་དྲུག་སེམས་ཅན་སྤྲུལ་སྐུར་མངོན་གྱུར་ཤོག༔",
+          "english": "How needing of compassion are sentient beings with discordant views, right here,\nWho are driven on through cyclic existence by aversion and dualistic perception —\nBecause they do not understand that their own mind\nIs the Buddha-body of Emanation, arising and subsiding naturally!\nMay they all actualise the Buddha-body of Emanation!",
+          "korean": "오, 증오심을 일으키는 이원적인 분별심 속에서 윤회하며 방황하는 중생들이여!\n그대들의 마음이 곧 자유로이 나투는 몸임을 알지 못하는 이들이여!\n그대들 모두가 붓다의 나투는 몸을 이룰지어다!"
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "1-8",
+        "title": "대상에 얽매임에 대한 자비의 기도",
+        "text": {
+          "tibetan": "ཀྱེ་མ་འདིར་སྣང་འཁོར་བར་འཁྱམས་པའི་སེམས་ཅན་རྣམས༔\nགཟུང་འཛིན་ཉོན་མོངས་དབང་གིས་འཁོར་བར་འཁྱམས༔\nརང་སེམས་སྐུ་གསུམ་དབྱེར་མེད་མ་ཤེས་པས༔\nའགྲོ་དྲུག་སེམས་ཅན་སྐུ་གསུམ་མངོན་གྱུར་ཤོག༔",
+          "english": "How needing of compassion are all unenlightened living beings, right here,\nWho, as a result of grasping, are obscured by dissonant mental states and subtle obstructions to knowledge —\nBecause they do not understand that their own mind\nIs indivisible from the three buddha-bodies!\nMay they all actualise the three buddha-bodies!",
+          "korean": "오, 습관과 대상의 올가미에 걸려 아직 붓다를 이루지 못한 중생들이여!\n그대들의 마음이 곧 붓다의 나눌 수 없는 세 몸임을 알지 못하는 이들이여!\n그대들 모두가 붓다의 세 몸을 이룰지어다!"
+        },
+        "audioUrl": null
+      }
+    ]
+  },
+  {
+    "id": "prayer-2",
+    "chapterName": "Prayer 2",
+    "verses": []
+  },
+  {
+    "id": "prayer-3",
+    "chapterName": "Prayer 3",
+    "verses": [
+      {
+        "id": "3-1",
+        "title": "귀의와 구원의 간청 (Invocation)",
+        "text": {
+          "tibetan": "བླ་མ་ཡི་དམ་མཁའ་འགྲོའི་ཚོགས་ལ་ཕྱག་འཚལ་ལོ༔\nབརྩེ་བ་ཆེན་པོས་ལམ་སྣ་དྲང་དུ་གསོལ༔",
+          "english": "I bow down to the spiritual teachers, meditational deities and dakinis,\nMay I be guided on the path by their great love.",
+          "korean": "모든 스승과 다섯 원형 붓다와 그들의 배우자들께 엎드려 절하옵나이다.\n청하옵건대, 큰 사랑을 베푸사 저를 진리의 길로 이끌어 주소서!"
+        },
+        "audioUrl": "/mp3/Prayer/3-1.mp3"
+      },
+      {
+        "id": "3-2",
+        "title": "깊은 혼란 속에서 (Bewilderment)",
+        "text": {
+          "tibetan": "ཀྱེ་མ༔ འཁྲུལ་པ་དྲག་པོས་འཁོར་བར་འཁྱམས་པའི་ཚེ༔\nཐོས་བསམ་སྒོམ་པའི་མ་ཡེངས་འོད་ལམ་ལ༔\nབཀའ་བརྒྱུད་བླ་མ་རྣམས་ཀྱིས་ལམ་སྣ་དྲོངས༔\nཡུམ་མཆོག་མཁའ་འགྲོའི་ཚོགས་ཀྱིས་རྒྱབ་ནས་སྐྱོར༔\nབར་དོ་འཇིགས་པའི་འཕྲང་ལས་བསྒྲལ་དུ་གསོལ༔\nཡང་དག་རྫོགས་པའི་སངས་རྒྱས་ས་རུ་སྐྱོལ༔",
+          "english": "O, as I roam in cyclic existence driven by deep-seated bewilderment,\nMay the spiritual teachers, holders of the oral lineages, draw me forward,\nLeading me on the path of radiant light,\nWhich is undistracted study, reflection and meditation.\nMay the supreme consorts, the hosts of dakinis, support me from behind,\nAnd thus encircled may I be rescued\nFrom the fearsome passageway of the intermediate state,\nAnd be escorted to the level of an utterly perfect buddha.",
+          "korean": "제가 심한 혼란 속에서 윤회 세계를 방황하고 있을 때\n신성한 법통을 이어 받은 스승들의 인도를 받아,\n배우고 생각하고 명상하여, 흔들리지 않는 빛의 길을 가게 하소서.\n그들의 수행의 짝[다끼니]들이 수호자가 되어,\n중간계의 어려운 길을 잘 통과하게 하소서.\n그리하여 제가 완전한 붓다의 경지에 이르도록 하옵소서."
+        },
+        "audioUrl": "/mp3/Prayer/3-2.mp3"
+      },
+      {
+        "id": "3-3",
+        "title": "무지와 바이로차나 붓다 (Delusion / Vairocana)",
+        "text": {
+          "tibetan": "ཀྱེ་མ༔ གཏི་མུག་དྲག་པོས་འཁོར་བར་འཁྱམས་པའི་ཚེ༔\nཆོས་དབྱིངས་ཡེ་ཤེས་གསལ་བའི་འོད་ལམ་ལ༔\nབཅོམ་ལྡན་རྣམ་པར་སྣང་མཛད་ལམ་སྣ་དྲོངས༔\nཡུམ་མཆོག་དབྱིངས་ཕྱུག་མ་ཡིས་རྒྱབ་ནས་སྐྱོར༔\nབར་དོ་འཇིགས་པའི་འཕྲང་ལས་བསྒྲལ་དུ་གསོལ༔\nཡང་དག་རྫོགས་པའི་སངས་རྒྱས་ས་རུ་སྐྱོལ༔",
+          "english": "O, as I roam in cyclic existence driven by deep-seated delusion,\nMay the transcendent lord Vairocana draw me forward,\nLeading me on the path of radiant light,\nWhich is the pristine cognition of reality's expanse.\nMay the supreme consort Akashadhatvisvari support me from behind,\nAnd thus encircled may I be rescued\nFrom the fearsome passageway of the intermediate state,\nAnd be escorted to the level of an utterly perfect buddha.",
+          "korean": "제가 어두운 무지 때문에 윤회 세계를 방황하고 있을 때,\n바이로차나 붓다(大日如來)의 인도를 받아,\n궁극적인 지혜의 투명한 빛 가운데로 들어가게 하소서.\n그의 배우자 다트비쉬바리 붓다가 수호자가 되어,\n중간계의 어려운 길을 잘 통과하게 하소서.\n그리하여 제가 완전한 붓다의 경지에 이르도록 하옵소서."
+        },
+        "audioUrl": "/mp3/Prayer/3-3.mp3"
+      },
+      {
+        "id": "3-4",
+        "title": "분노와 바즈라사트바 붓다 (Aversion / Vajrasattva)",
+        "text": {
+          "tibetan": "ཀྱེ་མ༔ ཞེ་སྡང་དྲག་པོས་འཁོར་བར་འཁྱམས་པའི་ཚེ༔\nམེ་ལོང་ཡེ་ཤེས་གསལ་བའི་འོད་ལམ་ལ༔\nབཅོམ་ལྡན་རྡོ་རྗེ་སེམས་དཔས་ལམ་སྣ་དྲོངས༔\nཡུམ་མཆོག་སངས་རྒྱས་སྤྱན་མས་རྒྱབ་ནས་སྐྱོར༔\nབར་དོ་འཇིགས་པའི་འཕྲང་ལས་བསྒྲལ་དུ་གསོལ༔\nཡང་དག་རྫོགས་པའི་སངས་རྒྱས་ས་རུ་སྐྱོལ༔",
+          "english": "O, as I roam in cyclic existence driven by deep-seated aversion,\nMay the transcendent lord Vajrasattva draw me forward,\nLeading me on the path of radiant light,\nWhich is the mirror-like pristine cognition.\nMay the supreme consort Buddhalocana support me from behind,\nAnd thus encircled may I be rescued\nFrom the fearsome passageway of the intermediate state,\nAnd be escorted to the level of an utterly perfect buddha.",
+          "korean": "제가 강한 분노 때문에 윤회 세계를 방황하고 있을 때,\n바즈라사트바 붓다(持金剛佛)의 인도를 받아,\n거울 같은 지혜의 투명한 빛 가운데로 들어가게 하소서.\n그의 배우자 붓다로카나가 수호자가 되어,\n중간계의 어려운 길을 잘 통과하게 하소서.\n그리하여 제가 완전한 붓다의 경지에 이르도록 하옵소서."
+        },
+        "audioUrl": "/mp3/Prayer/3-4.mp3"
+      },
+      {
+        "id": "3-5",
+        "title": "아집과 라트나삼바바 붓다 (Pride / Ratnasambhava)",
+        "text": {
+          "tibetan": "ཀྱེ་མ༔ ང་རྒྱལ་དྲག་པོས་འཁོར་བར་འཁྱམས་པའི་ཚེ༔\nམཉམ་ཉིད་ཡེ་ཤེས་གསལ་བའི་འོད་ལམ་ལ༔\nབཅོམ་ལྡན་རིན་ཆེན་འབྱུང་ལྡན་ལམ་སྣ་དྲོངས༔\nཡུམ་མཆོག་མཱ་མ་ཀཱི་ཡིས་རྒྱབ་ནས་སྐྱོར༔\nབར་དོ་འཇིགས་པའི་འཕྲང་ལས་བསྒྲལ་དུ་གསོལ༔\nཡང་དག་རྫོགས་པའི་སངས་རྒྱས་ས་རུ་སྐྱོལ༔",
+          "english": "O, as I roam in cyclic existence driven by deep-seated pride,\nMay the transcendent lord Ratnasambhava draw me forward,\nLeading me on the path of radiant light,\nWhich is the pristine cognition of sameness.\nMay the supreme consort Mamaki support me from behind,\nAnd thus encircled may I be rescued\nFrom the fearsome passageway of the intermediate state,\nAnd be escorted to the level of an utterly perfect buddha.",
+          "korean": "제가 강한 아집 때문에 윤회 세계를 방황하고 있을 때,\n라트나삼바바 붓다(寶生佛)의 인도를 받아,\n평등하게 보는 지혜의 투명한 빛 가운데로 들어가게 하소서.\n그의 배우자 마마키 붓다가 수호자가 되어,\n중간계의 어려운 길을 잘 통과하게 하소서.\n그리하여 제가 완전한 붓다의 경지에 이르도록 하옵소서."
+        },
+        "audioUrl": "/mp3/Prayer/3-5.mp3"
+      },
+      {
+        "id": "3-6",
+        "title": "탐욕과 아미타바 붓다 (Attachment / Amitabha)",
+        "text": {
+          "tibetan": "ཀྱེ་མ༔ འདོད་ཆགས་དྲག་པོས་འཁོར་བར་འཁྱམས་པའི་ཚེ༔\nསོ་སོར་རྟོག་པའི་ཡེ་ཤེས་གསལ་བའི་འོད་ལམ་ལ༔\nབཅོམ་ལྡན་སྣང་བ་མཐའ་ཡས་ལམ་སྣ་དྲོངས༔\nཡུམ་མཆོག་གོས་དཀར་མོ་ཡིས་རྒྱབ་ནས་སྐྱོར༔\nབར་དོ་འཇིགས་པའི་འཕྲང་ལས་བསྒྲལ་དུ་གསོལ༔\nཡང་དག་རྫོགས་པའི་སངས་རྒྱས་ས་རུ་སྐྱོལ༔",
+          "english": "O, as I roam in cyclic existence driven by deep-seated attachment,\nMay the transcendent lord Amitabha draw me forward,\nLeading me on the path of radiant light,\nWhich is the pristine cognition of discernment.\nMay the supreme consort Pandaravasini support me from behind,\nAnd thus encircled may I be rescued\nFrom the fearsome passageway of the intermediate state,\nAnd be escorted to the level of an utterly perfect buddha.",
+          "korean": "제가 지나친 탐욕 때문에 윤회 세계를 방황하고 있을 때,\n아미타바 붓다(阿彌陀佛)의 인도를 받아,\n분석하는 지혜의 투명한 빛 가운데로 들어가게 하소서.\n그의 배우자 판다라바시니 붓다가 수호자가 되어,\n중간계의 어려운 길을 잘 통과하게 하소서.\n그리하여 제가 완전한 붓다의 경지에 이르도록 하옵소서."
+        },
+        "audioUrl": "/mp3/Prayer/3-6.mp3"
+      },
+      {
+        "id": "3-7",
+        "title": "질투와 아모가싯디 붓다 (Envy / Amoghasiddhi)",
+        "text": {
+          "tibetan": "ཀྱེ་མ༔ ཕྲག་དོག་དྲག་པོས་འཁོར་བར་འཁྱམས་པའི་ཚེ༔\nབྱ་བ་གྲུབ་པའི་ཡེ་ཤེས་གསལ་བའི་འོད་ལམ་ལ༔\nབཅོམ་ལྡན་དོན་ཡོད་གྲུབ་པས་ལམ་སྣ་དྲོངས༔\nཡུམ་མཆོག་དམ་ཚིག་སྒྲོལ་མས་རྒྱབ་ནས་སྐྱོར༔\nབར་དོ་འཇིགས་པའི་འཕྲང་ལས་བསྒྲལ་དུ་གསོལ༔\nཡང་དག་རྫོགས་པའི་སངས་རྒྱས་ས་རུ་སྐྱོལ༔",
+          "english": "O, as I roam in cyclic existence driven by deep-seated envy,\nMay the transcendent lord Amoghasiddhi draw me forward,\nLeading me on the path of radiant light,\nWhich is the pristine cognition of accomplishment.\nMay the supreme consort Samayatara support me from behind,\nAnd thus encircled may I be rescued\nFrom the fearsome passageway of the intermediate state,\nAnd be escorted to the level of an utterly perfect buddha.",
+          "korean": "제가 심한 질투심 때문에 윤회 세계를 방황하고 있을 때,\n아모가싯디 붓다(不空成就佛)의 인도를 받아,\n성취하는 지혜의 투명한 빛 가운데로 들어가게 하소서.\n그의 배우자 사마야타라 붓다가 수호자가 되어,\n중간계의 어려운 길을 잘 통과하게 하소서.\n그리하여 제가 완전한 붓다의 경지에 이르도록 하옵소서."
+        },
+        "audioUrl": "/mp3/Prayer/3-7.mp3"
+      },
+      {
+        "id": "3-8",
+        "title": "5가지 독과 다섯 붓다 (The Five Poisons / Five Buddhas)",
+        "text": {
+          "tibetan": "ཀྱེ་མ༔ དུག་ལྔ་དྲག་པོས་འཁོར་བར་འཁྱམས་པའི་ཚེ༔\nཡེ་ཤེས་བཞི་སྦྱོར་གསལ་བའི་འོད་ལམ་ལ༔\nབཅོམ་ལྡན་རྒྱལ་བ་རིགས་ལྔས་ལམ་སྣ་དྲོངས༔\nཡུམ་མཆོག་རིགས་ལྔའི་ཡུམ་གྱིས་རྒྱབ་ནས་སྐྱོར༔\nབར་དོ་འཇིགས་པའི་འཕྲང་ལས་བསྒྲལ་དུ་གསོལ༔\nདག་པའི་ཞིང་མཆོག་ལྔ་རུ་བསྐྱལ་དུ་གསོལ༔",
+          "english": "O, as I roam in cyclic existence driven by the five deep-seated poisons,\nMay the conquerors, the five peaceful male buddhas, draw me forward,\nLeading me on the path of radiant light,\nWhich is the five pristine cognitions combined.\nMay the supreme female consorts, Queens of the Expanse, support me from behind,\nAnd thus encircled may I be rescued\nFrom the fearsome passageway of the intermediate state,\nAnd be escorted to the most pure fields of the five buddhas.",
+          "korean": "제가 5가지 심한 독 때문에 윤회 세계를 방황하고 있을 때,\n다섯 계열의 승리자 붓다들의 인도를 받아,\n5가지 지혜가 어우러진 투명한 빛 속으로 들어가게 하소서.\n다섯 붓다의 배우자 붓다들이 수호자가 되어,\n윤회하는 여섯 존재 차원(六道輪廻)에서 저를 건져 주소서.\n제가 중간계의 어려운 길을 잘 통과하여,\n지극히 순수한 다섯 붓다의 땅에 이르게 하옵소서."
+        },
+        "audioUrl": "/mp3/Prayer/3-8.mp3"
+      },
+      {
+        "id": "3-9",
+        "title": "본능과 영웅적 스승들 (Habitual Tendencies / Awareness Holders)",
+        "text": {
+          "tibetan": "ཀྱེ་མ༔ བག་ཆགས་དྲག་པོས་འཁོར་བར་འཁྱམས་པའི་ཚེ༔\nལྷན་སྐྱེས་ཡེ་ཤེས་གསལ་བའི་འོད་ལམ་ལ༔\nདཔའ་བོ་རིག་འཛིན་རྣམས་ཀྱིས་ལམ་སྣ་དྲོངས༔\nཡུམ་མཆོག་མཁའ་འགྲོའི་ཚོགས་ཀྱིས་རྒྱབ་ནས་སྐྱོར༔\nབར་དོ་འཇིགས་པའི་འཕྲང་ལས་བསྒྲལ་དུ་གསོལ༔\nཡང་དག་རྫོགས་པའི་སངས་རྒྱས་ས་རུ་སྐྱོལ༔",
+          "english": "O, as I roam in cyclic existence driven by deep-seated habitual tendencies,\nMay the heroic awareness holders draw me forward,\nLeading me on the path of radiant light,\nWhich is the luminance of spontaneously arising pristine cognition.\nMay the supreme female consorts, the assembly of dakinis, support me from behind,\nAnd thus encircled may I be rescued\nFrom the fearsome passageway of the intermediate state,\nAnd be escorted to the pure fields of the sky-farers.",
+          "korean": "제가 강한 본능에 이끌려 윤회 세계를 방황하고 있을 때,\n깨달음을 얻은 영웅적인 스승들의 인도를 받아,\n희열이 넘치는 지혜의 투명한 빛 가운데로 들어가게 하소서.\n그들의 수행의 짝[다끼니]들이 수호자가 되어,\n중간계의 어려운 길을 잘 통과하게 하소서.\n그리하여 제가 완전한 붓다의 경지에 이르도록 하옵소서."
+        },
+        "audioUrl": "/mp3/Prayer/3-9.mp3"
+      },
+      {
+        "id": "3-10",
+        "title": "무서운 환상과 분노의 신들 (Terrifying Illusions / Wrathful Deities)",
+        "text": {
+          "tibetan": "ཀྱེ་མ༔ འཁྲུལ་སྣང་དྲག་པོས་འཁོར་བར་འཁྱམས་པའི་ཚེ༔\nའཇིགས་སྐྲག་སྤངས་པ་གསལ་བའི་འོད་ལམ་ལ༔\nབཅོམ་ལྡན་ཞི་ཁྲོའི་ཚོགས་ཀྱིས་ལམ་སྣ་དྲོངས༔\nཁྲོ་མོ་དབྱིངས་ཕྱུག་མ་ཡིས་རྒྱབ་ནས་སྐྱོར༔\nབར་དོ་འཇིགས་པའི་འཕྲང་ལས་བསྒྲལ་དུ་གསོལ༔\nཡང་དག་རྫོགས་པའི་སངས་རྒྱས་ས་རུ་སྐྱོལ༔",
+          "english": "O, as I roam in cyclic existence driven by deep-seated confused perceptions,\nMay the assembly of wrathful blood-drinking deities draw me forward,\nLeading me on the path of radiant light,\nWhich is free of fear and terrifying perceptions!\nMay the assembly of wrathful female deities, Queens of the Expanse, support me from behind!\nAnd thus encircled, may I be rescued\nFrom the fearsome passageway of the intermediate state,\nAnd be escorted to the level of an utterly perfected buddha.",
+          "korean": "제가 강렬한 환각 속에서 윤회 세계를 방황하고 있을 때,\n자애로운 모습과 무서운 모습의 붓다들의 인도를 받아,\n두려운 환상을 극복하는 빛 가운데로 들어가게 하소서.\n공간을 가득 채운 다끼니[女神]의 무리가 수호자가 되어,\n중간계의 어려운 길을 잘 통과하게 하소서.\n그리하여 제가 완전한 붓다의 경지에 이르도록 하옵소서."
+        },
+        "audioUrl": "/mp3/Prayer/3-10.mp3"
+      },
+      {
+        "id": "3-11",
+        "title": "다섯 원소의 정화 (The Five Elements)",
+        "text": {
+          "tibetan": "ནམ་མཁའི་འབྱུང་བ་དགྲར་མི་ལྡང་བར་ཤོག༔ མཐིང་ག་སངས་རྒྱས་ཞིང་དུ་མཐོང་བར་ཤོག༔\nཆུའི་འབྱུང་བ་དགྲར་མི་ལྡང་བར་ཤོག༔ དཀར་པོ་སངས་རྒྱས་ཞིང་དུ་མཐོང་བར་ཤོག༔\nསའི་འབྱུང་བ་དགྲར་མི་ལྡང་བར་ཤོག༔ སེར་པོ་སངས་རྒྱས་ཞིང་དུ་མཐོང་བར་ཤོག༔\nམེའི་འབྱུང་བ་དགྲར་མི་ལྡང་བར་ཤོག༔ དམར་པོ་སངས་རྒྱས་ཞིང་དུ་མཐོང་བར་ཤོག༔\nརླུང་གི་འབྱུང་བ་དགྲར་མི་ལྡང་བར་ཤོག༔ ལྗང་གུ་སངས་རྒྱས་ཞིང་དུ་མཐོང་བར་ཤོག༔\nའབྱུང་བ་འཇའ་ཚོན་དགྲར་མི་ལྡང་བར་ཤོག༔ སངས་རྒྱས་སྣ་ཚོགས་ཞིང་དུ་མཐོང་བར་ཤོག༔",
+          "english": "May the elements of space not arise as a hostile force. May I see them as the field of the blue buddha.\nMay the elements of water not arise as a hostile force. May I see them as the field of the white buddha.\nMay the elements of earth not arise as a hostile force. May I see them as the field of the yellow buddha.\nMay the elements of fire not arise as a hostile force. May I see them as the field of the red buddha.\nMay the elements of wind not arise as a hostile force. May I see them as the field of the green buddha.\nMay the rainbow-coloured elements not rise up as a hostile force. May I see them as the fields of the manifold buddhas.",
+          "korean": "저로 하여금 푸른색 사파이어 붓다의 영역만을 바라보게 하시어, 공간[空]의 원소가 저를 대적하지 못하도록 해 주소서.\n저로 하여금 백색 다이아몬드 붓다의 영역만을 바라보게 하시어, 물[水]의 원소가 저를 대적하지 못하도록 해 주소서.\n저로 하여금 노란 색 황금 붓다의 영역만을 바라보게 하시어, 땅[地]의 원소가 저를 대적하지 못하도록 해 주소서.\n저로 하여금 붉은 색 루비 붓다의 영역만을 바라보게 하시어, 불[火]의 원소가 저를 대적하지 못하도록 해 주소서.\n저로 하여금 초록색 에머랄드 붓다의 영역만을 바라보게 하시어, 바람[風]의 원소가 저를 대적하지 못하도록 해 주소서.\n이처럼 무지개 빛 다섯 붓다의 영역만을 바라보게 하시어, 5가지 원소들이 저를 대적하지 못하도록 해 주소서."
+        },
+        "audioUrl": "/mp3/Prayer/3-11.mp3"
+      },
+      {
+        "id": "3-12",
+        "title": "소리, 빛, 광선의 자각 (Sounds, Lights, Rays)",
+        "text": {
+          "tibetan": "སྒྲ་འོད་ཟེར་གསུམ་དགྲར་མི་ལྡང་བར་ཤོག༔\nཞི་ཁྲོ་རབ་འབྱམས་ཞིང་དུ་མཐོང་བར་ཤོག༔\nསྒྲ་ཐམས་ཅད་རང་སྒྲར་ཤེས་པར་ཤོག༔\nའོད་ཐམས་ཅད་རང་འོད་ཤེས་པར་ཤོག༔\nཟེར་ཐམས་ཅད་རང་ཟེར་ཤེས་པར་ཤོག༔\nབར་དོ་རང་ངོ་རང་གིས་ཤེས་པར་ཤོག༔\nསྐུ་གསུམ་གྱི་ཞིང་ཁམས་མངོན་གྱུར་ཤོག༔",
+          "english": "May the awesome sounds, lights and rays not arise as a hostile force. May I see them as the infinite fields of the Peaceful and Wrathful Deities.\nMay I recognise all sounds as my own sounds.\nMay I recognise all lights as my own lights.\nMay I recognise all rays as my own rays.\nMay I spontaneously recognise the characteristics of the intermediate states.\nMay the fields of the three buddha-bodies be manifest.",
+          "korean": "저로 하여금 자애로운 모습과 무서운 모습의 붓다들이 좌정하신 장엄한 영역만을 바라보게 하시어, 소리와 빛과 광선이 저를 대적하지 못하도록 해 주소서.\n모든 소리를 제가 만들어 낸 소리인 줄 알게 하소서.\n모든 빛을 제가 만들어 낸 빛인 줄 알게 하소서.\n모든 광선을 제가 만들어 낸 광선인 줄 알게 하소서.\n제 자신이 곧 중간계의 실체임을 알게 하소서.\n저로 하여금 붓다의 세 몸을 실현할 수 있도록 인도하소서."
+        },
+        "audioUrl": "/mp3/Prayer/3-12.mp3"
+      }
+    ]
+  },
+  {
+    "id": "prayer-4",
+    "chapterName": "Prayer 4",
+    "verses": []
+  },
+  {
+    "id": "prayer-5",
+    "chapterName": "Prayer 5",
+    "verses": [
+      {
+        "id": "5-1",
+        "title": "이승 중간계 (Living / skye gnas bar do)",
+        "text": {
+          "tibetan": "ཀཻ་མ༔ བདག་ལ་སྐེ་གནས་བར་དོ་འཆར་དུས་འདིར༔\nཚེ་ལ་ལོངས་མེད་ལེ་ལོ་སངས་བས་ནས༔\nཐོས་བསམ་སྒོམ་གསུམ་མ་ཡེངས་ལམ་ལ་འཇུག༔\nསྣང་སེམས་ལམ་བསོང་སྐུ་གསུམ་མངོན་གྱུར་བ༔\nམི་ལུས་ལན་གཅིག་ཐོབ་པའི་དུས་ཚོད་འདིར༔\nཡེངས་མ་ལམ་ལ་སོང་པའི་དུས་ཚོད་མིན༔",
+          "english": "Alas, now as the intermediate state of living arises before me, Renouncing laziness, for which there is no time in this life, I must enter the undistracted path of study, reflection and meditation. Taking perceptual experience and [the nature of] mind as the path, I must cultivate actualisation of the three buddha-bodies. Now, having obtained a precious human body, this one time, I do not have the luxury of remaining on a distracted path.",
+          "korean": "오! 이제 이승 중간계의 여명이 밝아 오고 있구나.\n게으름을 버리고, 마지막 인생이라는 생각으로 살리라.\n배우고, 생각하고, 명상하는 수행자의 길에 꿋꿋이 서서\n현상과 마음의 실체를 밝히고,\n깨달음의 세 몸을 실현시키고 말리라!\n일단 인간의 몸을 입게 되면\n인생을 헛되이 낭비하지 않으리니,\n허접 쓰레기 같은 것은 좇아 다니지 않으리라."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "5-2",
+        "title": "꿈 중간계 (Dreams / rmi lam bar do)",
+        "text": {
+          "tibetan": "ཀྱཻ་མ༔ བདག་ལ་རྨི་ལམ་བར་དོ་འཆར་དུས་འདིར༔ གཏི་མུག་རོ་ཉལ་བག་མེད་སྤངས་བྱས་ནས༔ དྲན་པ་ཡེངས་མེད་གནས་ལུགས་ངང་ལ་འཇོག༔ རྨི་ལམ་ངོས་བཟུང་སྤྲུལ་བསྒྱུར་འོད་གསལ་སྦྱང༔ དུད་འགྲོ་བཞིན་དུ་གཉིད་ལ་མི་འཐུག་པར༔ གཉིད་དང་མངོན་སུམ་འདྲེས་པའི་ཉམས་ལེན་གཅེས༔",
+          "english": "Alas, now as the intermediate state of dreams arises before me, Renouncing the corpse-like, insensitive sleep of delusion, I must enter, free from distracting memories, the state of the abiding nature of reality. Cultivating [the experience of] inner radiance, Through the recognition, emanation, and transformation of dreams, I must not sleep like a beast, But cherish the experiential cultivation which mingles sleep with actual [realisation].",
+          "korean": "오! 이제 꿈 중간계의 여명이 밝아 오고 있구나.\n시체처럼 우둔하게 망상 속에서 헤매는 잠을 떠나,\n온전히 깨어 있는 상태로, 실체를 체험하는 흔들리지 않는 경지로 들어가리라.\n꿈 속에서도 정신을 차려, 의식이 깨어 있는 상태로 꿈을 꾸리라.\n짐승처럼 정신을 잃고 잠에 빠지지 않고,\n잠 속에서도 깨달음을 얻는 수행을 소중히 여기리라."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "5-3",
+        "title": "명상 중간계 (Meditative Concentration / bsam gtan bar do)",
+        "text": {
+          "tibetan": "ཀྱཻ་མ༔ བདག་ལ་བསམ་གཏན་བར་དོ་འཆར་དུས་འདིར༔ རྣམ་ཡེངས་འཁྲུལ་པའི་ཚོགས་རྣམས་སྤངས་བྱས་ནས༔ ཡེངས་མེད་འཛིན་མེད་མཐའ་བྲལ་ངང་ལ་འཇོག༔ བསྐྱེད་རྫོགས་གཉིས་ལ་བརྟན་པ་ཐོབ་པར་བྱ༔ བྱ་བྱེད་སྤངས་ནས་རྩེ་གཅིག་སྒྲུབ་དུས་འདིར༔ ཉོན་མོངས་འཁྲུལ་པའི་དབང་དུ་མི་བཏང་ངོ༔",
+          "english": "Alas, now as the intermediate state of meditative concentration arises before me, Renouncing the mass of distractions and confusions, I must undistractedly enter a state, Which is devoid of subjective apprehension, and free from the [two] extremes, And attain stability in the stages of generation and perfection. At this moment, having renounced activity, And having attained a singular [concentration], I must not fall under the sway of bewildering mental afflictions!",
+          "korean": "오! 이제 명상 중간계의 여명이 밝아 오고 있구나.\n이리 저리 흩어지는 산만함을 버리고,\n마음을 풀어놓지도 않고 통제하지도 않는, 궁극적으로 자유로운 상태에 초점을 맞추리라.\n그리하여 창조 단계와 완성 단계를 확고하게 성취하리라.\n이제 잡다한 생각과 행위를 포기하고,\n한 점에 집중하는 명상 상태에 들리라.\n그릇된 길로 인도하는 탐착의 힘에 굴복하지 않으리라."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "5-4",
+        "title": "죽음 중간계 (Time of Death / 'chi kha bar do)",
+        "text": {
+          "tibetan": "ཀྱཻ་མ༔ བདག་ལ་འཆི་ཁ་བར་དོ་འཆར་དུས་འདིར༔ ཀུན་ལ་ཆགས་ཤིང་ཞེན་འཛིན་སྤངས་བྱས་ནས༔ གདམས་ངག་གསལ་བའི་ངང་ལ་ཡེངས་མེད་འཇུག༔ རང་རིག་སྐྱེ་མེད་དབྱིངས་སུ་འཕོ་བར་བྱ༔ འདུས་བྱས་ཤ་ཁྲག་ལུས་དང་བྲལ་དུས་འདིར༔ མི་རྟག་སྒྱུ་མ་ཡིན་པར་ཤེས་པར་བྱ༔",
+          "english": "Alas, now as the intermediate state of the time of death arises before me, Renouncing [all] attachment, yearning and subjective apprehension in every respect, I must undistractedly enter the path, on which the oral teachings are clearly understood, And eject my own awareness into the uncreated expanse of space. Immediately upon separation from this compounded body of flesh and blood, I must know [this body] to be like a transient illusion.",
+          "korean": "오, 이제 죽음 중간계의 여명이 밝아 오고 있구나.\n마음을 사로잡고 있는 집착과 욕망을 버리고,\n흔들리지 않는 투명한 진리 속으로 들어가리라.\n그리하여 다시 태어나지 않는 내적인 각성을 얻으리라.\n지금 내가 버리고 떠나는, 피와 살로 된 이 육체는 일시적인 환영(幻影)이었음을 깨달으리라."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "5-5",
+        "title": "저승 중간계 - 법성 바르도 (Reality / chos nyid bar do)",
+        "text": {
+          "tibetan": "ཀྱཻ་མ༔ བདག་ལ་ཆོས་ཉིད་བར་དོ་འཆར་དུས་འདིར༔ ཀུན་ལ་སྔངས་སྐྲག་འཇིགས་སྣང་སྤངས་བྱས་ནས༔ གང་ཤར་རང་སྣང་རིག་པར་ངོས་ཤེས་འཇུག༔ བར་དོའི་སྣང་ཚུལ་ཡིན་པར་ཤེས་པར་བྱ༔ དོན་ཆེན་འགག་ལ་ཐུག་པའི་དུས་ཚོད་འདིར༔ རང་སྣང་ཞི་ཁྲོའི་ཚོགས་ལ་འཇིགས་མི་བྱ༔",
+          "english": "Alas, now as the intermediate state of reality arises before me, Renouncing the merest sense of awe, terror or fear, I must recognise all that arises to be awareness, manifesting naturally of itself. Knowing [such sounds, lights and rays] to be visionary phenomena of the intermediate state, At this moment, having reached this critical point, I must not fear the assembly of Peaceful and Wrathful Deities, which manifest naturally!",
+          "korean": "오, 이제 저승 중간계의 여명이 밝아 오고 있구나.\n무엇이 나타나든 두려워하지 않고, 모든 것이 내 마음이 만들어 낸 환상임을 알아차리리라.\n모든 것이 중간계의 환상에 지나지 않음을 이해하리라.\n지금까지의 진행이 일단 정지하는 이 위기의 순간에,\n내가 만든 환상 속에 나타나는, 자애롭고 무서운 모습의 신들을 두려워하지 않으리라."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "5-6",
+        "title": "탄생 중간계 (Rebirth / srid pa bar do)",
+        "text": {
+          "tibetan": "ཀྱཻ་མ༔ བདག་ལ་སྲིད་པ་བར་དོ་འཆར་དུས་འདིར༔ འདུན་པ་རྩེ་གཅིག་སེམས་ལ་བཟུང་བྱས་ནས༔ བཟང་པོ་ལས་ཀྱི་འཕྲོ་ལ་ནན་གྱིས་མཐུད༔ མངལ་སྒོ་དགག་ཅིང་ལྡོག་པ་དྲན་པར་བྱ༔ སྙིང་རུས་དག་སྣང་དགོས་པའི་དུས་གཅིག་ཡིན༔ ཕྲག་དོག་སྤངས་ནས་བླ་མ་ཡབ་ཡུམ་སྒོམ༔",
+          "english": "Alas, now as the intermediate state of rebirth arises before me, I must with one-pointed intention concentrate my mind, And resolutely connect with the residual potency of my virtuous past actions. I must obstruct the womb entrance and call to mind the methods of reversal. This is the time when perseverance and purity of perception are imperative. I must give up all jealousy and meditate on my spiritual teacher with consort.",
+          "korean": "오, 이제 탄생 중간계의 여명이 밝아 오고 있구나.\n마음과 뜻을 한 데 모아, 긍정적인 진화의 추진력을 강화시키리라.\n자궁 입구를 막고, 부정적인 상황에 태어나는 것에 저항하리라.\n긍정적인 생각과 용기가 필요한 이 때에, 질투심을 버리고,\n결합하고 있는 모든 짝들을 나의 영적인 스승과 그의 짝으로 보리라."
+        },
+        "audioUrl": null
+      },
+      {
+        "id": "5-7",
+        "title": "결론: 성자들의 경고 (Conclusion: The Deceiver of Myself)",
+        "text": {
+          "tibetan": "ཟཆི་ཕ་ཟོང་སྙབྷ་མེཐ་ནའི་བློ་རིང་ནོ༔ ཐོདྷ་མེཐ་ཚེ་ཟདི་བ་ཕ་ཕསྒྲུཕཥ་ཕསྒྲུཕཥ་དྷཥ༔ ཐ་རུཥ་སྟོང་རོག་བཥ་དྷ་ཤིདྷ་ཏུ་ཟཁྲུར༔ ཐགོཥ་ངོ་ཤེཥ་ན་ཐབྷ་ནའི་ལྷ་ཆོཥ་ཡིདྷ༔ ཐ་ལྟ་ཉིཐ་དུ་ལྷ་ཆོཥ་མི་བྱེཐ་ཐབྷ༔ གྲུཕ་ཆེདྷ་རྣབྷཥ་ཀྱི་ཝར་དྷཥ་ཟདི་སྐཐ་གསུངཥ༔ བླ་བྷའི་གཐབྷཥ་ངག་སེབྷཥ་ར་བྷ་ཕཝག་དྷ༔ ཡང་གིཥ་ཡང་ཉིཐ་ཕསླུ་ཕཡ་མི་ཟགྱུཡ་ཡབྷ༔ ཞེཥ་གསུངཥ་ཥོ༔",
+          "english": "From the mouth of the accomplished masters come these words: ‘O, [you], with your mind far away, thinking that death will not come, Entranced by the pointless activities of this life, If you were to return empty-handed now, would not your [life’s] purpose have been [utterly] confused? Recognise what it is that you truly need! It is a sacred teaching [for liberation]! So, should you not practise this divine [sacred] teaching, beginning from this very moment?’ And it is also said, ‘If I choose not to take the oral teachings of the spiritual teacher to heart, Am I not the deceiver of myself?’",
+          "korean": "위대한 성자들은 이렇게 말씀하셨다. “죽음이 다가 오는 것을 생각지 아니하고, 쓰레기 같은 세상 일에 노예처럼 끌려 다니다가 빈 손으로 떠나는 가련한 인생들아! 거룩한 신들의 가르침을 왜 외면하는가? 그 가르침대로 살지 않는 이유가 무엇인가?“ 스승의 가르침을 마음에 새기지 않으면, 스스로 속고 속이는 인생이 될 수밖에 없지 않는가?"
+        },
+        "audioUrl": null
+      }
+    ]
+  }
+]
