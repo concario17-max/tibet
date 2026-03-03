@@ -1,8 +1,1 @@
-node_modules/
-dist/
-.env
-.DS_Store
-public/mp3/
-mp3/
-bfg.jar
-*.mp3
+node_modules

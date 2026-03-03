@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4c025",
+                        "background-light": "#fcfbf8",
+                        "background-dark": "#1c180d",
+                        "champagne": "#f4f0e7",
+                        "muted-gold": "#9c8749",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Crimson Pro", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .serif-title { font-family: 'Crimson Pro', serif; letter-spacing: 0.15em; }
+        .nav-divider::after { content: "•"; margin: 0 1rem; color: #9c8749; opacity: 0.5; }
+        .nav-divider:last-child::after { content: ""; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex flex-col items-center justify-center pt-16 pb-12 px-6">
+<div class="mb-4">
+<span class="material-symbols-outlined text-primary text-4xl">temple_buddhist</span>
+</div>
+<h1 class="serif-title text-4xl md:text-6xl font-extralight text-slate-900 dark:text-slate-100 text-center uppercase mb-4">
+                The Bardo Thodol
+            </h1>
+<p class="text-muted-gold text-sm tracking-[0.3em] uppercase font-light text-center">
+                Liberation Through Hearing in the Intermediate State
+            </p>
+</header>
+<nav class="flex justify-center border-y border-champagne dark:border-slate-800 py-6 mb-16">
+<div class="flex items-center">
+<a class="nav-divider text-sm font-medium tracking-widest uppercase hover:text-primary transition-colors" href="#">Compendium</a>
+<a class="nav-divider text-sm font-medium tracking-widest uppercase hover:text-primary transition-colors" href="#">Lexicon</a>
+<a class="nav-divider text-sm font-medium tracking-widest uppercase hover:text-primary transition-colors" href="#">Commentaries</a>
+</div>
+</nav>
+<main class="max-w-5xl mx-auto px-6 w-full flex-1">
+<section class="mb-20">
+<div class="bg-champagne/50 dark:bg-slate-800/30 rounded-xl p-8 md:p-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-muted-gold ml-1">Select a Chapter</label>
+<div class="relative">
+<select class="w-full bg-white dark:bg-slate-900 border border-champagne dark:border-slate-700 rounded-lg py-4 px-5 appearance-none focus:ring-1 focus:ring-primary focus:border-primary outline-none text-slate-700 dark:text-slate-200">
+<option>The Chikhai Bardo</option>
+<option>The Chonyid Bardo</option>
+<option>The Sidpa Bardo</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-muted-gold pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-muted-gold ml-1">Select a Verse</label>
+<div class="relative">
+<input class="w-full bg-white dark:bg-slate-900 border border-champagne dark:border-slate-700 rounded-lg py-4 px-5 focus:ring-1 focus:ring-primary focus:border-primary outline-none text-slate-700 dark:text-slate-200" placeholder="Enter verse number..." type="number"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-muted-gold">search</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-20">
+<div class="flex items-center justify-between mb-10 border-b border-champagne dark:border-slate-800 pb-4">
+<h2 class="serif-title text-xl uppercase tracking-widest font-light">Featured Chapters</h2>
+<a class="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2" href="#">
+                        View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Chapter 1 -->
+<div class="group flex flex-col bg-white dark:bg-slate-900 border border-champagne dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale opacity-70 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract golden mountain peaks in clouds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Y7NmlY5THPMAn6q5XlXTMvsGi0ziB5RAYRM84aZvtCsX3-iRr4bgq4wAzFkr0XrQ0pnJ2W7Qp8UURaR-HW-tn3x-63NaluE72eWAn91sBgrvtVjLqAyyfdPcphi-iPzOLQ-QZbJiqBDaW6-doxAwfH1VuC3ExCwwqogWeBykbLM3Wq3gW7JeiyqaIuSv8Fed4sUUnWSh5pALLw8Zx1M2UOlVg11SIBQAZP25QvI2vJsp9Yk5GRVVJzCZVOgG0_W0tDRy9IIcqOU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-white dark:from-slate-900 to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">Part I</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<h3 class="serif-title text-xl mb-3">Chikhai Bardo</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8 flex-1">
+                                The Bardo of the Moments of Death, exploring the luminous clarity of the Dharmakaya.
+                            </p>
+<a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-900 dark:text-white group-hover:text-primary transition-colors" href="#">
+                                Begin Reading <span class="material-symbols-outlined text-sm">menu_book</span>
+</a>
+</div>
+</div>
+<!-- Chapter 2 -->
+<div class="group flex flex-col bg-white dark:bg-slate-900 border border-champagne dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale opacity-70 group-hover:scale-105 transition-transform duration-700" data-alt="Ethereal mandala pattern with golden accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWbg_7hTWFFEfhkEbsBsQnn7JMqP0dSZVJyWdkmQpEMgAtemy_jGlEm9mcfALy-ZwawB_dUD4XhVEr6g1pzbftfikJwgVxz7bna8RISLycTld5_SIEG3N02V4I4wvt6WmHK9p31NSnUnbqBTqTxim1hs-nqG0Y_R2IMabApGI7CTGxbbKhgJZxEplageh2iXJbjExww9s3xQx8e4osiztcvxmL5WmINMtmHmBXPoFftsYtH6nyveELBW3oIOepWD7Q5AMovzrqkKY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-white dark:from-slate-900 to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">Part II</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<h3 class="serif-title text-xl mb-3">Chonyid Bardo</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8 flex-1">
+                                The Bardo of the Experiencing of Reality, where the peaceful and wrathful deities appear.
+                            </p>
+<a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-900 dark:text-white group-hover:text-primary transition-colors" href="#">
+                                Begin Reading <span class="material-symbols-outlined text-sm">menu_book</span>
+</a>
+</div>
+</div>
+<!-- Chapter 3 -->
+<div class="group flex flex-col bg-white dark:bg-slate-900 border border-champagne dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale opacity-70 group-hover:scale-105 transition-transform duration-700" data-alt="Ancient parchment and ink texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWyQZjksW6AnWRgPdnGDThtE-Phmyey5XdJVwc-OKgt3APQT3fqEv52XbSlfMCQuBuA6X0IOsD7pFMh_-840xhaV0Y41AM1sTud_rc9ych_5keDAfaSEHqCuK1cqP2ZXvAiEYG3yjgZO8Kn4Un1ue-zl7Alt9BI7fbG_zwuy5s5amYw7dB4xAG20-M8ziA8DfXjkrm8hcH4cbnpO4VsNTh6OAF8Etx8T2syfLnZxNSap6jEJ8k52HoyEVhVqm71rWrr2_Fkc8zOUc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-white dark:from-slate-900 to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">Part III</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<h3 class="serif-title text-xl mb-3">Sidpa Bardo</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8 flex-1">
+                                The Bardo of Rebirth, guiding the consciousness toward a favorable new existence.
+                            </p>
+<a class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-900 dark:text-white group-hover:text-primary transition-colors" href="#">
+                                Begin Reading <span class="material-symbols-outlined text-sm">menu_book</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="mt-auto border-t border-champagne dark:border-slate-800 py-12">
+<div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-muted-gold">auto_stories</span>
+<span class="serif-title text-sm tracking-widest">The Bardo Thodol</span>
+</div>
+<div class="flex gap-8">
+<a class="text-[10px] font-bold uppercase tracking-widest text-muted-gold hover:text-primary transition-colors" href="#">Foundation</a>
+<a class="text-[10px] font-bold uppercase tracking-widest text-muted-gold hover:text-primary transition-colors" href="#">Archival Texts</a>
+<a class="text-[10px] font-bold uppercase tracking-widest text-muted-gold hover:text-primary transition-colors" href="#">Privacy</a>
+</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-muted-gold/60">
+                    © MMXXIV Sacred Texts Library
+                </div>
+</div>
+</footer>
+</div>
+</body></html>

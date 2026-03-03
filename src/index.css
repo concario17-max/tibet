@@ -2,28 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .serif-title {
+    font-family: 'Crimson Pro', serif;
+    letter-spacing: 0.15em;
+  }
+
+  .nav-divider::after {
+    content: "•";
+    margin: 0 1rem;
+    color: #9c8749;
+    opacity: 0.5;
+  }
+
+  .nav-divider:last-child::after {
+    content: "";
+  }
+}
+
 :root {
-  /* Simsang Archive Dark Aesthetics */
-  --color-rich-black: #080808;
-  --color-slate-slate: #1e293b;
-  --color-slate-light: #cbd5e1;
-  --color-gold-accent: #c5a059;
-  --color-gold-dim: #8B703B;
-
-  /* Semantic Tokens */
-  --bg-primary: var(--color-rich-black);
-  --text-primary: var(--color-slate-light);
-  --border-gold: var(--color-gold-accent);
-
-  --font-serif: 'Cinzel', serif;
-  --font-sans: 'Inter', sans-serif;
-
   line-height: 1.6;
   font-weight: 400;
-  font-family: var(--font-sans);
-
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  font-family: 'Manrope', sans-serif;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
