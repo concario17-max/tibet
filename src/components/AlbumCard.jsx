@@ -32,7 +32,7 @@ const AlbumCard = ({ album, onSelect }) => {
             <div className="p-8 flex flex-col flex-1 space-y-4 bg-sand-primary">
                 <div className="flex justify-between items-start">
                     <div className="space-y-1">
-                        <p className="text-gold-primary text-[10px] tracking-[0.4em] uppercase font-bold">Lexicon Entry</p>
+                        <p className="text-gold-primary text-[10px] tracking-[0.4em] uppercase font-bold">Chants Entry</p>
                         <h3 className="serif-title text-xl text-charcoal-main group-hover:text-gold-primary transition-colors duration-300 leading-tight">
                             {album.title}
                         </h3>

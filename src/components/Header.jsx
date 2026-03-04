@@ -76,8 +76,10 @@ const Header = () => {
                     <Link to="/chapter" className="nav-divider text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary">
                         Compendium
                     </Link>
-                    <Link to="/album" className="nav-divider text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary">
-                        Lexicon
+                    <Link to="/album" className="nav-divider text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary relative group flex items-center gap-2">
+                        <span className="text-gold-primary tracking-widest text-xs font-medium uppercase mt-[2px] opacity-0 group-hover:opacity-100 transition-opacity absolute -left-6">✧</span>
+                        Chants
+                        <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                     <Link to="/chapter" className="nav-divider text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary">
                         Commentaries
