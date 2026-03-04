@@ -19,12 +19,15 @@ const Home = () => {
                     </p>
 
                     <div className="pt-10">
-                        <Link to="/chapter" className="group relative px-12 py-5 overflow-hidden border border-gold-primary/30 rounded-none transition-all duration-700 hover:border-gold-primary inline-block">
+                        <button
+                            onClick={() => document.getElementById('featured-chapters')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="group relative px-12 py-5 overflow-hidden border border-gold-primary/30 rounded-none transition-all duration-700 hover:border-gold-primary inline-block"
+                        >
                             <span className="relative z-10 text-[10px] tracking-[0.5em] uppercase text-charcoal-main transition-colors duration-700 group-hover:text-white font-bold">
                                 Begin Journey
                             </span>
                             <div className="absolute inset-0 bg-gold-primary translate-y-full transition-transform duration-700 cubic-bezier(0.19, 1, 0.22, 1) group-hover:translate-y-0" />
-                        </Link>
+                        </button>
                     </div>
                 </div>
 
@@ -33,7 +36,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="py-20 max-w-5xl mx-auto px-6 w-full">
+            <section id="featured-chapters" className="py-20 max-w-5xl mx-auto px-6 w-full">
                 <div className="flex items-center justify-between mb-10 border-b border-sand-tertiary pb-4">
                     <h2 className="serif-title text-xl uppercase tracking-widest font-light text-charcoal-main">Featured Chapters</h2>
                     <Link to="/chapter" className="text-xs font-bold uppercase tracking-widest text-gold-primary flex items-center gap-2 hover:text-charcoal-main transition-colors">
