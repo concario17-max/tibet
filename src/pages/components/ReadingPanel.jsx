@@ -2,32 +2,27 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Play, Pause, Bookmark } from 'lucide-react';
 import { useAudioPlayer } from '../../hooks/useAudioPlayer';
 
+// Gita 스타일 시간 포맷터 (순수 함수로 외부 분리)
+const formatTime = (time) => {
+    if (isNaN(time)) return "0:00";
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+};
+
 // 강제 불변성과 Zero Monolith 원칙을 준수하는 ReadingPanel
 const ReadingPanel = ({ verse }) => {
     // 오디오 플레이어 로직 (Tibet 커스텀 훅 지원)
-    const audioPlaylist = verse.audioUrl ? [{ id: verse.id, title: verse.title, url: verse.audioUrl }] : [];
+    const audioPlaylist = React.useMemo(() => {
+        return verse.audioUrl ? [{ id: verse.id, title: verse.title, url: verse.audioUrl }] : [];
+    }, [verse.id, verse.title, verse.audioUrl]);
+
     const { isPlaying, progress, togglePlay, playTrack, seek } = useAudioPlayer(audioPlaylist);
+
+    // ... (rest remains same but replacing the previous audioPlaylist initialization and function)
 
     // UI 업데이트용 내부 시간 상태
     const [currentTime, setCurrentTime] = useState(0);
-    const audioRef = useRef(null); // 만약 hook에서 audio 객체를 주지 않는다면 시각적 페이크 사용 혹은 Native Play 전환
-
-    useEffect(() => {
-        if (verse.audioUrl) {
-            playTrack(0);
-            setTimeout(() => {
-                if (isPlaying) togglePlay(); // 강제 오토플레이 방지 (UX)
-            }, 50);
-        }
-    }, [verse.id]);
-
-    // Gita 스타일 시간 포맷터
-    const formatTime = (time) => {
-        if (isNaN(time)) return "0:00";
-        const minutes = Math.floor(time / 60);
-        const seconds = Math.floor(time % 60);
-        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-    };
 
     // 장과 구절 번호 파싱
     const [chapterStr, verseStr] = verse.id.split('.');
@@ -153,4 +148,4 @@ const ReadingPanel = ({ verse }) => {
     );
 };
 
-export default ReadingPanel;
+export default React.memo(ReadingPanel, (prevProps, nextProps) => prevProps.verse.id === nextProps.verse.id);

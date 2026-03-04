@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const ThemeContext = createContext();
 
@@ -31,8 +31,11 @@ export const ThemeProvider = ({ children }) => {
         setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
     };
 
+    // Provider value 리렌더링 방지용 메모이제이션
+    const providerValue = React.useMemo(() => ({ theme, toggleTheme }), [theme]);
+
     return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <ThemeContext.Provider value={providerValue}>
             {children}
         </ThemeContext.Provider>
     );

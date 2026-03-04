@@ -13,10 +13,10 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
     // 첫 번째 챕터를 기본으로 열어둠 (불변성)
     const [expandedChapter, setExpandedChapter] = useState(prayers?.[0]?.id || null);
 
-    // 챕터 토글 핸들러
-    const toggleChapter = (chapterId) => {
+    // 챕터 토글 핸들러 (재생성 방지)
+    const toggleChapter = React.useCallback((chapterId) => {
         setExpandedChapter(prev => prev === chapterId ? null : chapterId);
-    };
+    }, []);
 
     return (
         <>
@@ -112,4 +112,9 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
     );
 };
 
-export default LeftSidebar;
+export default React.memo(LeftSidebar, (prevProps, nextProps) => {
+    return (
+        prevProps.activeVerseId === nextProps.activeVerseId &&
+        prevProps.prayers === nextProps.prayers
+    );
+});

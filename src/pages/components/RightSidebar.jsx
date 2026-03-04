@@ -21,15 +21,15 @@ const RightSidebar = ({ activeVerseId }) => {
         setNote(savedNote || '');
     }, [activeVerseId, noteKey]);
 
-    const handleSave = () => {
+    const handleSave = React.useCallback(() => {
         if (!activeVerseId) return;
         setIsSaving(true);
         localStorage.setItem(noteKey, note);
         // 저장 피드백을 위한 인위적 지연
         setTimeout(() => setIsSaving(false), 1000);
-    };
+    }, [activeVerseId, noteKey, note]);
 
-    const handleExportCurrent = () => {
+    const handleExportCurrent = React.useCallback(() => {
         if (!activeVerseId) return;
         const element = document.createElement("a");
         const file = new Blob([note], { type: 'text/plain' });
@@ -38,9 +38,9 @@ const RightSidebar = ({ activeVerseId }) => {
         document.body.appendChild(element);
         element.click();
         setShowExportMenu(false);
-    };
+    }, [activeVerseId, note]);
 
-    const handleExportAll = () => {
+    const handleExportAll = React.useCallback(() => {
         let allNotesText = `Tibet Prayers - All Reflections\n\n`;
         const noteKeys = Object.keys(localStorage).filter(key => key.startsWith('tibet-note-'));
 
@@ -68,7 +68,7 @@ const RightSidebar = ({ activeVerseId }) => {
         document.body.appendChild(element);
         element.click();
         setShowExportMenu(false);
-    };
+    }, []);
 
     if (!activeVerseId) return null;
 
@@ -152,4 +152,4 @@ const RightSidebar = ({ activeVerseId }) => {
     );
 };
 
-export default RightSidebar;
+export default React.memo(RightSidebar, (prevProps, nextProps) => prevProps.activeVerseId === nextProps.activeVerseId);

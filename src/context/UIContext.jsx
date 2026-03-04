@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const UIContext = createContext();
 
@@ -8,26 +8,29 @@ export const UIProvider = ({ children }) => {
     // 리플렉션(우측 패널) 상태 제어
     const [isReflectionsOpen, setIsReflectionsOpen] = useState(false);
 
-    // 각 패널을 토글하는 불변성 기반 함수들
-    const toggleSidebar = () => setIsSidebarOpen(prev => !prev);
-    const toggleReflections = () => setIsReflectionsOpen(prev => !prev);
+    // 각 패널을 토글하는 불변성 기반 함수들 (재생성 방지)
+    const toggleSidebar = React.useCallback(() => setIsSidebarOpen(prev => !prev), []);
+    const toggleReflections = React.useCallback(() => setIsReflectionsOpen(prev => !prev), []);
 
-    // 강제 종료 함수
-    const closeAllDrawers = () => {
+    // 강제 종료 함수 (재생성 방지)
+    const closeAllDrawers = React.useCallback(() => {
         setIsSidebarOpen(false);
         setIsReflectionsOpen(false);
-    };
+    }, []);
+
+    // Provider Value 메모이제이션
+    const providerValue = React.useMemo(() => ({
+        isSidebarOpen,
+        setIsSidebarOpen,
+        toggleSidebar,
+        isReflectionsOpen,
+        setIsReflectionsOpen,
+        toggleReflections,
+        closeAllDrawers
+    }), [isSidebarOpen, isReflectionsOpen, toggleSidebar, toggleReflections, closeAllDrawers]);
 
     return (
-        <UIContext.Provider value={{
-            isSidebarOpen,
-            setIsSidebarOpen,
-            toggleSidebar,
-            isReflectionsOpen,
-            setIsReflectionsOpen,
-            toggleReflections,
-            closeAllDrawers
-        }}>
+        <UIContext.Provider value={providerValue}>
             {children}
         </UIContext.Provider>
     );
