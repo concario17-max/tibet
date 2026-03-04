@@ -39,8 +39,8 @@ const AlbumCard = ({ album, onSelect }) => {
                     </div>
                 </div>
                 <div className="h-px w-8 bg-gold-primary/30 group-hover:w-full transition-all duration-1000"></div>
-                <p className="text-charcoal-muted text-sm leading-relaxed flex-1 font-serif">
-                    Guided chanting and ancient rituals fully preserved for the path of awakening.
+                <p className="text-charcoal-main/80 text-sm leading-relaxed flex-1 font-sans font-medium line-clamp-3">
+                    {album.description || "Guided chanting and ancient rituals fully preserved for the path of awakening."}
                 </p>
             </div>
         </div>
