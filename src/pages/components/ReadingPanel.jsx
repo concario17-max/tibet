@@ -56,6 +56,15 @@ const ReadingPanel = ({ verse }) => {
                             {verse.text.tibetan.replace(/[\r\n]+/g, ' ')}
                         </p>
                     )}
+                    {verse.text.pronunciation && (
+                        <p className="font-inter italic text-gold-muted/80 dark:text-gold-muted/80 text-sm sm:text-base leading-relaxed tracking-widest mt-6">
+                            {verse.text.pronunciation.split('\n').map((line, i) => (
+                                <React.Fragment key={i}>
+                                    {line}<br />
+                                </React.Fragment>
+                            ))}
+                        </p>
+                    )}
                 </section>
 
                 <div className="w-8 h-[1px] bg-gold-border/60 mx-auto my-8"></div>
