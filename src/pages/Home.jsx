@@ -35,7 +35,7 @@ const Home = () => {
                         <div className="p-5 md:p-6 flex flex-col flex-1 bg-sand-primary">
                             <h3 className="serif-title text-lg md:text-xl mb-2 text-charcoal-main">Text</h3>
                             <p className="text-charcoal-main/80 text-sm leading-relaxed mb-4 md:mb-6 flex-1 font-sans font-medium line-clamp-2 md:line-clamp-none">
-                                티벳 사자의 서 본문 내용
+                                티벳 사자의 서 본문
                             </p>
                             <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest text-charcoal-main group-hover:text-gold-primary transition-colors mt-auto">
                                 Begin Reading <span className="material-symbols-outlined text-[12px] md:text-sm">menu_book</span>
@@ -55,7 +55,7 @@ const Home = () => {
                         <div className="p-5 md:p-6 flex flex-col flex-1 bg-sand-primary">
                             <h3 className="serif-title text-lg md:text-xl mb-2 text-charcoal-main">Prayer</h3>
                             <p className="text-charcoal-main/80 text-sm leading-relaxed mb-4 md:mb-6 flex-1 font-sans font-medium line-clamp-2 md:line-clamp-none">
-                                티벳 사자의 서 기도문 내용
+                                티벳 사자의 서 기도문
                             </p>
                             <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest text-charcoal-main group-hover:text-gold-primary transition-colors mt-auto">
                                 Begin Reading <span className="material-symbols-outlined text-[12px] md:text-sm">menu_book</span>
@@ -75,7 +75,7 @@ const Home = () => {
                         <div className="p-5 md:p-6 flex flex-col flex-1 bg-sand-primary">
                             <h3 className="serif-title text-lg md:text-xl mb-2 text-charcoal-main">Chants</h3>
                             <p className="text-charcoal-main/80 text-sm leading-relaxed mb-4 md:mb-6 flex-1 font-sans font-medium line-clamp-2 md:line-clamp-none">
-                                티벳 음악 앨범 내용
+                                티벳 음악 앨범
                             </p>
                             <span className="inline-flex items-center gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest text-charcoal-main group-hover:text-gold-primary transition-colors mt-auto">
                                 Listen Now <span className="material-symbols-outlined text-[12px] md:text-sm">headphones</span>
