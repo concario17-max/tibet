@@ -3,7 +3,7 @@ import { ChevronDown, ChevronRight, X } from 'lucide-react';
 import { useUI } from '../../context/UIContext';
 
 // Gita의 디자인 철학(Awwwards급)을 Tibet 프로젝트에 맞게 변환
-const LeftSidebar = React.memo(({ prayers, onSelectVerse, activeVerseId }) => {
+const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
     // 만약 useUI가 App 최상단에 Provider로 안 감싸져 있다면 에러가 나므로, 
     // 실제 통합 전까지는 UIContext를 우선 임시로 써도 되지만, 에러 방지를 위해 optional chaining 처리.
     // 하지만 Zero Monolith & 강제 Immutability 원칙에 따라 UIContext는 외부에서 반드시 주입됨.
