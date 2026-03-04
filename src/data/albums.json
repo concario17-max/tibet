@@ -7,33 +7,33 @@
         "tracks": [
             {
                 "id": "album-01-t1",
-                "title": "Side A silence split 1 320kbps",
-                "url": "/mp3/Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)/Side_A_silence_split_1_320kbps.mp3"
+                "title": "Side A 1",
+                "url": "/mp3/Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)/Side_A_1.mp3"
             },
             {
                 "id": "album-01-t2",
-                "title": "Side A silence split 2 320kbps",
-                "url": "/mp3/Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)/Side_A_silence_split_2_320kbps.mp3"
+                "title": "Side A 2",
+                "url": "/mp3/Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)/Side_A_2.mp3"
             },
             {
                 "id": "album-01-t3",
-                "title": "Side A silence split 3 320kbps",
-                "url": "/mp3/Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)/Side_A_silence_split_3_320kbps.mp3"
+                "title": "Side A 3",
+                "url": "/mp3/Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)/Side_A_3.mp3"
             },
             {
                 "id": "album-01-t4",
-                "title": "Side B silence split 1",
-                "url": "/mp3/Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)/Side_B_silence_split_1.mp3"
+                "title": "Side B 1",
+                "url": "/mp3/Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)/Side_B_1.mp3"
             },
             {
                 "id": "album-01-t5",
-                "title": "Side B silence split 2",
-                "url": "/mp3/Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)/Side_B_silence_split_2.mp3"
+                "title": "Side B 2",
+                "url": "/mp3/Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)/Side_B_2.mp3"
             },
             {
                 "id": "album-01-t6",
-                "title": "Side B silence split 3",
-                "url": "/mp3/Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)/Side_B_silence_split_3.mp3"
+                "title": "Side B 3",
+                "url": "/mp3/Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)/Side_B_3.mp3"
             }
         ]
     },
