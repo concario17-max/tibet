@@ -8,26 +8,48 @@ export const useAudioPlayer = (playlist) => {
 
     const currentTrack = playlist[currentTrackIndex];
 
-    const togglePlay = useCallback(() => {
-        if (isPlaying) {
-            audioRef.current.pause();
-        } else {
-            audioRef.current.play();
-        }
-        setIsPlaying(!isPlaying);
-    }, [isPlaying]);
-
     const loadTrack = useCallback((index) => {
         const track = playlist[index];
         if (track && audioRef.current) {
-            audioRef.current.src = track.url;
-            audioRef.current.load();
+            // Only update src if it has actually changed to avoid interrupting playback if same
+            if (!audioRef.current.src.endsWith(track.url)) {
+                audioRef.current.src = track.url;
+                audioRef.current.load();
+            }
             if (isPlaying) {
                 audioRef.current.play().catch(e => console.warn('Audio play prevented:', e));
             }
             setCurrentTrackIndex(index);
         }
     }, [playlist, isPlaying]);
+
+    // Automatically load track source when playlist updates (like Verse change)
+    useEffect(() => {
+        if (playlist && playlist.length > 0 && audioRef.current) {
+            const track = playlist[currentTrackIndex] || playlist[0];
+            if (!audioRef.current.src || !audioRef.current.src.endsWith(track.url)) {
+                audioRef.current.src = track.url;
+                audioRef.current.load();
+                setCurrentTrackIndex(currentTrackIndex < playlist.length ? currentTrackIndex : 0);
+            }
+        }
+    }, [playlist, currentTrackIndex]);
+
+    const togglePlay = useCallback(() => {
+        if (!audioRef.current) return;
+
+        if (isPlaying) {
+            audioRef.current.pause();
+        } else {
+            // Ensure source is loaded before playing
+            if (!audioRef.current.src && playlist.length > 0) {
+                audioRef.current.src = playlist[currentTrackIndex].url;
+                audioRef.current.load();
+            }
+            audioRef.current.play().catch(e => console.warn('Audio play prevented:', e));
+        }
+        setIsPlaying(!isPlaying);
+    }, [isPlaying, playlist, currentTrackIndex]);
 
     const playTrack = useCallback((index) => {
         if (index >= 0 && index < playlist.length) {
