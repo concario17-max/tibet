@@ -11,6 +11,8 @@ export const UIProvider = ({ children }) => {
     const [isCompendiumOpen, setIsCompendiumOpen] = useState(false);
     // 코멘터리 모달 상태 제어
     const [isCommentariesOpen, setIsCommentariesOpen] = useState(false);
+    // 렉시콘 모달 상태 제어
+    const [isLexiconOpen, setIsLexiconOpen] = useState(false);
 
     // 글로벌 구절(Sutra) 정보 공유 스테이트
     const [activeVerse, setActiveVerse] = useState(null);
@@ -36,11 +38,13 @@ export const UIProvider = ({ children }) => {
         setIsCompendiumOpen,
         isCommentariesOpen,
         setIsCommentariesOpen,
+        isLexiconOpen,
+        setIsLexiconOpen,
         toggleReflections,
         closeAllDrawers,
         activeVerse,
         setActiveVerse
-    }), [isSidebarOpen, isReflectionsOpen, isCompendiumOpen, isCommentariesOpen, toggleSidebar, toggleReflections, closeAllDrawers, activeVerse]);
+    }), [isSidebarOpen, isReflectionsOpen, isCompendiumOpen, isCommentariesOpen, isLexiconOpen, toggleSidebar, toggleReflections, closeAllDrawers, activeVerse]);
 
     return (
         <UIContext.Provider value={providerValue}>

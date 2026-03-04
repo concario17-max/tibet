@@ -4,6 +4,7 @@ import Header from './Header';
 import GlobalPlayer from './GlobalPlayer';
 import CompendiumModal from './CompendiumModal';
 import CommentariesModal from './CommentariesModal';
+import LexiconModal from './LexiconModal';
 
 const Layout = ({ playbackRequest, setPlaybackRequest }) => {
     return (
@@ -17,6 +18,7 @@ const Layout = ({ playbackRequest, setPlaybackRequest }) => {
             <GlobalPlayer playbackRequest={playbackRequest} setPlaybackRequest={setPlaybackRequest} />
             <CompendiumModal />
             <CommentariesModal />
+            <LexiconModal />
         </div>
     );
 };

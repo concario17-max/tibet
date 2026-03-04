@@ -10,8 +10,8 @@ const Header = () => {
     const location = useLocation();
 
     // UI 로직 안전 연동
-    const uiContext = useUI() || { toggleSidebar: () => { }, toggleReflections: () => { }, activeVerse: null, setActiveVerse: () => { }, setIsCompendiumOpen: () => { }, setIsCommentariesOpen: () => { } };
-    const { toggleSidebar, toggleReflections, activeVerse, setActiveVerse, setIsCompendiumOpen, setIsCommentariesOpen } = uiContext;
+    const uiContext = useUI() || { toggleSidebar: () => { }, toggleReflections: () => { }, activeVerse: null, setActiveVerse: () => { }, setIsCompendiumOpen: () => { }, setIsCommentariesOpen: () => { }, setIsLexiconOpen: () => { } };
+    const { toggleSidebar, toggleReflections, activeVerse, setActiveVerse, setIsCompendiumOpen, setIsCommentariesOpen, setIsLexiconOpen } = uiContext;
 
     // 다크모드 컨텍스트 연동
     const themeContext = useTheme() || { theme: 'light', toggleTheme: () => { } };
@@ -76,11 +76,11 @@ const Header = () => {
                     <button onClick={() => setIsCompendiumOpen(true)} className="nav-divider text-[11px] sm:text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary px-2 sm:px-0">
                         Compendium
                     </button>
-                    <Link to="/album" className="nav-divider text-[11px] sm:text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary relative group flex items-center gap-2 px-2 sm:px-0">
+                    <button onClick={() => setIsLexiconOpen(true)} className="nav-divider text-[11px] sm:text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary relative group flex items-center gap-2 px-2 sm:px-0 border-none sm:border-solid">
                         <span className="text-gold-primary tracking-widest text-[9px] sm:text-xs font-medium uppercase mt-[2px] opacity-0 group-hover:opacity-100 transition-opacity absolute -left-4 sm:-left-6">✧</span>
-                        Chants
+                        Lexicon
                         <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
-                    </Link>
+                    </button>
                     <button onClick={() => setIsCommentariesOpen(true)} className="nav-divider text-[11px] sm:text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary px-2 sm:px-0 border-r-0">
                         Commentaries
                     </button>
