@@ -39,7 +39,7 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                 </div>
 
                 {/* 상단: 챕터 목록 */}
-                <div className="flex-1 overflow-y-auto border-b border-gold-border/40 dark:border-[#222] custom-scrollbar min-h-[40%]">
+                <div className="flex-none overflow-y-auto border-b border-gold-border/40 dark:border-[#222] custom-scrollbar max-h-[35%]">
                     <div className="p-4 bg-transparent sticky top-0 z-10 backdrop-blur-sm hidden lg:block">
                         <h2 className="text-xs font-bold text-text-primary/70 dark:text-dark-text-primary/70">
                             기도 챕터
@@ -73,7 +73,7 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                 </div>
 
                 {/* 하단: 구절(Verse) 목록 */}
-                <div className="flex-1 overflow-y-auto bg-transparent custom-scrollbar">
+                <div className="flex-1 overflow-y-auto bg-transparent custom-scrollbar h-full">
                     <div className="py-2 px-3 space-y-0.5">
                         {expandedChapter ? (
                             prayers.find(p => p.id === expandedChapter)?.verses.map((verse) => {
