@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LeftSidebar from './components/LeftSidebar';
 import ReadingPanel from './components/ReadingPanel';
 import RightSidebar from './components/RightSidebar';
 import prayersData from '../data/prayers.json';
+import { useUI } from '../context/UIContext';
 
 const Chapter = () => {
     // Default to Prayer 3 - Verse 1, since it has audio
     const [selectedVerse, setSelectedVerse] = useState(prayersData[2].verses[0]);
+    const { setActiveVerse } = useUI() || {};
+
+    // Sync local verse to global UI context for Header
+    useEffect(() => {
+        if (setActiveVerse) {
+            setActiveVerse(selectedVerse);
+        }
+    }, [selectedVerse, setActiveVerse]);
 
     return (
         <div className="flex w-full min-h-screen h-screen overflow-hidden bg-sand-primary relative z-10 transition-colors duration-500 xl:bg-transparent dark:xl:bg-transparent">

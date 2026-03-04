@@ -8,6 +8,9 @@ export const UIProvider = ({ children }) => {
     // 리플렉션(우측 패널) 상태 제어
     const [isReflectionsOpen, setIsReflectionsOpen] = useState(false);
 
+    // 글로벌 구절(Sutra) 정보 공유 스테이트
+    const [activeVerse, setActiveVerse] = useState(null);
+
     // 각 패널을 토글하는 불변성 기반 함수들 (재생성 방지)
     const toggleSidebar = React.useCallback(() => setIsSidebarOpen(prev => !prev), []);
     const toggleReflections = React.useCallback(() => setIsReflectionsOpen(prev => !prev), []);
@@ -26,8 +29,10 @@ export const UIProvider = ({ children }) => {
         isReflectionsOpen,
         setIsReflectionsOpen,
         toggleReflections,
-        closeAllDrawers
-    }), [isSidebarOpen, isReflectionsOpen, toggleSidebar, toggleReflections, closeAllDrawers]);
+        closeAllDrawers,
+        activeVerse,
+        setActiveVerse
+    }), [isSidebarOpen, isReflectionsOpen, toggleSidebar, toggleReflections, closeAllDrawers, activeVerse]);
 
     return (
         <UIContext.Provider value={providerValue}>
