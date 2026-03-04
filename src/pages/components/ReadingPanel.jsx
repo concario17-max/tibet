@@ -49,7 +49,7 @@ const ReadingPanel = ({ verse }) => {
                 <section className="mb-4 text-center px-2 sm:px-0 mt-8">
                     {verse.text.tibetan && (
                         <p className="font-noto text-[#1F2937] dark:text-[#E5E7EB] text-xl sm:text-3xl leading-[1.8] tracking-wide font-bold drop-shadow-sm break-keep">
-                            {verse.text.tibetan.replace(/\n/g, ' ')}
+                            {verse.text.tibetan.replace(/[\r\n]+/g, ' ')}
                         </p>
                     )}
                 </section>
@@ -105,8 +105,8 @@ const ReadingPanel = ({ verse }) => {
                     {verse.text.english && (
                         <div className="mb-12">
                             <h3 className="text-xs font-semibold uppercase tracking-widest text-gold-primary/70 dark:text-gold-light/60 text-center mb-4 font-inter">English</h3>
-                            <p className="text-base sm:text-lg leading-loose text-text-primary dark:text-dark-text-primary font-inter min-h-[1.5em] text-center max-w-4xl mx-auto px-2 sm:px-4 break-keep italic">
-                                {verse.text.english.replace(/\n/g, ' ')}
+                            <p className="text-base sm:text-lg leading-loose text-text-primary dark:text-dark-text-primary font-inter min-h-[1.5em] text-center px-2 sm:px-4 italic">
+                                {verse.text.english.replace(/[\r\n]+/g, ' ')}
                             </p>
                         </div>
                     )}
@@ -115,8 +115,8 @@ const ReadingPanel = ({ verse }) => {
                     {verse.text.korean && (
                         <div className="mb-8">
                             <h3 className="text-xs font-semibold uppercase tracking-widest text-gold-primary/70 dark:text-gold-light/60 text-center mb-4 font-inter">한글 (Korean)</h3>
-                            <p className="font-korean text-base sm:text-[17px] leading-[1.8] text-text-primary dark:text-dark-text-primary min-h-[1.5em] text-center max-w-4xl mx-auto px-2 sm:px-4 break-keep font-[400] tracking-[-0.01em]">
-                                {verse.text.korean.replace(/\n/g, ' ')}
+                            <p className="font-korean text-base sm:text-[17px] leading-[1.8] text-text-primary dark:text-dark-text-primary min-h-[1.5em] text-center px-2 sm:px-4 break-keep font-[400] tracking-[-0.01em]">
+                                {verse.text.korean.replace(/[\r\n]+/g, ' ')}
                             </p>
                         </div>
                     )}
