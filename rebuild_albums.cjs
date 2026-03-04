@@ -10,8 +10,8 @@ const dataFile = path.join(__dirname, 'src', 'data', 'albums.json');
 const targetFolders = [
     "Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)",
     "The Lama's Chant Songs of Awakening (Lama Gyurme)",
-    "Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 1 \u2013 Rituals Of The Drukpa Order From Thimphu And Punakha",
-    "Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders"
+    "Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 1",
+    "Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2"
 ];
 
 if (!fs.existsSync(destAudioBase)) fs.mkdirSync(destAudioBase, { recursive: true });
