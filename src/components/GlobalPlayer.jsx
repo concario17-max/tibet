@@ -21,6 +21,7 @@ const GlobalPlayer = ({ playbackRequest, setPlaybackRequest }) => {
     // Repeat mode: 0 = No Repeat, 1 = Repeat All, 2 = Repeat One
     const [repeatMode, setRepeatMode] = useState(1);
     const [isMuted, setIsMuted] = useState(false);
+    const [volume, setVolume] = useState(1);
 
     const audioRef = useRef(null);
 
@@ -112,6 +113,12 @@ const GlobalPlayer = ({ playbackRequest, setPlaybackRequest }) => {
         setIsPlaying(!isPlaying);
     };
 
+    useEffect(() => {
+        if (audioRef.current) {
+            audioRef.current.volume = isMuted ? 0 : volume;
+        }
+    }, [volume, isMuted]);
+
     const handleSeek = (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -121,8 +128,15 @@ const GlobalPlayer = ({ playbackRequest, setPlaybackRequest }) => {
         setProgress(percentage * 100);
     };
 
+    const handleVolumeSeek = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const percentage = Math.max(0, Math.min(1, x / rect.width));
+        setVolume(percentage);
+        if (isMuted && percentage > 0) setIsMuted(false);
+    };
+
     const toggleMute = () => {
-        audioRef.current.muted = !isMuted;
         setIsMuted(!isMuted);
     };
 
@@ -221,9 +235,22 @@ const GlobalPlayer = ({ playbackRequest, setPlaybackRequest }) => {
 
                     <div className="w-px h-6 bg-gold-primary/20 mx-1 hidden sm:block"></div>
 
-                    <button onClick={toggleMute} className="text-sand-primary/60 hover:text-gold-primary transition-colors hidden sm:block">
-                        {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-                    </button>
+                    <div className="hidden sm:flex items-center gap-2 group/vol relative cursor-pointer">
+                        <button onClick={toggleMute} className="text-sand-primary/60 hover:text-gold-primary transition-colors shrink-0">
+                            {isMuted || volume === 0 ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                        </button>
+                        <div
+                            className="w-0 overflow-hidden group-hover/vol:w-20 transition-all duration-300 ease-in-out flex items-center py-2"
+                            onClick={handleVolumeSeek}
+                        >
+                            <div className="h-1.5 w-full bg-black/40 rounded-full relative overflow-hidden">
+                                <div
+                                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-gold-primary to-gold-light rounded-full"
+                                    style={{ width: `${(isMuted ? 0 : volume) * 100}%` }}
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
