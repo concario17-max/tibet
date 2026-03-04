@@ -10,8 +10,8 @@ const Header = () => {
     const location = useLocation();
 
     // UI 로직 안전 연동
-    const uiContext = useUI() || { toggleSidebar: () => { }, toggleReflections: () => { }, activeVerse: null, setActiveVerse: () => { }, setIsCompendiumOpen: () => { } };
-    const { toggleSidebar, toggleReflections, activeVerse, setActiveVerse, setIsCompendiumOpen } = uiContext;
+    const uiContext = useUI() || { toggleSidebar: () => { }, toggleReflections: () => { }, activeVerse: null, setActiveVerse: () => { }, setIsCompendiumOpen: () => { }, setIsCommentariesOpen: () => { } };
+    const { toggleSidebar, toggleReflections, activeVerse, setActiveVerse, setIsCompendiumOpen, setIsCommentariesOpen } = uiContext;
 
     // 다크모드 컨텍스트 연동
     const themeContext = useTheme() || { theme: 'light', toggleTheme: () => { } };
@@ -81,9 +81,9 @@ const Header = () => {
                         Chants
                         <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                    <Link to="/chapter" className="nav-divider text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary">
+                    <button onClick={() => setIsCommentariesOpen(true)} className="nav-divider text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary">
                         Commentaries
-                    </Link>
+                    </button>
                 </nav>
             )}
 

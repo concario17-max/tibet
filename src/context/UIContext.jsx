@@ -4,11 +4,12 @@ const UIContext = createContext();
 
 export const UIProvider = ({ children }) => {
     // 사이드바 상태를 제어하는 내부 State (불변성 유지)
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     // 리플렉션(우측 패널) 상태 제어
     const [isReflectionsOpen, setIsReflectionsOpen] = useState(false);
     // 컴펜디움(안내서) 모달 상태 제어
     const [isCompendiumOpen, setIsCompendiumOpen] = useState(false);
+    // 코멘터리 모달 상태 제어
+    const [isCommentariesOpen, setIsCommentariesOpen] = useState(false);
 
     // 글로벌 구절(Sutra) 정보 공유 스테이트
     const [activeVerse, setActiveVerse] = useState(null);
@@ -32,11 +33,13 @@ export const UIProvider = ({ children }) => {
         setIsReflectionsOpen,
         isCompendiumOpen,
         setIsCompendiumOpen,
+        isCommentariesOpen,
+        setIsCommentariesOpen,
         toggleReflections,
         closeAllDrawers,
         activeVerse,
         setActiveVerse
-    }), [isSidebarOpen, isReflectionsOpen, isCompendiumOpen, toggleSidebar, toggleReflections, closeAllDrawers, activeVerse]);
+    }), [isSidebarOpen, isReflectionsOpen, isCompendiumOpen, isCommentariesOpen, toggleSidebar, toggleReflections, closeAllDrawers, activeVerse]);
 
     return (
         <UIContext.Provider value={providerValue}>
