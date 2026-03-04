@@ -39,7 +39,10 @@ const AlbumDetail = ({ album, isOpen, onClose, onPlayTrack }) => {
                     >
                         {/* Header Image Area */}
                         <div className="relative h-64 md:h-80 shrink-0 bg-charcoal-main border-b border-sand-tertiary">
-                            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544923246-77307dd654ca?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center grayscale mix-blend-screen opacity-10"></div>
+                            <div
+                                className="absolute inset-0 bg-cover bg-center grayscale mix-blend-screen opacity-10"
+                                style={{ backgroundImage: album.coverImage ? `url(${album.coverImage})` : "url('https://images.unsplash.com/photo-1544923246-77307dd654ca?q=80&w=2574&auto=format&fit=crop')" }}
+                            ></div>
                             <div className="absolute inset-0 bg-gradient-to-t from-sand-primary to-transparent"></div>
 
                             <button
@@ -50,8 +53,12 @@ const AlbumDetail = ({ album, isOpen, onClose, onPlayTrack }) => {
                             </button>
 
                             <div className="absolute bottom-8 left-8 md:left-12 flex items-end gap-6 max-w-3xl">
-                                <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-charcoal-main to-gold-primary/10 shadow-lg border border-gold-primary/20 flex items-center justify-center shrink-0">
-                                    <Music className="text-gold-primary/30 w-16 h-16 stroke-[0.5]" />
+                                <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-charcoal-main to-gold-primary/10 shadow-lg border border-gold-primary/20 flex flex-col items-center justify-center shrink-0 overflow-hidden">
+                                    {album.coverImage ? (
+                                        <img src={album.coverImage} alt={album.title} className="w-full h-full object-cover" />
+                                    ) : (
+                                        <Music className="text-gold-primary/30 w-16 h-16 stroke-[0.5]" />
+                                    )}
                                 </div>
                                 <div className="space-y-3 pb-2 text-shadow-sm">
                                     <p className="text-gold-primary text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold">

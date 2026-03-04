@@ -8,11 +8,17 @@ const AlbumCard = ({ album, onSelect }) => {
             className="group flex flex-col bg-white border border-sand-tertiary rounded-xl overflow-hidden hover:shadow-xl hover:shadow-gold-primary/5 transition-all duration-300 cursor-pointer"
         >
             <div className="h-48 overflow-hidden relative">
-                {/* Album Art Placeholder with Golden Texture Style */}
-                <div className="absolute inset-0 bg-gradient-to-br from-charcoal-main to-gold-primary/10"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <Music className="text-gold-primary/30 w-24 h-24 stroke-[0.3]" />
-                </div>
+                {/* Dynamic Album Art or Fallback */}
+                {album.coverImage ? (
+                    <img src={album.coverImage} alt={album.title} className="absolute inset-0 w-full h-full object-cover" />
+                ) : (
+                    <>
+                        <div className="absolute inset-0 bg-gradient-to-br from-charcoal-main to-gold-primary/10"></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <Music className="text-gold-primary/30 w-24 h-24 stroke-[0.3]" />
+                        </div>
+                    </>
+                )}
 
                 {/* Luxury Overlays */}
                 <div className="absolute inset-0 bg-charcoal-main/80 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center z-10">
