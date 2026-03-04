@@ -1,126 +1,155 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Play, Pause, Bookmark } from 'lucide-react';
 import { useAudioPlayer } from '../../hooks/useAudioPlayer';
 
+// 강제 불변성과 Zero Monolith 원칙을 준수하는 ReadingPanel
 const ReadingPanel = ({ verse }) => {
-    // Dynamically format audio URL for the hook if it exists
+    // 오디오 플레이어 로직 (Tibet 커스텀 훅 지원)
     const audioPlaylist = verse.audioUrl ? [{ id: verse.id, title: verse.title, url: verse.audioUrl }] : [];
-
     const { isPlaying, progress, togglePlay, playTrack, seek } = useAudioPlayer(audioPlaylist);
+
+    // UI 업데이트용 내부 시간 상태
     const [currentTime, setCurrentTime] = useState(0);
+    const audioRef = useRef(null); // 만약 hook에서 audio 객체를 주지 않는다면 시각적 페이크 사용 혹은 Native Play 전환
 
-    // Initialize the track on mount
     useEffect(() => {
-        playTrack(0);
-        // Pause immediately to just load it
-        setTimeout(() => {
-            if (isPlaying) togglePlay();
-        }, 50);
-    }, []);
+        if (verse.audioUrl) {
+            playTrack(0);
+            setTimeout(() => {
+                if (isPlaying) togglePlay(); // 강제 오토플레이 방지 (UX)
+            }, 50);
+        }
+    }, [verse.id]);
 
-    // Effect to grab duration and time (approximate via progress since hook doesn't export them directly yet)
-    useEffect(() => {
-        // A simple workaround if we don't want to modify useAudioPlayer yet:
-        // Assume a static duration for UI purposes if true metadata isn't piped out
-        // In a real app, useAudioPlayer should return currentTime and duration.
-        // For UI fidelity to the PNG:
-    }, [progress]);
+    // Gita 스타일 시간 포맷터
+    const formatTime = (time) => {
+        if (isNaN(time)) return "0:00";
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time % 60);
+        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    };
+
+    // 장과 구절 번호 파싱
+    const [chapterStr, verseStr] = verse.id.split('.');
 
     return (
-        <main className="flex-1 max-w-3xl mx-auto px-6 lg:px-12 pt-24 pb-20 h-screen overflow-y-auto scrollbar-hide">
-            <div className="flex items-center justify-center space-x-2 text-xs text-charcoal-muted font-medium mb-12">
-                <span>Chapter {verse.id.split('.')[0]}</span>
-                <span className="text-sand-tertiary">›</span>
-                <span className="font-bold text-charcoal-main">Sutra {verse.id.split('.')[1]}</span>
-            </div>
+        <main className="flex-1 min-w-0 bg-transparent font-crimson text-text-primary dark:text-dark-text-primary transition-colors duration-500 overflow-y-auto scrollbar-hide relative z-10 pt-6 pb-24">
+            <div className="mx-auto max-w-[1000px] px-4 sm:px-6">
 
-            <article className="prose prose-slate max-w-none text-center">
-                <div className="w-8 h-8 rounded-full border border-gold-primary mx-auto mb-10 flex items-center justify-center text-gold-primary">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 2a10 10 0 0110 10" />
-                        <path d="M12 22a10 10 0 01-10-10" />
-                        <path d="M2 12h20" />
-                        <path d="M12 2v20" />
-                        <path d="M4.93 4.93l14.14 14.14" />
-                        <path d="M4.93 19.07L19.07 4.93" />
-                    </svg>
-                </div>
+                {/* 챕터 네비게이션 브레드크럼 */}
+                <div className="flex flex-col items-center justify-center mb-2 pt-4">
+                    <nav className="flex items-center gap-2 text-[13px] text-text-secondary dark:text-dark-text-secondary font-inter mb-6">
+                        <span className="text-text-secondary dark:text-dark-text-secondary transition-colors cursor-default">Chapter {chapterStr}</span>
+                        <span>›</span>
+                        <span className="text-text-primary dark:text-dark-text-primary font-bold">Prayer {verseStr}</span>
+                    </nav>
 
-                <div className="flex flex-col gap-8 mb-20 max-w-3xl mx-auto">
-                    {verse.text.tibetan && (
-                        <h1 className="text-3xl md:text-5xl text-charcoal-main font-serif whitespace-pre-line leading-[1.4] font-bold">
-                            {verse.text.tibetan}
-                        </h1>
-                    )}
-
-                    <div className="flex flex-col gap-6 mt-4">
-                        {verse.text.english && (
-                            <p className="text-[15px] leading-8 text-charcoal-muted font-serif italic whitespace-pre-line">
-                                {verse.text.english}
-                            </p>
-                        )}
-                        {(verse.text.english && verse.text.korean) && (
-                            <div className="w-12 h-px bg-sand-tertiary mx-auto my-2"></div>
-                        )}
-                        {verse.text.korean && (
-                            <p className="text-[14px] leading-8 text-charcoal-muted font-serif italic whitespace-pre-line">
-                                {verse.text.korean}
-                            </p>
-                        )}
+                    {/* 고유 장식 아이콘 */}
+                    <div className="w-8 h-8 rounded-full bg-gold-border/20 flex items-center justify-center mb-2 text-gold-primary">
+                        <span className="font-serif leading-none">֍</span>
                     </div>
                 </div>
 
-                {verse.audioUrl && (
-                    <div className="mt-16 max-w-md mx-auto flex items-center justify-between border border-sand-tertiary rounded-full px-6 py-3 bg-white shadow-sm">
+                {/* 티벳어 (Sanskrit 대체) */}
+                <section className="mb-4 text-center px-2 sm:px-0 mt-8">
+                    {verse.text.tibetan && (
+                        <p className="font-noto text-[#1F2937] dark:text-[#E5E7EB] text-xl sm:text-3xl leading-[1.8] whitespace-pre-line tracking-wide font-bold drop-shadow-sm">
+                            {verse.text.tibetan}
+                        </p>
+                    )}
+                </section>
+
+                <div className="w-8 h-[1px] bg-gold-border/60 mx-auto my-8"></div>
+
+                {/* 오디오 플레이어 (Gita 스타일 Pill 디자인 이식) */}
+                <div className="mb-16 flex justify-center">
+                    <div className="flex items-center justify-between w-full max-w-[400px] rounded-full border border-gold-primary/20 dark:border-dark-border/50 bg-white/40 dark:bg-[#111]/40 backdrop-blur-md px-5 py-2.5 shadow-sm hover:shadow-md transition-all hover:border-gold-primary/40">
                         <button
                             onClick={togglePlay}
-                            className="text-gold-primary hover:text-charcoal-main transition-colors mr-4"
+                            disabled={!verse.audioUrl}
+                            className={`text-gold-primary dark:text-gold-light hover:scale-110 transition-transform ${!verse.audioUrl ? 'opacity-30 cursor-not-allowed' : ''}`}
                         >
-                            {isPlaying ? <Pause size={18} fill="currentColor" /> : <Play size={18} fill="currentColor" className="ml-1" />}
+                            {isPlaying ? <Pause className="w-4 h-4 fill-current" /> : <Play className="w-4 h-4 fill-current ml-0.5" />}
                         </button>
-                        <div className="flex-1 flex items-center space-x-4">
-                            <span className="text-[10px] text-charcoal-muted font-medium w-8 text-right">0:00</span>
-                            <div
-                                className="h-1 flex-1 bg-sand-secondary rounded-full overflow-hidden cursor-pointer relative group"
-                                onClick={(e) => {
-                                    const rect = e.currentTarget.getBoundingClientRect();
-                                    const p = ((e.clientX - rect.left) / rect.width) * 100;
-                                    seek(p);
-                                }}
-                            >
-                                <div
-                                    className="h-full bg-gold-primary opacity-50 transition-all duration-300 relative"
-                                    style={{ width: `${progress}%` }}
-                                ></div>
-                            </div>
-                            <span className="text-[10px] text-charcoal-muted font-medium w-8">0:37</span>
-                        </div>
-                    </div>
-                )}
-            </article>
 
-            {/* Core Lexicon Grid */}
-            <div className="mt-20 border-t border-sand-tertiary pt-10">
-                <h3 className="serif-title text-xl mb-6 text-charcoal-main">Core Lexicon</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="p-5 border border-sand-tertiary rounded shadow-sm bg-white hover:border-gold-primary transition-colors cursor-pointer group">
-                        <div className="flex justify-between items-start mb-2">
-                            <h4 className="font-bold text-charcoal-main group-hover:text-gold-primary transition-colors">Bardo (바르도)</h4>
-                            <Bookmark size={16} className="text-sand-tertiary group-hover:text-gold-primary" />
+                        <span className="text-[10px] text-text-secondary/50 font-inter font-bold tracking-widest tabular-nums ml-4">
+                            0:00
+                        </span>
+
+                        <div className="relative flex-1 mx-4 h-[2px] bg-gold-border/30 dark:bg-dark-border rounded-full cursor-pointer group"
+                            onClick={(e) => {
+                                const rect = e.currentTarget.getBoundingClientRect();
+                                const x = e.clientX - rect.left;
+                                const percentage = x / rect.width;
+                                seek(percentage * 100);
+                            }}>
+                            <div
+                                className="absolute top-0 left-0 h-full bg-[#A68B5C] transition-all"
+                                style={{ width: `${progress}%` }}
+                            ></div>
+                            <div
+                                className="absolute top-1/2 -translate-y-1/2 w-2 h-2 bg-[#A68B5C] rounded-full shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                                style={{ left: `calc(${progress}% - 4px)` }}
+                            ></div>
                         </div>
-                        <p className="text-xs text-charcoal-muted leading-relaxed">The intermediate state between death and rebirth.</p>
-                    </div>
-                    <div className="p-5 border border-sand-tertiary rounded shadow-sm bg-white hover:border-gold-primary transition-colors cursor-pointer group">
-                        <div className="flex justify-between items-start mb-2">
-                            <h4 className="font-bold text-charcoal-main group-hover:text-gold-primary transition-colors">Dharmakaya (법신)</h4>
-                            <Bookmark size={16} className="text-sand-tertiary group-hover:text-gold-primary" />
-                        </div>
-                        <p className="text-xs text-charcoal-muted leading-relaxed">The truth body, the unmanifested state of ultimate reality.</p>
+
+                        <span className="text-[10px] text-text-secondary/50 font-inter font-bold tracking-widest tabular-nums">
+                            --:--
+                        </span>
                     </div>
                 </div>
+
+                {/* 번역 렌더링 영역 */}
+                <section className="mb-10">
+                    <div className="flex items-center justify-center mb-6">
+                        <span className="text-gold-muted/40 dark:text-gold-muted/30 tracking-[8px] text-xs">•••</span>
+                    </div>
+                    <h2 className="mb-8 text-sm font-semibold uppercase tracking-[0.2em] text-gold-muted dark:text-gold-muted text-center font-inter">Translation</h2>
+
+                    {/* 영문 번역 */}
+                    {verse.text.english && (
+                        <div className="mb-12">
+                            <h3 className="text-xs font-semibold uppercase tracking-widest text-gold-primary/70 dark:text-gold-light/60 text-center mb-4 font-inter">English</h3>
+                            <p className="text-base sm:text-lg leading-loose text-text-primary dark:text-dark-text-primary font-inter min-h-[1.5em] text-center max-w-3xl mx-auto px-2 sm:px-0 whitespace-pre-line break-keep italic">
+                                {verse.text.english}
+                            </p>
+                        </div>
+                    )}
+
+                    {/* 한글 번역 */}
+                    {verse.text.korean && (
+                        <div className="mb-8">
+                            <h3 className="text-xs font-semibold uppercase tracking-widest text-gold-primary/70 dark:text-gold-light/60 text-center mb-4 font-inter">한글 (Korean)</h3>
+                            <p className="font-noto-kr text-base sm:text-lg leading-[2.2] text-text-primary dark:text-dark-text-primary min-h-[1.5em] text-center max-w-3xl mx-auto px-2 sm:px-0 whitespace-pre-line break-keep font-medium">
+                                {verse.text.korean}
+                            </p>
+                        </div>
+                    )}
+                </section>
+
+                {/* 용어사전 UI 잔재 (선택적 유지) */}
+                <div className="mt-24 border-t border-gold-border/30 pt-16">
+                    <h3 className="font-crimson text-xl mb-6 text-text-primary dark:text-dark-text-primary text-center">Core Lexicon</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                        <div className="p-5 border border-gold-border/50 rounded-xl bg-white/40 dark:bg-dark-surface/40 hover:border-gold-primary transition-colors cursor-pointer group backdrop-blur-sm shadow-sm">
+                            <div className="flex justify-between items-start mb-2">
+                                <h4 className="font-bold text-text-primary dark:text-dark-text-primary group-hover:text-gold-primary transition-colors">Bardo (바르도)</h4>
+                                <Bookmark size={16} className="text-text-secondary/50 group-hover:text-gold-primary transition-colors" />
+                            </div>
+                            <p className="text-[13px] text-text-secondary dark:text-dark-text-secondary leading-relaxed">죽음과 환생 사이의 중간계 상태.</p>
+                        </div>
+                        <div className="p-5 border border-gold-border/50 rounded-xl bg-white/40 dark:bg-dark-surface/40 hover:border-gold-primary transition-colors cursor-pointer group backdrop-blur-sm shadow-sm">
+                            <div className="flex justify-between items-start mb-2">
+                                <h4 className="font-bold text-text-primary dark:text-dark-text-primary group-hover:text-gold-primary transition-colors">Dharmakaya (법신)</h4>
+                                <Bookmark size={16} className="text-text-secondary/50 group-hover:text-gold-primary transition-colors" />
+                            </div>
+                            <p className="text-[13px] text-text-secondary dark:text-dark-text-secondary leading-relaxed">궁극적 실체의 비현현 상태, 붓다의 진리의 몸.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </main >
+        </main>
     );
 };
 

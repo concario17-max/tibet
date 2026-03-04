@@ -35,11 +35,11 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #F9F7F2;
-  /* sand-primary */
-  color: #1A1A1A;
-  /* charcoal-main */
-  /* Remove old radial gradient and keep solid sophisticated sand background */
+  @apply bg-sand-primary text-charcoal-main font-inter antialiased transition-colors duration-500;
+}
+
+.dark body {
+  @apply bg-dark-bg text-dark-text-primary;
 }
 
 h1,
@@ -86,4 +86,26 @@ h6 {
 .mask-image-bottom {
   mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+.sanskrit-verse {
+  @apply font-serif text-xl leading-loose text-gold-primary dark:text-gold-light;
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gold-border dark:bg-dark-border rounded-full border border-solid border-transparent bg-clip-padding;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gold-primary/50 dark:bg-gold-light/50;
 }

@@ -4,21 +4,27 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import Chapter from './pages/Chapter';
 import Album from './pages/Album';
+import { UIProvider } from './context/UIContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
     // Global player state to maintain audio across route changes
     const [playbackRequest, setPlaybackRequest] = useState(null);
 
     return (
-        <Router>
-            <Routes>
-                <Route element={<Layout playbackRequest={playbackRequest} setPlaybackRequest={setPlaybackRequest} />}>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/chapter" element={<Chapter />} />
-                    <Route path="/album" element={<Album />} />
-                </Route>
-            </Routes>
-        </Router>
+        <ThemeProvider>
+            <UIProvider>
+                <Router>
+                    <Routes>
+                        <Route element={<Layout playbackRequest={playbackRequest} setPlaybackRequest={setPlaybackRequest} />}>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/chapter" element={<Chapter />} />
+                            <Route path="/album" element={<Album />} />
+                        </Route>
+                    </Routes>
+                </Router>
+            </UIProvider>
+        </ThemeProvider>
     );
 }
 
