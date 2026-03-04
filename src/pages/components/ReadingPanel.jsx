@@ -28,16 +28,16 @@ const ReadingPanel = ({ verse }) => {
     const [chapterStr, verseStr] = verse.id.split('.');
 
     return (
-        <main className="flex-1 min-w-0 bg-transparent font-crimson text-text-primary dark:text-dark-text-primary transition-colors duration-500 overflow-y-auto scrollbar-hide relative z-10 pt-6 pb-24">
+        <main className="flex-1 min-w-0 bg-transparent font-crimson text-text-primary dark:text-dark-text-primary transition-colors duration-500 overflow-y-auto scrollbar-hide relative z-10 pt-24 sm:pt-[100px] pb-24">
             <div className="mx-auto max-w-[1000px] px-4 sm:px-6">
 
                 {/* 챕터 네비게이션 브레드크럼 */}
                 <div className="flex flex-col items-center justify-center mb-2 pt-4">
-                    <nav className="flex items-center justify-center gap-3 text-lg sm:text-[22px] tracking-tight font-inter mb-12">
+                    <nav className="flex items-center justify-center gap-2 text-[10px] sm:text-[11px] tracking-wider uppercase font-inter mb-10">
                         <span className="text-text-secondary/80 dark:text-dark-text-secondary/80 font-medium transition-colors cursor-default">
                             Chapter {chapterStr}
                         </span>
-                        <span className="text-text-secondary/50 text-[15px] font-bold mt-0.5">›</span>
+                        <span className="text-text-secondary/50 text-[8px] font-bold mt-0.5">›</span>
                         <span className="text-text-primary dark:text-dark-text-primary font-bold">
                             Sutra {chapterStr}-{verseStr}
                         </span>
