@@ -6,13 +6,10 @@ const destAudioBase = path.join(__dirname, 'public', 'mp3');
 const destImageBase = path.join(__dirname, 'public', 'album-covers');
 const dataFile = path.join(__dirname, 'src', 'data', 'albums.json');
 
-// The exactly 4 folders to process
-const targetFolders = [
-    "Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)",
-    "The Lama's Chant Songs of Awakening (Lama Gyurme)",
-    "Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 1",
-    "Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2"
-];
+// Dynamically find all subdirectories in the mp3 folder to process
+const targetFolders = fs.readdirSync(srcBase, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name);
 
 if (!fs.existsSync(destAudioBase)) fs.mkdirSync(destAudioBase, { recursive: true });
 if (!fs.existsSync(destImageBase)) fs.mkdirSync(destImageBase, { recursive: true });
@@ -86,5 +83,5 @@ targetFolders.forEach((folderName, index) => {
 });
 
 fs.writeFileSync(dataFile, JSON.stringify(albums, null, 4));
-console.log('Successfully built albums.json with 4 albums.');
+console.log(`Successfully built albums.json with ${albums.length} albums.`);
 
