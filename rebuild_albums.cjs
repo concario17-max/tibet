@@ -1,0 +1,81 @@
+const fs = require('fs');
+const path = require('path');
+
+const srcBase = path.join(__dirname, 'mp3');
+const destAudioBase = path.join(__dirname, 'public', 'mp3');
+const destImageBase = path.join(__dirname, 'public', 'album-covers');
+const dataFile = path.join(__dirname, 'src', 'data', 'albums.json');
+
+// The exactly 4 folders to process
+const targetFolders = [
+    "Tantric Nyingma Chant of Tibet (Chimed Rigdzin Rinpoche)",
+    "The Lama's Chant Songs of Awakening (Lama Gyurme)",
+    "Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 1 \u2013 Rituals Of The Drukpa Order From Thimphu And Punakha",
+    "Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders"
+];
+
+if (!fs.existsSync(destAudioBase)) fs.mkdirSync(destAudioBase, { recursive: true });
+if (!fs.existsSync(destImageBase)) fs.mkdirSync(destImageBase, { recursive: true });
+
+const albums = [];
+
+targetFolders.forEach((folderName, index) => {
+    const srcFolder = path.join(srcBase, folderName);
+
+    // If exact name matching fails (due to unicode hyphen differences etc), fallback search
+    let actualFolderName = folderName;
+    if (!fs.existsSync(srcFolder)) {
+        const allDirs = fs.readdirSync(srcBase, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => d.name);
+        const matched = allDirs.find(d => d.includes("Volume 1"));
+        if (matched && folderName.includes("Volume 1")) {
+            actualFolderName = matched;
+        } else {
+            console.warn("Folder not found:", srcFolder);
+            return;
+        }
+    }
+
+    const trueSrcFolder = path.join(srcBase, actualFolderName);
+    const files = fs.readdirSync(trueSrcFolder);
+
+    const mp3Files = files.filter(f => f.toLowerCase().endsWith('.mp3'));
+    const imageFile = files.find(f => f.toLowerCase().endsWith('.jpg') || f.toLowerCase().endsWith('.png') || f.toLowerCase().endsWith('.jpeg'));
+
+    const albumId = `album-${String(index + 1).padStart(2, '0')}`;
+
+    // Process Image
+    let coverImagePath = '';
+    if (imageFile) {
+        const ext = path.extname(imageFile);
+        const newImageName = `${albumId}-cover${ext}`;
+        fs.copyFileSync(path.join(trueSrcFolder, imageFile), path.join(destImageBase, newImageName));
+        coverImagePath = `/album-covers/${newImageName}`;
+    }
+
+    // Process MP3s
+    const destFolder = path.join(destAudioBase, actualFolderName);
+    if (!fs.existsSync(destFolder)) fs.mkdirSync(destFolder, { recursive: true });
+
+    const tracks = mp3Files.map((f, i) => {
+        fs.copyFileSync(path.join(trueSrcFolder, f), path.join(destFolder, f));
+
+        let cleanedTitle = f.replace(/\.mp3$/i, '').replace(/^\d+[\._-]?\s*/, '').replace(/_/g, ' ');
+        return {
+            id: `${albumId}-t${i + 1}`,
+            title: cleanedTitle,
+            url: `/mp3/${actualFolderName}/${f}`
+        };
+    });
+
+    albums.push({
+        id: albumId,
+        title: actualFolderName.split(' (')[0].split(' \u2013 ')[0],
+        artist: actualFolderName.includes('(') ? actualFolderName.split('(')[1].replace(')', '') : 'Traditional',
+        coverImage: coverImagePath, // Now properly linked
+        tracks: tracks
+    });
+});
+
+fs.writeFileSync(dataFile, JSON.stringify(albums, null, 4));
+console.log('Successfully built albums.json with 4 albums.');
+
