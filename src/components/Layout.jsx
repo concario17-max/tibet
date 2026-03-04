@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
+import GlobalPlayer from './GlobalPlayer';
 
 const Layout = ({ playbackRequest, setPlaybackRequest }) => {
     return (
@@ -10,6 +11,8 @@ const Layout = ({ playbackRequest, setPlaybackRequest }) => {
             <main className="flex-1 flex flex-col">
                 <Outlet context={{ setPlaybackRequest }} />
             </main>
+
+            <GlobalPlayer playbackRequest={playbackRequest} setPlaybackRequest={setPlaybackRequest} />
         </div>
     );
 };
