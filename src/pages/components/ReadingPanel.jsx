@@ -33,10 +33,14 @@ const ReadingPanel = ({ verse }) => {
 
                 {/* 챕터 네비게이션 브레드크럼 */}
                 <div className="flex flex-col items-center justify-center mb-2 pt-4">
-                    <nav className="flex items-center gap-2 text-[13px] text-text-secondary dark:text-dark-text-secondary font-inter mb-6">
-                        <span className="text-text-secondary dark:text-dark-text-secondary transition-colors cursor-default">Chapter {chapterStr}</span>
-                        <span>›</span>
-                        <span className="text-text-primary dark:text-dark-text-primary font-bold">Prayer {verseStr}</span>
+                    <nav className="flex items-center justify-center gap-3 text-lg sm:text-[22px] tracking-tight font-inter mb-12">
+                        <span className="text-text-secondary/80 dark:text-dark-text-secondary/80 font-medium transition-colors cursor-default">
+                            Chapter {chapterStr}
+                        </span>
+                        <span className="text-text-secondary/50 text-[15px] font-bold mt-0.5">›</span>
+                        <span className="text-text-primary dark:text-dark-text-primary font-bold">
+                            Sutra {chapterStr}-{verseStr}
+                        </span>
                     </nav>
 
                     {/* 고유 장식 아이콘 */}
