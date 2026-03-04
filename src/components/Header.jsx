@@ -9,8 +9,8 @@ const Header = () => {
     const location = useLocation();
 
     // UI 로직 안전 연동
-    const uiContext = useUI() || { toggleSidebar: () => { }, toggleReflections: () => { } };
-    const { toggleSidebar, toggleReflections } = uiContext;
+    const uiContext = useUI() || { toggleSidebar: () => { }, toggleReflections: () => { }, activeVerse: null };
+    const { toggleSidebar, toggleReflections, activeVerse } = uiContext;
 
     // Hide navigations on Chapter page for 3-Column focus
     const isChapter = location.pathname.includes('/chapter');
