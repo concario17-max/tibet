@@ -36,6 +36,7 @@ export default {
                 "crimson": ["Crimson Pro", "Noto Serif", "serif"],
                 "noto": ["Noto Serif", "serif"],
                 "noto-kr": ["Noto Serif KR", "serif"],
+                "korean": ["Pretendard Variable", "Pretendard", "-apple-system", "BlinkMacSystemFont", "system-ui", "Roboto", "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "sans-serif"],
                 "inter": ["Inter", "sans-serif"],
             },
             borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },

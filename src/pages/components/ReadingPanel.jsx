@@ -115,33 +115,14 @@ const ReadingPanel = ({ verse }) => {
                     {verse.text.korean && (
                         <div className="mb-8">
                             <h3 className="text-xs font-semibold uppercase tracking-widest text-gold-primary/70 dark:text-gold-light/60 text-center mb-4 font-inter">한글 (Korean)</h3>
-                            <p className="font-noto-kr text-base sm:text-lg leading-[2.2] text-text-primary dark:text-dark-text-primary min-h-[1.5em] text-center max-w-3xl mx-auto px-2 sm:px-0 whitespace-pre-line break-keep font-medium">
+                            <p className="font-korean text-base sm:text-[17px] leading-[1.8] text-text-primary dark:text-dark-text-primary min-h-[1.5em] text-center max-w-3xl mx-auto px-2 sm:px-0 whitespace-pre-line break-keep font-[400] tracking-[-0.01em]">
                                 {verse.text.korean}
                             </p>
                         </div>
                     )}
                 </section>
 
-                {/* 용어사전 UI 잔재 (선택적 유지) */}
-                <div className="mt-24 border-t border-gold-border/30 pt-16">
-                    <h3 className="font-crimson text-xl mb-6 text-text-primary dark:text-dark-text-primary text-center">Core Lexicon</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-                        <div className="p-5 border border-gold-border/50 rounded-xl bg-white/40 dark:bg-dark-surface/40 hover:border-gold-primary transition-colors cursor-pointer group backdrop-blur-sm shadow-sm">
-                            <div className="flex justify-between items-start mb-2">
-                                <h4 className="font-bold text-text-primary dark:text-dark-text-primary group-hover:text-gold-primary transition-colors">Bardo (바르도)</h4>
-                                <Bookmark size={16} className="text-text-secondary/50 group-hover:text-gold-primary transition-colors" />
-                            </div>
-                            <p className="text-[13px] text-text-secondary dark:text-dark-text-secondary leading-relaxed">죽음과 환생 사이의 중간계 상태.</p>
-                        </div>
-                        <div className="p-5 border border-gold-border/50 rounded-xl bg-white/40 dark:bg-dark-surface/40 hover:border-gold-primary transition-colors cursor-pointer group backdrop-blur-sm shadow-sm">
-                            <div className="flex justify-between items-start mb-2">
-                                <h4 className="font-bold text-text-primary dark:text-dark-text-primary group-hover:text-gold-primary transition-colors">Dharmakaya (법신)</h4>
-                                <Bookmark size={16} className="text-text-secondary/50 group-hover:text-gold-primary transition-colors" />
-                            </div>
-                            <p className="text-[13px] text-text-secondary dark:text-dark-text-secondary leading-relaxed">궁극적 실체의 비현현 상태, 붓다의 진리의 몸.</p>
-                        </div>
-                    </div>
-                </div>
+
 
             </div>
         </main>
