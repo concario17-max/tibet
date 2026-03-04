@@ -10,8 +10,8 @@ const Header = () => {
     const location = useLocation();
 
     // UI 로직 안전 연동
-    const uiContext = useUI() || { toggleSidebar: () => { }, toggleReflections: () => { }, activeVerse: null, setActiveVerse: () => { } };
-    const { toggleSidebar, toggleReflections, activeVerse, setActiveVerse } = uiContext;
+    const uiContext = useUI() || { toggleSidebar: () => { }, toggleReflections: () => { }, activeVerse: null, setActiveVerse: () => { }, setIsCompendiumOpen: () => { } };
+    const { toggleSidebar, toggleReflections, activeVerse, setActiveVerse, setIsCompendiumOpen } = uiContext;
 
     // 다크모드 컨텍스트 연동
     const themeContext = useTheme() || { theme: 'light', toggleTheme: () => { } };
@@ -73,9 +73,9 @@ const Header = () => {
             {/* 비 챕터 페이지: 중앙 네비게이션 */}
             {!isChapter && (
                 <nav className="flex items-center justify-center w-full mt-2">
-                    <Link to="/chapter" className="nav-divider text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary">
+                    <button onClick={() => setIsCompendiumOpen(true)} className="nav-divider text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary">
                         Compendium
-                    </Link>
+                    </button>
                     <Link to="/album" className="nav-divider text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary relative group flex items-center gap-2">
                         <span className="text-gold-primary tracking-widest text-xs font-medium uppercase mt-[2px] opacity-0 group-hover:opacity-100 transition-opacity absolute -left-6">✧</span>
                         Chants

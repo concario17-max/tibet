@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import GlobalPlayer from './GlobalPlayer';
+import CompendiumModal from './CompendiumModal';
 
 const Layout = ({ playbackRequest, setPlaybackRequest }) => {
     return (
@@ -13,6 +14,7 @@ const Layout = ({ playbackRequest, setPlaybackRequest }) => {
             </main>
 
             <GlobalPlayer playbackRequest={playbackRequest} setPlaybackRequest={setPlaybackRequest} />
+            <CompendiumModal />
         </div>
     );
 };

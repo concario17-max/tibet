@@ -7,6 +7,8 @@ export const UIProvider = ({ children }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     // 리플렉션(우측 패널) 상태 제어
     const [isReflectionsOpen, setIsReflectionsOpen] = useState(false);
+    // 컴펜디움(안내서) 모달 상태 제어
+    const [isCompendiumOpen, setIsCompendiumOpen] = useState(false);
 
     // 글로벌 구절(Sutra) 정보 공유 스테이트
     const [activeVerse, setActiveVerse] = useState(null);
@@ -28,11 +30,13 @@ export const UIProvider = ({ children }) => {
         toggleSidebar,
         isReflectionsOpen,
         setIsReflectionsOpen,
+        isCompendiumOpen,
+        setIsCompendiumOpen,
         toggleReflections,
         closeAllDrawers,
         activeVerse,
         setActiveVerse
-    }), [isSidebarOpen, isReflectionsOpen, toggleSidebar, toggleReflections, closeAllDrawers, activeVerse]);
+    }), [isSidebarOpen, isReflectionsOpen, isCompendiumOpen, toggleSidebar, toggleReflections, closeAllDrawers, activeVerse]);
 
     return (
         <UIContext.Provider value={providerValue}>
