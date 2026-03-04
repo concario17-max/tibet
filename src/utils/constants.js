@@ -67,5 +67,29 @@ export const ALBUMS = [
         tracks: [
             { id: 'lc-t1', title: "Songs Of Awakening (Full Album)", url: "/mp3/The Lama's Chant Songs of Awakening (Lama Gyurme)/Lama Gyurme & Jean Philippe Rykiel – The Lama's Chant - Songs Of Awakening (Full Album) (1994).mp3" }
         ]
+    },
+    {
+        id: 'album-02',
+        title: 'Tibetan Buddhist Rites Volume 2',
+        artist: 'Sacred Dances And Rituals',
+        description: 'Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders',
+        tracks: [
+            { id: 'tbr-1', title: 'Entreaty To The Three Buddha-Bodies', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/01_Entreaty_To_The_Three_Buddha-Bodies.mp3' },
+            { id: 'tbr-2', title: 'Invitation To Padma Sambhava', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/02_Invitation_To_Padma_Sambhava.mp3' },
+            { id: 'tbr-3', title: 'Rise Up Padma', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/03_Rise_Up_Padma.mp3' },
+            { id: 'tbr-4', title: 'Words Of Prayer', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/04_Words_Of_Prayer.mp3' },
+            { id: 'tbr-5', title: 'Tibetan Shawms', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/05_Tibetan_Shawms.mp3' },
+            { id: 'tbr-6', title: 'Myule Drelwa And Kulwa', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/06_Myule_Drelwa_And_Kulwa.mp3' },
+            { id: 'tbr-7', title: 'Part Of Junbeb', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/07_Part_Of_Junbeb.mp3' },
+            { id: 'tbr-8', title: 'Monks In Procession Thimphu', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/08_Monks_In_Procession_Thimphu.mp3' },
+            { id: 'tbr-9', title: 'Dramnyen Choshe Song Of Offering', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/09_Dramnyen_Choshe_Song_Of_Offering.mp3' },
+            { id: 'tbr-10', title: 'Monks Clown Crowds 1', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/11_Monks_Clown_Crowds_1.mp3' },
+            { id: 'tbr-11', title: 'End Of Festival', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/14_End_Of_Festival.mp3' },
+            { id: 'tbr-12', title: 'Wandering Ascetic', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/15_Wandering_Ascetic.mp3' },
+            { id: 'tbr-13', title: 'Cymbals Silnyen Solo', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/17_Cymbals_Silnyen_Solo.mp3' },
+            { id: 'tbr-14', title: 'Cross-Flute Zurlim', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/18_Cross-Flute_Zurlim.mp3' },
+            { id: 'tbr-15', title: 'Another Manip Milarepa', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/19_Another_Manip_Milarepa.mp3' },
+            { id: 'tbr-16', title: 'First Manip Storyteller', url: '/mp3/Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2 Sacred Dances And Rituals Of The Nyingmapa And Drukpa Orders/20_First_Manip_Storyteller.mp3' }
+        ]
     }
 ];
