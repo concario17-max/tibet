@@ -52,7 +52,13 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                             return (
                                 <button
                                     key={prayer.id}
-                                    onClick={() => toggleChapter(prayer.id)}
+                                    onClick={() => {
+                                        toggleChapter(prayer.id);
+                                        // 챕터 클릭 시 해당 챕터의 첫 번째 구절로 자동 이동
+                                        if (prayer.verses && prayer.verses.length > 0) {
+                                            if (onSelectVerse) onSelectVerse(prayer.verses[0]);
+                                        }
+                                    }}
                                     className={`w-full flex items-start justify-between gap-2 px-3 py-3 rounded-xl text-left transition-colors ${isExpanded
                                         ? 'bg-white/60 dark:bg-dark-bg/60 shadow-sm border border-gold-primary/20 text-[#1C2B36] dark:text-gold-light'
                                         : 'text-[#5B7282] dark:text-dark-text-secondary hover:bg-gold-surface/40 dark:hover:bg-dark-bg/40 border border-transparent'

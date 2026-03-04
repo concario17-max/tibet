@@ -68,13 +68,6 @@ const Header = () => {
                         The Bardo Thodol
                     </span>
                 </Link>
-                {isChapter && (
-                    <button className="ml-4 p-1.5 rounded-full hover:bg-black/5 transition-colors hidden sm:block">
-                        <svg className="w-5 h-5 text-gold-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                        </svg>
-                    </button>
-                )}
             </div>
 
             {/* 비 챕터 페이지: 중앙 네비게이션 */}
