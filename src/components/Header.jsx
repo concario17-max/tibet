@@ -72,16 +72,16 @@ const Header = () => {
 
             {/* 비 챕터 페이지: 중앙 네비게이션 */}
             {!isChapter && (
-                <nav className="flex items-center justify-center w-full mt-2">
-                    <button onClick={() => setIsCompendiumOpen(true)} className="nav-divider text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary">
+                <nav className="flex flex-wrap items-center justify-center w-full mt-2 gap-y-2">
+                    <button onClick={() => setIsCompendiumOpen(true)} className="nav-divider text-[11px] sm:text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary px-2 sm:px-0">
                         Compendium
                     </button>
-                    <Link to="/album" className="nav-divider text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary relative group flex items-center gap-2">
-                        <span className="text-gold-primary tracking-widest text-xs font-medium uppercase mt-[2px] opacity-0 group-hover:opacity-100 transition-opacity absolute -left-6">✧</span>
+                    <Link to="/album" className="nav-divider text-[11px] sm:text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary relative group flex items-center gap-2 px-2 sm:px-0">
+                        <span className="text-gold-primary tracking-widest text-[9px] sm:text-xs font-medium uppercase mt-[2px] opacity-0 group-hover:opacity-100 transition-opacity absolute -left-4 sm:-left-6">✧</span>
                         Chants
                         <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                    <button onClick={() => setIsCommentariesOpen(true)} className="nav-divider text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary">
+                    <button onClick={() => setIsCommentariesOpen(true)} className="nav-divider text-[11px] sm:text-sm font-medium tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-main dark:text-dark-text-primary px-2 sm:px-0 border-r-0">
                         Commentaries
                     </button>
                 </nav>

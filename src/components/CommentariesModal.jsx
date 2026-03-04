@@ -103,7 +103,7 @@ const CommentariesModal = () => {
                     />
 
                     {/* Modal Content */}
-                    <div className="fixed inset-0 z-[101] flex items-center justify-center p-4 sm:p-6 pointer-events-none">
+                    <div className="fixed inset-0 z-[101] flex items-center justify-center p-3 sm:p-6 pointer-events-none">
                         <motion.div
                             initial={{ y: 20, opacity: 0, scale: 0.95 }}
                             animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -112,8 +112,8 @@ const CommentariesModal = () => {
                             className="bg-sand-primary w-full max-w-4xl max-h-[90vh] rounded-xl shadow-2xl flex flex-col pointer-events-auto border border-gold-primary/20 overflow-hidden"
                         >
                             {/* Header */}
-                            <div className="flex justify-between items-center px-8 py-6 border-b border-sand-tertiary bg-[#fdfaf6] shrink-0">
-                                <h2 className="serif-title text-2xl text-[#9A7B4F] font-medium tracking-wide">My Reflections</h2>
+                            <div className="flex justify-between items-center px-5 py-4 sm:px-8 sm:py-6 border-b border-sand-tertiary bg-[#fdfaf6] shrink-0">
+                                <h2 className="serif-title text-xl sm:text-2xl text-[#9A7B4F] font-medium tracking-wide">My Reflections</h2>
                                 <button
                                     onClick={() => setIsCommentariesOpen(false)}
                                     className="p-1 rounded-full text-charcoal-muted hover:text-charcoal-main hover:bg-sand-secondary transition-colors"
@@ -123,21 +123,21 @@ const CommentariesModal = () => {
                             </div>
 
                             {/* Body */}
-                            <div className="flex-1 overflow-y-auto p-8 custom-scrollbar bg-sand-secondary/30">
+                            <div className="flex-1 overflow-y-auto p-5 sm:p-8 custom-scrollbar bg-sand-secondary/30">
                                 {savedNotes.length === 0 ? (
-                                    <div className="flex flex-col items-center justify-center h-full text-charcoal-muted/50 space-y-4 py-20">
-                                        <Edit3 className="w-16 h-16 opacity-20" />
-                                        <p className="font-serif text-lg">아직 작성된 개인 코멘터리(Reflections)가 없습니다.</p>
-                                        <p className="text-sm font-sans">Chapter 페이지 우측 패널에서 구절에 대한 통찰을 기록해보세요.</p>
+                                    <div className="flex flex-col items-center justify-center h-full text-charcoal-muted/50 space-y-4 py-16 sm:py-20 text-center">
+                                        <Edit3 className="w-12 h-12 sm:w-16 sm:h-16 opacity-20" />
+                                        <p className="font-serif text-base sm:text-lg">아직 작성된 개인 코멘터리(Reflections)가 없습니다.</p>
+                                        <p className="text-xs sm:text-sm font-sans mx-4">Chapter 페이지 우측 패널에서 구절에 대한 통찰을 기록해보세요.</p>
                                     </div>
                                 ) : (
-                                    <div className="flex flex-col gap-6">
+                                    <div className="flex flex-col gap-4 sm:gap-6">
                                         {savedNotes.map((note) => (
                                             <div
                                                 key={note.id}
-                                                className="bg-white border text-charcoal-main border-sand-tertiary rounded-md p-6 shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col font-serif"
+                                                className="bg-white border text-charcoal-main border-sand-tertiary rounded-md p-5 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col font-serif"
                                             >
-                                                <div className="flex items-center gap-4 mb-5 pb-5 border-b border-sand-secondary relative">
+                                                <div className="flex flex-col sm:flex-row sm:items-center items-start gap-3 sm:gap-4 mb-4 sm:mb-5 pb-4 sm:pb-5 border-b border-sand-secondary relative">
                                                     <span className="bg-[#f2efe9] text-[#9A7B4F] text-[11px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shrink-0">
                                                         [{note.typeLabel}] {note.id}
                                                     </span>

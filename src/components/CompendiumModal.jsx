@@ -36,7 +36,7 @@ const CompendiumModal = () => {
                     />
 
                     {/* Modal Content */}
-                    <div className="fixed inset-0 z-[101] flex items-center justify-center p-4 sm:p-6 pointer-events-none">
+                    <div className="fixed inset-0 z-[101] flex items-center justify-center p-3 sm:p-6 pointer-events-none">
                         <motion.div
                             initial={{ y: 20, opacity: 0, scale: 0.95 }}
                             animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -45,7 +45,7 @@ const CompendiumModal = () => {
                             className="bg-sand-primary w-full max-w-2xl max-h-[90vh] rounded-xl shadow-2xl flex flex-col pointer-events-auto border border-gold-primary/20 overflow-hidden"
                         >
                             {/* Header */}
-                            <div className="flex justify-between items-center px-8 py-6 border-b border-sand-tertiary bg-white/50 shrink-0">
+                            <div className="flex justify-between items-center px-5 py-4 sm:px-8 sm:py-6 border-b border-sand-tertiary bg-white/50 shrink-0">
                                 <h2 className="serif-title text-2xl text-[#9A7B4F] font-medium tracking-wide">Compendium</h2>
                                 <button
                                     onClick={() => setIsCompendiumOpen(false)}
@@ -56,9 +56,9 @@ const CompendiumModal = () => {
                             </div>
 
                             {/* Body */}
-                            <div className="overflow-y-auto px-8 py-8 space-y-10 text-charcoal-main leading-relaxed font-sans scroll-smooth custom-scrollbar">
+                            <div className="overflow-y-auto px-5 py-6 sm:px-8 sm:py-8 space-y-8 sm:space-y-10 text-charcoal-main leading-relaxed font-sans scroll-smooth custom-scrollbar text-[14px] sm:text-[15px]">
 
-                                <div className="space-y-4">
+                                <div className="space-y-3 sm:space-y-4">
                                     <p className="font-medium">
                                         죽음은 멀리 있는 주제가 아니라, 우리가 살아가는 방식을 비추는 가장 선명한 거울일지 모릅니다.
                                     </p>
@@ -78,10 +78,10 @@ const CompendiumModal = () => {
                                     </p>
                                 </div>
 
-                                <div className="bg-sand-secondary/50 rounded-lg p-6 border-l-4 border-[#9A7B4F] space-y-4">
-                                    <h3 className="font-bold text-lg text-charcoal-main">이 사이트는 무엇을 돕나요?</h3>
+                                <div className="bg-sand-secondary/50 rounded-lg p-5 sm:p-6 border-l-4 border-[#9A7B4F] space-y-3 sm:space-y-4">
+                                    <h3 className="font-bold text-base sm:text-lg text-charcoal-main">이 사이트는 무엇을 돕나요?</h3>
                                     <p>목차는 단순해 보이지만, 핵심은 분명합니다.</p>
-                                    <ul className="space-y-2 list-disc pl-5 text-[15px]">
+                                    <ul className="space-y-2 list-disc pl-5 text-[14px] sm:text-[15px]">
                                         <li>앞부분의 예비기도는 도움과 지지를 청하며 마음의 방향을 세우는 준비 과정이고,</li>
                                         <li>중심부의 중간계 안내는 ‘죽음 이후의 길’을 실제적으로 조망하게 해주며,</li>
                                         <li>마지막의 핵심 논설은 <strong>“있는 그대로 봄”</strong>이라는 해탈의 열쇠를 깊이 다룹니다.</li>
