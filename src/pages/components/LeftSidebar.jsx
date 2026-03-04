@@ -60,7 +60,7 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                                 >
                                     <div className="flex-1 pr-2 flex flex-col gap-0.5">
                                         <span className={`text-[15px] leading-snug font-inter break-keep pl-1 ${isExpanded ? 'font-bold text-[#1C2B36]' : 'font-bold'}`}>
-                                            {prayer.id}. {prayer.chapterName}
+                                            {prayer.id.replace('prayer-', '')}. {prayer.chapterName}
                                         </span>
                                     </div>
                                     <span className={`shrink-0 mt-0.5 text-[#A68B5C] px-2 py-0.5 rounded text-xs font-bold ${isExpanded ? 'opacity-100' : 'opacity-70'}`}>
