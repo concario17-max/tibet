@@ -67,10 +67,19 @@ targetFolders.forEach((folderName, index) => {
         };
     });
 
+    // Find TXT description
+    const txtFiles = files.filter(f => f.toLowerCase().endsWith('.txt'));
+    let description = 'Sacred teachings and rituals from the Himalayas.'; // Default description
+    if (txtFiles.length > 0) {
+        const txtSourcePath = path.join(trueSrcFolder, txtFiles[0]);
+        description = fs.readFileSync(txtSourcePath, 'utf8').trim();
+    }
+
     albums.push({
         id: albumId,
         title: actualFolderName.split(' (')[0].split(' \u2013 ')[0],
         artist: actualFolderName.includes('(') ? actualFolderName.split('(')[1].replace(')', '') : 'Traditional',
+        description: description, // Added description field
         coverImage: coverImagePath, // Now properly linked
         tracks: tracks
     });
