@@ -29,13 +29,21 @@ const ReadingPanel = ({ verse, hideAudio = false }) => {
                 {/* 챕터 네비게이션 브레드크럼 */}
                 <div className="flex flex-col items-center justify-center mb-2 pt-4">
                     <nav className="flex items-center justify-center gap-2 text-[10px] sm:text-[11px] tracking-wider uppercase font-inter mb-10">
-                        <span className="text-text-secondary/80 dark:text-dark-text-secondary/80 font-medium transition-colors cursor-default">
-                            Chapter {chapterStr}
-                        </span>
-                        <span className="text-text-secondary/50 text-[8px] font-bold mt-0.5">›</span>
-                        <span className="text-text-primary dark:text-dark-text-primary font-bold">
-                            Sutra {chapterStr}-{verseStr}
-                        </span>
+                        {verseStr ? (
+                            <>
+                                <span className="text-text-secondary/80 dark:text-dark-text-secondary/80 font-medium transition-colors cursor-default">
+                                    Chapter {chapterStr}
+                                </span>
+                                <span className="text-text-secondary/50 text-[8px] font-bold mt-0.5">›</span>
+                                <span className="text-text-primary dark:text-dark-text-primary font-bold">
+                                    Sutra {chapterStr}-{verseStr}
+                                </span>
+                            </>
+                        ) : (
+                            <span className="text-text-secondary/80 dark:text-dark-text-secondary/80 font-bold max-w-full truncate text-center px-4 leading-relaxed">
+                                {verse.title}
+                            </span>
+                        )}
                     </nav>
 
                     {/* 고유 장식 아이콘 */}
