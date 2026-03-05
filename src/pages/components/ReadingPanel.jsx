@@ -53,24 +53,27 @@ const ReadingPanel = ({ verse, hideAudio = false }) => {
                 </div>
 
                 {/* 티벳어 (Sanskrit 대체) */}
-                <section className="mb-4 text-center px-2 sm:px-0 mt-8">
-                    {verse.text.tibetan && (
-                        <p className="font-noto text-[#1F2937] dark:text-[#E5E7EB] text-xl sm:text-3xl leading-[1.8] tracking-wide font-bold drop-shadow-sm break-keep">
-                            {verse.text.tibetan.replace(/[\r\n]+/g, ' ')}
-                        </p>
-                    )}
-                    {verse.text.pronunciation && (
-                        <p className="font-inter italic text-gold-muted/80 dark:text-gold-muted/80 text-sm sm:text-base leading-relaxed tracking-widest mt-6">
-                            {verse.text.pronunciation.split('\n').map((line, i) => (
-                                <React.Fragment key={i}>
-                                    {line}<br />
-                                </React.Fragment>
-                            ))}
-                        </p>
-                    )}
-                </section>
-
-                <div className="w-8 h-[1px] bg-gold-border/60 mx-auto my-8"></div>
+                {(verse.text.tibetan || verse.text.pronunciation) && (
+                    <>
+                        <section className="mb-4 text-center px-2 sm:px-0 mt-8">
+                            {verse.text.tibetan && (
+                                <p className="font-noto text-[#1F2937] dark:text-[#E5E7EB] text-xl sm:text-3xl leading-[1.8] tracking-wide font-bold drop-shadow-sm break-keep">
+                                    {verse.text.tibetan.replace(/[\r\n]+/g, ' ')}
+                                </p>
+                            )}
+                            {verse.text.pronunciation && (
+                                <p className="font-inter italic text-gold-muted/80 dark:text-gold-muted/80 text-sm sm:text-base leading-relaxed tracking-widest mt-6">
+                                    {verse.text.pronunciation.split('\n').map((line, i) => (
+                                        <React.Fragment key={i}>
+                                            {line}<br />
+                                        </React.Fragment>
+                                    ))}
+                                </p>
+                            )}
+                        </section>
+                        <div className="w-8 h-[1px] bg-gold-border/60 mx-auto my-8"></div>
+                    </>
+                )}
 
                 {/* 오디오 플레이어 (Gita 스타일 Pill 디자인 이식) */}
                 {!hideAudio && (

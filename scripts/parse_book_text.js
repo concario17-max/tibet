@@ -88,7 +88,7 @@ function parseCategories(ulNode, currentChapterObj) {
                             title: titlePreview,
                             chapterTitle: enText, // Use the full english as requested
                             text: {
-                                tibetan: paragraphs[i].text.english || "",
+                                tibetan: "",
                                 english: paragraphs[i].text.english || "",
                                 korean: [{
                                     translator: "정창영",
