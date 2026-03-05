@@ -3,9 +3,11 @@ import { JSDOM } from 'jsdom';
 
 const html1 = fs.readFileSync('../book/1.html', 'utf8');
 const html2 = fs.readFileSync('../book/2.html', 'utf8');
+const html3 = fs.readFileSync('../book/3.html', 'utf8');
 
 const doc1 = new JSDOM(html1).window.document;
 const doc2 = new JSDOM(html2).window.document;
+const doc3 = new JSDOM(html3).window.document;
 
 const paragraphs = {};
 let currentP = null;
@@ -16,7 +18,7 @@ doc2.body.childNodes.forEach(node => {
         const match = text.match(/\[문단 (\d+)\]/i);
         if (match) {
             currentP = parseInt(match[1]);
-            paragraphs[currentP] = { id: currentP.toString(), text: {} };
+            if (!paragraphs[currentP]) paragraphs[currentP] = { id: currentP.toString(), text: {} };
         }
     } else if (node.tagName === 'UL' && currentP) {
         node.childNodes.forEach(li => {
@@ -33,6 +35,38 @@ doc2.body.childNodes.forEach(node => {
                     temp.innerHTML = koMatch[1];
                     paragraphs[currentP].text.korean = temp.textContent.trim();
                 }
+            }
+        });
+    }
+});
+
+let currentP3 = null;
+doc3.body.childNodes.forEach(node => {
+    if (node.tagName === 'P') {
+        const text = node.textContent.trim();
+        const match = text.match(/\[문단 (\d+)\](.*)/i);
+        if (match) {
+            currentP3 = parseInt(match[1]);
+            const content = match[2].trim();
+            if (!paragraphs[currentP3]) paragraphs[currentP3] = { id: currentP3.toString(), text: {} };
+
+            // Extract strong tags or formatting if there is any, otherwise text
+            const temp = doc3.createElement('div');
+            temp.innerHTML = node.innerHTML.replace(/<strong>\[문단 \d+\]<\/strong>/i, '').replace(/\[문단 \d+\]/i, '').trim();
+
+            // Append if there's multiple paragraphs for the same verse in 3.html
+            const existingText = paragraphs[currentP3].text.korean2 || '';
+            paragraphs[currentP3].text.korean2 = existingText ? existingText + '\n\n' + temp.textContent.trim() : temp.textContent.trim();
+        } else if (currentP3 && !text.includes('다음') && !text.includes('진행') && text.length > 5) {
+            const temp = doc3.createElement('div');
+            temp.innerHTML = node.innerHTML;
+            const content = temp.textContent.trim();
+            paragraphs[currentP3].text.korean2 += '\n\n' + content;
+        }
+    } else if (node.tagName === 'OL' && currentP3) {
+        node.childNodes.forEach(li => {
+            if (li.tagName === 'LI') {
+                paragraphs[currentP3].text.korean2 += '\n\n' + li.textContent.trim();
             }
         });
     }
@@ -128,6 +162,18 @@ function parseCategories(ulNode, currentChapterObj) {
                     if (paragraphs[i]) {
                         const enText = paragraphs[i].text.english || '';
                         let titlePreview = enText.substring(0, 45) + (enText.length > 45 ? '...' : '');
+                        let koreanTranslators = [{
+                            translator: "정창영",
+                            text: paragraphs[i].text.korean || ""
+                        }];
+
+                        if (paragraphs[i].text.korean2) {
+                            koreanTranslators.push({
+                                translator: "중암 선혜",
+                                text: paragraphs[i].text.korean2
+                            });
+                        }
+
                         chap.verses.push({
                             id: i.toString(),
                             title: titlePreview,
@@ -135,11 +181,8 @@ function parseCategories(ulNode, currentChapterObj) {
                             text: {
                                 tibetan: "",
                                 english: paragraphs[i].text.english || "",
-                                korean: [{
-                                    translator: "정창영",
-                                    text: paragraphs[i].text.korean || ""
-                                }]
-                            },
+                                korean: koreanTranslators
+                            }
                         });
                     }
                 }
