@@ -17,18 +17,13 @@ const ReadingPanel = ({ verse }) => {
         return verse.audioUrl ? [{ id: verse.id, title: verse.title, url: verse.audioUrl }] : [];
     }, [verse.id, verse.title, verse.audioUrl]);
 
-    const { isPlaying, progress, togglePlay, playTrack, seek } = useAudioPlayer(audioPlaylist);
-
-    // ... (rest remains same but replacing the previous audioPlaylist initialization and function)
-
-    // UI 업데이트용 내부 시간 상태
-    const [currentTime, setCurrentTime] = useState(0);
+    const { isPlaying, progress, currentTime, duration, togglePlay, playTrack, seek } = useAudioPlayer(audioPlaylist);
 
     // 장과 구절 번호 파싱
     const [chapterStr, verseStr] = verse.id.split('.');
 
     return (
-        <main className="flex-1 min-w-0 bg-transparent font-crimson text-text-primary dark:text-dark-text-primary transition-colors duration-500 overflow-y-auto scrollbar-hide relative z-10 pt-24 sm:pt-[100px] pb-24">
+        <main className="flex-1 min-w-0 bg-transparent font-crimson text-text-primary dark:text-dark-text-primary transition-colors duration-500 overflow-y-auto scrollbar-hide relative z-10 pt-24 sm:pt-[100px] pb-48 sm:pb-32">
             <div className="mx-auto max-w-[1000px] px-4 sm:px-6">
 
                 {/* 챕터 네비게이션 브레드크럼 */}
@@ -80,8 +75,8 @@ const ReadingPanel = ({ verse }) => {
                             {isPlaying ? <Pause className="w-4 h-4 fill-current" /> : <Play className="w-4 h-4 fill-current ml-0.5" />}
                         </button>
 
-                        <span className="text-[10px] text-text-secondary/50 font-inter font-bold tracking-widest tabular-nums ml-4">
-                            0:00
+                        <span className="text-[10px] text-text-secondary/50 font-inter font-bold tracking-widest tabular-nums ml-4 w-8 text-right">
+                            {formatTime(currentTime)}
                         </span>
 
                         <div className="relative flex-1 mx-4 h-[2px] bg-gold-border/30 dark:bg-dark-border rounded-full cursor-pointer group"
@@ -101,8 +96,8 @@ const ReadingPanel = ({ verse }) => {
                             ></div>
                         </div>
 
-                        <span className="text-[10px] text-text-secondary/50 font-inter font-bold tracking-widest tabular-nums">
-                            --:--
+                        <span className="text-[10px] text-text-secondary/50 font-inter font-bold tracking-widest tabular-nums w-8">
+                            {formatTime(duration)}
                         </span>
                     </div>
                 </div>

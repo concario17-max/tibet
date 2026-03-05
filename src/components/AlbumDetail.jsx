@@ -72,7 +72,7 @@ const AlbumDetail = ({ album, isOpen, onClose, onPlayTrack }) => {
                         </div>
 
                         {/* Tracklist Area */}
-                        <div className="flex-1 overflow-y-auto px-6 md:px-12 py-6 md:py-8 pb-32">
+                        <div className="flex-1 overflow-y-auto px-6 md:px-12 py-6 md:py-8 pb-48 md:pb-32">
                             <div className="max-w-3xl mx-auto space-y-6 md:space-y-8">
                                 <p className="text-charcoal-main/90 md:text-md font-sans font-medium leading-[1.8] tracking-[0.02em] whitespace-pre-line border-l-2 border-gold-primary/40 pl-5 md:pl-6 text-sm">
                                     {album.description}
