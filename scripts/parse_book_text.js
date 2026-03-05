@@ -25,9 +25,13 @@ doc2.body.childNodes.forEach(node => {
                 let enMatch = liHtml.match(/<strong>English:<\/strong>(.*)/);
                 let koMatch = liHtml.match(/<strong>Korean:<\/strong>(.*)/);
                 if (enMatch) {
-                    paragraphs[currentP].text.english = enMatch[1].replace(/<[^>]+>/g, '').trim();
+                    const temp = doc2.createElement('div');
+                    temp.innerHTML = enMatch[1];
+                    paragraphs[currentP].text.english = temp.textContent.trim();
                 } else if (koMatch) {
-                    paragraphs[currentP].text.korean = koMatch[1].replace(/<[^>]+>/g, '').trim();
+                    const temp = doc2.createElement('div');
+                    temp.innerHTML = koMatch[1];
+                    paragraphs[currentP].text.korean = temp.textContent.trim();
                 }
             }
         });
