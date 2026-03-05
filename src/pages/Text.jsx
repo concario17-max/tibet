@@ -8,8 +8,26 @@ const Text = () => {
     const [activeTextVerse, setActiveTextVerse] = useState(null);
 
     useEffect(() => {
-        if (!activeTextVerse) {
-            setActiveTextVerse(bookData[0].verses[0]);
+        if (!activeTextVerse && bookData && bookData.length > 0) {
+            let firstVerse = null;
+            // Iterate until we find the first verse
+            for (const item of bookData) {
+                if (item.verses && item.verses.length > 0) {
+                    firstVerse = item.verses[0];
+                    break;
+                } else if (item.isGroup && item.subchapters && item.subchapters.length > 0) {
+                    for (const sub of item.subchapters) {
+                        if (sub.verses && sub.verses.length > 0) {
+                            firstVerse = sub.verses[0];
+                            break;
+                        }
+                    }
+                }
+                if (firstVerse) break;
+            }
+            if (firstVerse) {
+                setActiveTextVerse(firstVerse);
+            }
         }
     }, [activeTextVerse]);
 
