@@ -21,8 +21,8 @@ const Album = () => {
     }, [viewingAlbum, setPlaybackRequest]);
 
     return (
-        <div className="flex flex-col min-h-screen pt-32 pb-20 bg-sand-primary">
-            <section id="gallery" className="py-20 px-8 relative flex-1">
+        <div className="flex flex-col min-h-screen pb-20 bg-sand-primary">
+            <section id="gallery" className="pt-12 pb-20 px-8 relative flex-1">
                 <div className="absolute inset-0 bg-sand-primary pointer-events-none" />
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-primary/10 to-transparent pointer-events-none" />
 
