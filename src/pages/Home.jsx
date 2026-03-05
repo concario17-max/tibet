@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useUI } from '../context/UIContext';
 
 const Home = () => {
+    const uiContext = useUI() || { setIsCompendiumOpen: () => { }, setIsCommentariesOpen: () => { }, setIsLexiconOpen: () => { } };
+    const { setIsCompendiumOpen, setIsCommentariesOpen, setIsLexiconOpen } = uiContext;
+
     return (
         <div className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden py-8 px-4 md:px-6">
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544923246-77307dd654ca?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-10 scale-110" />
@@ -16,9 +20,21 @@ const Home = () => {
                         The Bardo <br /> <span className="gold-gradient-text italic font-medium">Thodol</span>
                     </h1>
                     <div className="w-12 h-px bg-gold-primary/30 mx-auto" />
-                    <p className="text-charcoal-muted max-w-md mx-auto text-[10px] md:text-xs leading-loose font-bold tracking-widest uppercase">
-                        Liberation Through Hearing in the Intermediate State
-                    </p>
+                    <div className="flex flex-wrap items-center justify-center w-full gap-x-6 gap-y-3 pt-4">
+                        <button onClick={() => setIsCompendiumOpen(true)} className="text-[10px] md:text-xs font-bold tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-muted">
+                            Compendium
+                        </button>
+                        <span className="text-sand-tertiary text-xs">|</span>
+                        <button onClick={() => setIsLexiconOpen(true)} className="text-[10px] md:text-xs font-bold tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-muted relative group flex items-center">
+                            <span className="text-gold-primary tracking-widest text-[9px] md:text-[10px] font-medium uppercase mt-[1px] opacity-0 group-hover:opacity-100 transition-opacity absolute -left-3 md:-left-4">✧</span>
+                            Lexicon
+                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
+                        </button>
+                        <span className="text-sand-tertiary text-xs">|</span>
+                        <button onClick={() => setIsCommentariesOpen(true)} className="text-[10px] md:text-xs font-bold tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-muted">
+                            Commentaries
+                        </button>
+                    </div>
                 </div>
 
                 {/* Cards Section */}
