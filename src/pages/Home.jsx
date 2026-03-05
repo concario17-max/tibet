@@ -1,111 +1,171 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useUI } from '../context/UIContext';
+import { motion } from 'framer-motion';
 
 const Home = () => {
     const uiContext = useUI() || { setIsCompendiumOpen: () => { }, setIsCommentariesOpen: () => { }, setIsLexiconOpen: () => { } };
     const { setIsCompendiumOpen, setIsCommentariesOpen, setIsLexiconOpen } = uiContext;
 
+    const fadeUp = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.19, 1, 0.22, 1] } }
+    };
+
+    const staggerCards = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.15, delayChildren: 0.8 }
+        }
+    };
+
     return (
-        <div className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden py-8 px-4 md:px-6">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544923246-77307dd654ca?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-10 scale-110" />
-            <div className="absolute inset-0 bg-sand-primary mix-blend-multiply opacity-60" />
+        <div className="relative min-h-[100dvh] bg-[#050505] text-[#E5E5E5] flex flex-col items-center justify-center overflow-hidden selection:bg-gold-primary/30">
+            {/* Cinematic Background */}
+            <motion.div
+                initial={{ scale: 1.15, filter: 'blur(10px)', opacity: 0 }}
+                animate={{ scale: 1, filter: 'blur(0px)', opacity: 0.3 }}
+                transition={{ duration: 4, ease: "easeOut" }}
+                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544923246-77307dd654ca?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center grayscale mix-blend-luminosity"
+            />
+            {/* Moody Gradients */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/90 via-[#050505]/60 to-[#050505] z-0 pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(214,199,162,0.06)_0%,transparent_70%)] z-0 pointer-events-none" />
 
-            <div className="relative z-10 w-full max-w-5xl flex flex-col gap-8 md:gap-12 animate-in fade-in duration-1000 mt-2 md:mt-4">
+            {/* Floating Top Navigation */}
+            <motion.header
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, delay: 0.2 }}
+                className="absolute top-0 left-0 w-full z-50 px-6 sm:px-12 py-8 flex items-center justify-between"
+            >
+                <div className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-gold-primary text-xl">auto_stories</span>
+                    <span className="text-gold-primary/80 text-[9px] tracking-[0.4em] uppercase font-bold hidden sm:block">Tibetan Book of the Dead</span>
+                </div>
 
-                {/* Hero Section */}
-                <div className="text-center space-y-5 md:space-y-6">
-                    <div className="flex flex-col items-center">
-                        <span className="material-symbols-outlined text-gold-primary text-[40px]">auto_stories</span>
-                        <p className="text-gold-primary text-[10px] tracking-[1em] uppercase font-bold mt-1">Tibetan Book of the Dead</p>
-                    </div>
-                    <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-serif text-charcoal-main leading-[0.9] tracking-tighter uppercase font-extralight py-2">
-                        The Bardo <br /> <span className="gold-gradient-text italic font-medium tracking-normal pr-2">Thodol</span>
+                <nav className="flex items-center gap-6 sm:gap-10">
+                    {[
+                        { name: 'Compendium', action: () => setIsCompendiumOpen(true) },
+                        { name: 'Lexicon', action: () => setIsLexiconOpen(true) },
+                        { name: 'Commentaries', action: () => setIsCommentariesOpen(true) }
+                    ].map((item, i) => (
+                        <button
+                            key={i}
+                            onClick={item.action}
+                            className="group relative text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase text-white/60 hover:text-white transition-colors duration-300"
+                        >
+                            {item.name}
+                            <span className="absolute -bottom-1.5 left-0 w-0 h-[1px] bg-gold-primary transition-all duration-500 ease-out group-hover:w-full"></span>
+                        </button>
+                    ))}
+                </nav>
+            </motion.header>
+
+            {/* Main Hero Content */}
+            <main className="relative z-10 w-full max-w-7xl px-4 sm:px-8 flex flex-col items-center mt-16 sm:mt-12">
+
+                <motion.div
+                    initial="hidden" animate="visible" variants={fadeUp}
+                    className="flex flex-col items-center text-center space-y-4 mb-20 md:mb-32"
+                >
+                    <motion.span
+                        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 2 }}
+                        className="text-gold-primary/50 text-[10px] md:text-sm font-noto tracking-[0.5em] font-light mb-2"
+                    >
+                        བར་དོ་ཐོས་གྲོལ
+                    </motion.span>
+
+                    <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-serif text-white/95 leading-[0.9] tracking-tighter uppercase font-extralight drop-shadow-2xl">
+                        The Bardo <br />
+                        <span className="gold-gradient-text italic font-light tracking-normal pr-4 mix-blend-normal">Thodol</span>
                     </h1>
-                    <div className="w-12 h-px bg-gold-primary/30 mx-auto" />
-                    <div className="flex flex-wrap items-center justify-center w-full gap-x-6 gap-y-3 pt-4">
-                        <button onClick={() => setIsCompendiumOpen(true)} className="text-[10px] md:text-xs font-bold tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-muted">
-                            Compendium
-                        </button>
-                        <span className="text-sand-tertiary text-xs">|</span>
-                        <button onClick={() => setIsLexiconOpen(true)} className="text-[10px] md:text-xs font-bold tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-muted relative group flex items-center">
-                            <span className="text-gold-primary tracking-widest text-[9px] md:text-[10px] font-medium uppercase mt-[1px] opacity-0 group-hover:opacity-100 transition-opacity absolute -left-3 md:-left-4">✧</span>
-                            Lexicon
-                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold-primary transition-all duration-300 group-hover:w-full"></span>
-                        </button>
-                        <span className="text-sand-tertiary text-xs">|</span>
-                        <button onClick={() => setIsCommentariesOpen(true)} className="text-[10px] md:text-xs font-bold tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-muted">
-                            Commentaries
-                        </button>
-                    </div>
-                </div>
+                </motion.div>
 
-                {/* Cards Section */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6 w-full animate-in slide-in-from-bottom-8 fade-in duration-1000 delay-200 px-2 sm:px-0">
-                    {/* Card 1: Text */}
-                    <Link to="/text" className="group flex flex-col bg-white border border-sand-tertiary/60 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-gold-primary/10 transition-all duration-500 hover:-translate-y-1 relative before:absolute before:inset-0 before:border before:border-gold-primary/0 hover:before:border-gold-primary/20 before:transition-colors before:duration-500 before:z-10 before:rounded-xl">
-                        <div className="h-32 sm:h-36 md:h-48 overflow-hidden relative">
-                            <img alt="Bardo Text" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 ease-out" src="https://images.unsplash.com/photo-1510172951991-856a654063f9?q=80&w=600&auto=format&fit=crop" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
-                            <div className="absolute bottom-4 left-5 md:left-6 z-20">
-                                <span className="bg-sand-secondary border border-sand-tertiary text-charcoal-main text-[8px] sm:text-[9px] font-bold px-2.5 py-1 rounded uppercase tracking-[0.2em] shadow-sm backdrop-blur-sm bg-opacity-90">Main Text</span>
+                {/* Glassmorphism Cards Grid */}
+                <motion.div
+                    variants={staggerCards}
+                    initial="hidden"
+                    animate="visible"
+                    className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl"
+                >
+                    {/* Card 1 */}
+                    <motion.div variants={fadeUp} className="h-full">
+                        <Link to="/text" className="group relative flex flex-col h-[320px] sm:h-[420px] rounded-2xl overflow-hidden glass-panel premium-card isolation-auto bg-white/[0.01]">
+                            <div className="absolute inset-0 z-0">
+                                <img alt="Text" className="w-full h-full object-cover grayscale opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-all duration-1000 ease-out" src="https://images.unsplash.com/photo-1510172951991-856a654063f9?q=80&w=600&auto=format&fit=crop" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent" />
                             </div>
-                        </div>
-                        <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-1 bg-gradient-to-b from-white to-sand-primary z-20 relative">
-                            <div className="absolute top-0 right-6 w-12 h-[1px] bg-gradient-to-r from-transparent via-gold-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <h3 className="serif-title text-lg sm:text-xl md:text-2xl mb-2 text-charcoal-main group-hover:text-[#8C6D45] transition-colors duration-300">Text</h3>
-                            <p className="text-charcoal-muted text-[13px] sm:text-sm leading-relaxed mb-6 md:mb-8 flex-1 font-sans font-medium line-clamp-2">
-                                티벳 사자의 서 본문
-                            </p>
-                            <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] text-charcoal-main/60 group-hover:text-gold-primary transition-all duration-300 mt-auto w-fit group-hover:translate-x-1">
-                                Begin Reading <span className="material-symbols-outlined text-[13px] sm:text-[14px]">menu_book</span>
-                            </span>
-                        </div>
-                    </Link>
 
-                    {/* Card 2: Prayer */}
-                    <Link to="/chapter" className="group flex flex-col bg-white border border-sand-tertiary/60 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-gold-primary/10 transition-all duration-500 hover:-translate-y-1 relative before:absolute before:inset-0 before:border before:border-gold-primary/0 hover:before:border-gold-primary/20 before:transition-colors before:duration-500 before:z-10 before:rounded-xl">
-                        <div className="h-32 sm:h-36 md:h-48 overflow-hidden relative">
-                            <img alt="Bardo Prayers" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 ease-out" src="https://images.unsplash.com/photo-1600096582520-2dca1c37b38d?q=80&w=600&auto=format&fit=crop" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
-                            <div className="absolute bottom-4 left-5 md:left-6 z-20">
-                                <span className="bg-sand-secondary border border-sand-tertiary text-charcoal-main text-[8px] sm:text-[9px] font-bold px-2.5 py-1 rounded uppercase tracking-[0.2em] shadow-sm backdrop-blur-sm bg-opacity-90">Sacred Prayers</span>
-                            </div>
-                        </div>
-                        <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-1 bg-gradient-to-b from-white to-sand-primary z-20 relative">
-                            <div className="absolute top-0 right-6 w-12 h-[1px] bg-gradient-to-r from-transparent via-gold-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <h3 className="serif-title text-lg sm:text-xl md:text-2xl mb-2 text-charcoal-main group-hover:text-[#8C6D45] transition-colors duration-300">Prayer</h3>
-                            <p className="text-charcoal-muted text-[13px] sm:text-sm leading-relaxed mb-6 md:mb-8 flex-1 font-sans font-medium line-clamp-2">
-                                티벳 사자의 서 기도문
-                            </p>
-                            <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] text-charcoal-main/60 group-hover:text-gold-primary transition-all duration-300 mt-auto w-fit group-hover:translate-x-1">
-                                Begin Reading <span className="material-symbols-outlined text-[13px] sm:text-[14px]">menu_book</span>
-                            </span>
-                        </div>
-                    </Link>
+                            <div className="relative z-10 flex flex-col h-full p-6 md:p-8 justify-end">
+                                <span className="absolute top-6 left-6 text-gold-primary/80 text-[8px] font-bold tracking-[0.3em] uppercase">01 / Main Text</span>
 
-                    {/* Card 3: Chants */}
-                    <Link to="/album" className="group flex flex-col bg-white border border-sand-tertiary/60 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-gold-primary/10 transition-all duration-500 hover:-translate-y-1 relative before:absolute before:inset-0 before:border before:border-gold-primary/0 hover:before:border-gold-primary/20 before:transition-colors before:duration-500 before:z-10 before:rounded-xl">
-                        <div className="h-32 sm:h-36 md:h-48 overflow-hidden relative">
-                            <img alt="Bardo Chants" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 ease-out" src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=600&auto=format&fit=crop" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
-                            <div className="absolute bottom-4 left-5 md:left-6 z-20">
-                                <span className="bg-sand-secondary border border-sand-tertiary text-charcoal-main text-[8px] sm:text-[9px] font-bold px-2.5 py-1 rounded uppercase tracking-[0.2em] shadow-sm backdrop-blur-sm bg-opacity-90">Sacred Audio</span>
+                                <div className="w-8 h-[1px] bg-gold-primary/40 mb-4 transform origin-left group-hover:scale-x-150 transition-transform duration-500 ease-out" />
+                                <h3 className="serif-title text-2xl md:text-3xl text-white/90 group-hover:text-gold-light transition-colors duration-500 mb-2">The Text</h3>
+                                <p className="text-white/40 text-[13px] font-noto font-light group-hover:text-white/70 transition-colors duration-500 mb-6">
+                                    티벳 사자의 서 본문 탐독
+                                </p>
+
+                                <div className="flex items-center gap-3 overflow-hidden">
+                                    <span className="text-[9px] uppercase tracking-[0.2em] text-gold-primary font-bold group-hover:translate-x-2 transition-transform duration-500">Explore</span>
+                                    <span className="material-symbols-outlined text-[14px] text-gold-primary group-hover:translate-x-3 transition-transform duration-500 delay-75">arrow_right_alt</span>
+                                </div>
                             </div>
-                        </div>
-                        <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-1 bg-gradient-to-b from-white to-sand-primary z-20 relative">
-                            <div className="absolute top-0 right-6 w-12 h-[1px] bg-gradient-to-r from-transparent via-gold-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <h3 className="serif-title text-lg sm:text-xl md:text-2xl mb-2 text-charcoal-main group-hover:text-[#8C6D45] transition-colors duration-300">Chants</h3>
-                            <p className="text-charcoal-muted text-[13px] sm:text-sm leading-relaxed mb-6 md:mb-8 flex-1 font-sans font-medium line-clamp-2">
-                                티벳 음악 앨범
-                            </p>
-                            <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] text-charcoal-main/60 group-hover:text-gold-primary transition-all duration-300 mt-auto w-fit group-hover:translate-x-1">
-                                Listen Now <span className="material-symbols-outlined text-[13px] sm:text-[14px]">headphones</span>
-                            </span>
-                        </div>
-                    </Link>
-                </div>
-            </div>
+                        </Link>
+                    </motion.div>
+
+                    {/* Card 2 */}
+                    <motion.div variants={fadeUp} className="h-full">
+                        <Link to="/chapter" className="group relative flex flex-col h-[320px] sm:h-[420px] rounded-2xl overflow-hidden glass-panel premium-card isolation-auto bg-white/[0.01]">
+                            <div className="absolute inset-0 z-0">
+                                <img alt="Prayer" className="w-full h-full object-cover grayscale opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-all duration-1000 ease-out" src="https://images.unsplash.com/photo-1600096582520-2dca1c37b38d?q=80&w=600&auto=format&fit=crop" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent" />
+                            </div>
+
+                            <div className="relative z-10 flex flex-col h-full p-6 md:p-8 justify-end">
+                                <span className="absolute top-6 left-6 text-gold-primary/80 text-[8px] font-bold tracking-[0.3em] uppercase">02 / Sacred Prayers</span>
+
+                                <div className="w-8 h-[1px] bg-gold-primary/40 mb-4 transform origin-left group-hover:scale-x-150 transition-transform duration-500 ease-out" />
+                                <h3 className="serif-title text-2xl md:text-3xl text-white/90 group-hover:text-gold-light transition-colors duration-500 mb-2">The Prayer</h3>
+                                <p className="text-white/40 text-[13px] font-noto font-light group-hover:text-white/70 transition-colors duration-500 mb-6">
+                                    영혼을 달래는 성스러운 기도문
+                                </p>
+
+                                <div className="flex items-center gap-3 overflow-hidden">
+                                    <span className="text-[9px] uppercase tracking-[0.2em] text-gold-primary font-bold group-hover:translate-x-2 transition-transform duration-500">Discover</span>
+                                    <span className="material-symbols-outlined text-[14px] text-gold-primary group-hover:translate-x-3 transition-transform duration-500 delay-75">arrow_right_alt</span>
+                                </div>
+                            </div>
+                        </Link>
+                    </motion.div>
+
+                    {/* Card 3 */}
+                    <motion.div variants={fadeUp} className="h-full">
+                        <Link to="/album" className="group relative flex flex-col h-[320px] sm:h-[420px] rounded-2xl overflow-hidden glass-panel premium-card isolation-auto bg-white/[0.01]">
+                            <div className="absolute inset-0 z-0">
+                                <img alt="Chants" className="w-full h-full object-cover grayscale opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-all duration-1000 ease-out" src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=600&auto=format&fit=crop" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent" />
+                            </div>
+
+                            <div className="relative z-10 flex flex-col h-full p-6 md:p-8 justify-end">
+                                <span className="absolute top-6 left-6 text-gold-primary/80 text-[8px] font-bold tracking-[0.3em] uppercase">03 / Sonic Journey</span>
+
+                                <div className="w-8 h-[1px] bg-gold-primary/40 mb-4 transform origin-left group-hover:scale-x-150 transition-transform duration-500 ease-out" />
+                                <h3 className="serif-title text-2xl md:text-3xl text-white/90 group-hover:text-gold-light transition-colors duration-500 mb-2">The Chants</h3>
+                                <p className="text-white/40 text-[13px] font-noto font-light group-hover:text-white/70 transition-colors duration-500 mb-6">
+                                    티벳 전통 찬트와 소리의 파동
+                                </p>
+
+                                <div className="flex items-center gap-3 overflow-hidden">
+                                    <span className="text-[9px] uppercase tracking-[0.2em] text-gold-primary font-bold group-hover:translate-x-2 transition-transform duration-500">Listen</span>
+                                    <span className="material-symbols-outlined text-[14px] text-gold-primary group-hover:translate-x-3 transition-transform duration-500 delay-75">headphones</span>
+                                </div>
+                            </div>
+                        </Link>
+                    </motion.div>
+                </motion.div>
+            </main>
         </div>
     );
 };
