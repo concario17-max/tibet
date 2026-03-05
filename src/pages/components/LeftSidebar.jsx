@@ -47,8 +47,47 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                     </div>
                     <div className="py-2 px-3 space-y-1">
                         {prayers && prayers.map((prayer) => {
-                            const isExpanded = expandedChapter === prayer.id;
+                            if (prayer.isGroup) {
+                                return (
+                                    <div key={prayer.id} className="mb-4">
+                                        <div className="px-3 py-2 text-text-secondary dark:text-dark-text-secondary text-[14px] font-bold tracking-tight rounded-lg bg-gold-surface/20 dark:bg-dark-bg/20 uppercase">
+                                            {prayer.chapterName}
+                                        </div>
+                                        <div className="mt-1 space-y-0.5">
+                                            {prayer.subchapters.map(subGroup => {
+                                                const isExpanded = expandedChapter === subGroup.id;
+                                                return (
+                                                    <button
+                                                        key={subGroup.id}
+                                                        onClick={() => {
+                                                            toggleChapter(subGroup.id);
+                                                            if (subGroup.verses && subGroup.verses.length > 0) {
+                                                                if (onSelectVerse) onSelectVerse(subGroup.verses[0]);
+                                                            }
+                                                        }}
+                                                        className={`w-full flex items-start justify-between gap-2 px-3 py-2.5 rounded-xl text-left transition-colors pl-6 ${isExpanded
+                                                            ? 'bg-white/60 dark:bg-dark-bg/60 shadow-sm border border-gold-primary/20 text-[#1C2B36] dark:text-gold-light'
+                                                            : 'text-[#5B7282] dark:text-dark-text-secondary hover:bg-gold-surface/40 dark:hover:bg-dark-bg/40 border border-transparent'
+                                                            }`}
+                                                    >
+                                                        <div className="flex-1 pr-2 flex flex-col gap-0.5">
+                                                            <span className={`text-[13px] leading-snug font-inter break-keep ${isExpanded ? 'font-bold text-[#1C2B36]' : 'font-medium'}`}>
+                                                                {subGroup.chapterName}
+                                                            </span>
+                                                        </div>
+                                                        <span className={`shrink-0 mt-0.5 text-[#A68B5C] px-2 py-0.5 rounded text-[10px] font-bold ${isExpanded ? 'opacity-100' : 'opacity-70'}`}>
+                                                            {subGroup.verses.length}
+                                                        </span>
+                                                    </button>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
+                                );
+                            }
 
+                            // Original flat mapping for prayers
+                            const isExpanded = expandedChapter === prayer.id;
                             return (
                                 <button
                                     key={prayer.id}
@@ -81,8 +120,25 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                 {/* 하단: 구절(Verse) 목록 */}
                 <div className="flex-1 overflow-y-auto bg-transparent custom-scrollbar h-full">
                     <div className="py-2 px-3 space-y-0.5">
-                        {expandedChapter ? (
-                            prayers.find(p => p.id === expandedChapter)?.verses.map((verse) => {
+                        {expandedChapter ? (() => {
+                            let foundChapter = null;
+                            for (const prayer of prayers) {
+                                if (prayer.id === expandedChapter) {
+                                    foundChapter = prayer;
+                                    break;
+                                }
+                                if (prayer.isGroup && prayer.subchapters) {
+                                    const sub = prayer.subchapters.find(s => s.id === expandedChapter);
+                                    if (sub) {
+                                        foundChapter = sub;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (!foundChapter || !foundChapter.verses) return null;
+
+                            return foundChapter.verses.map((verse) => {
                                 const isActive = activeVerseId === verse.id;
 
                                 return (
@@ -105,8 +161,8 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                                         </span>
                                     </button>
                                 );
-                            })
-                        ) : (
+                            });
+                        })() : (
                             <div className="p-8 text-center text-text-secondary dark:text-dark-text-secondary text-sm">
                                 챕터를 선택해주세요
                             </div>
