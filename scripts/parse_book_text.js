@@ -38,8 +38,22 @@ doc2.body.childNodes.forEach(node => {
     }
 });
 
+const CUSTOM_CHAPTERS = [
+    "0. 듣고 이해함으로써 절대 자유에 이르는 위대한 가르침 배경 / 서론",
+    "1. 죽음 중간계 및 자애로운 모습의 붓다와 보살들이 나타나는 저승 중간계에 대한 해설 / 서론",
+    "1-1. 죽음 중간계에서 경험하는 투명한 빛 / 근원적인 투명한 빛에 대한 안내)",
+    "1-2. 길의 투명한 빛에 대한 안내 / 몸 밖에서 투명한 빛을 경험하는 중간계",
+    "1-3. 저승 중간계 길 안내",
+    "2. 무서운 모습의 붓다와 보살들이 나타나는 저승 중간계에 대한 해설 / 서론",
+    "2-1. 본론&결론",
+    "3. 탄생 중간계에 대한 해설 / 정신적인 몸에 대한 서론",
+    "3-1. 자궁으로 들어가는 것을 막음",
+    "3-2. 자궁을 선택하는 법",
+    "3-3. 결론"
+];
+
 const chapters = [];
-let chapterIdCounter = 1;
+let chapterIdCounter = -1;
 
 function parseCategories(ulNode, currentChapterObj) {
     if (!ulNode || ulNode.tagName !== 'UL') return;
@@ -56,22 +70,23 @@ function parseCategories(ulNode, currentChapterObj) {
             if (matchRange) {
                 const start = parseInt(matchRange[1]);
                 const end = parseInt(matchRange[2]);
-                const descStr = matchRange[3].trim();
+                chapterIdCounter++;
+                const actualChapterName = CUSTOM_CHAPTERS[chapterIdCounter] || currentChapterObj;
 
                 const chap = {
-                    id: `chapter-${chapterIdCounter++}`,
-                    chapterName: currentChapterObj ? currentChapterObj : descStr,
+                    id: `chapter-${chapterIdCounter}`,
+                    chapterName: actualChapterName,
                     verses: []
                 };
 
                 for (let i = start; i <= end; i++) {
                     if (paragraphs[i]) {
                         const enText = paragraphs[i].text.english || '';
-                        let titlePreview = enText.substring(0, 30) + '...';
+                        let titlePreview = enText.substring(0, 45) + (enText.length > 45 ? '...' : '');
                         chap.verses.push({
                             id: i.toString(),
-                            title: `${i}. ${titlePreview}`,
-                            chapterTitle: descStr,
+                            title: titlePreview,
+                            chapterTitle: enText, // Use the full english as requested
                             text: {
                                 tibetan: paragraphs[i].text.english || "",
                                 english: paragraphs[i].text.english || "",
@@ -87,7 +102,7 @@ function parseCategories(ulNode, currentChapterObj) {
                     chapters.push(chap);
                 }
             } else {
-                let cleanLabel = label.replace(/ \(.*/, '').trim(); // Remove parenthetical tags for chapterName
+                let cleanLabel = label.replace(/ \(.*/, '').trim();
                 if (cleanLabel.includes(':')) {
                     cleanLabel = cleanLabel.split(':')[1].trim();
                 }
