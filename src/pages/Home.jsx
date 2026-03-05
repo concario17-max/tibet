@@ -11,7 +11,7 @@ const Home = () => {
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544923246-77307dd654ca?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-10 scale-110" />
             <div className="absolute inset-0 bg-sand-primary mix-blend-multiply opacity-60" />
 
-            <div className="relative z-10 w-full max-w-5xl flex flex-col gap-8 md:gap-12 animate-in fade-in duration-1000 mt-12 md:mt-20">
+            <div className="relative z-10 w-full max-w-5xl flex flex-col gap-8 md:gap-12 animate-in fade-in duration-1000 mt-2 md:mt-4">
 
                 {/* Hero Section */}
                 <div className="text-center space-y-5 md:space-y-6">
