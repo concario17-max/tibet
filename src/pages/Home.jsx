@@ -92,9 +92,9 @@ const Home = () => {
                     {/* Card 1 */}
                     <motion.div variants={fadeUp} className="h-full">
                         <Link to="/text" className="group relative flex flex-col h-[320px] sm:h-[420px] rounded-xl overflow-hidden bg-white/60 border border-[#D6C7A2]/40 hover:border-[#B29A62]/60 hover:shadow-2xl hover:shadow-[#B29A62]/10 transition-all duration-700 ease-[0.19,1,0.22,1] hover:-translate-y-2 backdrop-blur-md">
-                            <div className="absolute inset-0 h-[55%] z-0 overflow-hidden bg-[#EFEBE0]">
-                                <img alt="Text" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=600&auto=format&fit=crop" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent" />
+                            <div className="absolute inset-0 h-[55%] z-0 overflow-hidden bg-[#F5F2EA] flex items-center justify-center">
+                                <span className="material-symbols-outlined text-8xl md:text-[100px] text-[#D6C7A2]/60 group-hover:text-[#B29A62]/80 transition-all duration-700 ease-out group-hover:scale-110 mb-8 pb-4">auto_stories</span>
+                                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/30 to-transparent pointer-events-none" />
                             </div>
 
                             <div className="relative z-10 flex flex-col h-full p-6 md:p-8 justify-end">
@@ -117,9 +117,9 @@ const Home = () => {
                     {/* Card 2 */}
                     <motion.div variants={fadeUp} className="h-full">
                         <Link to="/chapter" className="group relative flex flex-col h-[320px] sm:h-[420px] rounded-xl overflow-hidden bg-white/60 border border-[#D6C7A2]/40 hover:border-[#B29A62]/60 hover:shadow-2xl hover:shadow-[#B29A62]/10 transition-all duration-700 ease-[0.19,1,0.22,1] hover:-translate-y-2 backdrop-blur-md">
-                            <div className="absolute inset-0 h-[55%] z-0 overflow-hidden bg-[#EFEBE0]">
-                                <img alt="Prayer" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://images.unsplash.com/photo-1542601098-8fc114e148e2?q=80&w=600&auto=format&fit=crop" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent" />
+                            <div className="absolute inset-0 h-[55%] z-0 overflow-hidden bg-[#F5F2EA] flex items-center justify-center">
+                                <span className="material-symbols-outlined text-8xl md:text-[100px] text-[#D6C7A2]/60 group-hover:text-[#B29A62]/80 transition-all duration-700 ease-out group-hover:scale-110 mb-8 pb-4">self_improvement</span>
+                                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/30 to-transparent pointer-events-none" />
                             </div>
 
                             <div className="relative z-10 flex flex-col h-full p-6 md:p-8 justify-end">
@@ -142,9 +142,9 @@ const Home = () => {
                     {/* Card 3 */}
                     <motion.div variants={fadeUp} className="h-full">
                         <Link to="/album" className="group relative flex flex-col h-[320px] sm:h-[420px] rounded-xl overflow-hidden bg-white/60 border border-[#D6C7A2]/40 hover:border-[#B29A62]/60 hover:shadow-2xl hover:shadow-[#B29A62]/10 transition-all duration-700 ease-[0.19,1,0.22,1] hover:-translate-y-2 backdrop-blur-md">
-                            <div className="absolute inset-0 h-[55%] z-0 overflow-hidden bg-[#EFEBE0]">
-                                <img alt="Chants" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=600&auto=format&fit=crop" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent" />
+                            <div className="absolute inset-0 h-[55%] z-0 overflow-hidden bg-[#F5F2EA] flex items-center justify-center">
+                                <span className="material-symbols-outlined text-8xl md:text-[100px] text-[#D6C7A2]/60 group-hover:text-[#B29A62]/80 transition-all duration-700 ease-out group-hover:scale-110 mb-8 pb-4">graphic_eq</span>
+                                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/30 to-transparent pointer-events-none" />
                             </div>
 
                             <div className="relative z-10 flex flex-col h-full p-6 md:p-8 justify-end">
