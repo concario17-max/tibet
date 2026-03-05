@@ -35,7 +35,7 @@ const Home = () => {
             {/* Header removed as per user request */}
 
             {/* Main Hero Content */}
-            <main className="relative z-10 w-full max-w-7xl px-4 sm:px-8 flex flex-col items-center mt-12 sm:mt-8">
+            <main className="relative z-10 w-full max-w-7xl px-4 sm:px-8 flex flex-col items-center mt-12 sm:mt-8 pb-16 md:pb-24">
 
                 <motion.div
                     initial="hidden" animate="visible" variants={fadeUp}
@@ -48,7 +48,7 @@ const Home = () => {
                         བར་དོ་ཐོས་གྲོལ
                     </motion.span>
 
-                    <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] font-serif text-[#1A1A1A] leading-[0.9] tracking-tight uppercase font-light">
+                    <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[7rem] font-serif text-[#1A1A1A] leading-[0.9] tracking-tight uppercase font-light">
                         The Bardo <br />
                         <span className="gold-gradient-text italic font-medium tracking-normal pr-4">Thodol</span>
                     </h1>
