@@ -81,7 +81,13 @@ const parseFile = (fileName) => {
 files.forEach(file => {
     const sections = parseFile(file);
     if (sections) {
-        // Remove the specific mp3 paths for File 3 since they do not exist
+        // Add specific mp3 paths for File 3
+        if (file === '3.txt') {
+            sections.forEach((sec, idx) => {
+                const num = sec.id.split('.')[1];
+                sec.audioUrl = `/mp3/Prayer/3-${num}.mp3`;
+            });
+        }
         results.push({
             id: 'prayer-' + file.replace('.txt', ''),
             chapterName: titleMap[file] || `Prayer ${file.replace('.txt', '')}`,
@@ -99,7 +105,7 @@ files.forEach(file => {
                         english: s.english.join('\n'),
                         korean: s.korean.join('\n')
                     },
-                    audioUrl: null // Default to null for now
+                    audioUrl: s.audioUrl || null
                 };
             })
         });
