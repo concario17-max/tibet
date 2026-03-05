@@ -32,42 +32,14 @@ const Home = () => {
             {/* Soft Gradients */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#F7F5F0]/90 via-[#F7F5F0]/60 to-[#F7F5F0] z-0 pointer-events-none" />
 
-            {/* Floating Top Navigation */}
-            <motion.header
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, delay: 0.2 }}
-                className="absolute top-0 left-0 w-full z-50 px-6 sm:px-12 py-8 flex items-center justify-between"
-            >
-                <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-[#B29A62] text-xl">auto_stories</span>
-                    <span className="text-[#B29A62]/90 text-[9px] tracking-[0.4em] uppercase font-bold hidden sm:block">Tibetan Book of the Dead</span>
-                </div>
-
-                <nav className="flex items-center gap-6 sm:gap-10">
-                    {[
-                        { name: 'Compendium', action: () => setIsCompendiumOpen(true) },
-                        { name: 'Lexicon', action: () => setIsLexiconOpen(true) },
-                        { name: 'Commentaries', action: () => setIsCommentariesOpen(true) }
-                    ].map((item, i) => (
-                        <button
-                            key={i}
-                            onClick={item.action}
-                            className="group relative text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase text-[#1A1A1A]/60 hover:text-[#B29A62] transition-colors duration-300"
-                        >
-                            {item.name}
-                            <span className="absolute -bottom-1.5 left-0 w-0 h-[1px] bg-[#B29A62] transition-all duration-500 ease-out group-hover:w-full"></span>
-                        </button>
-                    ))}
-                </nav>
-            </motion.header>
+            {/* Header removed as per user request */}
 
             {/* Main Hero Content */}
             <main className="relative z-10 w-full max-w-7xl px-4 sm:px-8 flex flex-col items-center mt-12 sm:mt-8">
 
                 <motion.div
                     initial="hidden" animate="visible" variants={fadeUp}
-                    className="flex flex-col items-center text-center space-y-4 mb-20 md:mb-32"
+                    className="flex flex-col items-center text-center space-y-4 mb-16 md:mb-24"
                 >
                     <motion.span
                         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 2 }}
@@ -81,6 +53,28 @@ const Home = () => {
                         <span className="gold-gradient-text italic font-medium tracking-normal pr-4">Thodol</span>
                     </h1>
                 </motion.div>
+
+                {/* Prominent Navigation Links */}
+                <motion.nav
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 1 }}
+                    className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 mb-20 md:mb-28 z-20 relative"
+                >
+                    {[
+                        { name: 'Compendium', action: () => setIsCompendiumOpen(true) },
+                        { name: 'Lexicon', action: () => setIsLexiconOpen(true) },
+                        { name: 'Commentaries', action: () => setIsCommentariesOpen(true) }
+                    ].map((item, i) => (
+                        <button
+                            key={i}
+                            onClick={item.action}
+                            className="px-6 py-2.5 rounded-full border border-[#D6C7A2]/60 bg-white/40 backdrop-blur-md text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-[#1A1A1A]/70 hover:text-white hover:bg-[#B29A62] hover:border-[#B29A62] hover:shadow-lg hover:shadow-[#B29A62]/20 transition-all duration-500"
+                        >
+                            {item.name}
+                        </button>
+                    ))}
+                </motion.nav>
 
                 {/* Elegant Cards Grid */}
                 <motion.div
