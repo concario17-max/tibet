@@ -93,7 +93,7 @@ const Home = () => {
                     <motion.div variants={fadeUp} className="h-full">
                         <Link to="/text" className="group relative flex flex-col h-[320px] sm:h-[420px] rounded-xl overflow-hidden bg-white/60 border border-[#D6C7A2]/40 hover:border-[#B29A62]/60 hover:shadow-2xl hover:shadow-[#B29A62]/10 transition-all duration-700 ease-[0.19,1,0.22,1] hover:-translate-y-2 backdrop-blur-md">
                             <div className="absolute inset-0 h-[55%] z-0 overflow-hidden bg-[#EFEBE0]">
-                                <img alt="Text" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://images.unsplash.com/photo-1544923246-77307dd654ca?q=80&w=600&auto=format&fit=crop" />
+                                <img alt="Text" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=600&auto=format&fit=crop" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent" />
                             </div>
 
@@ -143,7 +143,7 @@ const Home = () => {
                     <motion.div variants={fadeUp} className="h-full">
                         <Link to="/album" className="group relative flex flex-col h-[320px] sm:h-[420px] rounded-xl overflow-hidden bg-white/60 border border-[#D6C7A2]/40 hover:border-[#B29A62]/60 hover:shadow-2xl hover:shadow-[#B29A62]/10 transition-all duration-700 ease-[0.19,1,0.22,1] hover:-translate-y-2 backdrop-blur-md">
                             <div className="absolute inset-0 h-[55%] z-0 overflow-hidden bg-[#EFEBE0]">
-                                <img alt="Chants" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://images.unsplash.com/photo-1519794206461-ccf8fbce3e95?q=80&w=600&auto=format&fit=crop" />
+                                <img alt="Chants" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=600&auto=format&fit=crop" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent" />
                             </div>
 
