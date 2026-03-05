@@ -46,7 +46,9 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    if (isHome) return null;
+    const isAlbum = location.pathname.includes('/album');
+
+    if (isHome || isAlbum) return null;
 
     return (
         <header className={`fixed top-0 left-0 w-full z-50 px-4 sm:px-8 flex justify-between sm:justify-center text-center items-center transition-all duration-500 border-b border-sand-tertiary dark:border-dark-border/50 ${scrolled ? 'glass-panel py-2' : 'bg-transparent py-2 sm:py-3'} ${isChapter ? 'bg-white/80 dark:bg-[#070707]/80 backdrop-blur-md' : ''}`}>
