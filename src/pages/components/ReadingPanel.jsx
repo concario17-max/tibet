@@ -106,11 +106,6 @@ const ReadingPanel = ({ verse, hideAudio = false }) => {
 
                 {/* 번역 렌더링 영역 */}
                 <section className="mb-10">
-                    <div className="flex items-center justify-center mb-6">
-                        <span className="text-gold-muted/40 dark:text-gold-muted/30 tracking-[8px] text-xs">•••</span>
-                    </div>
-                    <h2 className="mb-8 text-sm font-semibold uppercase tracking-[0.2em] text-gold-muted dark:text-gold-muted text-center font-inter">Translation</h2>
-
                     {/* 영문 번역 */}
                     {verse.text.english && (
                         <div className="mb-12">
