@@ -8,6 +8,7 @@ import prayersData from '../data/prayers.json';
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
+    const isHome = location.pathname === '/';
 
     // UI 로직 안전 연동
     const uiContext = useUI() || { toggleSidebar: () => { }, toggleReflections: () => { }, activeVerse: null, setActiveVerse: () => { }, setIsCompendiumOpen: () => { }, setIsCommentariesOpen: () => { }, setIsLexiconOpen: () => { } };
@@ -44,6 +45,8 @@ const Header = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    if (isHome) return null;
 
     return (
         <header className={`fixed top-0 left-0 w-full z-50 px-4 sm:px-8 flex justify-between sm:justify-center text-center items-center transition-all duration-500 border-b border-sand-tertiary dark:border-dark-border/50 ${scrolled ? 'glass-panel py-2' : 'bg-transparent py-2 sm:py-3'} ${isChapter ? 'bg-white/80 dark:bg-[#070707]/80 backdrop-blur-md' : ''}`}>
