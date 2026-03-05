@@ -43,61 +43,64 @@ const Home = () => {
                 {/* Cards Section */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6 w-full animate-in slide-in-from-bottom-8 fade-in duration-1000 delay-200 px-2 sm:px-0">
                     {/* Card 1: Text */}
-                    <Link to="/text" className="group flex flex-col bg-white border border-sand-tertiary rounded-xl overflow-hidden hover:shadow-xl hover:shadow-gold-primary/5 transition-all duration-300">
-                        <div className="h-24 sm:h-28 md:h-36 overflow-hidden relative">
-                            <img alt="Bardo Text" className="w-full h-full object-cover grayscale opacity-70 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Y7NmlY5THPMAn6q5XlXTMvsGi0ziB5RAYRM84aZvtCsX3-iRr4bgq4wAzFkr0XrQ0pnJ2W7Qp8UURaR-HW-tn3x-63NaluE72eWAn91sBgrvtVjLqAyyfdPcphi-iPzOLQ-QZbJiqBDaW6-doxAwfH1VuC3ExCwwqogWeBykbLM3Wq3gW7JeiyqaIuSv8Fed4sUUnWSh5pALLw8Zx1M2UOlVg11SIBQAZP25QvI2vJsp9Yk5GRVVJzCZVOgG0_W0tDRy9IIcqOU" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent" />
-                            <div className="absolute bottom-3 left-4 md:left-6">
-                                <span className="bg-sand-secondary border border-sand-tertiary text-charcoal-main text-[8px] sm:text-[9px] font-bold px-2 py-1 rounded uppercase tracking-widest">Main Text</span>
+                    <Link to="/text" className="group flex flex-col bg-white border border-sand-tertiary/60 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-gold-primary/10 transition-all duration-500 hover:-translate-y-1 relative before:absolute before:inset-0 before:border before:border-gold-primary/0 hover:before:border-gold-primary/20 before:transition-colors before:duration-500 before:z-10 before:rounded-xl">
+                        <div className="h-32 sm:h-36 md:h-48 overflow-hidden relative">
+                            <img alt="Bardo Text" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Y7NmlY5THPMAn6q5XlXTMvsGi0ziB5RAYRM84aZvtCsX3-iRr4bgq4wAzFkr0XrQ0pnJ2W7Qp8UURaR-HW-tn3x-63NaluE72eWAn91sBgrvtVjLqAyyfdPcphi-iPzOLQ-QZbJiqBDaW6-doxAwfH1VuC3ExCwwqogWeBykbLM3Wq3gW7JeiyqaIuSv8Fed4sUUnWSh5pALLw8Zx1M2UOlVg11SIBQAZP25QvI2vJsp9Yk5GRVVJzCZVOgG0_W0tDRy9IIcqOU" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
+                            <div className="absolute bottom-4 left-5 md:left-6 z-20">
+                                <span className="bg-sand-secondary border border-sand-tertiary text-charcoal-main text-[8px] sm:text-[9px] font-bold px-2.5 py-1 rounded uppercase tracking-[0.2em] shadow-sm backdrop-blur-sm bg-opacity-90">Main Text</span>
                             </div>
                         </div>
-                        <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-1 bg-sand-primary">
-                            <h3 className="serif-title text-base sm:text-lg md:text-xl mb-1 sm:mb-2 text-charcoal-main">Text</h3>
-                            <p className="text-charcoal-main/80 text-[13px] sm:text-sm leading-relaxed mb-3 sm:mb-4 md:mb-6 flex-1 font-sans font-medium line-clamp-2 md:line-clamp-none">
+                        <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-1 bg-gradient-to-b from-white to-sand-primary z-20 relative">
+                            <div className="absolute top-0 right-6 w-12 h-[1px] bg-gradient-to-r from-transparent via-gold-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <h3 className="serif-title text-lg sm:text-xl md:text-2xl mb-2 text-charcoal-main group-hover:text-[#8C6D45] transition-colors duration-300">Text</h3>
+                            <p className="text-charcoal-muted text-[13px] sm:text-sm leading-relaxed mb-6 md:mb-8 flex-1 font-sans font-medium line-clamp-2">
                                 티벳 사자의 서 본문
                             </p>
-                            <span className="inline-flex items-center gap-2 text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-widest text-charcoal-main group-hover:text-gold-primary transition-colors mt-auto">
-                                Begin Reading <span className="material-symbols-outlined text-[11px] sm:text-[12px] md:text-sm">menu_book</span>
+                            <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] text-charcoal-main/60 group-hover:text-gold-primary transition-all duration-300 mt-auto w-fit group-hover:translate-x-1">
+                                Begin Reading <span className="material-symbols-outlined text-[13px] sm:text-[14px]">menu_book</span>
                             </span>
                         </div>
                     </Link>
 
                     {/* Card 2: Prayer */}
-                    <Link to="/chapter" className="group flex flex-col bg-white border border-sand-tertiary rounded-xl overflow-hidden hover:shadow-xl hover:shadow-gold-primary/5 transition-all duration-300">
-                        <div className="h-24 sm:h-28 md:h-36 overflow-hidden relative">
-                            <img alt="Bardo Prayers" className="w-full h-full object-cover grayscale opacity-70 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWbg_7hTWFFEfhkEbsBsQnn7JMqP0dSZVJyWdkmQpEMgAtemy_jGlEm9mcfALy-ZwawB_dUD4XhVEr6g1pzbftfikJwgVxz7bna8RISLycTld5_SIEG3N02V4I4wvt6WmHK9p31NSnUnbqBTqTxim1hs-nqG0Y_R2IMabApGI7CTGxbbKhgJZxEplageh2iXJbjExww9s3xQx8e4osiztcvxmL5WmINMtmHmBXPoFftsYtH6nyveELBW3oIOepWD7Q5AMovzrqkKY" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent" />
-                            <div className="absolute bottom-3 left-4 md:left-6">
-                                <span className="bg-sand-secondary border border-sand-tertiary text-charcoal-main text-[8px] sm:text-[9px] font-bold px-2 py-1 rounded uppercase tracking-widest">Sacred Prayers</span>
+                    <Link to="/chapter" className="group flex flex-col bg-white border border-sand-tertiary/60 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-gold-primary/10 transition-all duration-500 hover:-translate-y-1 relative before:absolute before:inset-0 before:border before:border-gold-primary/0 hover:before:border-gold-primary/20 before:transition-colors before:duration-500 before:z-10 before:rounded-xl">
+                        <div className="h-32 sm:h-36 md:h-48 overflow-hidden relative">
+                            <img alt="Bardo Prayers" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWbg_7hTWFFEfhkEbsBsQnn7JMqP0dSZVJyWdkmQpEMgAtemy_jGlEm9mcfALy-ZwawB_dUD4XhVEr6g1pzbftfikJwgVxz7bna8RISLycTld5_SIEG3N02V4I4wvt6WmHK9p31NSnUnbqBTqTxim1hs-nqG0Y_R2IMabApGI7CTGxbbKhgJZxEplageh2iXJbjExww9s3xQx8e4osiztcvxmL5WmINMtmHmBXPoFftsYtH6nyveELBW3oIOepWD7Q5AMovzrqkKY" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
+                            <div className="absolute bottom-4 left-5 md:left-6 z-20">
+                                <span className="bg-sand-secondary border border-sand-tertiary text-charcoal-main text-[8px] sm:text-[9px] font-bold px-2.5 py-1 rounded uppercase tracking-[0.2em] shadow-sm backdrop-blur-sm bg-opacity-90">Sacred Prayers</span>
                             </div>
                         </div>
-                        <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-1 bg-sand-primary">
-                            <h3 className="serif-title text-base sm:text-lg md:text-xl mb-1 sm:mb-2 text-charcoal-main">Prayer</h3>
-                            <p className="text-charcoal-main/80 text-[13px] sm:text-sm leading-relaxed mb-3 sm:mb-4 md:mb-6 flex-1 font-sans font-medium line-clamp-2 md:line-clamp-none">
+                        <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-1 bg-gradient-to-b from-white to-sand-primary z-20 relative">
+                            <div className="absolute top-0 right-6 w-12 h-[1px] bg-gradient-to-r from-transparent via-gold-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <h3 className="serif-title text-lg sm:text-xl md:text-2xl mb-2 text-charcoal-main group-hover:text-[#8C6D45] transition-colors duration-300">Prayer</h3>
+                            <p className="text-charcoal-muted text-[13px] sm:text-sm leading-relaxed mb-6 md:mb-8 flex-1 font-sans font-medium line-clamp-2">
                                 티벳 사자의 서 기도문
                             </p>
-                            <span className="inline-flex items-center gap-2 text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-widest text-charcoal-main group-hover:text-gold-primary transition-colors mt-auto">
-                                Begin Reading <span className="material-symbols-outlined text-[12px] md:text-sm">menu_book</span>
+                            <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] text-charcoal-main/60 group-hover:text-gold-primary transition-all duration-300 mt-auto w-fit group-hover:translate-x-1">
+                                Begin Reading <span className="material-symbols-outlined text-[13px] sm:text-[14px]">menu_book</span>
                             </span>
                         </div>
                     </Link>
 
                     {/* Card 3: Chants */}
-                    <Link to="/album" className="group flex flex-col bg-white border border-sand-tertiary rounded-xl overflow-hidden hover:shadow-xl hover:shadow-gold-primary/5 transition-all duration-300">
-                        <div className="h-24 sm:h-28 md:h-36 overflow-hidden relative">
-                            <img alt="Bardo Chants" className="w-full h-full object-cover grayscale opacity-70 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWyQZjksW6AnWRgPdnGDThtE-Phmyey5XdJVwc-OKgt3APQT3fqEv52XbSlfMCQuBuA6X0IOsD7pFMh_-840xhaV0Y41AM1sTud_rc9ych_5keDAfaSEHqCuK1cqP2ZXvAiEYG3yjgZO8Kn4Un1ue-zl7Alt9BI7fbG_zwuy5s5amYw7dB4xAG20-M8ziA8DfXjkrm8hcH4cbnpO4VsNTh6OAF8Etx8T2syfLnZxNSap6jEJ8k52HoyEVhVqm71rWrr2_Fkc8zOUc" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent" />
-                            <div className="absolute bottom-3 left-4 md:left-6">
-                                <span className="bg-sand-secondary border border-sand-tertiary text-charcoal-main text-[8px] sm:text-[9px] font-bold px-2 py-1 rounded uppercase tracking-widest">Sacred Audio</span>
+                    <Link to="/album" className="group flex flex-col bg-white border border-sand-tertiary/60 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-gold-primary/10 transition-all duration-500 hover:-translate-y-1 relative before:absolute before:inset-0 before:border before:border-gold-primary/0 hover:before:border-gold-primary/20 before:transition-colors before:duration-500 before:z-10 before:rounded-xl">
+                        <div className="h-32 sm:h-36 md:h-48 overflow-hidden relative">
+                            <img alt="Bardo Chants" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWyQZjksW6AnWRgPdnGDThtE-Phmyey5XdJVwc-OKgt3APQT3fqEv52XbSlfMCQuBuA6X0IOsD7pFMh_-840xhaV0Y41AM1sTud_rc9ych_5keDAfaSEHqCuK1cqP2ZXvAiEYG3yjgZO8Kn4Un1ue-zl7Alt9BI7fbG_zwuy5s5amYw7dB4xAG20-M8ziA8DfXjkrm8hcH4cbnpO4VsNTh6OAF8Etx8T2syfLnZxNSap6jEJ8k52HoyEVhVqm71rWrr2_Fkc8zOUc" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
+                            <div className="absolute bottom-4 left-5 md:left-6 z-20">
+                                <span className="bg-sand-secondary border border-sand-tertiary text-charcoal-main text-[8px] sm:text-[9px] font-bold px-2.5 py-1 rounded uppercase tracking-[0.2em] shadow-sm backdrop-blur-sm bg-opacity-90">Sacred Audio</span>
                             </div>
                         </div>
-                        <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-1 bg-sand-primary">
-                            <h3 className="serif-title text-base sm:text-lg md:text-xl mb-1 sm:mb-2 text-charcoal-main">Chants</h3>
-                            <p className="text-charcoal-main/80 text-[13px] sm:text-sm leading-relaxed mb-3 sm:mb-4 md:mb-6 flex-1 font-sans font-medium line-clamp-2 md:line-clamp-none">
+                        <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-1 bg-gradient-to-b from-white to-sand-primary z-20 relative">
+                            <div className="absolute top-0 right-6 w-12 h-[1px] bg-gradient-to-r from-transparent via-gold-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <h3 className="serif-title text-lg sm:text-xl md:text-2xl mb-2 text-charcoal-main group-hover:text-[#8C6D45] transition-colors duration-300">Chants</h3>
+                            <p className="text-charcoal-muted text-[13px] sm:text-sm leading-relaxed mb-6 md:mb-8 flex-1 font-sans font-medium line-clamp-2">
                                 티벳 음악 앨범
                             </p>
-                            <span className="inline-flex items-center gap-2 text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-widest text-charcoal-main group-hover:text-gold-primary transition-colors mt-auto">
-                                Listen Now <span className="material-symbols-outlined text-[11px] sm:text-[12px] md:text-sm">headphones</span>
+                            <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] text-charcoal-main/60 group-hover:text-gold-primary transition-all duration-300 mt-auto w-fit group-hover:translate-x-1">
+                                Listen Now <span className="material-symbols-outlined text-[13px] sm:text-[14px]">headphones</span>
                             </span>
                         </div>
                     </Link>
