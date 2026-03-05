@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Play, Pause, Bookmark } from 'lucide-react';
+import { Play, Pause, Bookmark, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useAudioPlayer } from '../../hooks/useAudioPlayer';
 
 // Gita 스타일 시간 포맷터 (순수 함수로 외부 분리)
@@ -11,7 +11,7 @@ const formatTime = (time) => {
 };
 
 // 강제 불변성과 Zero Monolith 원칙을 준수하는 ReadingPanel
-const ReadingPanel = ({ verse, hideAudio = false }) => {
+const ReadingPanel = ({ verse, hideAudio = false, onPrevious, onNext }) => {
     // 오디오 플레이어 로직 (Tibet 커스텀 훅 지원)
     const audioPlaylist = React.useMemo(() => {
         return verse.audioUrl ? [{ id: verse.id, title: verse.title, url: verse.audioUrl }] : [];
@@ -162,7 +162,32 @@ const ReadingPanel = ({ verse, hideAudio = false }) => {
                     )}
                 </section>
 
+                {/* 하단 네비게이션 알약 버튼 */}
+                <div className="flex justify-center mt-12 mb-8">
+                    <div className="flex items-center justify-between w-[200px] px-6 py-[14px] rounded-full bg-white/60 dark:bg-[#111] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-gold-border/10 dark:border-[#333] backdrop-blur-md transition-all duration-300">
+                        <button
+                            onClick={onPrevious}
+                            disabled={!onPrevious}
+                            className="text-slate-400 dark:text-slate-500 hover:text-gold-primary dark:hover:text-gold-light disabled:opacity-30 disabled:hover:text-slate-400 transition-colors outline-none focus:outline-none"
+                            aria-label="Previous Verse"
+                        >
+                            <ChevronLeft size={20} strokeWidth={1.5} />
+                        </button>
 
+                        <span className="font-inter font-[600] text-[15px] letter-spacing-tight text-slate-700 dark:text-gray-200">
+                            {verse.id.replace('chapter-', '')}
+                        </span>
+
+                        <button
+                            onClick={onNext}
+                            disabled={!onNext}
+                            className="text-slate-400 dark:text-slate-500 hover:text-gold-primary dark:hover:text-gold-light disabled:opacity-30 disabled:hover:text-slate-400 transition-colors outline-none focus:outline-none"
+                            aria-label="Next Verse"
+                        >
+                            <ChevronRight size={20} strokeWidth={1.5} />
+                        </button>
+                    </div>
+                </div>
 
             </div>
         </main>

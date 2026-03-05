@@ -3,6 +3,7 @@ import LeftSidebar from './components/LeftSidebar';
 import ReadingPanel from './components/ReadingPanel';
 import RightSidebar from './components/RightSidebar';
 import bookData from '../data/book.json';
+import { flattenVerses } from '../utils/textUtils';
 
 const Text = () => {
     const [activeTextVerse, setActiveTextVerse] = useState(null);
@@ -31,6 +32,24 @@ const Text = () => {
         }
     }, [activeTextVerse]);
 
+    const flatVerses = React.useMemo(() => flattenVerses(bookData), []);
+
+    const handleNavigate = (direction) => {
+        if (!activeTextVerse) return;
+        const currentIndex = flatVerses.findIndex(v => v.id === activeTextVerse.id);
+        if (currentIndex === -1) return;
+
+        if (direction === 'prev' && currentIndex > 0) {
+            setActiveTextVerse(flatVerses[currentIndex - 1]);
+        } else if (direction === 'next' && currentIndex < flatVerses.length - 1) {
+            setActiveTextVerse(flatVerses[currentIndex + 1]);
+        }
+    };
+
+    const currentIndex = activeTextVerse ? flatVerses.findIndex(v => v.id === activeTextVerse.id) : -1;
+    const hasPrev = currentIndex > 0;
+    const hasNext = currentIndex !== -1 && currentIndex < flatVerses.length - 1;
+
     if (!activeTextVerse) return null;
 
     return (
@@ -39,7 +58,13 @@ const Text = () => {
             <div className="fixed inset-0 pointer-events-none bg-grid-slate-900/[0.04] dark:bg-grid-slate-100/[0.03] bg-[bottom_1px_center] z-[-1] transition-opacity duration-500"></div>
 
             <LeftSidebar onSelectVerse={setActiveTextVerse} activeVerseId={activeTextVerse.id} prayers={bookData} />
-            <ReadingPanel key={`text-${activeTextVerse.id}`} verse={activeTextVerse} hideAudio={true} />
+            <ReadingPanel
+                key={`text-${activeTextVerse.id}`}
+                verse={activeTextVerse}
+                hideAudio={true}
+                onPrevious={hasPrev ? () => handleNavigate('prev') : null}
+                onNext={hasNext ? () => handleNavigate('next') : null}
+            />
             <RightSidebar activeVerseId={activeTextVerse.id} storagePrefix="book" />
         </div>
     );
