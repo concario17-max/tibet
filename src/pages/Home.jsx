@@ -19,6 +19,9 @@ const Home = () => {
                         <span className="material-symbols-outlined text-gold-primary text-[40px]">auto_stories</span>
                         <p className="text-gold-primary text-[10px] tracking-[1em] uppercase font-bold mt-2">Tibetan Book of the Dead</p>
                     </div>
+                    <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-serif text-charcoal-main leading-[0.9] tracking-tighter uppercase font-extralight">
+                        The Bardo <br /> <span className="gold-gradient-text italic font-medium">Thodol</span>
+                    </h1>
                     <div className="w-12 h-px bg-gold-primary/30 mx-auto" />
                     <div className="flex flex-wrap items-center justify-center w-full gap-x-6 gap-y-3 pt-4">
                         <button onClick={() => setIsCompendiumOpen(true)} className="text-[10px] md:text-xs font-bold tracking-widest uppercase hover:text-gold-primary transition-colors text-charcoal-muted">
