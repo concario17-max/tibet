@@ -39,7 +39,7 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                 </div>
 
                 {/* 상단: 챕터 목록 */}
-                <div className="flex-none overflow-y-auto border-b border-gold-border/40 dark:border-[#222] custom-scrollbar max-h-[55%]">
+                <div className="flex-none overflow-y-auto border-b border-gold-border/40 dark:border-[#222] custom-scrollbar max-h-[70%]">
                     <div className="p-4 bg-transparent sticky top-0 z-10 backdrop-blur-sm hidden lg:block">
                         <h2 className="text-[11px] font-bold font-inter tracking-[0.2em] uppercase text-text-primary/70 dark:text-dark-text-primary/60 pl-1">
                             장 (Chapter)
