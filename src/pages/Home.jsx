@@ -19,8 +19,8 @@ const Home = () => {
                         <span className="material-symbols-outlined text-gold-primary text-[40px]">auto_stories</span>
                         <p className="text-gold-primary text-[10px] tracking-[1em] uppercase font-bold mt-2">Tibetan Book of the Dead</p>
                     </div>
-                    <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-serif text-charcoal-main leading-[0.9] tracking-tighter uppercase font-extralight">
-                        The Bardo <br /> <span className="gold-gradient-text italic font-medium">Thodol</span>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-serif text-charcoal-main leading-[1.1] tracking-widest uppercase font-extralight py-2">
+                        The Bardo <br /> <span className="gold-gradient-text italic font-light tracking-normal pr-2">Thodol</span>
                     </h1>
                     <div className="w-12 h-px bg-gold-primary/30 mx-auto" />
                     <div className="flex flex-wrap items-center justify-center w-full gap-x-6 gap-y-3 pt-4">
@@ -45,7 +45,7 @@ const Home = () => {
                     {/* Card 1: Text */}
                     <Link to="/text" className="group flex flex-col bg-white border border-sand-tertiary/60 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-gold-primary/10 transition-all duration-500 hover:-translate-y-1 relative before:absolute before:inset-0 before:border before:border-gold-primary/0 hover:before:border-gold-primary/20 before:transition-colors before:duration-500 before:z-10 before:rounded-xl">
                         <div className="h-32 sm:h-36 md:h-48 overflow-hidden relative">
-                            <img alt="Bardo Text" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Y7NmlY5THPMAn6q5XlXTMvsGi0ziB5RAYRM84aZvtCsX3-iRr4bgq4wAzFkr0XrQ0pnJ2W7Qp8UURaR-HW-tn3x-63NaluE72eWAn91sBgrvtVjLqAyyfdPcphi-iPzOLQ-QZbJiqBDaW6-doxAwfH1VuC3ExCwwqogWeBykbLM3Wq3gW7JeiyqaIuSv8Fed4sUUnWSh5pALLw8Zx1M2UOlVg11SIBQAZP25QvI2vJsp9Yk5GRVVJzCZVOgG0_W0tDRy9IIcqOU" />
+                            <img alt="Bardo Text" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 ease-out" src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=800&auto=format&fit=crop" />
                             <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
                             <div className="absolute bottom-4 left-5 md:left-6 z-20">
                                 <span className="bg-sand-secondary border border-sand-tertiary text-charcoal-main text-[8px] sm:text-[9px] font-bold px-2.5 py-1 rounded uppercase tracking-[0.2em] shadow-sm backdrop-blur-sm bg-opacity-90">Main Text</span>
@@ -66,7 +66,7 @@ const Home = () => {
                     {/* Card 2: Prayer */}
                     <Link to="/chapter" className="group flex flex-col bg-white border border-sand-tertiary/60 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-gold-primary/10 transition-all duration-500 hover:-translate-y-1 relative before:absolute before:inset-0 before:border before:border-gold-primary/0 hover:before:border-gold-primary/20 before:transition-colors before:duration-500 before:z-10 before:rounded-xl">
                         <div className="h-32 sm:h-36 md:h-48 overflow-hidden relative">
-                            <img alt="Bardo Prayers" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWbg_7hTWFFEfhkEbsBsQnn7JMqP0dSZVJyWdkmQpEMgAtemy_jGlEm9mcfALy-ZwawB_dUD4XhVEr6g1pzbftfikJwgVxz7bna8RISLycTld5_SIEG3N02V4I4wvt6WmHK9p31NSnUnbqBTqTxim1hs-nqG0Y_R2IMabApGI7CTGxbbKhgJZxEplageh2iXJbjExww9s3xQx8e4osiztcvxmL5WmINMtmHmBXPoFftsYtH6nyveELBW3oIOepWD7Q5AMovzrqkKY" />
+                            <img alt="Bardo Prayers" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 ease-out" src="https://images.unsplash.com/photo-1548625361-ecb9eb81c815?q=80&w=800&auto=format&fit=crop" />
                             <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
                             <div className="absolute bottom-4 left-5 md:left-6 z-20">
                                 <span className="bg-sand-secondary border border-sand-tertiary text-charcoal-main text-[8px] sm:text-[9px] font-bold px-2.5 py-1 rounded uppercase tracking-[0.2em] shadow-sm backdrop-blur-sm bg-opacity-90">Sacred Prayers</span>
@@ -87,7 +87,7 @@ const Home = () => {
                     {/* Card 3: Chants */}
                     <Link to="/album" className="group flex flex-col bg-white border border-sand-tertiary/60 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-gold-primary/10 transition-all duration-500 hover:-translate-y-1 relative before:absolute before:inset-0 before:border before:border-gold-primary/0 hover:before:border-gold-primary/20 before:transition-colors before:duration-500 before:z-10 before:rounded-xl">
                         <div className="h-32 sm:h-36 md:h-48 overflow-hidden relative">
-                            <img alt="Bardo Chants" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWyQZjksW6AnWRgPdnGDThtE-Phmyey5XdJVwc-OKgt3APQT3fqEv52XbSlfMCQuBuA6X0IOsD7pFMh_-840xhaV0Y41AM1sTud_rc9ych_5keDAfaSEHqCuK1cqP2ZXvAiEYG3yjgZO8Kn4Un1ue-zl7Alt9BI7fbG_zwuy5s5amYw7dB4xAG20-M8ziA8DfXjkrm8hcH4cbnpO4VsNTh6OAF8Etx8T2syfLnZxNSap6jEJ8k52HoyEVhVqm71rWrr2_Fkc8zOUc" />
+                            <img alt="Bardo Chants" className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700 ease-out" src="https://images.unsplash.com/photo-1516280440502-39f8f4a7c8be?q=80&w=800&auto=format&fit=crop" />
                             <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
                             <div className="absolute bottom-4 left-5 md:left-6 z-20">
                                 <span className="bg-sand-secondary border border-sand-tertiary text-charcoal-main text-[8px] sm:text-[9px] font-bold px-2.5 py-1 rounded uppercase tracking-[0.2em] shadow-sm backdrop-blur-sm bg-opacity-90">Sacred Audio</span>
