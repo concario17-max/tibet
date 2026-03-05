@@ -40,9 +40,15 @@ const ReadingPanel = ({ verse, hideAudio = false }) => {
                                 </span>
                             </>
                         ) : (
-                            <span className="text-text-secondary/80 dark:text-dark-text-secondary/80 font-bold max-w-full truncate text-center px-4 leading-relaxed">
-                                {verse.title}
-                            </span>
+                            <>
+                                <span className="text-text-secondary/80 dark:text-dark-text-secondary/80 font-medium transition-colors cursor-default">
+                                    Text
+                                </span>
+                                <span className="text-text-secondary/50 text-[8px] font-bold mt-0.5">›</span>
+                                <span className="text-text-primary dark:text-dark-text-primary font-bold">
+                                    Paragraph {verse.id}
+                                </span>
+                            </>
                         )}
                     </nav>
 
