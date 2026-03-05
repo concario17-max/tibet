@@ -8,10 +8,10 @@ import { useUI } from '../context/UIContext';
 const Chapter = () => {
     const { activeVerse, setActiveVerse } = useUI() || {};
 
-    // Defaults to Prayer 3 - Verse 1. If global activeVerse is unset, set it initially.
+    // Defaults to Prayer 1 - Verse 1. If global activeVerse is unset, set it initially.
     useEffect(() => {
         if (!activeVerse && setActiveVerse) {
-            setActiveVerse(prayersData[2].verses[0]);
+            setActiveVerse(prayersData[0].verses[0]);
         }
     }, [activeVerse, setActiveVerse]);
 
