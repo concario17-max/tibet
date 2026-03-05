@@ -3,7 +3,7 @@ import { Download, Save, Edit3, X } from 'lucide-react';
 import { useUI } from '../../context/UIContext';
 
 // 불변성과 기능적 분리 원칙 적용: LocalStorage 연동 Reflections 패널
-const RightSidebar = ({ activeVerseId }) => {
+const RightSidebar = ({ activeVerseId, storagePrefix = 'prayer' }) => {
     const [note, setNote] = useState('');
     const [isSaving, setIsSaving] = useState(false);
     const [showExportMenu, setShowExportMenu] = useState(false);
@@ -12,7 +12,7 @@ const RightSidebar = ({ activeVerseId }) => {
     const { isReflectionsOpen, setIsReflectionsOpen } = uiContext;
 
     // activeVerseId를 기반으로 LocalStorage 키 생성
-    const noteKey = `tibet-note-${activeVerseId}`;
+    const noteKey = `tibet-${storagePrefix}-note-${activeVerseId}`;
 
     // 구절이 바뀔 때마다 메모 로드
     useEffect(() => {
@@ -42,13 +42,13 @@ const RightSidebar = ({ activeVerseId }) => {
 
     const handleExportAll = React.useCallback(() => {
         let allNotesText = `Tibet Prayers - All Reflections\n\n`;
-        const noteKeys = Object.keys(localStorage).filter(key => key.startsWith('tibet-note-'));
+        const noteKeys = Object.keys(localStorage).filter(key => key.startsWith(`tibet-${storagePrefix}-note-`));
 
         // 키 정렬 로직 (ID가 문자열이므로 문자열 비교 정렬)
         noteKeys.sort((a, b) => a.localeCompare(b));
 
         noteKeys.forEach(key => {
-            const vId = key.replace('tibet-note-', '');
+            const vId = key.replace(`tibet-${storagePrefix}-note-`, '');
             const content = localStorage.getItem(key);
             if (content && content.trim()) {
                 allNotesText += `--- Verse ${vId} ---\n${content}\n\n`;
