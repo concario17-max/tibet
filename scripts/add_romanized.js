@@ -50,12 +50,28 @@ if (fs.existsSync('Prayer/5/5.txt')) {
     }
 }
 
-// Ensure the audio urls match since they were missing for Prayer 3 in the git checkout
+// Ensure the audio urls match since they were missing for Prayer 3, 4, 5
 const prayer3 = prayers.find(p => p.id === 'prayer-3');
 if (prayer3) {
     prayer3.verses.forEach(v => {
         const num = v.id.split('.')[1];
         v.audioUrl = `/mp3/Prayer/3-${num}.mp3`;
+    });
+}
+
+const prayer4 = prayers.find(p => p.id === 'prayer-4');
+if (prayer4) {
+    prayer4.verses.forEach(v => {
+        const num = v.id.split('.')[1];
+        v.audioUrl = `/mp3/Prayer/4-${num}.mp3`;
+    });
+}
+
+const prayer5 = prayers.find(p => p.id === 'prayer-5');
+if (prayer5) {
+    prayer5.verses.forEach(v => {
+        const num = v.id.split('.')[1];
+        v.audioUrl = `/mp3/Prayer/5-${num}.mp3`;
     });
 }
 
