@@ -92,9 +92,8 @@ const Home = () => {
                     {/* Card 1 */}
                     <motion.div variants={fadeUp} className="h-full">
                         <Link to="/text" className="group relative flex flex-col h-[320px] sm:h-[420px] rounded-xl overflow-hidden bg-white/60 border border-[#D6C7A2]/40 hover:border-[#B29A62]/60 hover:shadow-2xl hover:shadow-[#B29A62]/10 transition-all duration-700 ease-[0.19,1,0.22,1] hover:-translate-y-2 backdrop-blur-md">
-                            <div className="absolute inset-0 h-[55%] z-0 overflow-hidden bg-[#F5F2EA] flex items-center justify-center">
-                                <span className="material-symbols-outlined text-8xl md:text-[100px] text-[#D6C7A2]/60 group-hover:text-[#B29A62]/80 transition-all duration-700 ease-out group-hover:scale-110 mb-8 pb-4">auto_stories</span>
-                                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/30 to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 z-0 flex items-center justify-center bg-gradient-to-b from-[#F5F2EA]/80 to-transparent pointer-events-none">
+                                <span className="material-symbols-outlined text-8xl md:text-[120px] text-[#D6C7A2]/40 group-hover:text-[#B29A62]/60 transition-all duration-700 ease-out group-hover:scale-110 mb-8 md:mb-12">auto_stories</span>
                             </div>
 
                             <div className="relative z-10 flex flex-col h-full p-6 md:p-8 justify-end">
@@ -117,9 +116,8 @@ const Home = () => {
                     {/* Card 2 */}
                     <motion.div variants={fadeUp} className="h-full">
                         <Link to="/chapter" className="group relative flex flex-col h-[320px] sm:h-[420px] rounded-xl overflow-hidden bg-white/60 border border-[#D6C7A2]/40 hover:border-[#B29A62]/60 hover:shadow-2xl hover:shadow-[#B29A62]/10 transition-all duration-700 ease-[0.19,1,0.22,1] hover:-translate-y-2 backdrop-blur-md">
-                            <div className="absolute inset-0 h-[55%] z-0 overflow-hidden bg-[#F5F2EA] flex items-center justify-center">
-                                <span className="material-symbols-outlined text-8xl md:text-[100px] text-[#D6C7A2]/60 group-hover:text-[#B29A62]/80 transition-all duration-700 ease-out group-hover:scale-110 mb-8 pb-4">self_improvement</span>
-                                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/30 to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 z-0 flex items-center justify-center bg-gradient-to-b from-[#F5F2EA]/80 to-transparent pointer-events-none">
+                                <span className="material-symbols-outlined text-8xl md:text-[120px] text-[#D6C7A2]/40 group-hover:text-[#B29A62]/60 transition-all duration-700 ease-out group-hover:scale-110 mb-8 md:mb-12">self_improvement</span>
                             </div>
 
                             <div className="relative z-10 flex flex-col h-full p-6 md:p-8 justify-end">
@@ -142,9 +140,8 @@ const Home = () => {
                     {/* Card 3 */}
                     <motion.div variants={fadeUp} className="h-full">
                         <Link to="/album" className="group relative flex flex-col h-[320px] sm:h-[420px] rounded-xl overflow-hidden bg-white/60 border border-[#D6C7A2]/40 hover:border-[#B29A62]/60 hover:shadow-2xl hover:shadow-[#B29A62]/10 transition-all duration-700 ease-[0.19,1,0.22,1] hover:-translate-y-2 backdrop-blur-md">
-                            <div className="absolute inset-0 h-[55%] z-0 overflow-hidden bg-[#F5F2EA] flex items-center justify-center">
-                                <span className="material-symbols-outlined text-8xl md:text-[100px] text-[#D6C7A2]/60 group-hover:text-[#B29A62]/80 transition-all duration-700 ease-out group-hover:scale-110 mb-8 pb-4">graphic_eq</span>
-                                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/30 to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 z-0 flex items-center justify-center bg-gradient-to-b from-[#F5F2EA]/80 to-transparent pointer-events-none">
+                                <span className="material-symbols-outlined text-8xl md:text-[120px] text-[#D6C7A2]/40 group-hover:text-[#B29A62]/60 transition-all duration-700 ease-out group-hover:scale-110 mb-8 md:mb-12">graphic_eq</span>
                             </div>
 
                             <div className="relative z-10 flex flex-col h-full p-6 md:p-8 justify-end">
