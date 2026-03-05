@@ -39,7 +39,7 @@ const Home = () => {
 
                 <motion.div
                     initial="hidden" animate="visible" variants={fadeUp}
-                    className="flex flex-col items-center text-center space-y-4 mb-16 md:mb-24"
+                    className="flex flex-col items-center text-center space-y-4 mb-8 md:mb-12"
                 >
                     <motion.span
                         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 2 }}
@@ -59,7 +59,7 @@ const Home = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8, duration: 1 }}
-                    className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 mb-20 md:mb-28 z-20 relative"
+                    className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 mb-10 md:mb-14 z-20 relative"
                 >
                     {[
                         { name: 'Compendium', action: () => setIsCompendiumOpen(true) },
