@@ -14,8 +14,21 @@ export const UIProvider = ({ children }) => {
     // 렉시콘 모달 상태 제어
     const [isLexiconOpen, setIsLexiconOpen] = useState(false);
 
-    // 글로벌 구절(Sutra) 정보 공유 스테이트
-    const [activeVerse, setActiveVerse] = useState(null);
+    // 글로벌 구절(Sutra) 정보 공유 스테이트 (localStorage 기반 영속성 추가)
+    const [activeVerse, setActiveVerse] = useState(() => {
+        try {
+            const saved = localStorage.getItem('tibet_active_verse');
+            return saved ? JSON.parse(saved) : null;
+        } catch (e) {
+            return null;
+        }
+    });
+
+    // activeVerse 변경 시 localStorage 동기화
+    React.useEffect(() => {
+        if (activeVerse === undefined) return;
+        localStorage.setItem('tibet_active_verse', JSON.stringify(activeVerse));
+    }, [activeVerse]);
 
     // 각 패널을 토글하는 불변성 기반 함수들 (재생성 방지)
     const toggleSidebar = React.useCallback(() => setIsSidebarOpen(prev => !prev), []);

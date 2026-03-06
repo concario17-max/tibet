@@ -10,8 +10,42 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
     const uiContext = useUI() || { isSidebarOpen: true, setIsSidebarOpen: () => { } };
     const { isSidebarOpen, setIsSidebarOpen } = uiContext;
 
-    // 초기 상태는 열려있는 챕터 없이 (null) 깔끔하게 시작 (Zero Monolith, 불변성)
-    const [expandedChapter, setExpandedChapter] = useState(null);
+    // activeVerseId를 기반으로 초기 확장 챕터 설정 (새로고침 대응)
+    const [expandedChapter, setExpandedChapter] = useState(() => {
+        if (!activeVerseId || !prayers) return null;
+        for (const prayer of prayers) {
+            if (prayer.isGroup && prayer.subchapters) {
+                const sub = prayer.subchapters.find(s => s.verses?.some(v => v.id === activeVerseId));
+                if (sub) return sub.id;
+            } else if (prayer.verses?.some(v => v.id === activeVerseId)) {
+                return prayer.id;
+            }
+        }
+        return null;
+    });
+
+    // 외부에서 구절이 변경될 때(네비게이션 등) 해당 챕터를 자동으로 확장
+    React.useEffect(() => {
+        if (!activeVerseId || !prayers) return;
+
+        let targetChapterId = null;
+        for (const prayer of prayers) {
+            if (prayer.isGroup && prayer.subchapters) {
+                const sub = prayer.subchapters.find(s => s.verses?.some(v => v.id === activeVerseId));
+                if (sub) {
+                    targetChapterId = sub.id;
+                    break;
+                }
+            } else if (prayer.verses?.some(v => v.id === activeVerseId)) {
+                targetChapterId = prayer.id;
+                break;
+            }
+        }
+
+        if (targetChapterId && targetChapterId !== expandedChapter) {
+            setExpandedChapter(targetChapterId);
+        }
+    }, [activeVerseId, prayers]);
 
     // 챕터 토글 핸들러 (재생성 방지)
     const toggleChapter = React.useCallback((chapterId) => {
@@ -60,7 +94,13 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                                                     <button
                                                         key={subGroup.id}
                                                         onClick={() => {
+                                                            const currentlyExpanded = expandedChapter === subGroup.id;
                                                             toggleChapter(subGroup.id);
+
+                                                            // 챕터 클릭 시 (이미 열려있든 아니든) 무조건 1절부터 강제 실행 (유저 요청)
+                                                            if (subGroup.verses && subGroup.verses.length > 0) {
+                                                                if (onSelectVerse) onSelectVerse(subGroup.verses[0]);
+                                                            }
                                                         }}
                                                         className={`w-full flex items-start justify-between gap-2 px-3 py-1.5 rounded-xl text-left transition-colors pl-6 ${isExpanded
                                                             ? 'bg-white/60 dark:bg-dark-bg/60 shadow-sm border border-gold-primary/20 text-[#1C2B36] dark:text-gold-light'
@@ -89,7 +129,13 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                                 <button
                                     key={prayer.id}
                                     onClick={() => {
+                                        const currentlyExpanded = expandedChapter === prayer.id;
                                         toggleChapter(prayer.id);
+
+                                        // 챕터 클릭 시 (이미 열려있든 아니든) 무조건 1절부터 강제 실행 (유저 요청)
+                                        if (prayer.verses && prayer.verses.length > 0) {
+                                            if (onSelectVerse) onSelectVerse(prayer.verses[0]);
+                                        }
                                     }}
                                     className={`w-full flex items-start justify-between gap-2 px-3 py-2 rounded-xl text-left transition-colors ${isExpanded
                                         ? 'bg-white/60 dark:bg-dark-bg/60 shadow-sm border border-gold-primary/20 text-[#1C2B36] dark:text-gold-light'

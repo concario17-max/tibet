@@ -6,7 +6,20 @@ import bookData from '../data/book.json';
 import { flattenVerses } from '../utils/textUtils';
 
 const Text = () => {
-    const [activeTextVerse, setActiveTextVerse] = useState(null);
+    const [activeTextVerse, setActiveTextVerse] = useState(() => {
+        try {
+            const saved = localStorage.getItem('tibet_active_text_verse');
+            return saved ? JSON.parse(saved) : null;
+        } catch (e) {
+            return null;
+        }
+    });
+
+    // activeTextVerse 변경 시 localStorage 동기화
+    useEffect(() => {
+        if (activeTextVerse === undefined) return;
+        localStorage.setItem('tibet_active_text_verse', JSON.stringify(activeTextVerse));
+    }, [activeTextVerse]);
 
     // 강제 구절 선택 로직 제거, 유저가 직접 선택하도록 유도 (Meta-Design)
 
