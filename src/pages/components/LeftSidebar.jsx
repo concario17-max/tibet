@@ -39,7 +39,7 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                 </div>
 
                 {/* 상단: 챕터 목록 */}
-                <div className="flex-none overflow-y-auto border-b border-gold-border/40 dark:border-[#222] custom-scrollbar max-h-[40%]">
+                <div className={`flex-none overflow-y-auto border-gold-border/40 dark:border-[#222] custom-scrollbar transition-all duration-500 ease-in-out ${expandedChapter ? 'max-h-[45%] border-b shadow-sm' : 'max-h-full h-full'}`}>
                     <div className="p-4 bg-transparent sticky top-0 z-10 backdrop-blur-sm hidden lg:block">
                         <h2 className="text-[11px] font-bold font-inter tracking-[0.2em] uppercase text-text-primary/70 dark:text-dark-text-primary/60 pl-1">
                             장 (Chapter)
@@ -61,9 +61,6 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                                                         key={subGroup.id}
                                                         onClick={() => {
                                                             toggleChapter(subGroup.id);
-                                                            if (subGroup.verses && subGroup.verses.length > 0) {
-                                                                if (onSelectVerse) onSelectVerse(subGroup.verses[0]);
-                                                            }
                                                         }}
                                                         className={`w-full flex items-start justify-between gap-2 px-3 py-1.5 rounded-xl text-left transition-colors pl-6 ${isExpanded
                                                             ? 'bg-white/60 dark:bg-dark-bg/60 shadow-sm border border-gold-primary/20 text-[#1C2B36] dark:text-gold-light'
@@ -93,10 +90,6 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                                     key={prayer.id}
                                     onClick={() => {
                                         toggleChapter(prayer.id);
-                                        // 챕터 클릭 시 해당 챕터의 첫 번째 구절로 자동 이동
-                                        if (prayer.verses && prayer.verses.length > 0) {
-                                            if (onSelectVerse) onSelectVerse(prayer.verses[0]);
-                                        }
                                     }}
                                     className={`w-full flex items-start justify-between gap-2 px-3 py-2 rounded-xl text-left transition-colors ${isExpanded
                                         ? 'bg-white/60 dark:bg-dark-bg/60 shadow-sm border border-gold-primary/20 text-[#1C2B36] dark:text-gold-light'
@@ -117,58 +110,56 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                     </div>
                 </div>
 
-                {/* 하단: 구절(Verse) 목록 */}
-                <div className="flex-1 overflow-y-auto bg-transparent custom-scrollbar h-full">
-                    <div className="py-2 px-3 space-y-0.5">
-                        {expandedChapter ? (() => {
-                            let foundChapter = null;
-                            for (const prayer of prayers) {
-                                if (prayer.id === expandedChapter) {
-                                    foundChapter = prayer;
-                                    break;
-                                }
-                                if (prayer.isGroup && prayer.subchapters) {
-                                    const sub = prayer.subchapters.find(s => s.id === expandedChapter);
-                                    if (sub) {
-                                        foundChapter = sub;
+                {/* 하단: 구절(Verse) 목록 - 챕터가 선택되었을 때만 렌더링 (메타 디자인) */}
+                {expandedChapter && (
+                    <div className="flex-1 overflow-y-auto bg-transparent custom-scrollbar h-full animate-[fadeIn_0.5s_ease-out]">
+                        <div className="py-2 px-3 space-y-0.5">
+                            {(() => {
+                                let foundChapter = null;
+                                for (const prayer of prayers) {
+                                    if (prayer.id === expandedChapter) {
+                                        foundChapter = prayer;
                                         break;
                                     }
+                                    if (prayer.isGroup && prayer.subchapters) {
+                                        const sub = prayer.subchapters.find(s => s.id === expandedChapter);
+                                        if (sub) {
+                                            foundChapter = sub;
+                                            break;
+                                        }
+                                    }
                                 }
-                            }
 
-                            if (!foundChapter || !foundChapter.verses) return null;
+                                if (!foundChapter || !foundChapter.verses) return null;
 
-                            return foundChapter.verses.map((verse) => {
-                                const isActive = activeVerseId === verse.id;
+                                return foundChapter.verses.map((verse) => {
+                                    const isActive = activeVerseId === verse.id;
 
-                                return (
-                                    <button
-                                        key={verse.id}
-                                        onClick={() => {
-                                            if (onSelectVerse) onSelectVerse(verse);
-                                            if (window.innerWidth < 1024) setIsSidebarOpen(false);
-                                        }}
-                                        className={`w-full flex items-start text-left gap-3 px-3 py-2.5 rounded-lg text-sm transition-all ${isActive
-                                            ? 'bg-white/60 border border-gold-primary/30 text-text-primary font-medium shadow-sm dark:bg-dark-bg/60 dark:border-gold-primary/20 dark:text-gold-light'
-                                            : 'border border-transparent text-text-secondary dark:text-dark-text-secondary hover:text-text-primary hover:bg-gold-surface/30 dark:hover:bg-dark-bg/40'
-                                            }`}
-                                    >
-                                        <span className={`min-w-[40px] whitespace-nowrap font-bold text-xs mt-[3px] ${isActive ? 'text-gold-primary' : 'text-text-secondary/60 dark:text-dark-text-secondary/60'}`}>
-                                            {verse.id}
-                                        </span>
-                                        <span className="truncate opacity-90 text-[13px] leading-relaxed font-inter">
-                                            {verse.chapterTitle || verse.title}
-                                        </span>
-                                    </button>
-                                );
-                            });
-                        })() : (
-                            <div className="p-8 text-center text-text-secondary dark:text-dark-text-secondary text-sm">
-                                챕터를 선택해주세요
-                            </div>
-                        )}
+                                    return (
+                                        <button
+                                            key={verse.id}
+                                            onClick={() => {
+                                                if (onSelectVerse) onSelectVerse(verse);
+                                                if (window.innerWidth < 1024) setIsSidebarOpen(false);
+                                            }}
+                                            className={`w-full flex items-start text-left gap-3 px-3 py-2.5 rounded-lg text-sm transition-all ${isActive
+                                                ? 'bg-white/60 border border-gold-primary/30 text-text-primary font-medium shadow-sm dark:bg-dark-bg/60 dark:border-gold-primary/20 dark:text-gold-light'
+                                                : 'border border-transparent text-text-secondary dark:text-dark-text-secondary hover:text-text-primary hover:bg-gold-surface/30 dark:hover:bg-dark-bg/40'
+                                                }`}
+                                        >
+                                            <span className={`min-w-[40px] whitespace-nowrap font-bold text-xs mt-[3px] ${isActive ? 'text-gold-primary' : 'text-text-secondary/60 dark:text-dark-text-secondary/60'}`}>
+                                                {verse.id}
+                                            </span>
+                                            <span className="truncate opacity-90 text-[13px] leading-relaxed font-inter">
+                                                {verse.chapterTitle || verse.title}
+                                            </span>
+                                        </button>
+                                    );
+                                });
+                            })()}
+                        </div>
                     </div>
-                </div>
+                )}
             </aside>
         </>
     );
