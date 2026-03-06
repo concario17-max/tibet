@@ -1,12 +1,12 @@
 [
   {
     "id": "group-0",
-    "chapterName": "11장. 듣고 이해함으로써 절대 자유에 이르는 위대한 가르침 배경",
+    "chapterName": "저승 중간계에서 드리는 기도",
     "isGroup": true,
     "subchapters": [
       {
         "id": "chapter-0",
-        "chapterName": "1) 서론",
+        "chapterName": "준비",
         "verses": [
           {
             "id": "1",
@@ -218,17 +218,10 @@
             }
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "group-1",
-    "chapterName": "1부. 죽음 중간계 및 자애로운 모습의 붓다와 보살들이 나타나는 저승 중간계에 대한 해설",
-    "isGroup": true,
-    "subchapters": [
+      },
       {
         "id": "chapter-1",
-        "chapterName": "1) 서론",
+        "chapterName": "실제적인 적용",
         "verses": [
           {
             "id": "12",
@@ -278,7 +271,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "<중간계에서 듣고 이해함으로써 그 자리에서 절대 자유의 경지에 이르게 하는 위대한 가르침>은 그 다음에 3번이나 7번 반복해서 읽어라. 읽는 회수는 상황에 따라 바뀔 수 있다."
+                  "text": "<중간계에서 듣고 이해함으로써 그 자리에서 절대 자유의 경지에 이르게 하는 위대한 가르침>은 그 다음에 3번이나 7번 반복해서 읽어라. 읽는 횟수는 상황에 따라 바뀔 수 있다."
                 },
                 {
                   "translator": "중암 선혜",
@@ -286,7 +279,20 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "group-1",
+    "chapterName": "죽음 중간계에서 경험하는 투명한 빛",
+    "isGroup": true,
+    "subchapters": [
+      {
+        "id": "chapter-0",
+        "chapterName": "중앙 통로에서 투명한 빛을 경험하는 중간계",
+        "verses": [
           {
             "id": "15",
             "title": "This introduction is made on behalf of those ...",
@@ -362,13 +368,7 @@
                 }
               ]
             }
-          }
-        ]
-      },
-      {
-        "id": "chapter-2",
-        "chapterName": "2) 죽음 중간계에서 경험하는 투명한 빛 / 근원적인 투명한 빛에 대한 안내",
-        "verses": [
+          },
           {
             "id": "19",
             "title": "O, Child of Buddha Nature, (call the name of ...",
@@ -615,13 +615,7 @@
                 }
               ]
             }
-          }
-        ]
-      },
-      {
-        "id": "chapter-3",
-        "chapterName": "3) 길의 투명한 빛에 대한 안내 / 몸 밖에서 투명한 빛을 경험하는 중간계",
-        "verses": [
+          },
           {
             "id": "32",
             "title": "For all others, one should introduce [the inn...",
@@ -678,18 +672,24 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-1",
+        "chapterName": "몸밖에서 투명한 빛을 경험하는 중간계",
+        "verses": [
           {
             "id": "35",
-            "title": "[Introduction to the Inner Radiance of the Pa...",
-            "chapterTitle": "[Introduction to the Inner Radiance of the Path]",
+            "title": "If, however, it is feared that [the deceased]...",
+            "chapterTitle": "If, however, it is feared that [the deceased] has not recognised the first inner radiance, the so-called ‘second inner radiance’ [of the path] will arise. [Again, it is said that this second inner radiance] lasts a little more than the time it takes to eat a meal, after the respiration has ceased.",
             "text": {
               "tibetan": "",
-              "english": "[Introduction to the Inner Radiance of the Path]",
+              "english": "If, however, it is feared that [the deceased] has not recognised the first inner radiance, the so-called ‘second inner radiance’ [of the path] will arise. [Again, it is said that this second inner radiance] lasts a little more than the time it takes to eat a meal, after the respiration has ceased.",
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "2. 몸 밖에서 투명한 빛을 경험하는 중간계"
+                  "text": "만약 죽음의 길을 가는 사람이 그대가 읽어 주는 내용을 의심하고, 첫 번째 나타나는 투명한 빛을 인식하지 못하면 두 번째 투명한 빛이 나타난다. 그 빛은 외적인 숨이 멎고 나서, 한 끼 밥 먹는 시간 정도가 지난 다음에 나타난다."
                 },
                 {
                   "translator": "중암 선혜",
@@ -700,15 +700,15 @@
           },
           {
             "id": "36",
-            "title": "If, however, it is feared that [the deceased]...",
-            "chapterTitle": "If, however, it is feared that [the deceased] has not recognised the first inner radiance, the so-called ‘second inner radiance’ [of the path] will arise. [Again, it is said that this second inner radiance] lasts a little more than the time it takes to eat a meal, after the respiration has ceased. Specifically, it arises once the vital energy has escaped into the right or left channel, whichever is appropriate depending on the positive and negative past actions [of the deceased], and once the vital energy has emerged through one of the orifices of the body. When this occurs, the consciousness suddenly becomes awake and lucid. Although it is said that this second inner radiance also lasts [approximately] for as long as it takes to eat a meal, this actually depends, as before, on whether or not the energy channels are healthy and whether or not [the individual] has or lacks meditative experience.",
+            "title": "Specifically, it arises once the vital energy...",
+            "chapterTitle": "Specifically, it arises once the vital energy has escaped into the right or left channel, whichever is appropriate depending on the positive and negative past actions [of the deceased], and once the vital energy has emerged through one of the orifices of the body. When this occurs, the consciousness suddenly becomes awake and lucid. Although it is said that this second inner radiance also lasts [approximately] for as long as it takes to eat a meal, this actually depends, as before, on whether or not the energy channels are healthy and whether or not [the individual] has or lacks meditative experience.",
             "text": {
               "tibetan": "",
-              "english": "If, however, it is feared that [the deceased] has not recognised the first inner radiance, the so-called ‘second inner radiance’ [of the path] will arise. [Again, it is said that this second inner radiance] lasts a little more than the time it takes to eat a meal, after the respiration has ceased. Specifically, it arises once the vital energy has escaped into the right or left channel, whichever is appropriate depending on the positive and negative past actions [of the deceased], and once the vital energy has emerged through one of the orifices of the body. When this occurs, the consciousness suddenly becomes awake and lucid. Although it is said that this second inner radiance also lasts [approximately] for as long as it takes to eat a meal, this actually depends, as before, on whether or not the energy channels are healthy and whether or not [the individual] has or lacks meditative experience.",
+              "english": "Specifically, it arises once the vital energy has escaped into the right or left channel, whichever is appropriate depending on the positive and negative past actions [of the deceased], and once the vital energy has emerged through one of the orifices of the body. When this occurs, the consciousness suddenly becomes awake and lucid. Although it is said that this second inner radiance also lasts [approximately] for as long as it takes to eat a meal, this actually depends, as before, on whether or not the energy channels are healthy and whether or not [the individual] has or lacks meditative experience.",
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "만약 죽음의 길을 가는 사람이 그대가 읽어 주는 내용을 의심하고, 첫 번째 나타나는 투명한 빛을 인식하지 못하면 두 번째 투명한 빛이 나타난다. 그 빛은 외적인 숨이 멎고 나서, 한 끼 밥 먹는 시간 정도가 지난 다음에 나타난다. 프라나는 생전에 쌓은 선과 악의 진화력[까르마]에 따라 오른 쪽이나 왼 쪽 통로로 들어가고, 그 다음에는 육체에 있는 여러 구멍을 통해 밖으로 빠져나간다. 의식은 그 순간 투명한 상태가 된다. 위에서 말한 ‘한 끼 밥 먹는 시간 정도’라는 것은, 중앙 통로의 상태와 생전의 수행 정도에 따라 더 길 수도 있고 더 짧을 수도 있다."
+                  "text": "프라나는 생전에 쌓은 선과 악의 진화력[까르마]에 따라 오른 쪽이나 왼 쪽 통로로 들어가고, 그 다음에는 육체에 있는 여러 구멍을 통해 밖으로 빠져나간다. 의식은 그 순간 투명한 상태가 된다. 위에서 말한 ‘한 끼 밥 먹는 시간 정도’라는 것은, 중앙 통로의 상태와 생전의 수행 정도에 따라 더 길 수도 있고 더 짧을 수도 있다."
                 },
                 {
                   "translator": "중암 선혜",
@@ -735,13 +735,7 @@
                 }
               ]
             }
-          }
-        ]
-      },
-      {
-        "id": "chapter-4",
-        "chapterName": "4) 저승 중간계 길 안내",
-        "verses": [
+          },
           {
             "id": "38",
             "title": "O, Child of Buddha Nature! Meditate on this, ...",
@@ -828,7 +822,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "‘두 번째 중간계’라고 부르는 상태가 정신적인 몸[心體] 앞에 나타날 때, 죽음의 길을 가는 사람의 의식은 그대가 말하는 것을 들을 수 있는 범위 안에서 방황하고 있다. 그러므로 이때 이 가르침을 읽어 주면 효과가 있다. 아직은 까르마가 만들어 내는 환상이 나타나지 않기 때문에, 그가 방향을 바꾸는데 큰 어려움이 없다. 첫 단계 중간계에서는 근원적인 투명한 빛을 인식하는데 실패했다 할지라도, 두 번째 단계에서는 인식하여 절대 자유의 경지에 이를 수 있다."
+                  "text": "‘두 번째 중간계’라고 부르는 상태가 정신적인 몸[心體] 앞에 나타날 때, 죽음의 길을 가는 사람의 의식은 그대가 말하는 것을 들을 수 있는 범위 안에서 방황하고 있다. 그러므로 이때 이 가르침을 읽어 주면 효과가 있다. 아직은 까르마가 만들어 내는 환상이 나타나지 않기 때문에, 그가 방향을 바꾸는데 큰 어려움이 없다. 첫 단계 중간계에서는 근원적인 투명한 빛을 인식하는데 실패했다 할지라도, 두 번째 단계에서는 인식하여 절대 자유의 경지에 이를 수 있다. 2.  자애로운 모습의  붓다와 보살들이  나타나는 저승 중간계"
                 },
                 {
                   "translator": "중암 선혜",
@@ -836,7 +830,20 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "group-2",
+    "chapterName": "자애로운 모습의 붓다와 보살들이 나타나는 저승 중간계",
+    "isGroup": true,
+    "subchapters": [
+      {
+        "id": "chapter-0",
+        "chapterName": "서론",
+        "verses": [
           {
             "id": "43",
             "title": "If liberation is still not attained through t...",
@@ -1064,7 +1071,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-1",
+        "chapterName": "첫째 날",
+        "verses": [
           {
             "id": "55",
             "title": "O, Child of Buddha Nature, should you have mo...",
@@ -1197,7 +1210,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-2",
+        "chapterName": "둘째 날",
+        "verses": [
           {
             "id": "62",
             "title": "If, however, even after receiving this introd...",
@@ -1311,7 +1330,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-3",
+        "chapterName": "셋째 날",
+        "verses": [
           {
             "id": "68",
             "title": "Yet, even after being introduced in this way,...",
@@ -1410,14 +1435,14 @@
           {
             "id": "73",
             "title": "By making this aspirational prayer with ferve...",
-            "chapterTitle": "By making this aspirational prayer with fervent devotion, you will dissolve into rainbow light in the heart of the transcendent lord Ratnasambhava, and you will attain buddhahood, as the Buddha-body of Perfect Resource, in the southern Buddha field of the Glorious (Śrῑmat).",
+            "chapterTitle": "By making this aspirational prayer with fervent devotion, you will dissolve into rainbow light in the heart of the transcendent lord Ratnasambhava, and you will attain buddhahood, as the Buddha-body of Perfect Resource, in the southern Buddha field of the Glorious (Śrῑmat). There is no doubt that if [the deceased] are receptive to this introduction, they will attain liberation, however weak their [individual] ability may be.",
             "text": {
               "tibetan": "",
-              "english": "By making this aspirational prayer with fervent devotion, you will dissolve into rainbow light in the heart of the transcendent lord Ratnasambhava, and you will attain buddhahood, as the Buddha-body of Perfect Resource, in the southern Buddha field of the Glorious (Śrῑmat).",
+              "english": "By making this aspirational prayer with fervent devotion, you will dissolve into rainbow light in the heart of the transcendent lord Ratnasambhava, and you will attain buddhahood, as the Buddha-body of Perfect Resource, in the southern Buddha field of the Glorious (Śrῑmat). There is no doubt that if [the deceased] are receptive to this introduction, they will attain liberation, however weak their [individual] ability may be.",
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "깊이 헌신하는 마음으로 이 기도를 드리면, 그대는 무지개 빛 찬란한 라트나삼바바 주님의 심장 속으로 녹아들어 가게 될 것이오. 남방에 있는 순수한 땅(南方淨土) 쉬리마트에 들어가 붓다의 깨달은 몸(報身)을 성취할 것이오."
+                  "text": "깊이 헌신하는 마음으로 이 기도를 드리면, 그대는 무지개 빛 찬란한 라트나삼바바 주님의 심장 속으로 녹아들어 가게 될 것이오. 남방에 있는 순수한 땅(南方淨土) 쉬리마트에 들어가 붓다의 깨달은 몸(報身)을 성취할 것이오. 죽음의 길을 가는 사람이 그대가 읽어 주는 가르침을 받아들여 평등하게 보는 지혜를 인식하고 하나 된다면, 생전에 수행 능력[根氣]이 아무리 미약했던 사람일지라도 틀림없이 절대 자유의 경지에 이르게 된다."
                 },
                 {
                   "translator": "중암 선혜",
@@ -1425,18 +1450,24 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-4",
+        "chapterName": "넷째 날",
+        "verses": [
           {
             "id": "74",
-            "title": "There is no doubt that if [the deceased] are ...",
-            "chapterTitle": "There is no doubt that if [the deceased] are receptive to this introduction, they will attain liberation, however weak their [individual] ability may be. Yet, even after being given this introduction many times, there are some whose positive opportunities have been exhausted by, for example, their great negativity or through not having maintained their commitments and so forth, who, even now, will not have accepted this introduction. These individuals will have turned away in fear of both the sounds and the luminosities and become agitated by desire and negative obscuration. So it is that, on the fourth day, the transcendent lord Amitābha’s assembly of deities will come to escort them and, at that same time, the light path [indicative of the realm] of the anguished spirits, which is generated by desire and miserliness, will emerge. Again, calling the deceased by name, the introduction should be given with the following words:",
+            "title": "Yet, even after being given this introduction...",
+            "chapterTitle": "Yet, even after being given this introduction many times, there are some whose positive opportunities have been exhausted by, for example, their great negativity or through not having maintained their commitments and so forth, who, even now, will not have accepted this introduction. These individuals will have turned away in fear of both the sounds and the luminosities and become agitated by desire and negative obscuration. So it is that, on the fourth day, the transcendent lord Amitābha’s assembly of deities will come to escort them and, at that same time, the light path [indicative of the realm] of the anguished spirits, which is generated by desire and miserliness, will emerge. Again, calling the deceased by name, the introduction should be given with the following words:",
             "text": {
               "tibetan": "",
-              "english": "There is no doubt that if [the deceased] are receptive to this introduction, they will attain liberation, however weak their [individual] ability may be. Yet, even after being given this introduction many times, there are some whose positive opportunities have been exhausted by, for example, their great negativity or through not having maintained their commitments and so forth, who, even now, will not have accepted this introduction. These individuals will have turned away in fear of both the sounds and the luminosities and become agitated by desire and negative obscuration. So it is that, on the fourth day, the transcendent lord Amitābha’s assembly of deities will come to escort them and, at that same time, the light path [indicative of the realm] of the anguished spirits, which is generated by desire and miserliness, will emerge. Again, calling the deceased by name, the introduction should be given with the following words:",
+              "english": "Yet, even after being given this introduction many times, there are some whose positive opportunities have been exhausted by, for example, their great negativity or through not having maintained their commitments and so forth, who, even now, will not have accepted this introduction. These individuals will have turned away in fear of both the sounds and the luminosities and become agitated by desire and negative obscuration. So it is that, on the fourth day, the transcendent lord Amitābha’s assembly of deities will come to escort them and, at that same time, the light path [indicative of the realm] of the anguished spirits, which is generated by desire and miserliness, will emerge. Again, calling the deceased by name, the introduction should be given with the following words:",
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "죽음의 길을 가는 사람이 그대가 읽어 주는 가르침을 받아들여 평등하게 보는 지혜를 인식하고 하나 된다면, 생전에 수행 능력[根氣]이 아무리 미약했던 사람일지라도 틀림없이 절대 자유의 경지에 이르게 된다. [넷째 날] 그러나 아무리 일러 주어도 악한 행위를 일삼은 사람이나, 맹세와 서원을 저버린 사람은 나타나는 모든 현상이 자신의 의식이 빚어내는 환상임을 인식하는 데 실패한다. 그들은 갈망과 죄로 인해 심하게 동요한다. 중간계에서 들리는 소리와 나타나는 빛을 무서워하며, 거기에서 도망가려고 한다. 이런 사람들에게는 넷째 날, 그를 돕기 위해 아미타바(阿彌陀佛)가 수행원 보살들과 함께 나타난다. 이 즈음 죽음의 길을 가는 사람은 탐욕과 갈망이 만들어 내는 아귀계(餓鬼界)에서 비치는 침침한 빛을 따라가려고 할 것이다. 이때 그의 이름을 부르고 다음과 같이 일러주도록 하라."
+                  "text": "[넷째 날] 그러나 아무리 일러 주어도 악한 행위를 일삼은 사람이나, 맹세와 서원을 저버린 사람은 나타나는 모든 현상이 자신의 의식이 빚어내는 환상임을 인식하는 데 실패한다. 그들은 갈망과 죄로 인해 심하게 동요한다. 중간계에서 들리는 소리와 나타나는 빛을 무서워하며, 거기에서 도망가려고 한다. 이런 사람들에게는 넷째 날, 그를 돕기 위해 아미타바(阿彌陀佛)가 수행원 보살들과 함께 나타난다. 이 즈음 죽음의 길을 가는 사람은 탐욕과 갈망이 만들어 내는 아귀계(餓鬼界)에서 비치는 침침한 빛을 따라가려고 할 것이다. 이때 그의 이름을 부르고 다음과 같이 일러주도록 하라."
                 },
                 {
                   "translator": "중암 선혜",
@@ -1524,14 +1555,14 @@
           {
             "id": "79",
             "title": "By making this aspirational prayer with ferve...",
-            "chapterTitle": "By making this aspirational prayer with fervent devotion, you will dissolve into rainbow light in the heart of the transcendent lord Amitābha and his consort, and you will attain buddhahood, as the Buddha-body of Perfect Resource, in the western Buddha field of the Blissful (Sukhāvatῑ).",
+            "chapterTitle": "By making this aspirational prayer with fervent devotion, you will dissolve into rainbow light in the heart of the transcendent lord Amitābha and his consort, and you will attain buddhahood, as the Buddha-body of Perfect Resource, in the western Buddha field of the Blissful (Sukhāvatῑ). Although it is impossible not to be liberated by [the successful recognition of] this [introduction],",
             "text": {
               "tibetan": "",
-              "english": "By making this aspirational prayer with fervent devotion, you will dissolve into rainbow light in the heart of the transcendent lord Amitābha and his consort, and you will attain buddhahood, as the Buddha-body of Perfect Resource, in the western Buddha field of the Blissful (Sukhāvatῑ).",
+              "english": "By making this aspirational prayer with fervent devotion, you will dissolve into rainbow light in the heart of the transcendent lord Amitābha and his consort, and you will attain buddhahood, as the Buddha-body of Perfect Resource, in the western Buddha field of the Blissful (Sukhāvatῑ). Although it is impossible not to be liberated by [the successful recognition of] this [introduction],",
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "깊이 헌신하는 마음으로 이 기도를 드리면, 그대는 무지개 빛 찬란한 아미타바 주님의 심장 속으로 녹아들어 가게 될 것이오. 서쪽에 있는 순수한 땅(西方淨土) 수카바티에 들어가 붓다의 깨달은 몸(報身)을 성취할 것이오."
+                  "text": "깊이 헌신하는 마음으로 이 기도를 드리면, 그대는 무지개 빛 찬란한 아미타바 주님의 심장 속으로 녹아들어 가게 될 것이오. 서쪽에 있는 순수한 땅(西方淨土) 수카바티에 들어가 붓다의 깨달은 몸(報身)을 성취할 것이오. 죽음의 길을 가는 사람이 이 가르침을 듣고 이해하면 분명히 절대 자유의 경지에 이른다."
                 },
                 {
                   "translator": "중암 선혜",
@@ -1539,18 +1570,24 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-5",
+        "chapterName": "다섯째 날",
+        "verses": [
           {
             "id": "80",
-            "title": "Although it is impossible not to be liberated...",
-            "chapterTitle": "Although it is impossible not to be liberated by [the successful recognition of] this [introduction], there are nonetheless those who will be unable to give up their propensities due to habituation over long periods of time, even after receiving such an introduction. Under the sway of envy and negative past actions, they will become fearful and overawed by the sounds and luminosities. Failing to be caught by the light-ray hook of compassion, they roam downwards into the fifth day. So it is that, on the fifth day, the transcendent lord Amoghasiddhi’s assembly of deities, resplendent with the light rays of compassion, will come to escort them and, at the same time, the light path indicative of [the realm of] the antigods, which is generated by the dissonant mental state of envy, will emerge invitingly. Again, calling the deceased by name, the introduction should now be given with the following words:",
+            "title": "there are nonetheless those who will be unabl...",
+            "chapterTitle": "there are nonetheless those who will be unable to give up their propensities due to habituation over long periods of time, even after receiving such an introduction. Under the sway of envy and negative past actions, they will become fearful and overawed by the sounds and luminosities. Failing to be caught by the light-ray hook of compassion, they roam downwards into the fifth day. So it is that, on the fifth day, the transcendent lord Amoghasiddhi’s assembly of deities, resplendent with the light rays of compassion, will come to escort them and, at the same time, the light path indicative of [the realm of] the antigods, which is generated by the dissonant mental state of envy, will emerge invitingly. Again, calling the deceased by name, the introduction should now be given with the following words:",
             "text": {
               "tibetan": "",
-              "english": "Although it is impossible not to be liberated by [the successful recognition of] this [introduction], there are nonetheless those who will be unable to give up their propensities due to habituation over long periods of time, even after receiving such an introduction. Under the sway of envy and negative past actions, they will become fearful and overawed by the sounds and luminosities. Failing to be caught by the light-ray hook of compassion, they roam downwards into the fifth day. So it is that, on the fifth day, the transcendent lord Amoghasiddhi’s assembly of deities, resplendent with the light rays of compassion, will come to escort them and, at the same time, the light path indicative of [the realm of] the antigods, which is generated by the dissonant mental state of envy, will emerge invitingly. Again, calling the deceased by name, the introduction should now be given with the following words:",
+              "english": "there are nonetheless those who will be unable to give up their propensities due to habituation over long periods of time, even after receiving such an introduction. Under the sway of envy and negative past actions, they will become fearful and overawed by the sounds and luminosities. Failing to be caught by the light-ray hook of compassion, they roam downwards into the fifth day. So it is that, on the fifth day, the transcendent lord Amoghasiddhi’s assembly of deities, resplendent with the light rays of compassion, will come to escort them and, at the same time, the light path indicative of [the realm of] the antigods, which is generated by the dissonant mental state of envy, will emerge invitingly. Again, calling the deceased by name, the introduction should now be given with the following words:",
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "죽음의 길을 가는 사람이 이 가르침을 듣고 이해하면 분명히 절대 자유의 경지에 이른다. [다섯째 날] 그러나 아무리 일러주어도, 질투심에 사로잡혀 있는 사람은 절대 자유의 경지로 인도하는 자비의 빛을 인식하지 못할 것이다. 그들은 부정적인 진화력과 질투심 때문에 중간계에서 나타나는 지혜의 빛과 소리를 두려워한다. 이런 사람들에게는 다섯째 날, 그를 인도하기 위해 아모가싯디(不空成就佛)가 수행원 보살들과 함께 나타난다. 이 즈음 죽음의 길을 가는 사람은 아수라계(阿修羅界)에서 비치는 습관적인 질투의 빛을 따라 가려고 할 것이다. 이때 그의 이름을 부르고 다음과 같이 일러주도록 하라."
+                  "text": "그러나 아무리 일러주어도, 질투심에 사로잡혀 있는 사람은 절대 자유의 경지로 인도하는 자비의 빛을 인식하지 못할 것이다. 그들은 부정적인 진화력과 질투심 때문에 중간계에서 나타나는 지혜의 빛과 소리를 두려워한다. 이런 사람들에게는 다섯째 날, 그를 인도하기 위해 아모가싯디(不空成就佛)가 수행원 보살들과 함께 나타난다. 이 즈음 죽음의 길을 가는 사람은 아수라계(阿修羅界)에서 비치는 습관적인 질투의 빛을 따라 가려고 할 것이다. 이때 그의 이름을 부르고 다음과 같이 일러주도록 하라."
                 },
                 {
                   "translator": "중암 선혜",
@@ -1645,7 +1682,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "깊이 헌신하는 마음으로 이 기도를 드리면, 그대는 무지개 빛 찬란한 아모가싯디 주님의 심장 속으로 녹아들어 가게 될 것이오. 북쪽에 있는 순수한 땅(北方淨土) 프라쿠타에 들어가 붓다의 깨달음 몸(報身)을 성취할 것이오. 생전에 수행 능력[根氣]이 미약했던 사람일지라도 그대가 읽어 주는 가르침을 통해, 밝게 빛나는 지혜의 빛을 자신의 의식에서 발산되는 빛으로 인식하고 절대 자유의 경지에 이를 것이다. 5가지 지혜의 빛 중에 어느 하나와는 틀림없이 결합할 수 있으리라."
+                  "text": "깊이 헌신하는 마음으로 이 기도를 드리면, 그대는 무지개 빛 찬란한 아모가싯디 주님의 심장 속으로 녹아들어 가게 될 것이오. 북쪽에 있는 순수한 땅(北方淨土) 프라쿠타에 들어가 붓다의 깨달음 몸(報身)을 성취할 것이오."
                 },
                 {
                   "translator": "중암 선혜",
@@ -1672,7 +1709,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-6",
+        "chapterName": "여섯째 날",
+        "verses": [
           {
             "id": "87",
             "title": "However, owing to a long association with myr...",
@@ -1683,7 +1726,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "[여섯째 날] 그러나 아무리 일러주어도, 본능에 강하게 사로잡혀 있는 사람은 앞에서 얘기한 지혜의 빛을 인식하지 못할 것이다. 이미 여러 차례 명확한 안내를 받았음에도 불구하고 여전히 부정적인 진화의 추진력에 끌려 다닌다. 절대 자유의 경지로 인도하는 자비의 빛을 두려워하며 낮은 차원으로 떨어져 들어간다. 이런 사람들에게는 여섯째 날, 그를 돕기 위해 다섯 붓다들이 수행원 보살들과 함께 동시에 나타난다. 이때 그의 이름을 부르고 다음과 같이 일러주도록 하라."
+                  "text": "그러나 아무리 일러주어도, 본능에 강하게 사로잡혀 있는 사람은 앞에서 얘기한 지혜의 빛을 인식하지 못할 것이다. 이미 여러 차례 명확한 안내를 받았음에도 불구하고 여전히 부정적인 진화의 추진력에 끌려 다닌다. 절대 자유의 경지로 인도하는 자비의 빛을 두려워하며 낮은 차원으로 떨어져 들어간다. 이런 사람들에게는 여섯째 날, 그를 돕기 위해 다섯 붓다들이 수행원 보살들과 함께 동시에 나타난다. 이때 그의 이름을 부르고 다음과 같이 일러주도록 하라."
                 },
                 {
                   "translator": "중암 선혜",
@@ -2014,7 +2057,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-7",
+        "chapterName": "일곱째 날",
+        "verses": [
           {
             "id": "105",
             "title": "However, those most lowly individuals in the ...",
@@ -2321,15 +2370,15 @@
           },
           {
             "id": "121",
-            "title": "This concludes the first part of the Great Li...",
-            "chapterTitle": "This concludes the first part of the Great Liberation by Hearing, the introduction to inner radiance in the intermediate state of the time of death and the introduction to the peaceful deities of the intermediate state of reality. ITI! SAMAYA! rgya rgya rgya!",
+            "title": "Now, the way in which the intermediate state ...",
+            "chapterTitle": "Now, the way in which the intermediate state of the wrathful deities arises should be presented.",
             "text": {
               "tibetan": "",
-              "english": "This concludes the first part of the Great Liberation by Hearing, the introduction to inner radiance in the intermediate state of the time of death and the introduction to the peaceful deities of the intermediate state of reality. ITI! SAMAYA! rgya rgya rgya!",
+              "english": "Now, the way in which the intermediate state of the wrathful deities arises should be presented.",
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "이제 <중간계에서 듣고 이해함으로써 그 자리에서 절대 자유의 경지에 이르게 하는 위대한 가르침>의 1부인, 죽음 중간계에서 경험하는 투명한 빛과 저승 중간계에서 나타나는 자애로운 모습의 붓다와 보살들에 대한 가르침을 마친다. SAMAYA GYA GYA GYA"
+                  "text": "[여덟째 날] 이제 무서운 모습의 신들이 나타나는 저승 중간계이다."
                 },
                 {
                   "translator": "중암 선혜",
@@ -2343,26 +2392,22 @@
     ]
   },
   {
-    "id": "group-2",
-    "chapterName": "2부. 무서운 모습의 붓다와 보살들이 나타나는 저승 중간계에 대한 해설",
+    "id": "group-3",
+    "chapterName": "무서운 모습의 붓다와 보살들이 나타나는 저승 중간계",
     "isGroup": true,
     "subchapters": [
       {
-        "id": "chapter-5",
-        "chapterName": "1) 서론",
+        "id": "chapter-0",
+        "chapterName": "여덟째 날",
         "verses": [
           {
             "id": "122",
-            "title": "PART TWO: An Elucidation of the Appearance of...",
-            "chapterTitle": "PART TWO: An Elucidation of the Appearance of the Wrathful Deities in the Intermediate State of Reality. Herein is contained An Elucidation of the Arising of the Intermediate State of the Wrathful Deities. INTRODUCTION. Now, the way in which the intermediate state of the wrathful deities arises should be presented.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "PART TWO: An Elucidation of the Appearance of the Wrathful Deities in the Intermediate State of Reality. Herein is contained An Elucidation of the Arising of the Intermediate State of the Wrathful Deities. INTRODUCTION. Now, the way in which the intermediate state of the wrathful deities arises should be presented.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "------◎------ 무서운 모습의 붓다와 보살들이 나타나는 저승 중간계 ------◎------ [여덟째 날] 이제 무서운 모습의 신들이 나타나는 저승 중간계이다."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "오, 고귀한 가문의 자손이시여! [불공성취불의] 성소작지의 녹색 광명은 그대 각성의 지혜의 힘이 성숙하지 못한 탓에 나타나지 않습니다."
@@ -2635,13 +2680,7 @@
                 }
               ]
             }
-          }
-        ]
-      },
-      {
-        "id": "chapter-6",
-        "chapterName": "2) 본론&결론",
-        "verses": [
+          },
           {
             "id": "137",
             "title": "MAIN SUBJECT MATTER. Having outlined in this ...",
@@ -2671,7 +2710,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "[여덟째 날] 오, 고귀한 가문의 자손이여! 정신 똑바로 차리고 들으시오. 자애로운 모습의 붓다와 보살들이 이미 나타났지만 그대는 그 빛을 깨닫지 못했소. 그래서 지금까지 방황하고 있는 거라오. 오늘을 여덟째 날이오. 이제 무서운 모습의 헤루까 붓다들이 그대 앞에 나타날 것이오. 동요하지 말고 그들을 인식하도록 하시오."
+                  "text": "오, 고귀한 가문의 자손이여! 정신 똑바로 차리고 들으시오. 자애로운 모습의 붓다와 보살들이 이미 나타났지만 그대는 그 빛을 깨닫지 못했소. 그래서 지금까지 방황하고 있는 거라오. 오늘을 여덟째 날이오. 이제 무서운 모습의 헤루까 붓다들이 그대 앞에 나타날 것이오. 동요하지 말고 그들을 인식하도록 하시오."
                 },
                 {
                   "translator": "중암 선혜",
@@ -2736,7 +2775,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-1",
+        "chapterName": "아홉째 날",
+        "verses": [
           {
             "id": "142",
             "title": "Yet should [the deceased], once again, flee i...",
@@ -2812,7 +2857,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-2",
+        "chapterName": "열 번째 날",
+        "verses": [
           {
             "id": "146",
             "title": "Yet, if those individuals who are greatly obs...",
@@ -2823,7 +2874,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "[열 번째 날] 분노와 두려움 때문에 바즈라 헤루까 주님을 피하려고 하는 사람에게는, 열 번째 날 보석 붓다 계열의 헤루까가 그를 돕기 위해 나타난다. 이때 그의 이름을 부르고, 다음과 같이 일러주도록 하라."
+                  "text": "분노와 두려움 때문에 바즈라 헤루까 주님을 피하려고 하는 사람에게는, 열 번째 날 보석 붓다 계열의 헤루까가 그를 돕기 위해 나타난다. 이때 그의 이름을 부르고, 다음과 같이 일러주도록 하라."
                 },
                 {
                   "translator": "중암 선혜",
@@ -2888,7 +2939,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-3",
+        "chapterName": "열 한 번째 날",
+        "verses": [
           {
             "id": "150",
             "title": "Yet, even after receiving this introduction, ...",
@@ -2899,7 +2956,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "[열 한 번째 날] 그대가 알려주는 대로 붓다와 그의 배우자를 만나고서도, 부정적인 성향 때문에 그들을 두려워하며 피하려는 사람이 있다. 그들은 무서운 모습으로 나타나는 붓다와 그의 배우자를 자신의 수호불로 인식하지 못하고, 죽음의 사자로 오해한다. 이런 사람에게는 열 한 번째 날, 연꽃 붓다 계열의 헤루까가 그를 돕기 위해 나타난다. 이때 그의 이름을 부르고, 다음과 같이 일러주도록 하라."
+                  "text": "그대가 알려주는 대로 붓다와 그의 배우자를 만나고서도, 부정적인 성향 때문에 그들을 두려워하며 피하려는 사람이 있다. 그들은 무서운 모습으로 나타나는 붓다와 그의 배우자를 자신의 수호불로 인식하지 못하고, 죽음의 사자로 오해한다. 이런 사람에게는 열 한 번째 날, 연꽃 붓다 계열의 헤루까가 그를 돕기 위해 나타난다. 이때 그의 이름을 부르고, 다음과 같이 일러주도록 하라."
                 },
                 {
                   "translator": "중암 선혜",
@@ -2964,7 +3021,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-4",
+        "chapterName": "열 두 번째 날",
+        "verses": [
           {
             "id": "154",
             "title": "Yet, even after receiving this introduction, ...",
@@ -2975,7 +3038,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "[열 두 번째 날] 그대가 알려주는 대로 붓다와 그의 배우자를 만나고서도, 부정적인 성향 때문에 그들을 두려워하며 피하려는 사람이 있다. 그들은 무서운 모습으로 나타나는 붓다와 그의 배우자를 자신의 수호불로 인식하지 못하고, 죽음의 사자로 오해한다. 이런 사람에게는 열 두 번째 날, 까르마 붓다 계열의 헤루까와 가우리 여신, 그리고 시체를 파먹는 피샤치 여신과 이쉬바리 여신이 그를 돕기 위해 나타난다. 이들을 올바로 인식하지 못하면 심한 공포 속에서 떨게 된다. 그러므로 그대는 죽음의 길을 가고 있는 사람의 이름을 부른 다음, 다음과 같이 일러주도록 하라."
+                  "text": "그대가 알려주는 대로 붓다와 그의 배우자를 만나고서도, 부정적인 성향 때문에 그들을 두려워하며 피하려는 사람이 있다. 그들은 무서운 모습으로 나타나는 붓다와 그의 배우자를 자신의 수호불로 인식하지 못하고, 죽음의 사자로 오해한다. 이런 사람에게는 열 두 번째 날, 까르마 붓다 계열의 헤루까와 가우리 여신, 그리고 시체를 파먹는 피샤치 여신과 이쉬바리 여신이 그를 돕기 위해 나타난다. 이들을 올바로 인식하지 못하면 심한 공포 속에서 떨게 된다. 그러므로 그대는 죽음의 길을 가고 있는 사람의 이름을 부른 다음, 다음과 같이 일러주도록 하라."
                 },
                 {
                   "translator": "중암 선혜",
@@ -3032,7 +3095,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "죽음의 길을 가는 사람이 그대가 읽어 주는 이 가르침을 듣고 무서운 모습으로 나타나는 까르마 헤루까 붓다와 그의 배우자를 자신의 수호불로 인식하고 하나로 결합한다면, 그는 깨달은 몸을 성취한 붓다가 될 것이다."
+                  "text": "죽음의 길을 가는 사람이 그대가 읽어 주는 이 가르침을 듣고 무서운 모습으로 나타나는 까르마 헤루까 붓다와 그의 배우자를 자신의 수호불로 인식하고 하나로 결합한다면, 그는 깨달은 몸을 성취한 붓다가 될 것이다. 이후부터는 무서운 여신들(가우리, 피샤치, 수문장 등)이 나타나는 장면으로 계속 이어집니다. 계속해서 병기가 필요하시다면 언제든 말씀해 주십시오! 앞선 157번째 문단에 이어서, 까르마 헤루까가 나타난 이후의 내용부터 수많은 여신들(가우리, 피샤치, 수문장, 이쉬바리 여신 등)의 출현, 그리고 무서운 모습의 신들이 나타나는 저승 중간계의 결론부 기도까지를 영어 번역본을 기준으로 매칭하여 병기해 드립니다."
                 },
                 {
                   "translator": "중암 선혜",
@@ -3502,44 +3565,25 @@
     ]
   },
   {
-    "id": "group-3",
-    "chapterName": "3부. 탄생 중간계에 대한 해설",
+    "id": "group-4",
+    "chapterName": "탄생 중간계 길 안내",
     "isGroup": true,
     "subchapters": [
       {
-        "id": "chapter-7",
-        "chapterName": "1) 정신적인 몸에 대한 서론",
+        "id": "chapter-0",
+        "chapterName": "서론",
         "verses": [
           {
-            "id": "182",
-            "title": "PART THREE: An Elucidation of the Intermediat...",
-            "chapterTitle": "PART THREE: An Elucidation of the Intermediate State of Rebirth. Herein is contained the Great Liberation by Hearing, an introduction to and elucidation of the intermediate state of rebirth, [which is an extract from] the Peaceful and Wrathful Deities: A Profound Sacred Teaching, [entitled] Natural Liberation through [Recognition of] Enlightened Intention. I bow with respect to the spiritual teachers, and assembled meditational deities. May they effect liberation in the intermediate state! From within the Great Liberation by Hearing, the intermediate state of reality has already been presented. Here then follows that which is known as the elucidation of the intermediate state of rebirth.",
-            "text": {
-              "tibetan": "",
-              "english": "PART THREE: An Elucidation of the Intermediate State of Rebirth. Herein is contained the Great Liberation by Hearing, an introduction to and elucidation of the intermediate state of rebirth, [which is an extract from] the Peaceful and Wrathful Deities: A Profound Sacred Teaching, [entitled] Natural Liberation through [Recognition of] Enlightened Intention. I bow with respect to the spiritual teachers, and assembled meditational deities. May they effect liberation in the intermediate state! From within the Great Liberation by Hearing, the intermediate state of reality has already been presented. Here then follows that which is known as the elucidation of the intermediate state of rebirth.",
-              "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "------◎------ 탄생 중간계 길 안내 ------◎------ 신의 무리들 앞에 엎드려 절하나이다. 모든 영적인 스승, 모든 수호불, 모든 다끼니들께 경배하며 청하옵나니, 저로하여금 중간계에서 자유의 경지에 이르게 하소서. 저승 중간계에 관한 가르침은 앞에서 제시한 바와 같고, 이제부터는 탄생 중간계에 관한 가르침을 시작하겠다."
-                },
-                {
-                  "translator": "중암 선혜",
-                  "text": "오, 고귀한 가문의 자손이시여! 만약 그대가 지금 이것을 깨닫지 못한 채 두려워하게 되면, 적정의 붓다들은 모두 무서운 마하깔라(大黑天)의 모습으로 나타나고, 분노의 헤루까들은 모두 염라대왕의 모습으로 나타납니다. 그래서 자기의 광경[현현]이 도리어 악마가 되어 그대는 윤회 속에 유랑하게 됩니다."
-                }
-              ]
-            }
-          },
-          {
             "id": "183",
-            "title": "[INTRODUCTION TO THE MENTAL BODY] Although th...",
-            "chapterTitle": "[INTRODUCTION TO THE MENTAL BODY] Although the elucidation of the intermediate state of reality has already been given many times, with the exception of those who are greatly experienced in the meditations of the [sacred] teachings and those who have an excellent inheritance of past actions, it is difficult for those lacking familiarity with meditative experience and those with a negative disposition to attain recognition, on account of the fear and terror [induced by] negative past actions.",
+            "title": "Although the elucidation of the intermediate ...",
+            "chapterTitle": "Although the elucidation of the intermediate state of reality has already been given many times, with the exception of those who are greatly experienced in the meditations of the [sacred] teachings and those who have an excellent inheritance of past actions, it is difficult for those lacking familiarity with meditative experience and those with a negative disposition to attain recognition, on account of the fear and terror [induced by] negative past actions.",
             "text": {
               "tibetan": "",
-              "english": "[INTRODUCTION TO THE MENTAL BODY] Although the elucidation of the intermediate state of reality has already been given many times, with the exception of those who are greatly experienced in the meditations of the [sacred] teachings and those who have an excellent inheritance of past actions, it is difficult for those lacking familiarity with meditative experience and those with a negative disposition to attain recognition, on account of the fear and terror [induced by] negative past actions.",
+              "english": "Although the elucidation of the intermediate state of reality has already been given many times, with the exception of those who are greatly experienced in the meditations of the [sacred] teachings and those who have an excellent inheritance of past actions, it is difficult for those lacking familiarity with meditative experience and those with a negative disposition to attain recognition, on account of the fear and terror [induced by] negative past actions.",
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "[서론] 죽음의 길을 가는 사람은, 저승 중간계에 관한 안내는 이미 여러 번 받았다. 생전에 수행을 통한 분명한 체험이 있던 사람이나 긍정적인 진화의 추진력이 강한 사람은 이미 빛을 인식하고 자유의 경지에 들어갔을 것이다. 그러나 생전에 수행과 체험이 거의 없고 악업을 쌓은 사람들은, 공포와 부정적인 진화의 추진력 때문에 빛을 인식하기가 어렵다."
+                  "text": "죽음의 길을 가는 사람은, 저승 중간계에 관한 안내는 이미 여러 번 받았다. 생전에 수행을 통한 분명한 체험이 있던 사람이나 긍정적인 진화의 추진력이 강한 사람은 이미 빛을 인식하고 자유의 경지에 들어갔을 것이다. 그러나 생전에 수행과 체험이 거의 없고 악업을 쌓은 사람들은, 공포와 부정적인 진화의 추진력 때문에 빛을 인식하기가 어렵다."
                 },
                 {
                   "translator": "중암 선혜",
@@ -3699,7 +3743,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-1",
+        "chapterName": "중간계  존재의  능력과 문제점",
+        "verses": [
           {
             "id": "192",
             "title": "But, on account of negative past actions, rec...",
@@ -3710,7 +3760,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "[중간계 존재의 능력과 문제점] 여기까지 와서도 부정적인 진화의 추진력 때문에 투명한 빛을 인식하지 못하는 사람에게는 다음과 같이 일러 주어라."
+                  "text": "여기까지 와서도 부정적인 진화의 추진력 때문에 투명한 빛을 인식하지 못하는 사람에게는 다음과 같이 일러 주어라."
                 },
                 {
                   "translator": "중암 선혜",
@@ -3881,7 +3931,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "오, 고귀한 가문의 자손이여! 이 세 지옥 구덩이는 실재하는 구덩이가 아니라오. 그대의 탐욕과 증오심과 무지가 투영된 환상이라오. 그대는 이런 환상이 보이면 탄생 중간계에 들어와 있다는 것을 깨달아야 하오. 위대한 자비로운 주님[觀世音菩薩]께 이렇게 기도하도록 하시오. “오, 자비로운 주님이시여! 영적인 스승이시여! 3가지 보물이시여! 저를 처참한 상태에 떨어지지 않도록 붙잡아 주소서. 부디 저를 잊지 마소서.”"
+                  "text": "오, 고귀한 가문의 자손이여! 이 세 지옥 구덩이는 실재하는 구덩이가 아니라오. 그대의 탐욕과 증오심과 무지가 투영된 환상이라오. 그대는 이런 환상이 보이면 탄생 중간계에 들어와 있다는 것을 깨달아야 하오. 위대한 자비로운 주님[觀世音菩薩]께 이렇게 기도하도록 하시오. “오, 자비로운 주님이시여! 영적인 스승이시여! 3가지 보물이시여! 저를 처참한 상태에 떨어지지 않도록 붙잡아 주소서. 부디 저를 잊지 마소서.” 이후의 탄생 중간계 부분(재탄생을 막거나 좋은 자궁을 선택하는 방법 등)도 계속해서 병기가 필요하시다면 언제든지 말씀해 주십시오! 앞선 201번째 문단에 이어서, ‘탄생 중간계(Intermediate State of Rebirth)에서의 환상과 중간계 존재의 상태, 죽음의 신과의 만남, 두고 온 세상 일에 대한 집착 포기’에 이르는 내용을 영어 번역본을 기준으로 매칭하여 병기해 드립니다."
                 },
                 {
                   "translator": "중암 선혜",
@@ -4052,7 +4102,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "그래서 그대는 그대의 시체 속으로 들어가지 못할 것이오. 그럼에도 불구하고 그대는 9번까지 그 짓을 반복할 것이오. 그대는 들어갈 곳이 없기 때문에 절망하며, 바위나 돌틈에 낀 것 같이 답답함을 느낄 것이오. 이런 고통은 탄생 중간계의 특징이오. 깃들만한 육체를 찾아 아무리 헤멜지라도, 이런 고통만 반복될 뿐 쉴 곳은 찾지 못한다오. 그러니 육체에 대한 갈망을 버리도록 하시오. 억지로 어떻게 해 보려는 노력을 포기하고, 마음을 편안하게 갖도록 하시오."
+                  "text": "그래서 그대는 그대의 시체 속으로 들어가지 못할 것이오. 그럼에도 불구하고 그대는 9번까지 그 짓을 반복할 것이오. 그대는 들어갈 곳이 없기 때문에 절망하며, 바위나 돌틈에 낀 것 같이 답답함을 느낄 것이오. 이런 고통은 탄생 중간계의 특징이오. 깃들만한 육체를 찾아 아무리 헤멜지라도, 이런 고통만 반복될 뿐 쉴 곳은 찾지 못한다오. 그러니 육체에 대한 갈망을 버리도록 하시오. 억지로 어떻게 해보려는 노력을 포기하고, 마음을 편안하게 갖도록 하시오."
                 },
                 {
                   "translator": "중암 선혜",
@@ -4079,7 +4129,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-2",
+        "chapterName": "죽음의 신과 만나는 단계",
+        "verses": [
           {
             "id": "212",
             "title": "However, even though this introduction is giv...",
@@ -4090,7 +4146,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "[죽음의 신과 만나는 단계] 아무리 가르쳐 주어도 부정적인 진화의 추진력 때문에 실재의 빛을 인식하지 못하는 사람이 있다. 그런 사람에게는 이름을 부른 다음 이렇게 일러 주도록 하라."
+                  "text": "아무리 가르쳐 주어도 부정적인 진화의 추진력 때문에 실재의 빛을 인식하지 못하는 사람이 있다. 그런 사람에게는 이름을 부른 다음 이렇게 일러 주도록 하라."
                 },
                 {
                   "translator": "중암 선혜",
@@ -4402,7 +4458,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-3",
+        "chapterName": "두고 온 세상 일에 대한 집착의 포기",
+        "verses": [
           {
             "id": "229",
             "title": "Yet, since there is the possibility that [the...",
@@ -4413,7 +4475,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "[두고 온 세상 일에 대한 집착의 포기] 그러나 여전히 빛을 깨닫지 못하는 사람이 있을 수 있다. 그런 사람에게는 끈기를 가지고 다음과 같이 일어 주는 것이 중요하다. 그의 이름을 부른 다음, 이렇게 일러 주도록 하라."
+                  "text": "그러나 여전히 빛을 깨닫지 못하는 사람이 있을 수 있다. 그런 사람에게는 끈기를 가지고 다음과 같이 일어 주는 것이 중요하다. 그의 이름을 부른 다음, 이렇게 일러 주도록 하라."
                 },
                 {
                   "translator": "중암 선혜",
@@ -4653,20 +4715,20 @@
         ]
       },
       {
-        "id": "chapter-8",
-        "chapterName": "2) 자궁으로 들어가는 것을 막음",
+        "id": "chapter-4",
+        "chapterName": "여섯 존재 차원에서 비치는 희미한 빛",
         "verses": [
           {
             "id": "242",
-            "title": "[OBSTRUCTION OF THE WOMB ENTRANCES] Even thou...",
-            "chapterTitle": "[OBSTRUCTION OF THE WOMB ENTRANCES] Even though this introduction may have been given many times, due to the potency of strong negative past actions, recognition may be difficult. It is very beneficial, therefore, to repeat [the introduction] now, many times. Again, therefore, calling to the deceased by name, you should say the following words [at least] three times:",
+            "title": "Even though this introduction may have been g...",
+            "chapterTitle": "Even though this introduction may have been given many times, due to the potency of strong negative past actions, recognition may be difficult. It is very beneficial, therefore, to repeat [the introduction] now, many times. Again, therefore, calling to the deceased by name, you should say the following words [at least] three times:",
             "text": {
               "tibetan": "",
-              "english": "[OBSTRUCTION OF THE WOMB ENTRANCES] Even though this introduction may have been given many times, due to the potency of strong negative past actions, recognition may be difficult. It is very beneficial, therefore, to repeat [the introduction] now, many times. Again, therefore, calling to the deceased by name, you should say the following words [at least] three times:",
+              "english": "Even though this introduction may have been given many times, due to the potency of strong negative past actions, recognition may be difficult. It is very beneficial, therefore, to repeat [the introduction] now, many times. Again, therefore, calling to the deceased by name, you should say the following words [at least] three times:",
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "[여섯 존재 차원에서 비치는 희미한 빛] 그대가 아무리 여러 번 일러 주어도 부정적인 진화의 힘이 너무 강한 사람은 깨닫지 못할 것이다. 그런 사람에게는 다음 가르침을 반복해서 읽어주는 것이 도움이 된다. 그대는 그의 이름을 부른 다음, 다음과 같이 일러주도록 하라."
+                  "text": "그대가 아무리 여러 번 일러 주어도 부정적인 진화의 힘이 너무 강한 사람은 깨닫지 못할 것이다. 그런 사람에게는 다음 가르침을 반복해서 읽어주는 것이 도움이 된다. 그대는 그의 이름을 부른 다음, 다음과 같이 일러주도록 하라."
                 },
                 {
                   "translator": "중암 선혜",
@@ -4731,7 +4793,13 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-5",
+        "chapterName": "자궁으로 들어가는 것을 막음",
+        "verses": [
           {
             "id": "246",
             "title": "Yet, those unfamiliar with meditative experie...",
@@ -4742,7 +4810,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "[자궁으로 들어가는 것을 막음] 앞에서 일러 준 대로 명상하지 못하고, 따라서 빛을 인식하지 못하는 우둔한 사람이 있을 수 있다. 그런 사람은 자궁 입구를 찾아 돌아다닐 것이다. 그런 사람에게는 자궁으로 들어가는 것을 막는 방법을 가르쳐 주는 것이 중요하다. 그대는 그의 이름을 부른 다음, 다음과 같이 일러주도록 하라. 오, 고귀한 가문의 자손이여! 앞에서 일러 준 가르침을 이해하지 못했다면, 그대는 지금 진화의 힘에 의해 위나 옆이나 아래로 머리가 쏠리는 듯한 느낌을 받을 것이오. 그렇다면 자비로운 주님[觀世音菩薩]을 기억하고, 그분에 대해 명상하도록 하시오. 이제 앞에서 설명한 바 있는 무서운 광경이 나타날 것이오. 태풍과 눈보라가 몰아치고, 우박이 쏟아지며, 짙은 안개 속에서 수많은 무리가 그대를 치려고 몰려들 것이오. 그러면 그대는 어디로든 도망가 숨으려고 할 것이오. 이때 공덕을 쌓은 것이 없다면 비참한 장소로 숨어 들어갈 것이고, 공덕이 있다면 행복한 장소로 피해 들어갈 것이오."
+                  "text": "앞에서 일러 준 대로 명상하지 못하고, 따라서 빛을 인식하지 못하는 우둔한 사람이 있을 수 있다. 그런 사람은 자궁 입구를 찾아 돌아다닐 것이다. 그런 사람에게는 자궁으로 들어가는 것을 막는 방법을 가르쳐 주는 것이 중요하다. 그대는 그의 이름을 부른 다음, 다음과 같이 일러주도록 하라. 오, 고귀한 가문의 자손이여! 앞에서 일러 준 가르침을 이해하지 못했다면, 그대는 지금 진화의 힘에 의해 위나 옆이나 아래로 머리가 쏠리는 듯한 느낌을 받을 것이오. 그렇다면 자비로운 주님[觀世音菩薩]을 기억하고, 그분에 대해 명상하도록 하시오. 이제 앞에서 설명한 바 있는 무서운 광경이 나타날 것이오. 태풍과 눈보라가 몰아치고, 우박이 쏟아지며, 짙은 안개 속에서 수많은 무리가 그대를 치려고 몰려들 것이오. 그러면 그대는 어디로든 도망가 숨으려고 할 것이오. 이때 공덕을 쌓은 것이 없다면 비참한 장소로 숨어 들어갈 것이고, 공덕이 있다면 행복한 장소로 피해 들어갈 것이오."
                 },
                 {
                   "translator": "중암 선혜",
@@ -4818,7 +4886,7 @@
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "뜻을 잘 생각하면서, 크고 분명한 소리로 이 기도를 반복하시오. 뜻을 생각하면서 기도하는 것이 중요하오. “이제 탄생 중간계의 여명이 밝아 오고 있다”는 것은, 그대가 지금 탄생 중간계로 들어 가고 있다는 뜻이오. 물 속을 들여다 보아도 그대의 모습이 물에 비치지 않는다면, 그게 바로 그대가 탄생 중간계로 접어 들었다는 증거라오. 그대는 지금 물질적인 실체가 없는 정신적인 몸으로 탄생 중간계를 방황하고 있는 중이오. 그러므로 마음을 굳게 먹고 한 곳에 집중해야만 하오. 지금 가장 중요한 것은 정신 집중이오. 고삐를 움켜잡고 말을 제어하듯이, 그렇게 그대의 마음을 흔들리지 않도록 제어하시오. 그러면 그대가 마음 먹는대로 될 수 있소. 그대 자신의 부정적인 모습은 추호도 생각하지 마시오. 그대신 생전에 배운 진리나 가르침, 또는 입문할 때 스승께서 하신 말씀이나 <중간계에서 듣고 이해함으로써 그 자리에서 절대 자유의 경지에 이르게 하는 위대한 가르침>과 같은 책에 대한 영적인 설명 같은 데에만 마음을 두도록 하시오. 그리고 “긍정적인 진화의 추진력만 계속 강화시키리라”고 생각하도록 하시오. 이것은 대단히 중요한 일이오. 정신 똑바로 차리고 시키는대로 하시오. 이 순간 그대의 결단에 따라 높은 차원으로 올가갈 수도 있고 낮은 차원으로 떨어질 수도 있소. 분명한 결단을 내리지 못하고 게으름을 피우면 고통스러운 상황에 떨어질 것이오. 그러나 마음을 집중하여 긍정적인 생각만 한다면 행복하게 될 것이오. 그러니 마음을 집중하여, 선한 것만을 계속 생각하도록 하시오."
+                  "text": "뜻을 잘 생각하면서, 크고 분명한 소리로 이 기도를 반복하시오. 뜻을 생각하면서 기도하는 것이 중요하오. “이제 탄생 중간계의 여명이 밝아 오고 있다”는 것은, 그대가 지금 탄생 중간계로 들어 가고 있다는 뜻이오. 물 속을 들여다 보아도 그대의 모습이 물에 비치지 않는다면, 그게 바로 그대가 탄생 중간계로 접어 들었다는 증거라오. 그대는 지금 물질적인 실체가 없는 정신적인 몸으로 탄생 중간계를 방황하고 있는 중이오. 그러므로 마음을 굳게 먹고 한 곳에 집중해야만 하오. 지금 가장 중요한 것은 정신 집중이오. 고삐를 움켜잡고 말을 제어하듯이, 그렇게 그대의 마음을 흔들리지 않도록 제어하시오. 그러면 그대가 마음 먹은대로 될 수 있소. 그대 자신의 부정적인 모습은 추호도 생각하지 마시오. 그대신 생전에 배운 진리나 가르침, 또는 입문할 때 스승께서 하신 말씀이나 <중간계에서 듣고 이해함으로써 그 자리에서 절대 자유의 경지에 이르게 하는 위대한 가르침>과 같은 책에 대한 영적인 설명 같은 데에만 마음을 두도록 하시오. 그리고 “긍정적인 진화의 추진력만 계속 강화시키리라”고 생각하도록 하시오. 이것은 대단히 중요한 일이오. 정신 똑바로 차리고 시키는대로 하시오. 이 순간 그대의 결단에 따라 높은 차원으로 올라갈 수도 있고 낮은 차원으로 떨어질 수도 있소. 분명한 결단을 내리지 못하고 게으름을 피우면 고통스러운 상황에 떨어질 것이오. 그러나 마음을 집중하여 긍정적인 생각만 한다면 행복하게 될 것이오. 그러니 마음을 집중하여, 선한 것만을 계속 생각하도록 하시오."
                 },
                 {
                   "translator": "중암 선혜",
@@ -4867,15 +4935,15 @@
           },
           {
             "id": "253",
-            "title": "Should even this not obstruct the womb entran...",
-            "chapterTitle": "Should even this not obstruct the womb entrances, and you are still drawn ever nearer to entering the womb, the third method, which reverses attachment and aversion, is now to be revealed to you. There are four modes of birth: birth from an egg, birth from a womb, supernormal birth, and birth from warmth and moisture. Among these, the birth from an egg and birth from a womb are very similar, in that in both cases you will see the male and the female engaged in sexual union, as [described] above.",
+            "title": "Then again, there are several kinds [of perso...",
+            "chapterTitle": "Then again, there are several kinds [of persons] who do not achieve liberation, despite having received the above introductions and having been taught the above visualisation techniques. This [lack of ability] comes about through limited familiarity with virtuous past actions, extensive primal familiarity with non-virtuous past actions, and the potency and great force of negative obscurations. So, at this stage, if the womb entrances have still not been [successfully] obstructed [as described] above, there is a profound oral instruction for choosing an [appropriate] womb entrance, which should now be presented. Again, one should request the assistance of the buddhas and bodhisattvas, take refuge in [the Three Precious Jewels] and cultivate an altruistic intention. Then, as before, calling to the deceased by name, three times, one should say the following words:",
             "text": {
               "tibetan": "",
-              "english": "Should even this not obstruct the womb entrances, and you are still drawn ever nearer to entering the womb, the third method, which reverses attachment and aversion, is now to be revealed to you. There are four modes of birth: birth from an egg, birth from a womb, supernormal birth, and birth from warmth and moisture. Among these, the birth from an egg and birth from a womb are very similar, in that in both cases you will see the male and the female engaged in sexual union, as [described] above.",
+              "english": "Then again, there are several kinds [of persons] who do not achieve liberation, despite having received the above introductions and having been taught the above visualisation techniques. This [lack of ability] comes about through limited familiarity with virtuous past actions, extensive primal familiarity with non-virtuous past actions, and the potency and great force of negative obscurations. So, at this stage, if the womb entrances have still not been [successfully] obstructed [as described] above, there is a profound oral instruction for choosing an [appropriate] womb entrance, which should now be presented. Again, one should request the assistance of the buddhas and bodhisattvas, take refuge in [the Three Precious Jewels] and cultivate an altruistic intention. Then, as before, calling to the deceased by name, three times, one should say the following words:",
               "korean": [
                 {
                   "translator": "정창영",
-                  "text": "이 방법으로도 자궁 입구를 막지 못하고, 자궁으로 들어가고자 하는 힘이 계속 작용한다면, 애착과 증오의 힘을 돌려 놓는 3번째 방법을 사용해야 하오. 태어나는 형태는 4가지가 있소. 알에서 태어나는 형태(卵生), 자궁에서 태어나는 형태(胎生), 자궁이나 알을 통하지 않고 변화에 의해 태어나는 형태(化生), 따뜻하고 축축한 곳에서 태어나는 형태(濕生)가 있소. 이 중에서 알에서 태어나는 것과 자궁에서 태어나는 것은 비슷하오. 그대 앞에는 이미 성적인 결합을 하고 있는 남녀의 모습이 나타나기 시작했소."
+                  "text": "그동안 여러 가지 가르침을 받고도 생전에 밥먹듯이 죄를 지은 사람들, 선이라고는 씨도 찾아보기 어려운 사람들은 자유의 경지에 이르지 못했을 수도 있다. 그러면 자궁 입구도 아직 막히지 않은 상태이다. 그대는 지금부터 그런 사람들에게 자궁을 선택하는 방법을 가르쳐 주도록 하라. 먼저 <붓다와 보살들께 도움을 청하는 기도>와 3가지 보물께 귀의하는 기도를 드려라. 그런 다음 죽음의 길을 가고 있는 사람의 이름을 3번 부르고, 다음과 같이 일러주도록 하라."
                 },
                 {
                   "translator": "중암 선혜",
@@ -4886,16 +4954,12 @@
           },
           {
             "id": "254",
-            "title": "If, based on either attachment or aversion, y...",
-            "chapterTitle": "If, based on either attachment or aversion, you enter a womb at this time, you will be born as a horse, bird, dog, human, or whatever is appropriate. If you are to be born as a male, you will experience the perceptions of a male. You will feel intense aversion towards the father and you will feel jealousy and attachment towards the mother. If you are to be born as a female, you will experience the perceptions of a female. You will feel intense envy and jealousy towards the mother and you will feel intense attachment and affection towards the father. This [emotional arousal] will cause you to enter a womb... Finally, you will emerge [from the womb] and open your eyes. Now, you will have turned into a puppy... So consequently, you will suffer in a dog-kennel, or similarly, in a pigsty, or an anthill, or a wormhole, or else you may be born as a baby bull, a goat, a sheep and so forth. There is no way back. You will experience all manner of sufferings in a state of great obscurity and delusion. Through this process you will continue to remain within the six classes of living beings, including the realms of the hell beings and the anguished spirits. You will be completely drained by boundless sufferings.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "If, based on either attachment or aversion, you enter a womb at this time, you will be born as a horse, bird, dog, human, or whatever is appropriate. If you are to be born as a male, you will experience the perceptions of a male. You will feel intense aversion towards the father and you will feel jealousy and attachment towards the mother. If you are to be born as a female, you will experience the perceptions of a female. You will feel intense envy and jealousy towards the mother and you will feel intense attachment and affection towards the father. This [emotional arousal] will cause you to enter a womb... Finally, you will emerge [from the womb] and open your eyes. Now, you will have turned into a puppy... So consequently, you will suffer in a dog-kennel, or similarly, in a pigsty, or an anthill, or a wormhole, or else you may be born as a baby bull, a goat, a sheep and so forth. There is no way back. You will experience all manner of sufferings in a state of great obscurity and delusion. Through this process you will continue to remain within the six classes of living beings, including the realms of the hell beings and the anguished spirits. You will be completely drained by boundless sufferings.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "이때 애착과 증오의 힘에 영향을 받아 자궁 속으로 들어가면, 말이나 새나 개나 인간 같은 존재로 태어나게 된다오. 그대가 남자로 태어나는 중이라면 남자로서의 감정을 느끼게 될 것이오. 아버지에 대해서는 강한 증오심이 생기고, 어머니에 대해서는 애착이 생길 것이오. 만약 여자로 태어나는 중이라면 여자로서의 감정을 느끼게 될 것이오. 어머니에 대해서는 강한 질투와 증오심이 생기고, 아버지에 대해서는 애착과 갈망을 느끼게 될 것이오. 이런 감정에 휩싸이면 자궁으로 들어가게 되오... 그대가 정신을 차렸을때, 강아지로 태어난 그대의 모습을 보게 될 지도 모르오. 이전까지는 사람이었지만, 이제는 개로 태어나서 개집에 묶여 고통을 당하게 되는 것이오. 돼지우리, 개미굴, 벌레구멍, 소나 양이나 염소 같은 가축의 외양간에 태어날지도 모르오. 그런 곳에 태어나면 인간 상태로 되돌아 오지 못하오. 지독하게 우둔하고 미혹된 상태에서 여러가지 비참한 고통을 경험하게 될 것이오. 같은 식으로 지옥계나 아귀계 등을 떠돌며 말할 수 없는 고통을 당할 것이오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "그와 같이 지옥과 아귀 등의 육도세계를 윤회하면서 무량한 고통에 짓눌리고 억압받게 됩니다. 이것보다 더 처참한 것은 없습니다. 이것보다 더 무서운 것은 없습니다. 아, 두렵고 두려운지고! 아, 딱하고 딱한지고! 스승님의 가르침을 받지 못한 자들은 그와 같이 윤회의 나락에 떨어져서, 끝없는 고통에 억눌리고, 벗어날 길도 없이 참지 못할 괴로움들을 당하게 됩니다. 그러므로 제가 하는 말을 귀담아 잘 듣도록 하십시오! 제가 일러주는 이 가르침들을 가슴 깊이 새기도록 하십시오! 이제 애욕과 성냄을 파괴하여 자궁의 문을 막는 심오한 가르침을 설명코자 합니다. 귀담아 잘 듣고 마음 깊이 간직토록 하십시오!,"
@@ -4905,16 +4969,12 @@
           },
           {
             "id": "255",
-            "title": "There is nothing more awesome or frightening ...",
-            "chapterTitle": "There is nothing more awesome or frightening than this! ... Rather than this, listen to my words! Understand this instruction of mine. I will reveal now an oral instruction which obstructs the womb entrances, through the reversal of attachment and the reversal of aversion... O, Child of Buddha Nature, when the feelings of attachment and aversion arise, meditate as follows: ‘Alas, sentient beings such as I, with such negative past actions, have, up until now, roamed in cyclic existence. I have continued to wander in this way, being driven on by my feelings of attachment and aversion... Therefore, now, from the very beginning, I must not generate attachment or aversion. Oh dear, Oh dear! As of now, I shall never again be motivated by attachment or aversion.’ By concentrating intently on this thought, as it is said in the tantras, the womb entrances will be obstructed by this [singular intent] alone.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "There is nothing more awesome or frightening than this! ... Rather than this, listen to my words! Understand this instruction of mine. I will reveal now an oral instruction which obstructs the womb entrances, through the reversal of attachment and the reversal of aversion... O, Child of Buddha Nature, when the feelings of attachment and aversion arise, meditate as follows: ‘Alas, sentient beings such as I, with such negative past actions, have, up until now, roamed in cyclic existence. I have continued to wander in this way, being driven on by my feelings of attachment and aversion... Therefore, now, from the very beginning, I must not generate attachment or aversion. Oh dear, Oh dear! As of now, I shall never again be motivated by attachment or aversion.’ By concentrating intently on this thought, as it is said in the tantras, the womb entrances will be obstructed by this [singular intent] alone.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "이보다 더 끔찍한 일은 없소. 아! 아! 생각만해도 끔찍한 일이오... 그러니 내가 하는 말을 귀담아 들으시오... 그러면 이제 애착과 증오의 힘을 돌려 놓음으로써 자궁 입구를 막는 방법을 가르쳐 드리겠소... 오, 고귀한 가문의 자손이여! 애착과 증오심이 일어나거든 이렇게 생각하도록 하시오. “아! 이런 부정적인 진화의 추진력 때문에 윤회 세계를 방황하는 것이로구나. 애착과 증오를 버리지 않으면 끝없이 방황하게 되겠지... 그러니 애착과 증오를 털어 버리자. 정신 똑바로 차리고, 다시는 애착과 증오의 감정에 휩싸이지 않도록 하자.” 탄트라 경전은 이런 결단과 집중 상태가 자궁 입구를 막는다고 가르치고 있소."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "앞에서, “부정한 자궁의 문을 막은 뒤, 해탈의 길로 돌아옴을 기억하리라! 지금 인내심과 순결한 생각이 나에게 절실히 필요한 이때, 남녀의 교합에 질투를 버리고, 스승의 합체로 그들을 닦으리라!”고 설하였습니다. 그와 같이 남자로 태어나게 되면, 어머니에게 애욕을 품고, 아버지에게는 성냄을 일으키게 됩니다. 여자로 태어나게 되면, 아버지에게 애욕을 품고, 어머니에게 성내고 질투하는 감정을 일으키게 됩니다. 그때에 필요한 심오한 가르침이 있습니다."
@@ -4924,16 +4984,12 @@
           },
           {
             "id": "256",
-            "title": "Yet if, even having done this, the womb entra...",
-            "chapterTitle": "Yet if, even having done this, the womb entrances are still not obstructed and [the deceased] draws ever nearer to entering a womb, then the womb entrances should be obstructed by giving the oral instruction on the unreal and illusion-like nature [of all phenomena]... ‘Alas! The father and the mother [in sexual union], the rain, the blackness, the hurricane, the thunderous sound, the fearful and terrifying experiences, the nature of these and of all phenomena is illusion-like. In whatever form [phenomena] arise, they are not real... [In reality], they are like a dream, like an illusion, like an echo, like a celestial city, like a mirage, like a reflection, like an optical illusion, like the moon [reflected] in water. It is absolutely certain that these [phenomena] are not truly real, but that they are false...’ By knowing from the depths of your heart that all these [phenomena] are unreal, the womb entrances will certainly be obstructed.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "Yet if, even having done this, the womb entrances are still not obstructed and [the deceased] draws ever nearer to entering a womb, then the womb entrances should be obstructed by giving the oral instruction on the unreal and illusion-like nature [of all phenomena]... ‘Alas! The father and the mother [in sexual union], the rain, the blackness, the hurricane, the thunderous sound, the fearful and terrifying experiences, the nature of these and of all phenomena is illusion-like. In whatever form [phenomena] arise, they are not real... [In reality], they are like a dream, like an illusion, like an echo, like a celestial city, like a mirage, like a reflection, like an optical illusion, like the moon [reflected] in water. It is absolutely certain that these [phenomena] are not truly real, but that they are false...’ By knowing from the depths of your heart that all these [phenomena] are unreal, the womb entrances will certainly be obstructed.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "오, 고귀한 가문의 자손이여! 정신 똑바로 차리고, 그대의 마음을 한 곳에 집중 하시오. 앞에서 가르쳐 준 대로 명상을 해도 자궁 입구가 막히지 않는다면, 그래서 자궁으로 들어가려는 힘이 계속 작용한다면, 현상의 비실재성에 대해 명상함으로써 자궁 입구를 막아야 하오. 이렇게 생각하도록 하시오. “암컷과 수컷, 어머니와 아버지, 태풍과 회오리 바람과 천둥, 무시무시한 광경 등 모든 현상은 실체가 없는 환영(幻影)이다. 실제로 존재하는 것이 아니다... 메아리, 요정들의 도시, 신기루, 거울에 비친 영상, 허깨비, 물에 비친 달 그림자 같다는 것을 깨달아야겠다. 한 순간도 고정 불변의 실체를 가지고 있지 않은, 분명한 비실재라는 것을 알아야겠다.” ... 만물이 실재가 아니라는 것을 이해하면 자궁 입구가 확실히 막힐 것이오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "오, 고귀한 가문의 자손이시여! 애욕과 성냄이 일어날 때 다음과 같이 닦도록 하십시오! “아, 나와 같은 중생들이 일찍이 악업으로 윤회에 유랑하는 것은 모두 이와 같은 애욕과 성냄 둘에 의거해서 유전하는 것이다. 이제 또 이와 같은 애욕과 성냄을 일으킨다면, 끝없는 윤회세계를 떠돌며 가없는 고통의 바다에서 한없는 세월을 보내는 위험이 있게 된다. 이제는 결코 다시 애욕과 성냄을 일으키지 않으리라! 참으로 가련하도다! 이제는 이와 같은 애욕과 성냄을 다시는 범하지 않으리라!”는 강렬한 희원을 마음속에 깊이 새김으로써, “그것에 의해서 자궁의 문이 닫힌다.”고 딴뜨라의 경궤에서 설하였습니다.,"
@@ -4943,16 +4999,12 @@
           },
           {
             "id": "257",
-            "title": "However, if, despite this [teaching] being gi...",
-            "chapterTitle": "However, if, despite this [teaching] being given, the apprehension of true existence is not shattered, and the womb entrances are therefore not obstructed... you must obstruct the womb entrances by meditating on inner radiance. The method of meditation is as follows: ‘Alas! All [seemingly] substantial phenomena are [expressions of] my own mind. Yet, [in reality], this mind is of the nature of emptiness, it is beyond creation and beyond cessation.’ ... Let the mind rest in this, its natural state, directly in itself, in the same way, for example, as water is poured into water. Let [the mind] rest in its natural flow, clear, unconstricted, uncontrived and relaxed. [By following this method] you can be sure that the womb entrances to the four modes of birth will certainly be obstructed. Meditate again and again in this way, until the womb entrances are closed.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "However, if, despite this [teaching] being given, the apprehension of true existence is not shattered, and the womb entrances are therefore not obstructed... you must obstruct the womb entrances by meditating on inner radiance. The method of meditation is as follows: ‘Alas! All [seemingly] substantial phenomena are [expressions of] my own mind. Yet, [in reality], this mind is of the nature of emptiness, it is beyond creation and beyond cessation.’ ... Let the mind rest in this, its natural state, directly in itself, in the same way, for example, as water is poured into water. Let [the mind] rest in its natural flow, clear, unconstricted, uncontrived and relaxed. [By following this method] you can be sure that the womb entrances to the four modes of birth will certainly be obstructed. Meditate again and again in this way, until the womb entrances are closed.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "가르쳐 준대로 해도 실체에 대한 믿음이 사라지지 않고 자궁 입구가 막히지 않는다면, 그래서 자궁으로 들어가려는 힘이 계속 작용한다면... 투명한 빛에 대해 명상함으로써 자궁 입구를 막는 5번째 방법을 써야 하오. 이렇게 생각하도록 하시오. “모든 것이 내 마음이며, 이 마음은 비어-있다. 마음은 태어나지도 않고 소멸되지도 않는다(不生不滅).” 이렇게 생각하면서, 마음이 자연스럽게 흘러 가도록 간섭하지 마시오. 물이 흘러 가듯이, 마음 스스로 제 길로 흘러 가도록 내버려 두시오. 편안한 상태로 마음을 풀어 놓으시오. 그러면 자궁 입구가 막혀, 4가지 종류의 태어나는 형태의 그 어떤 형태로도 태어나지 않게 될 것이오. 그러므로 자궁 입구가 확실히 막힐 때까지 거듭거듭 이 명상을 하도록 하시오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "자궁의 문을 막는 네 번째 방법 오, 고귀한 가문의 자손이시여! 산란하지 마십시오! 강렬한 희원을 마음에 품도록 하십시오! 그와 같이 행할지라도 자궁의 문이 닫히지 않아서 자궁 속에 들어감이 임박하면, [네 번째의] 환상과 비실재의 가르침에 의해서 자궁의 문을 닫도록 하십시오!"
@@ -4962,16 +5014,12 @@
           },
           {
             "id": "258",
-            "title": "Set down above are several profound and genui...",
-            "chapterTitle": "Set down above are several profound and genuine instructions for effecting the obstruction of the womb entrances. For those with high, average or low ability, it is impossible not to be liberated by these [instructions]. This is because: first, consciousness in the intermediate state is endowed with an, albeit corrupt, supernormal cognitive ability... even if the deceased was deaf or blind [while in the human world], now, [in the intermediate state], all the sensory faculties will be complete... since the consciousness has no [physical] support, it is easy to guide... since the power of retention is now many times clearer, even the mentally weak will have... a lucid awareness... Therefore it is extremely important to persevere in the reading aloud of this Great Liberation by Hearing in the Intermediate States for the entire forty-nine days. For if liberation is not achieved at one introduction, it can be achieved at another.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "Set down above are several profound and genuine instructions for effecting the obstruction of the womb entrances. For those with high, average or low ability, it is impossible not to be liberated by these [instructions]. This is because: first, consciousness in the intermediate state is endowed with an, albeit corrupt, supernormal cognitive ability... even if the deceased was deaf or blind [while in the human world], now, [in the intermediate state], all the sensory faculties will be complete... since the consciousness has no [physical] support, it is easy to guide... since the power of retention is now many times clearer, even the mentally weak will have... a lucid awareness... Therefore it is extremely important to persevere in the reading aloud of this Great Liberation by Hearing in the Intermediate States for the entire forty-nine days. For if liberation is not achieved at one introduction, it can be achieved at another.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "지금까지 자궁 입구를 막는 여러가지 확실하고 심오한 가르침을 일러 주었다. 어떤 사람이든지 이 가르침을 통해 절대 자유의 경지에 이르지 수 있다. 지적인 능력이 뛰어난 사람, 보통 사람, 둔한 사람 모두가 그렇게 될 수 있다. 중간계를 여행하고 있는 영혼은 초자연적인 인식 능력을 갖고 있기 때문에 그대가 무슨 말을 해도 이해하고 체험할 수 있다. 이 세상에서 벙어리와 장님이었다 할지라도 중간계에서는 모든 감각이 완전하게 작용한다... 그들에게는 의식의 활동을 방해하는 조잡한 육신이 없다... 중간계에서는 지성이 9배 이상 투명해진다... 그러므로 이 책 <중간계에서 듣고 이해함으로써 그 자리에서 절대 자유의 경지에 이르게 하는 위대한 가르침>을 49일 동안 계속 읽어주는 것이 무엇 보다도 중요하다. 한 가지 가르침으로 자유의 경지에 들어가지 못했어도, 다른 가르침을 통해서는 들어갈 수 있기 때문이다."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "이와 같이 닦도록 하십시오! “아, 내생의 아버지와 어머니, 거친 눈보라와 어둠, 사나운 비바람과 천둥소리, 무서운 광경과 온갖 현상들 일체는 자성이 없는 환상과 같다. 비록 그렇게 나타날지라도 실재가 아니며, 그들 모두는 진실이 아닌 허상들이다. 이들은 신기루와 같으며, 영원하지도 않으며, 견고불변하지도 않다. 그러니 어찌 이것을 내가 집착하랴! 어찌 이것을 내가 두려워하랴! 본래 없는 것을 실재하는 것으로 착각한 것이다. 이들 모두는 내 마음의 현현들이다. 이 마음 또한 환상과 같아서 애초부터 없는데, 그와 같은 것들이 어떻게 바깥에서 오겠는가? 내가 일찍이 그와 같음을 깨닫지 못한 까닭에, 없는 것을 있는 것으로 어리석게 집착하였고, 진실하지 못한 것을 진실한 것으로 오인하였다. 환영 같은 것을 실재로 애착함으로써 한없는 세월을 윤회 속에 유전한 것이다. 이제 다시 이것들을 환상으로 깨닫지 못한다면, 또 다시 윤회에 떨어져 끝없는 세월을 유랑하며, 온갖 고통의 늪 속에서 헤매게 됨은 자명한 일이다. 이제 이들 모두는 꿈과 같고, 환상과 같고, 메아리와 같고, 공중의 누각과 같고, 아지랑이와 같고, 그림자와 같고, 허수아비와 같고, 물속의 달과 같아서 한 순간도 실재하지 않는다. 결단코 진실이 아닌 거짓이다!”라는 강렬한 확신을 가짐으로써, 바르도의 환영들을 실재로 인식하는 어리석은 집착을 파괴하게 됩니다. 딴뜨라의 경궤에서도 그와 같이 견고한 확신을 가짐으로써 자아의 집착을 끊게 된다고 설하였습니다. 그러므로 그와 같이 결단해서 거짓임을 알게 되면 반드시 자궁의 문을 파괴하게 됩니다.,"
@@ -4982,21 +5030,17 @@
         ]
       },
       {
-        "id": "chapter-9",
-        "chapterName": "3) 자궁을 선택하는 법",
+        "id": "chapter-6",
+        "chapterName": "자궁을 선택하는 법",
         "verses": [
           {
             "id": "259",
-            "title": "[CHOOSING A WOMB ENTRANCE] Then again, there ...",
-            "chapterTitle": "[CHOOSING A WOMB ENTRANCE] Then again, there are several kinds [of persons] who do not achieve liberation, despite having received the above introductions... So, at this stage, if the womb entrances have still not been [successfully] obstructed [as described] above, there is a profound oral instruction for choosing an [appropriate] womb entrance, which should now be presented. Again, one should request the assistance of the buddhas and bodhisattvas, take refuge in [the Three Precious Jewels] and cultivate an altruistic intention. Then, as before, calling to the deceased by name, three times, one should say the following words:",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "[CHOOSING A WOMB ENTRANCE] Then again, there are several kinds [of persons] who do not achieve liberation, despite having received the above introductions... So, at this stage, if the womb entrances have still not been [successfully] obstructed [as described] above, there is a profound oral instruction for choosing an [appropriate] womb entrance, which should now be presented. Again, one should request the assistance of the buddhas and bodhisattvas, take refuge in [the Three Precious Jewels] and cultivate an altruistic intention. Then, as before, calling to the deceased by name, three times, one should say the following words:",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "[자궁을 선택하는 법] 그동안 여러 가지 가르침을 받고도 생전에 밥먹듯이 죄를 지은 사람들, 선이라고는 씨도 찾아보기 어려운 사람들은 자유의 경지에 이르지 못했을 수도 있다. 그러면 자궁 입구도 아직 막히지 않은 상태이다. 그대는 지금부터 그런 사람들에게 자궁을 선택하는 방법을 가르쳐 주도록 하라. 먼저 <붓다와 보살들께 도움을 청하는 기도>와 3가지 보물께 귀의하는 기도를 드려라. 그런 다음 죽음의 길을 가고 있는 사람의 이름을 3번 부르고, 다음과 같이 일러주도록 하라."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "또한 그와 같이 행할지라도 실재의 집착을 끊지 못해서, 자궁의 문을 닫지 못한 채 자궁에 들어가야 함이 임박하면, 그때 필요한 심오한 가르침이 있습니다."
@@ -5025,16 +5069,12 @@
           },
           {
             "id": "261",
-            "title": "O, Child of Buddha Nature, now, [if you are t...",
-            "chapterTitle": "O, Child of Buddha Nature, now, [if you are to be born as a human] the indications and signs which relate to the environment into which you may be born, on one amongst the [four] continents, will arise. You must recognise these [indications]! If you are to take birth on the Eastern Continent, Videha, you will see a lake, adorned by male and female swans. Do not be drawn towards this [place]! If you are to take birth on the Southern Continent, Jambudvῑpa, you will see grand and delightful mansions. If indeed you can enter here, do so! If you are to take birth on the Western Continent, Aparagodanῑya, you will see a lake adorned [around its shores] by male and female horses. Do not be drawn towards this place! If you are to take birth on the Northern Continent, Uttarakuru, you will see a lake adorned [around its shores] by cattle or a lake adorned by trees. Recognise these appearances as indications of the birth that you are about to assume! Do not enter there!",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "O, Child of Buddha Nature, now, [if you are to be born as a human] the indications and signs which relate to the environment into which you may be born, on one amongst the [four] continents, will arise. You must recognise these [indications]! If you are to take birth on the Eastern Continent, Videha, you will see a lake, adorned by male and female swans. Do not be drawn towards this [place]! If you are to take birth on the Southern Continent, Jambudvῑpa, you will see grand and delightful mansions. If indeed you can enter here, do so! If you are to take birth on the Western Continent, Aparagodanῑya, you will see a lake adorned [around its shores] by male and female horses. Do not be drawn towards this place! If you are to take birth on the Northern Continent, Uttarakuru, you will see a lake adorned [around its shores] by cattle or a lake adorned by trees. Recognise these appearances as indications of the birth that you are about to assume! Do not enter there!",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "오, 고귀한 가문의 자손이여! 이제 그대가 태어날 대륙의 상징과 특징들이 나타날 것이니, 잘 관찰한 다음 그대가 태어날 곳을 선택하도록 하시오. 그대가 동쪽 비데하 대륙에 태어날 운명이라면, 암수 거위들이 노닐고 있는 호수가 보일 것이오... 그곳으로 가면 안되오. 그대가 남쪽 잠부드비파 대륙에 태어날 운명이라면, 아름답고 화려한 집들이 보일 것이오. 그곳으로는 들어가도 되오. 그대가 서쪽 고다니야 대륙에 태어날 운명이라면, 주위에서 암수 말들이 풀을 뜯고 있는 호수가 보일 것이오. 그곳으로는 가면 안되오. 그대가 북쪽 쿠루 대륙에 태어날 운명이라면, 주위에 사철 푸른 나무들이 있고 그 아래에서는 소들이 풀을 뜯고 있는 호수가 보일 것이오... 그러나 그곳으로도 들어가면 안되오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "【 이제까지 자궁의 문을 막는 심오하고 올바른 가르침들을 많이 설하였다. 이 가르침에 의해서 상중하의 근기를 막론하고 누구나 해탈하지 못함이 또한 없다. 왜냐하면, 첫째, 바르도의 의식은 유루의 신통력을 가지고 있기 때문에, 내가 무엇을 설할지라도 듣지 못함이 없기 때문이다. 둘째, 생전에 귀가 먹고 앞을 보지 못하였을지라도, 바르도의 상태에서는 감각기관들이 완전해서 내가 무엇을 설할지라도 듣지 못함이 없기 때문이다. 셋째, 두려움과 공포에 항상 쫓겨서 “어찌하면 좋을까?” 하는 생각에, 마음이 집중된 상태에 있기에 내가 무엇을 설할지라도 따르지 않음이 없기 때문이다. 넷째, 바르도의 의식은 몸이란 의지처가 없어서 생각이 향하는 곳에 순식간에 도달함으로서 인도하기가 쉽기 때문이다. 다섯째, 바르도의 의식은 생시에 비해 아홉 배나 밝아져서 바보일지라도, 이때 업력에 의해 마음이 크게 밝아져서 무엇을 가르치든 모두 닦을 수 있는 능력과 모두 그와 같은 상태에 있기 때문이다. 그래서 사자를 위한 천도의식을 행하면 효과가 있는 것도 그와 같은 이유이다. 그러므로 49일 동안 이 바르도퇴돌을 정성껏 읽어 주는 것이 매우 중요하다. 비록 한 차례의 독송을 통해서 해탈하지 못할지라도 다음번에는 해탈하기 때문이다. 이렇듯 한 번에 그치지 않고 허다하게 반복해서 읽어 주는 뜻도 여기에 있다. 】,"
@@ -5044,16 +5084,12 @@
           },
           {
             "id": "262",
-            "title": "If you are to take birth as a god you will se...",
-            "chapterTitle": "If you are to take birth as a god you will see delightful celestial palaces, many-storeyed and composed of diverse jewels. If indeed you can, you should enter here! If you are to take birth as an antigod, you will see exquisite groves and spinning wooden torches [creating] wheels of fire. Do not enter there, under any circumstances! If you are to take birth as an animal, you will see rocky caverns, empty hollows and straw sheds, shrouded by mist. Do not enter there! If you are to take birth as an anguished spirit, you will see tree-stumps, black protruding silhouettes, blind desolate gorges, or total darkness. Do not enter there! If you are to take birth as a hell being, you will hear the songs of those of negative past actions. Or, quite simply, you will feel powerless and compelled to enter. Whereupon, the perception will arise that you are moving into a land of darkness, where there are black and reddened houses, black earth-pits and black roads... Do not enter there, under any circumstances! As it is said [in the root verses]: ‘You must obstruct the womb entrances and call to mind the methods of reversal.’ These are [wholly] necessary now!",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "If you are to take birth as a god you will see delightful celestial palaces, many-storeyed and composed of diverse jewels. If indeed you can, you should enter here! If you are to take birth as an antigod, you will see exquisite groves and spinning wooden torches [creating] wheels of fire. Do not enter there, under any circumstances! If you are to take birth as an animal, you will see rocky caverns, empty hollows and straw sheds, shrouded by mist. Do not enter there! If you are to take birth as an anguished spirit, you will see tree-stumps, black protruding silhouettes, blind desolate gorges, or total darkness. Do not enter there! If you are to take birth as a hell being, you will hear the songs of those of negative past actions. Or, quite simply, you will feel powerless and compelled to enter. Whereupon, the perception will arise that you are moving into a land of darkness, where there are black and reddened houses, black earth-pits and black roads... Do not enter there, under any circumstances! As it is said [in the root verses]: ‘You must obstruct the womb entrances and call to mind the methods of reversal.’ These are [wholly] necessary now!",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "그대가 신들의 영역인 천상계에 태어날 운명이라면, 여러가지 보석으로 장식된 고층 저택이 나타날 것이오. 그곳은 들어가 살만한 곳이오. 그대가 아수라계에 태어날 운명이라면, 아름다운 과수원이나 회전하고 있는 불바퀴가 보일 것이오. 그곳은 포기하시오. 그곳으로는 절대로 들어가면 안되오. 그대가 축생계에 태어날 운명이라면, 동굴과 구멍과 초막들이 마치 안개에 휩싸인 것처럼 희미하게 보일 것이오. 그곳으로 들어가면 안되오. 그대가 아귀계에 태어날 운명이라면, 검게 그을린 그루터기와 어두운 골짜기와 시커먼 그림자 같은 것이 보일 것이오... 그러니 그곳으로는 들어가지 마시오. 그대가 지옥계에 태어날 운명이라면, 부정적인 까르마의 노래 소리가 들릴 것이오. 그대는 어쩔 수 없이 그곳으로 끌려 들어가는 느낌을 받을 것이며, 어둠에 휩싸인 섬이나 시커먼 집 또는 빨간색 집이 보일 것이오. 시커먼 구덩이와 검은 길일 보일 수도 있소... 그러니 무슨 수를 써서라도 그곳으로 들어가지 않도록 하시오. 지금이 곧 “자궁 입구를 막고, 저항할” 때라오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "【 또한 그럴지라도 선업을 닦아 익힘이 보잘것없거나, 악업을 애초부터 닦고 익힌 습기가 고강하거나, 죄장을 짓고 쌓은 힘과 정도가 크고 센 탓에, 앞서의 일깨워 줌을 그만큼 보고 듣고서도 해탈하지 못하는 무리들이 부지기수이다. 그래서 앞에서 자궁의 문을 파괴하지 못하였으면, 지금부터는 자궁의 문을 선택하는 심오한 가르침들을 설하고자 한다. 먼저 「불보살님의 구원을 청하는 기원문」을 읽고, 스승님과 삼보님께 귀의와 발심을 행한 뒤, 사자의 이름을 세 번 부르고 다음과 같이 들려 주도록 하라. 】,"
@@ -5063,16 +5099,12 @@
           },
           {
             "id": "263",
-            "title": "O, Child of Buddha Nature, although you do no...",
-            "chapterTitle": "O, Child of Buddha Nature, although you do not wish to move forward, you are powerless not to do so. The avenging forces, who are the executors of the unfailing laws of cause and effect, will be pursuing you. You will have no choice but to move forward... The experience will arise of trying to flee from these forces, of trying to flee from the darkness, from the most violent windstorms, from the [thunderous] tumult... [Frightened], you will set off to seek a refuge and you will find protection inside an enclosed space, such as within the mansions, just described, or in rock-shelters, or holes in the ground, or amongst trees... Hiding here, you will be very hesitant to come out... you will assume a body, however utterly bad that may be, and you will, [in time], come to experience all manner of sufferings. This [experience of wanting to hide] is a sign that you are being obstructed by malignant forces and carnivorous ogres.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "O, Child of Buddha Nature, although you do not wish to move forward, you are powerless not to do so. The avenging forces, who are the executors of the unfailing laws of cause and effect, will be pursuing you. You will have no choice but to move forward... The experience will arise of trying to flee from these forces, of trying to flee from the darkness, from the most violent windstorms, from the [thunderous] tumult... [Frightened], you will set off to seek a refuge and you will find protection inside an enclosed space, such as within the mansions, just described, or in rock-shelters, or holes in the ground, or amongst trees... Hiding here, you will be very hesitant to come out... you will assume a body, however utterly bad that may be, and you will, [in time], come to experience all manner of sufferings. This [experience of wanting to hide] is a sign that you are being obstructed by malignant forces and carnivorous ogres.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "오, 고귀한 가문의 자손이여! 그대는 가는 것을 원치 않을지라도, 진화의 추진력에 몰려 가지 않을 수 없을 것이오. 그대는 멈출 수 없다는 것을, 가지 않을 수 없다는 것을 알게 될 것이오. 복수자와 도살자들이 그대를 끌고 갈 것이오... 흑암과 회오리 바람, 유혹과 귀를 찢는 소음, 눈보라와 폭풍우, 천둥과 번개에서 어떻게든 벗어나고 싶을 것이오. 두려움과 공포에서 벗어나 숨을 곳을 찾게 될 것이오. 그래서 앞에서 얘기한 아름다운 집이나 바위 동굴, 또는 연꽃으로 둘러싸인 구덩이나 빽빽한 숲 같은 곳으로 들어가 숨을 것이오... 그대는 그대가 깃든 장소에서 떠나는 것을 두려워하며, 그곳에 대단히 집착하게 될 것이오... 열등한 형태의 몸을 입을 지라도 그대가 깃든 곳에 꼭꼭 숨어 있는 것이 낳다고 생각할 것이오. 수많은 고통이 뒤따르는 재탄생의 길은 이런 식으로 가게 된다오. 그대가 이런 상태에 처하게 되면, 마귀와 도깨비가 그대를 홀리고 있다고 생각하시오. 이런 상태에 처한 그대에게 필요한 중요한 가르침이 있소. 잘 듣고 마음에 새기도록 하시오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "육도세계에 태어나는 상징과 표시 오, 고귀한 가문의 자손이시여! (망자의 이름을 부름) 귀담아 잘 듣도록 하십시오! 앞에서 그만큼 많은 가르침들을 일러주었지만 그대는 그것을 이해하지 못하였습니다. 이제 자궁의 문을 막지 못하면 어쩔 수 없이 육도세계의 몸을 받아야 하는 때가 도래하였습니다. 자궁의 문을 선택하는 심오하고 올바른 가르침이 하나만이 아니라 여러 가지가 있습니다. 그것을 잘 기억하도록 하십시오! 산란함을 버리십시오! 강렬한 염원으로 잘 경청한 뒤 마음에 간직토록 하십시오!"
@@ -5082,16 +5114,12 @@
           },
           {
             "id": "264",
-            "title": "At this time, when you are being pursued by a...",
-            "chapterTitle": "At this time, when you are being pursued by avenging forces and you feel powerless [to escape] and you are terrified and frightened, you must, in an instant and with perfect recall, visualise the Transcendent Lord Mahottara Heruka, or Hayagrῑva, or Vajrapāṇi, or else, if you have one, your personal meditational deity. [Visualise the deity] as having a huge buddha-body, with thick limbs, standing upright, in a terrifying wrathful manifestation, which pulverises every form of obstructing force. [By virtue of this practice], insulated from the avengers by the blessing and compassion [of the meditational deity], you will secure the ability to choose a womb entrance. This is a profound and genuine crucial point of the oral instructions.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "At this time, when you are being pursued by avenging forces and you feel powerless [to escape] and you are terrified and frightened, you must, in an instant and with perfect recall, visualise the Transcendent Lord Mahottara Heruka, or Hayagrῑva, or Vajrapāṇi, or else, if you have one, your personal meditational deity. [Visualise the deity] as having a huge buddha-body, with thick limbs, standing upright, in a terrifying wrathful manifestation, which pulverises every form of obstructing force. [By virtue of this practice], insulated from the avengers by the blessing and compassion [of the meditational deity], you will secure the ability to choose a womb entrance. This is a profound and genuine crucial point of the oral instructions.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "복수자에 쫓기며 대책없이 두려움에 떨고 있을때, 즉시 쳄촉 헤루까나 하야그리바나 바즈라파니 주님의 모습을 마음 속에 그리시오. 그대 자신의 수호불이 있다면 그의 모습을 그려도 좋소. 거대한 몸집에, 무쇠 같은 팔다리로 마귀들을 한 방에 가루로 날려버릴 수 있는, 무시무시한 그들의 모습을 마음 속에 그리시오. 그대는 그들의 은혜와 자비로 복수자의 손에서 벗어날 수 있을 것이오. 복수자의 손에서 벗어나면 좋은 자궁을 선택할 기회와 힘이 주어질 것이오. 이것은 대단히 중요하고 비밀스러운 가르침이오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "오, 고귀한 기문의 자손이시여! 이제 그대가 어떤 대륙에 태어나게 되면 또한 그 상징과 표시가 나타나게 됩니다. 그것을 잘 이해하도록 하십시오! 어느 곳에 태어나게 되는가를 잘 관찰한 뒤 그곳을 선택토록 하십시오!"
@@ -5101,16 +5129,12 @@
           },
           {
             "id": "265",
-            "title": "Moreover, O, Child of Buddha Nature, the gods...",
-            "chapterTitle": "Moreover, O, Child of Buddha Nature, the gods [inhabiting the form realms] of meditative concentration, and similar beings [of the higher realms], take birth through the potency of their meditative stability. Also, certain classes of malevolent forces, including the anguished spirits, arise on the basis of the transformation of their mental body itself during this very [intermediate state], through a shift in their mode of perception... At this time, therefore, [while visualising the wrathful deity] it is essential that you hold in mind the meaning of emptiness, [the essence of] the Great Seal. If you are not able to practise in this way, you must cultivate your experience of the illusion-like natural expressive power [of actual reality]. If you are unable even to practise in that way, you should meditate on the meditational deity Mahākāruṇika... Through [practising this effectively], buddhahood will be attained in the Buddha-body of Perfect Resource, during this intermediate state.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "Moreover, O, Child of Buddha Nature, the gods [inhabiting the form realms] of meditative concentration, and similar beings [of the higher realms], take birth through the potency of their meditative stability. Also, certain classes of malevolent forces, including the anguished spirits, arise on the basis of the transformation of their mental body itself during this very [intermediate state], through a shift in their mode of perception... At this time, therefore, [while visualising the wrathful deity] it is essential that you hold in mind the meaning of emptiness, [the essence of] the Great Seal. If you are not able to practise in this way, you must cultivate your experience of the illusion-like natural expressive power [of actual reality]. If you are unable even to practise in that way, you should meditate on the meditational deity Mahākāruṇika... Through [practising this effectively], buddhahood will be attained in the Buddha-body of Perfect Resource, during this intermediate state.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "오, 고귀한 가문의 자손이여! 명상적인 영역[無色界天]에 거하는 신들은 사마디(三昧)의 힘에 의해 그런 곳에 태어나는 것이오. 아귀계에 거하는 프레탄 같은 악한 영들은, 중간계를 여행하는 동안 자기 이미지를 바꾸어 여러가지 형태로 그 모습을 바꾼다오... 지금 그대가 취할 수 있는 최선의 방책은 마하무드라(大印) 즉 ‘비어-있음’에 대해 명상하는 것이오. 그렇게 할 수 없다면, 모든 것을 환상으로 보는 명상을 하시오. 이것도 할 수 없다면, 어떤 것에도 애착을 갖지 말고 자비로운 수호불만 일념으로 명상하도록 하시오. 그러면 그대는 중간계에서 붓다의 깨달은 몸(報身)을 성취하게 될 것이오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "만약 동쪽 대륙인 위데하(동승신주)에 태어나게 되면, 암수의 오리들이 떠 있는 호수를 보게 됩니다. 그곳으로 가지 말고 돌아올 것을 기억하십시오! 그곳에 태어나면 비록 안락과 행복이 있을지라도 불법이 성행하지 않는 땅입니다. 그러므로 그곳에 들어가서는 안 됩니다! 만약 남쪽 대륙인 잠부위빠(남섬부주)에 태어나게 되면, 마음에 드는 아름다운 저택을 보게 됩니다. 원하면 그곳으로 들어가도록 하십시오! 만약 서쪽 대륙인 고다니야(서우화주)에 태어나게 되면, 암수의 말들이 노는 호수를 보게 됩니다. 그곳으로 가지 말고 이쪽으로 돌아오도록 하십시오! 그곳은 물질이 풍족한 땅일지라도 불법이 성행하지 않는 곳입니다. 그러므로 그곳에 들어가서는 안 됩니다! 만약 북쪽 대륙인 꾸루(북구로주)에 태어나게 되면, 소들이 있는 호수나 또는 나무들이 서 있는 호수를 보게 됩니다. 그곳에 태어나는 상징임을 알도록 하십시오. 그곳으로 들어가지 마십시오! 비록 장수와 복덕을 누릴지라도 불법이 성행하지 않는 땅입니다. 그러므로 그곳에 들어가서는 안 됩니다!,,"
@@ -5120,16 +5144,12 @@
           },
           {
             "id": "266",
-            "title": "O, Child of Buddha Nature, if, due to the pot...",
-            "chapterTitle": "O, Child of Buddha Nature, if, due to the potency of your past actions, you must at this stage enter a womb, a further teaching on the methods of choosing a womb entrance is now to be taught. Listen, [carefully], therefore! ... There are two kinds of oral instruction [which can now be applied]: [first], the oral instructions for transferring the consciousness to the pure buddha fields and [second], the instructions for choosing a womb entrance within impure cyclic existence.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "O, Child of Buddha Nature, if, due to the potency of your past actions, you must at this stage enter a womb, a further teaching on the methods of choosing a womb entrance is now to be taught. Listen, [carefully], therefore! ... There are two kinds of oral instruction [which can now be applied]: [first], the oral instructions for transferring the consciousness to the pure buddha fields and [second], the instructions for choosing a womb entrance within impure cyclic existence.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "오, 고귀한 가문의 자손이여! 진화의 추진력 때문에 자궁으로 들어가는 것을 피할 수 없다면, 자궁을 선택하는 방법을 가르쳐 줄테니 잘 듣기 바라오... 그대는 영혼을 순수한 붓다의 땅으로 옮겨 거기에 태어나든지, 아니면 자궁을 선택하여 순수하지 못한 윤회 세계에 태어날 것이오. 이 2가지 경우에 대비하는 방법을 알려 줄테니 그대로 따라 하기 바라오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "만약 천상에 태어나게 되면, 갖가지 보석으로 건립된 아름다운 높은 신전을 보게 됩니다. 그곳은 들어가도 좋으니 원하면 들어가도록 하십시오! 만약 아수라로 태어나게 되면, 아름다운 숲이나 빙글빙글 도는 불바퀴와 같은 것을 보게 됩니다. 그곳에는 절대 들어가지 않도록 돌아올 것을 기억하십시오! 만약 축생으로 태어나게 되면, 동굴과 개미구멍과 초막들이 엷은 안개에 쌓여 있는 것을 보게 됩니다. 그곳에는 절대로 들어가서는 안 됩니다! 만약 아귀로 태어나게 되면, [검게 그을린] 나무토막과 검고 긴 물건, 깊고 음산한 막다른 골짜기와 흔들거리는 검은 물체들을 보게 됩니다. 그곳에 들어가면 아귀로 태어나 배고픔과 갈증 등의 온갖 고통들을 받게 됩니다. 그곳에 절대 들어가지 않도록 돌아올 것을 기억하십시오! 전력을 다해야 합니다. 만약 지옥에 태어나게 되면, 악업에 의해서 노랫소리를 듣거나, 어쩔 수 없이 끌려들어 가거나, 또는 암흑의 땅과 검은 집, 붉은 집과 검은 흙구덩이, 시꺼먼 길 등으로 들어가는 광경이 나타납니다. 그곳에 들어가면 지옥에 태어나게 됩니다. 정녕 참지 못할 처절한 한열의 고통들을 벗어날 기약도 없이 받게 됩니다. 그 속으로 절대 들어가서는 안 됩니다! 신중에 신중을 다해야 합니다. 자궁의 문을 막고 돌아올 것을 기억도록 하십시오! 지금 이것이 절대로 필요합니다.,"
@@ -5139,16 +5159,12 @@
           },
           {
             "id": "267",
-            "title": "First, the transference of consciousness to t...",
-            "chapterTitle": "First, the transference of consciousness to the utterly pure realms of the sky-farers is effected by those of highest ability, by directing their intention as follows. ‘Alas! I am deeply sad that even after an infinite “incalculable aeon”, I am still left behind in this swamp of cyclic existence... Now, I must take birth, miraculously, in the bud of a lotus flower, in the presence of the Buddha Amitābha, in the western Buddha field of the Blissful (Sukhāvatῑ)!’ Focus your intention, concentratedly, on this thought! ... Alternatively, you can focus your intention on whichever buddha field you wish... Immediately upon establishing [this intention], you will take birth in the [chosen] buddha field.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "First, the transference of consciousness to the utterly pure realms of the sky-farers is effected by those of highest ability, by directing their intention as follows. ‘Alas! I am deeply sad that even after an infinite “incalculable aeon”, I am still left behind in this swamp of cyclic existence... Now, I must take birth, miraculously, in the bud of a lotus flower, in the presence of the Buddha Amitābha, in the western Buddha field of the Blissful (Sukhāvatῑ)!’ Focus your intention, concentratedly, on this thought! ... Alternatively, you can focus your intention on whichever buddha field you wish... Immediately upon establishing [this intention], you will take birth in the [chosen] buddha field.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "그대의 지성이 밝고, 따라서 그대의 영혼을 다끼니 천사들의 영역으로 옮길 수 있다면, 마음을 모아 다음과 같이 생각하도록 하시오. “아! 나는 얼마나 비참한 존재냐! 영겁의 세월을 윤회의 늪에서 헤어나지 못하고 방황하지 않았는가!... 아미타바 붓다(阿彌陀佛)의 발 앞에 피어 있는 연꽃 속으로 들어가, 희열이 넘치는 서방정토 수카바티에 태어나고 말겠다.” 여기서는 서쪽에 있는 순수한 땅 수카바티에 태어나겠다고 강력하게 염원하는 것이 무척 중요하오. 그대가 염원하는 땅이 꼭 수카바티가 아니라도 괜찮소. 그대는 아미타바(阿彌陀佛)의 수카바티, 아크소비야(不動佛)의 즐거움의 땅 아비라티, 바이로차나(大日如來)의 순수한 땅 가나뷰하... 낙원 포타라카, 또는 웃디아나에 있는 파드마 삼바바의 연꽃 궁전에 태어나는 것을 염원할 수 있소. 마음을 집중하여 순수한 땅에 태어나고자 간절히 염원하면, 그 순간 즉시 그곳에 태어날 것이오(化生)."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "오, 고귀한 가문의 자손이시여! 비록 그대가 가지 않기를 원해도 어쩔 수가 없습니다. 뒤에서는 업력에서 생긴 살인자들이 쫓아오기 때문에 꼼짝 없이 가게 됩니다. 앞에서는 살인자와 망나니가 끌고 가서 따라가지 않을 수가 없습니다. 또한 짙은 암흑과 붉은 모래바람, 고함소리와 진눈깨비, 거친 우박과 사나운 비바람에 쫓기고 도망치는 광경이 그대에게 나타납니다. 그것을 두려워한 나머지 피할 곳을 찾게 됩니다. 그래서 앞에서 말한 아름다운 집 또는 바위굴, 흙구덩이와 숲속, 연꽃 등의 둥근 구멍 속으로 들어가 안도의 숨을 쉬게 됩니다. 그곳에 숨어서 밖으로 나옴을 무서워하여, “지금 여기서 밖으로 나가는 것은 옳지 않다.”고 생각하게 됩니다. 그래서 그곳을 떠나는 것을 두려워하여 크게 집착하게 됩니다. 바깥에 나가게 되면 바르도의 공포들과 만나게 됨을 우려하고, 그것들을 두려워하고 무서워한 나머지 그 안에 꼭꼭 숨게 됩니다. 그래서 가장 비천한 몸을 얻은 뒤에 온갖 처참한 고통들을 받게 됩니다. 이것은 비천한 사귀들이 그대에게 마장을 일으키는 표시입니다. 이때를 위한 심오한 가르침이 있습니다. 그대는 잘 경청하여 마음에 간직토록 하십시오!,"
@@ -5158,16 +5174,12 @@
           },
           {
             "id": "268",
-            "title": "Alternatively, if you are unable to accomplis...",
-            "chapterTitle": "Alternatively, if you are unable to accomplish this [transference], or if you desire to enter a womb or you are obliged to enter one, then there are the following instructions on choosing a womb entrance within impure cyclic existence. Therefore, listen [carefully]. Utilising the supernormal cognitive ability which you now possess, examine the continents once again, as just described, and make your choice. You must enter a land where the [sacred] teachings flourish!",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "Alternatively, if you are unable to accomplish this [transference], or if you desire to enter a womb or you are obliged to enter one, then there are the following instructions on choosing a womb entrance within impure cyclic existence. Therefore, listen [carefully]. Utilising the supernormal cognitive ability which you now possess, examine the continents once again, as just described, and make your choice. You must enter a land where the [sacred] teachings flourish!",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "그러나 이러한 순수한 땅에 태어나는 것이 불가능하거나, 또는 그대 자신이 순수한 땅으로 들어가는 것을 바라지 않는다면 자궁으로 들어갈 수 밖에 없다. 하지만 불순한 윤회 세계에 태어나기 위해 자궁을 선택하는 방법 또한 있으니, 잘 듣기 바라오. 그대의 투시력을 사용하여, 앞에서 설명한 대륙들 중에서 진리가 널리 퍼져 있는 곳을 선택하도록 하시오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "업의 환영을 파괴하는 방법 그때 살인자들에게 속절없이 쫓기고, 두려운 공포가 치할 때, 곧바로 그대는 거룩하신 체촉헤루까(최승음혈불) 또는 하야그리와(마두명왕), 바즈라빠니(금강수보살) 등과 만일 그대에게 본존불이 계시면 그들의 모습을 온전하게 관상토록 하십시오! 그들의 거대한 몸집과 팔다리와 온갖 마군들을 짓밟아 뭉개는 무섭고 분노에 찬 모습을 일순간 떠올리도록 하십시오! 그들의 가피와 자비에 의해서 살인자들의 공포로부터 벗어나게 되고, 자궁의 문을 바르게 선택할 수 있는 힘을 얻게 됩니다. 이것은 매우 심오하고 진실한 가르침입니다. 마음에 잘 간직토록 하십시오!,"
@@ -5177,16 +5189,12 @@
           },
           {
             "id": "269",
-            "title": "[Be warned, however!] It could be that, [in r...",
-            "chapterTitle": "[Be warned, however!] It could be that, [in reality], you are about to take birth, by entering into a substance which is fetid and polluted, and yet that filthy mass will be perceived by you as sweet-smelling and you will be drawn towards it and take birth within it. Therefore, whatever such [attractive] appearances may arise, do not grasp at them as substantially real! Ensure that you remain utterly free from the symptoms of attachment and aversion, and on that basis choose an excellent womb entrance.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "[Be warned, however!] It could be that, [in reality], you are about to take birth, by entering into a substance which is fetid and polluted, and yet that filthy mass will be perceived by you as sweet-smelling and you will be drawn towards it and take birth within it. Therefore, whatever such [attractive] appearances may arise, do not grasp at them as substantially real! Ensure that you remain utterly free from the symptoms of attachment and aversion, and on that basis choose an excellent womb entrance.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "여기서 주의해야 하오. 그대가 만약 거름 더미 속에 태어날 운명이라면, 거름 썩는 냄새가 오히려 향기롭게 느껴질 것이오. 그래서 거름 더미 속으로 끌려가 거기서 태어나게 될 것이오. 그러므로 그대 앞에 나타나는 현상이나 느낌에 집착하거나 환멸감을 느끼지 않도록 하시오. 냉정하게 좋은 자궁을 선택하도록 하시오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "오, 고귀한 가문의 자손이시여! 또한 색계의 천신 등은 삼매의 힘으로 탄생하고, 아귀 등의 대부분 귀신의 부류들은 바르도의 상태에서 생각이 전도되어, 의생신(意生身)이 아귀와 이매망량 등의 갖가지 신통을 부리는 몸들로 변화하는 것입니다. 해변[호수]에 사는 아귀와 허공을 나는 아귀와 8만 가지에 이르는 마물들 전부가 바르도의 의생신이 생각이 전도되어 변화된 것입니다. 이때 공성(空性)의 마하무드라(大印)의 심오한 본질을 사유하는 것이 최상의 법입니다. 그와 같이 할 수 없다면 일체를 환상과 같이 여김을 전적으로 닦도록 하십시오! 또한 그렇게 할 수 없다면, 일체에 집착하는 마음을 버린 뒤에 오로지 본존과 대자대비 관세음보살님을 닦도록 하십시오! 그렇게 함으로써 바르도에서 보신의 몸으로 성불하게 됩니다."
@@ -5196,16 +5204,12 @@
           },
           {
             "id": "270",
-            "title": "It is extremely important that your motivatio...",
-            "chapterTitle": "It is extremely important that your motivation is firmly concentrated [as you approach the womb entrance]. Therefore think as follows: ‘Ah! For the sake of all sentient beings, I shall be born as a universal monarch, or [acting purely] like a great [dignified] sal tree, I shall be born into the brāhman class, or as the child of an accomplished master, or into a family which maintains an immaculate lineage of the [sacred] teachings, or into a family where the mother and father are deeply devout. Then, once I have taken on a body which is blessed with the merit of being able to act on behalf of all sentient beings, I shall [dedicate myself to] acting on their behalf!’ You must concentrate your motivation on this thought and [thus] enter the womb. As you enter the womb, consecrate it [by perceiving it] as a celestial palace of the deities. Be full of devotion. Ensure that you enter whilst praying to and imagining that you are receiving empowerments from the conquerors...",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "It is extremely important that your motivation is firmly concentrated [as you approach the womb entrance]. Therefore think as follows: ‘Ah! For the sake of all sentient beings, I shall be born as a universal monarch, or [acting purely] like a great [dignified] sal tree, I shall be born into the brāhman class, or as the child of an accomplished master, or into a family which maintains an immaculate lineage of the [sacred] teachings, or into a family where the mother and father are deeply devout. Then, once I have taken on a body which is blessed with the merit of being able to act on behalf of all sentient beings, I shall [dedicate myself to] acting on their behalf!’ You must concentrate your motivation on this thought and [thus] enter the womb. As you enter the womb, consecrate it [by perceiving it] as a celestial palace of the deities. Be full of devotion. Ensure that you enter whilst praying to and imagining that you are receiving empowerments from the conquerors...",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "이때 의지의 힘 즉 마음의 방향이 중요하오. 이런 마음을 품도록 하시오. “아! 나는 이제 뭇 중생을 이롭게 하기 위해 세상을 다스리는 왕으로 태어나리라. 또는 승려나 제사장으로 태어나서 뭇 중생들이 쉴 수 있는 큰 나무 역할을 하리라. 또는 성자(聖者)의 자식으로 태어나리라. 또는 진리를 따르는 고결한 가문에 태어나리라. 또는 깊은 신앙심을 가지고 있는 부모의 자식으로 태어나리라. 기필코 뭇 중생들을 좋은 길로 인도할 수 있는, 위대한 자질을 갗춘 몸을 입고 태어나리라.” 이렇게 단단히 각오하고 자궁을 찾아 들어가기 바라오. 그러면 그대가 들어가고 있는 자궁이 하늘 나라 궁전처럼 보일 것이오. 시방위(十方位)에 거하는 모든 붓다와 보살들께 기도하시오. 수호불들께 기도하시오. 특히 자비로운 주님(觀世音菩薩)께 기도하시오. 그리고 그들 모두가 그대가 자궁으로 들어가는 것을 축복해 주는 모습을 시각적으로 상상하도록 하시오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "오, 고귀한 가문의 자손이시여! 만약 업력에 의해서 부득이 자궁에 들어가게 되면, 자궁을 선택하는 가르침을 설명코자 합니다. 귀담아 잘 듣도록 하십시오! 아무 자궁이나 함부로 들어가서는 안 됩니다! 만약 살인자들이 나타나서 들어가지 않을 수가 없게 되면 하야그리와(마두명왕)를 관상토록 하십시오! 지금 그대에게는 미세한 신통력이 있습니다. 그래서 모든 탄생 장소들을 차례대로 알 수가 있습니다. 그러므로 올바르게 자궁을 선택토록 하십시오!,"
@@ -5215,35 +5219,33 @@
           },
           {
             "id": "271",
-            "title": "[However be warned], for as you make this cho...",
-            "chapterTitle": "[However be warned], for as you make this choice of a womb entrance, there is a risk of error. There is the risk of error when, through the potency of past actions, an excellent womb entrance is perceived as a bad one, and when a bad womb entrance is perceived as a good one... Even though perceptions of an excellent [womb entrance] may occur, do not become attached to these. And [conversely] even though perceptions of a poor [womb entrance] may occur, do not feel aversion. The essential point of the profound and genuine [instructions] is that you enter the womb in a state of great equanimity, utterly free from [the dichotomies of] good and bad, acceptance and rejection, or attachment and aversion.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "[However be warned], for as you make this choice of a womb entrance, there is a risk of error. There is the risk of error when, through the potency of past actions, an excellent womb entrance is perceived as a bad one, and when a bad womb entrance is perceived as a good one... Even though perceptions of an excellent [womb entrance] may occur, do not become attached to these. And [conversely] even though perceptions of a poor [womb entrance] may occur, do not feel aversion. The essential point of the profound and genuine [instructions] is that you enter the womb in a state of great equanimity, utterly free from [the dichotomies of] good and bad, acceptance and rejection, or attachment and aversion.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "자궁을 선택하는 데에는 실수할 위험이 늘 있소. 진화의 추진력[까르마]에 영향을 받아 좋은 자궁이 나쁘게 보일 수도 있고, 나쁜 자궁이 좋게 보일 수도 있소. 그러므로 다음과 같은 태도를 갖는 것이 중요하오. 어떤 자궁이 좋게 보일지라도 집착하지 않도록 하시오. 또 어떤 자궁이 나쁘게 보여도 혐오하거나 반발하지 마시오. 무엇을 바라거나 무엇을 미워하지 말고, 선한 것도 악한 것도 없다는 보편적인 평정심을 유지하는 것이야 말로 무엇보다 중요하오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "정토에 태어나는 방법 또한 여기에는 부처님의 정토에 태어나는 의식전이와 부정한 윤회계의 자궁을 선택하는 두 가지 가르침이 있습니다. 그러므로 이와 같이 행하도록 하십시오! 먼저 상근의 유정이 다까(空行)의 정토에 태어나는 포와(의식전이)의 행법이 있습니다. 그대는 다음과 같이 발원토록 하십시오! 아, 무시이래 헤아릴 수 없는 긴 세월이 그렇게 흘러갔건만, 나는 아직도 윤회의 수렁에서 헤어나지 못하고 맴돌고 있으니 이 얼마나 슬픈 일이 아닌가! 과거세에 그렇듯 많은 이들이 그와 같이 붓다가 되는 동안, 나만은 해탈하지 못하였으니 이 얼마나 슬픈 일이 아니랴! 이제부터 지겨운 윤회의 삶을 쉰 음식 토하듯이 뱉어 내리라! 참으로 두렵고 무서워하리라! 오물을 버리듯 던져 버리리라! 이제 탈출의 시기가 도래하였다! 나는 서방의 극락정토에 계시는 지존하신 아미타불의 면전에서 한 송이 연꽃 속에 화생하리라! 이렇게 서방의 극락정토를 향해서 강렬한 희원을 발하고 집중하고 정진토록 하십시오!,"
                 }
               ]
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "chapter-7",
+        "chapterName": "3가지 보물에 의지함",
+        "verses": [
           {
             "id": "272",
-            "title": "Nevertheless, with the exception of certain p...",
-            "chapterTitle": "Nevertheless, with the exception of certain persons who have experience of this [equanimity] it is difficult [for beings] to sever themselves from the deep-seated and long-lasting disease of negative habitual tendencies. Therefore, if [the deceased] remains unable to be free from attachment and aversion, in the above manner, such negative beings who are of the lowest capacity may seek refuge in the animal realms or similar [kinds of inferior existences]. In order to counteract this, again calling to the deceased by name, you should speak as follows:",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "Nevertheless, with the exception of certain persons who have experience of this [equanimity] it is difficult [for beings] to sever themselves from the deep-seated and long-lasting disease of negative habitual tendencies. Therefore, if [the deceased] remains unable to be free from attachment and aversion, in the above manner, such negative beings who are of the lowest capacity may seek refuge in the animal realms or similar [kinds of inferior existences]. In order to counteract this, again calling to the deceased by name, you should speak as follows:",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "[3가지 보물에 의지함] 수행을 통한 깊은 체험이 있는 몇몇 사람은 제외하고는, 무의식 속에 쌓여 있는 부정적인 요소를 극복하기가 아주 어렵다. 그러므로 만약 우둔하거나 짐승처럼 야만적이라고 집착과 반발심을 떨쳐버리지 못한다면, 3가지 보물 즉 붓다(佛)와 진리(法)와 진리를 따르는 공동체(僧)에 의지하도록 함으로써 무의식 속에 쌓여 있는 부정적인 요소를 제거시킬 수 있다. 그런 사람에게는 이름을 부른 다음, 다음 가르침을 7번까지 반복해서 읽어 주도록 하라."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "또한 달리 그대가 선망하는 정토거나 [동방의 환희세계인 아축불의] 아비라띠(묘희세계) 또는 [중앙의 정토인 비로자불의] 아까니스타(밀엄찰토) 또는 [금강수보살의 정토인] 알라까와띠(양류궁) 또는 [관세음보살의 정토인 남해의] 뽀딸라(보타낙가) 또는 [위대한 화신불 구루 빠드마쌈바와(연화생)의 정토인] 빠드마위마나(연화광) 등등, 그대가 원하는 정토를 향해서 강렬한 희원을 발출한 뒤, 산란함이 없이 일념으로 집중하고 정진토록 하십시오! 그 즉시 그곳에 태어나게 됩니다. 또한 도솔천(兜率天)에 계시는 미륵부처님의 회상에 왕생하기를 염원하면, 다음과 같이 기원토록 하십시오! 아, 나는 바르도의 상태에서 도솔천 내원궁(內院宮)에 계신, 불패의 법왕 미륵불 발아래 연꽃에서 화생하는 때가 왔다! 나는 이제 그곳을 향해 가리라! 이렇게 강렬하게 희원토록 하십시오! 그 즉시 미륵부처님의 회상에 왕생한 뒤 연꽃 속에서 태어나게 됩니다.,"
@@ -5253,16 +5255,12 @@
           },
           {
             "id": "273",
-            "title": "O, Child of Buddha Nature, if you do not know...",
-            "chapterTitle": "O, Child of Buddha Nature, if you do not know how to choose a womb entrance and you are unable to give up your attachment and your aversion, then, regardless of which of the above appearances arise, you must call out, by name, to the Three Precious Jewels. Take refuge in them! Pray to Mahākāruṇika! Go forward with your head held high. Recognise that this is the intermediate state! Give up your attachment and your clinging to the friends, sons, daughters and relatives that you have left behind. These [attachments] are not helpful [to you now]. Enter into the blue light of the human realm. Enter into the white light of the realm of the gods. Enter into the mansions of precious jewels and the gardens of delight.",
+            "title": "",
+            "chapterTitle": "",
             "text": {
               "tibetan": "",
-              "english": "O, Child of Buddha Nature, if you do not know how to choose a womb entrance and you are unable to give up your attachment and your aversion, then, regardless of which of the above appearances arise, you must call out, by name, to the Three Precious Jewels. Take refuge in them! Pray to Mahākāruṇika! Go forward with your head held high. Recognise that this is the intermediate state! Give up your attachment and your clinging to the friends, sons, daughters and relatives that you have left behind. These [attachments] are not helpful [to you now]. Enter into the blue light of the human realm. Enter into the white light of the realm of the gods. Enter into the mansions of precious jewels and the gardens of delight.",
+              "english": "",
               "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "오, 고귀한 가문의 자손이여! 그대가 욕망과 증오심을 버리지 못하여 자궁 입구를 올바로 선택할 수 없다면, 그대 눈에 무엇이 보이든지 상관하지 말고, 3가지 보물을 부르고 거기에 의지하시오. 그리고 자비로운 주님(觀世音菩薩)께 기도하시오. 움추리지 말고, 머리를 들고 당당히 앞으로 나가시오. 그대가 중간계에 있다는 것을 기억하고, 세상에 남아 있는 사랑하는 아들이나 딸이나 친구들에 대한 애착을 버리시오. 그들은 지금 그대에게 아무런 도움도 주지 못하오. 인간계에서 비치는 푸른색 빛이나 천상계에서 비치는 흰색 빛을 향해 앞으로 나아가, 아름다운 정원과 보석으로 꾸며진 궁전으로 들어 가시오."
-                },
                 {
                   "translator": "중암 선혜",
                   "text": "좋은 자궁을 선택하는 방법 만약 그와 같지 않고 자궁에 들어가기를 바라거나, 또는 반드시 들어가야 할 필요가 있으면, 이때 부정한 윤회계의 자궁을 바르게 선택하는 가르침이 있습니다. 이것을 귀담아 잘 듣도록 하십시오! 또한 앞에서 설명한 대로 탄생할 사대주를 선택하되, 먼저 신통력으로 잘 살펴본 뒤 불법이 융성하는 땅으로 들어가도록 하십시오! 만약 불결한 오물 속에 화생(化生)으로 태어나게 되면, 그 오물 덩어리를 향기롭게 여기는 전도된 생각이 일어나서 그것을 애착하게 됩니다. 그래서 거기에 태어나게 됩니다. 그러므로 그것들에 대하여 어떠한 느낌이 일어날지라도 그것을 진실한 것으로 집착함이 없이, 탐착과 성냄을 버린 상태에서 좋은 자궁을 선택토록 하십시오! 그 또한 강렬한 희원을 일으키는 것이 매우 중요합니다. 그러므로 다음과 같이 발원토록 하십시오!"
@@ -5272,99 +5270,6 @@
           },
           {
             "id": "274",
-            "title": "This [introduction] should be enunciated up t...",
-            "chapterTitle": "This [introduction] should be enunciated up to seven times. Then one should pray to the buddhas and bodhisattvas... Then one should read aloud, up to seven times, the Aspirational Prayer which Protects from Fear... Then, one should also read aloud, clearly and with correct pronunciation, the Liberation by Wearing: Natural Liberation of the Psycho-physical Aggregates. And you should also read aloud the Spiritual Practice: Natural Liberation of Habitual Tendencies.",
-            "text": {
-              "tibetan": "",
-              "english": "This [introduction] should be enunciated up to seven times. Then one should pray to the buddhas and bodhisattvas... Then one should read aloud, up to seven times, the Aspirational Prayer which Protects from Fear... Then, one should also read aloud, clearly and with correct pronunciation, the Liberation by Wearing: Natural Liberation of the Psycho-physical Aggregates. And you should also read aloud the Spiritual Practice: Natural Liberation of Habitual Tendencies.",
-              "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "이렇게 7번 읽어준 다음에는 붓다와 보살들께 가호를 비는 기도를 드려라. 그리고 <중간계의 여행의 두려움에서 도움을 청하는 기도>와 <여섯 중간계에 들어가기 전에 드리는 기도> 그리고 <중간계의 곤경에서 구원을 청하는 기도>를 7번 읽어 주도록 하라. 그리고 <몸을 구성하는 다섯 무더기(五蘊)를 해방시키키는 만트라>와 <본능의 해탈을 위한 다르마 수행>을 큰소리로 또박또박 읽어 주어라."
-                },
-                {
-                  "translator": "중암 선혜",
-                  "text": "아, 나는 일체중생의 이락을 위해서 가장 지복한 인간인 전륜성왕이거나, 사라수왕 같은 바라문 자손이거나 딴뜨라를 성취한 씻다의 후예이거나, 불법을 신봉하는 명가의 후손이거나 신심 깊은 부모의 자식으로 태어나, 모든 유정들의 이익과 안락을 행하는 큰 복덕을 지닌 사람 몸을 얻으리라! 이렇게 강렬한 희원을 품고서 자궁 속에 들어가도록 하십시오! 그때 들어가는 자궁을 신들의 궁전으로 축복한 다음 들어가도록 하십시오! 시방세계의 제불보살님과 본존의 성중들과 특별히 대자대비하신 관세음보살님께 기원을 올린 다음, 그들이 베푸는 관정의 축복을 사유하면서 자궁에 들어가도록 하십시오!,,"
-                }
-              ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "chapter-10",
-        "chapterName": "4) 결론",
-        "verses": [
-          {
-            "id": "275",
-            "title": "CONCLUSION. Thus, [in summary], by acting cor...",
-            "chapterTitle": "CONCLUSION. Thus, [in summary], by acting correctly, yogins with high realisation will [successfully] effect the transference of consciousness at the moment of death, and, being spared the necessity of having to wander through the intermediate states, will attain liberation in an ascending and core-penetrating manner. Certain others, below these [yogins in ability], who have achieved [direct] meditative experience, will recognise the inner radiance of reality... Others, below these... will attain liberation at one [moment] or at another, during the [respective] weeks... However, those who have a very weak inheritance of [positive] past actions... will be obliged to roam downwards into the intermediate state of rebirth. Here, as before, since there are different levels of introduction, like the rungs of a ladder, recognition will occur, if not at one stage, then at another...",
-            "text": {
-              "tibetan": "",
-              "english": "CONCLUSION. Thus, [in summary], by acting correctly, yogins with high realisation will [successfully] effect the transference of consciousness at the moment of death, and, being spared the necessity of having to wander through the intermediate states, will attain liberation in an ascending and core-penetrating manner. Certain others, below these [yogins in ability], who have achieved [direct] meditative experience, will recognise the inner radiance of reality... Others, below these... will attain liberation at one [moment] or at another, during the [respective] weeks... However, those who have a very weak inheritance of [positive] past actions... will be obliged to roam downwards into the intermediate state of rebirth. Here, as before, since there are different levels of introduction, like the rungs of a ladder, recognition will occur, if not at one stage, then at another...",
-              "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "이 가르침을 제대로 읽어주면 수행이 깊은 요기와 요기니들은 죽음의 순간에 즉시 의식의 전이(轉移)가 이루어져, 중간계를 방황할 필요가 없어진다... 수행의 깊이가 조금 모자라는 사람은 죽음 중간계에서 궁극적인 실재의 투명한 빛을 인식하여, 깨달음을 얻고 절대 자유의 경지를 향해 곧바로 올라갈 것이다. 수행의 깊이가 더 낮은 사람들은 7일 동안 계속되는 자애로운 모습의 붓다와 보살들이 나타나는 저승 중간계나... 자유의 경지에 도달할 것이다... 그러나 죄와 장애물로 뒤범벅이 된 부정적인 진화의 추진력[까르마]이 강한 사람은... 탄생 중간계까지 방황하며 내려간다. 탄생 중간계에서도 사다리의 발판처럼 여러 단계의 가르침이 차례로 주어진다. 그래서 이 가르침을 통해서는 깨닫지 못했다 할지라도, 다음에 주어지는 가르침을 통해서는 투명한 빛을 인식하고 자유의 경지로 들어갈 수 있다... 극단적으로 부정적인 진화의 힘을 쌓은 사람은 투명한 빛을 인식하지 못하고 두려움과 공포에 떨것이다. 그러나 그런 사람들을 위해서도 자궁 입구를 막는 방법과 좋은 자궁을 선택하는 다양한 가르침이 주어진다. 그들은 다양한 가르침 중에서 어느 한 가르침을 통해서 진리를 깨닫고, 최상의 상태에 다시 태어나게 될 것이다. 짐승같이 야만적인 가장 저급한 사람들은 3가지 보물에 의지함으로써 비참한 상태에서 벗어날 수 있다..."
-                },
-                {
-                  "translator": "중암 선혜",
-                  "text": "한편 자궁을 선택하는 데에는 또한 착란의 위험이 있습니다. 업력에 의해서 좋은 자궁을 나쁘게 보고, 나쁜 자궁을 좋게 보는 위험이 도사리고 있습니다. 그때 가르침의 요체를 이해하는 것이 매우 중요합니다. 이와 같이 하도록 하십시오! 비록 좋은 자궁의 느낌이 들지라도 거기에 애착하지 말고, 나쁜 자궁의 느낌이 들지라도 거기에 성내지 마십시오! 좋고 나쁨을 분별하지 않으며, 취하고 버림을 행하지 않고, 애착과 분노를 여읜 지극히 평정한 상태에 머무는 것이 참된 비결입니다."
-                }
-              ]
-            }
-          },
-          {
-            "id": "276",
-            "title": "This [sacred] teaching, when encountered in t...",
-            "chapterTitle": "This [sacred] teaching, when encountered in the intermediate state of rebirth, is an [oral] instruction that connects [the deceased] with their residual inheritance of virtuous past actions. This is why it [is said to] resemble a connecting tube which [re-establishes continuity] when inserted into a broken water channel. Therefore, [based on the veracity of this method], it is impossible not to be liberated upon hearing this teaching, even for those of the greatest negativity. This is because, during the intermediate states, both the compassionate invitation of all the [Peaceful and Wrathful] Conquerors and the invitation of the manifestations of the malevolent and obstacle-causing forces arise simultaneously... Further, this transformation is easy to effect because [the deceased] now possesses a [subtle] mental body and not a body of flesh and blood... [Thus], by sustaining mindfulness [of the teaching], the deceased is capable of transforming his or her perception in an instant... Its impact is like that of a catapult machine; in other words, it resembles the way in which a huge tree-trunk, incapable of being lifted by a hundred men, can be easily steered wherever one wants in a moment, when it is floated in water. [In essence, the impact of hearing this doctrine] resembles the turning of a horse by its bridle.",
-            "text": {
-              "tibetan": "",
-              "english": "This [sacred] teaching, when encountered in the intermediate state of rebirth, is an [oral] instruction that connects [the deceased] with their residual inheritance of virtuous past actions. This is why it [is said to] resemble a connecting tube which [re-establishes continuity] when inserted into a broken water channel. Therefore, [based on the veracity of this method], it is impossible not to be liberated upon hearing this teaching, even for those of the greatest negativity. This is because, during the intermediate states, both the compassionate invitation of all the [Peaceful and Wrathful] Conquerors and the invitation of the manifestations of the malevolent and obstacle-causing forces arise simultaneously... Further, this transformation is easy to effect because [the deceased] now possesses a [subtle] mental body and not a body of flesh and blood... [Thus], by sustaining mindfulness [of the teaching], the deceased is capable of transforming his or her perception in an instant... Its impact is like that of a catapult machine; in other words, it resembles the way in which a huge tree-trunk, incapable of being lifted by a hundred men, can be easily steered wherever one wants in a moment, when it is floated in water. [In essence, the impact of hearing this doctrine] resembles the turning of a horse by its bridle.",
-              "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "만약 탄생 중간계에서 이 가르침을 듣는다면, 마치 물이 콸콸 흘러가도록 도랑을 넓히는 것처럼, 선한 진화의 추진력이 계속 확장 되도록 그 길을 트는 것과 같은 힘을 발휘할 것이다. 아무리 악한 사람이라도 이 가르침을 듣는다면 분명히 자유의 경지에 도달한다. 중간계에서는 자애로운 모습과 무서운 모습의 붓다와 보살들이 일제히 나타나 빛을 비추어 주고, 마귀와 악마 같은 부정적인 존재들 조차도 깨달음을 자극하는 역할을 수행하기 때문에 이 가르침을 이해하고 마음을 돌이키기만 하면 자유의 경지에 들어갈 수 있는 것이다. 중간계 존재의 몸은 피와 살로 된 물질적인 육체가 아니라, 마음이 만들어 내는 정신적인 몸이기 때문에 변형이 쉽게 이루어진다... 중간계는 일종의 가속기(加速機)와 같다. 또는 100명의 장정이 달라붙어도 꼼짝도 않는 거대한 통나무라도 물에 띄우면 쉽게 옮길 수 있는 것처럼, 이 세상에서는 쉽게 변할 수 없던 사람이라도 중간계에서는 쉽게 변한다. 고삐만 잡아 당기면 말이 방향을 바꾸는 것처럼, 중간계에서는 마음만 바꾸면 변형이 일어난다."
-                },
-                {
-                  "translator": "중암 선혜",
-                  "text": "【 여기서 수행의 체험이 있는 소수의 사람을 제외하고는 나쁜 습기의 여독에서 벗어나기가 어렵다. 그러나 그와 같이 애착과 성냄에서 가히 벗어날 수가 없을지라도, 하근 가운데서도 최하의 말류인 짐승같이 사악한 자들 또한 삼귀의(三歸依)를 통해서 벗어나는 법이 있다. (중략) 】,"
-                }
-              ]
-            }
-          },
-          {
-            "id": "277",
-            "title": "All those who have died should be approached ...",
-            "chapterTitle": "All those who have died should be approached in the manner [here described]. If the corpse is present, then a friend should sit close to it and repeatedly read aloud this succinct reminder. This reading should continue [at least] until blood and serum emerge from the nostrils [of the deceased]; and until then, the corpse must not be disturbed. The commitments which relate to this practice are as follows: no living creatures should be killed in dedication to the dead person; relatives and friends, whether oneself or others, should not cry, shout, mourn or wail in the presence of the corpse; and instead should engage in as much virtuous activity as possible... Further, this text should be recited constantly. Its words and meaning should be learnt by heart. Then, if one’s health permits, when [the onset of] the intermediate state of the time of death becomes certain, and the signs of [approaching] death are recognised, one should read this text aloud to oneself, and reflect on its words and meaning. If one’s health does not allow this, then entrust the book to a fellow Buddhist for him or her to read aloud. The reminder thus being made, there is no doubt that liberation will assuredly be attained.",
-            "text": {
-              "tibetan": "",
-              "english": "All those who have died should be approached in the manner [here described]. If the corpse is present, then a friend should sit close to it and repeatedly read aloud this succinct reminder. This reading should continue [at least] until blood and serum emerge from the nostrils [of the deceased]; and until then, the corpse must not be disturbed. The commitments which relate to this practice are as follows: no living creatures should be killed in dedication to the dead person; relatives and friends, whether oneself or others, should not cry, shout, mourn or wail in the presence of the corpse; and instead should engage in as much virtuous activity as possible... Further, this text should be recited constantly. Its words and meaning should be learnt by heart. Then, if one’s health permits, when [the onset of] the intermediate state of the time of death becomes certain, and the signs of [approaching] death are recognised, one should read this text aloud to oneself, and reflect on its words and meaning. If one’s health does not allow this, then entrust the book to a fellow Buddhist for him or her to read aloud. The reminder thus being made, there is no doubt that liberation will assuredly be attained.",
-              "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "그러므로 조용한 분위기를 유지하며, 시체 곁에서 친구가 이 가르침을 읽어 주도록 하라. 콧구멍에서 피와 누런 액체가 흘러 나올 때까지 거듭거듭 읽어 주어라. 이때 지켜야할 규칙이 있다. 죽은 자에게 제사드리기 위해 동물을 잡아서는 안된다. 친구와 가족들은 시체곁에서 통곡하거나 비통해하면서 소란을 피워서는 안된다. 될 수 있는 한 조용하고 덕스러운 분위기를 유지해야 한다. 이 책 <중간계에서 듣고 이해함으로써 그 자리에서 절대 자유의 경지에 이르게 하는 위대한 가르침>을 읽어준 다음에는 이와 관련된 다른 가르침을 읽어주는 것도 대단히 유익하다. 물론 이 가르침은 계속 반복해서 읽어주어야 한다. 읽어주는 사람은 낱말의 뜻과 내용을 잘 알고 있어야 한다. 만약 죽음의 징조를 통해 그대 자신의 죽음이 임박했다는 것을 알았다면, 그리고 건강이 허락한다면, 뜻을 생각하면서 이 책을 큰 소리로 읽도록 하라. 건강이 여의치 않다면 동료 수행자에게 읽고 기도해 달라고 부탁하라. 그러면 분명히 절대 자유의 경지에 도달하게 될 것이다."
-                }
-              ]
-            }
-          },
-          {
-            "id": "278",
-            "title": "This teaching, which does not necessarily req...",
-            "chapterTitle": "This teaching, which does not necessarily require [prior] meditation practice, is the profound instruction which liberates by being seen, liberates by being heard and liberates by being read aloud. This profound instruction is one which can lead even those of the greatest negativity on the direct path [to liberation]. Ensure that its words and meaning are retained in the memory [such that] they are not forgotten, even if you were to be chased by seven [ferocious] dogs. This is a pith instruction for the attainment of buddhahood at the time of death. [Even if] all the buddhas of the past, present and future [were to search], they would not find a [sacred] teaching superior to this.",
-            "text": {
-              "tibetan": "",
-              "english": "This teaching, which does not necessarily require [prior] meditation practice, is the profound instruction which liberates by being seen, liberates by being heard and liberates by being read aloud. This profound instruction is one which can lead even those of the greatest negativity on the direct path [to liberation]. Ensure that its words and meaning are retained in the memory [such that] they are not forgotten, even if you were to be chased by seven [ferocious] dogs. This is a pith instruction for the attainment of buddhahood at the time of death. [Even if] all the buddhas of the past, present and future [were to search], they would not find a [sacred] teaching superior to this.",
-              "korean": [
-                {
-                  "translator": "정창영",
-                  "text": "이 가르침은 별도의 수행을 요구하지 않는다. 이것은 보거나 듣거나 읽음으로써 자유의 경지에 이르게 하는 심원한 가르침이다. 만약 7마리의 사냥개의 추격을 받는 중에도 이 가르침의 낱말이나 내용의 의미를 잊지 않는다면, 아무리 사악한 죄인이라도 비밀스러운 진리의 길에 들어설 수 있다. 과거와 현재와 미래의 모든 붓다들 조차도, 죽음 순간에 완전한 깨달음을 얻게 하는 데에는 이 보다 더 나은 가르침을 발견하지 못할 것이다."
-                }
-              ]
-            }
-          },
-          {
-            "id": "279",
             "title": "This completes the instruction on the interme...",
             "chapterTitle": "This completes the instruction on the intermediate state, which liberates corporeal beings, the profound, refined essence, entitled the Great Liberation by Hearing in the Intermediate States. It was brought forth from the mountain of Gampodar by the accomplished master Karma Lingpa, as a precious treasure. MAṄGALAM!",
             "text": {
@@ -5374,6 +5279,40 @@
                 {
                   "translator": "정창영",
                   "text": "이로써 모든 중생을 절대 자유의 길로 인도하는, 중간계에 관한 가장 심오한 가르침인 <중간계에서 듣고 이해함으로써 그 자리에서 절대 자유의 경지에 이르게 하는 위대한 가르침>을 끝맺노라. 하아 트바 트바 갸 갸아 HAA THVA THVA GYA GYAH"
+                },
+                {
+                  "translator": "중암 선혜",
+                  "text": "아, 나는 일체중생의 이락을 위해서 가장 지복한 인간인 전륜성왕이거나, 사라수왕 같은 바라문 자손이거나 딴뜨라를 성취한 씻다의 후예이거나, 불법을 신봉하는 명가의 후손이거나 신심 깊은 부모의 자식으로 태어나, 모든 유정들의 이익과 안락을 행하는 큰 복덕을 지닌 사람 몸을 얻으리라! 이렇게 강렬한 희원을 품고서 자궁 속에 들어가도록 하십시오! 그때 들어가는 자궁을 신들의 궁전으로 축복한 다음 들어가도록 하십시오! 시방세계의 제불보살님과 본존의 성중들과 특별히 대자대비하신 관세음보살님께 기원을 올린 다음, 그들이 베푸는 관정의 축복을 사유하면서 자궁에 들어가도록 하십시오!,,"
+                }
+              ]
+            }
+          },
+          {
+            "id": "275",
+            "title": "",
+            "chapterTitle": "",
+            "text": {
+              "tibetan": "",
+              "english": "",
+              "korean": [
+                {
+                  "translator": "중암 선혜",
+                  "text": "한편 자궁을 선택하는 데에는 또한 착란의 위험이 있습니다. 업력에 의해서 좋은 자궁을 나쁘게 보고, 나쁜 자궁을 좋게 보는 위험이 도사리고 있습니다. 그때 가르침의 요체를 이해하는 것이 매우 중요합니다. 이와 같이 하도록 하십시오! 비록 좋은 자궁의 느낌이 들지라도 거기에 애착하지 말고, 나쁜 자궁의 느낌이 들지라도 거기에 성내지 마십시오! 좋고 나쁨을 분별하지 않으며, 취하고 버림을 행하지 않고, 애착과 분노를 여읜 지극히 평정한 상태에 머무는 것이 참된 비결입니다."
+                }
+              ]
+            }
+          },
+          {
+            "id": "276",
+            "title": "",
+            "chapterTitle": "",
+            "text": {
+              "tibetan": "",
+              "english": "",
+              "korean": [
+                {
+                  "translator": "중암 선혜",
+                  "text": "【 여기서 수행의 체험이 있는 소수의 사람을 제외하고는 나쁜 습기의 여독에서 벗어나기가 어렵다. 그러나 그와 같이 애착과 성냄에서 가히 벗어날 수가 없을지라도, 하근 가운데서도 최하의 말류인 짐승같이 사악한 자들 또한 삼귀의(三歸依)를 통해서 벗어나는 법이 있다. (중략) 】,"
                 }
               ]
             }
