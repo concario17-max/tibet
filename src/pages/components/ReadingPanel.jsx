@@ -11,7 +11,7 @@ const formatTime = (time) => {
 };
 
 // 강제 불변성과 Zero Monolith 원칙을 준수하는 ReadingPanel
-const ReadingPanel = ({ verse, hideAudio = false, onPrevious, onNext }) => {
+const ReadingPanel = ({ verse, globalIndex, hideAudio = false, onPrevious, onNext }) => {
     // 오디오 플레이어 로직 (Tibet 커스텀 훅 지원)
     const audioPlaylist = React.useMemo(() => {
         return verse.audioUrl ? [{ id: verse.id, title: verse.title, url: verse.audioUrl }] : [];
@@ -36,7 +36,7 @@ const ReadingPanel = ({ verse, hideAudio = false, onPrevious, onNext }) => {
                                 </span>
                                 <span className="text-text-secondary/50 text-[8px] font-bold mt-0.5">›</span>
                                 <span className="text-text-primary dark:text-dark-text-primary font-bold">
-                                    Sutra {chapterStr}-{verseStr}
+                                    Sutra {globalIndex || `${chapterStr}-${verseStr}`}
                                 </span>
                             </>
                         ) : (
@@ -46,7 +46,7 @@ const ReadingPanel = ({ verse, hideAudio = false, onPrevious, onNext }) => {
                                 </span>
                                 <span className="text-text-secondary/50 text-[8px] font-bold mt-0.5">›</span>
                                 <span className="text-text-primary dark:text-dark-text-primary font-bold">
-                                    Paragraph {verse.id}
+                                    Paragraph {globalIndex || verse.id}
                                 </span>
                             </>
                         )}
@@ -175,7 +175,7 @@ const ReadingPanel = ({ verse, hideAudio = false, onPrevious, onNext }) => {
                         </button>
 
                         <span className="font-inter font-[600] text-[15px] letter-spacing-tight text-slate-700 dark:text-gray-200">
-                            {verse.id.replace('chapter-', '')}
+                            {globalIndex || verse.id.replace('chapter-', '')}
                         </span>
 
                         <button

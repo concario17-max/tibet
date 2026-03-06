@@ -10,13 +10,33 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
     const uiContext = useUI() || { isSidebarOpen: true, setIsSidebarOpen: () => { } };
     const { isSidebarOpen, setIsSidebarOpen } = uiContext;
 
-    // activeVerseId를 기반으로 초기 확장 챕터 설정 (새로고침 대응)
+    // 전역 구절 인덱스 맵 생성 (1부터 시작하는 연속된 번호 보장)
+    const verseGlobalIndices = React.useMemo(() => {
+        const map = {};
+        let count = 1;
+        prayers?.forEach(p => {
+            if (p.isGroup && p.subchapters) {
+                p.subchapters.forEach(s => {
+                    s.verses?.forEach(v => {
+                        map[v.id] = count++;
+                    });
+                });
+            } else {
+                p.verses?.forEach(v => {
+                    map[v.id] = count++;
+                });
+            }
+        });
+        return map;
+    }, [prayers]);
+
+    // activeVerseId를 기반으로 초기 확장 챕터 설정 (새로고침 대응, 고유 키 사용)
     const [expandedChapter, setExpandedChapter] = useState(() => {
         if (!activeVerseId || !prayers) return null;
         for (const prayer of prayers) {
             if (prayer.isGroup && prayer.subchapters) {
                 const sub = prayer.subchapters.find(s => s.verses?.some(v => v.id === activeVerseId));
-                if (sub) return sub.id;
+                if (sub) return `${prayer.id}-${sub.id}`;
             } else if (prayer.verses?.some(v => v.id === activeVerseId)) {
                 return prayer.id;
             }
@@ -33,7 +53,7 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
             if (prayer.isGroup && prayer.subchapters) {
                 const sub = prayer.subchapters.find(s => s.verses?.some(v => v.id === activeVerseId));
                 if (sub) {
-                    targetChapterId = sub.id;
+                    targetChapterId = `${prayer.id}-${sub.id}`;
                     break;
                 }
             } else if (prayer.verses?.some(v => v.id === activeVerseId)) {
@@ -89,13 +109,13 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                                         </div>
                                         <div className="mt-0 flex flex-col gap-0">
                                             {prayer.subchapters.map(subGroup => {
-                                                const isExpanded = expandedChapter === subGroup.id;
+                                                const uniqueId = `${prayer.id}-${subGroup.id}`;
+                                                const isExpanded = expandedChapter === uniqueId;
                                                 return (
                                                     <button
                                                         key={subGroup.id}
                                                         onClick={() => {
-                                                            const currentlyExpanded = expandedChapter === subGroup.id;
-                                                            toggleChapter(subGroup.id);
+                                                            toggleChapter(uniqueId);
 
                                                             // 챕터 클릭 시 (이미 열려있든 아니든) 무조건 1절부터 강제 실행 (유저 요청)
                                                             if (subGroup.verses && subGroup.verses.length > 0) {
@@ -129,7 +149,6 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                                 <button
                                     key={prayer.id}
                                     onClick={() => {
-                                        const currentlyExpanded = expandedChapter === prayer.id;
                                         toggleChapter(prayer.id);
 
                                         // 챕터 클릭 시 (이미 열려있든 아니든) 무조건 1절부터 강제 실행 (유저 요청)
@@ -168,7 +187,8 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                                         break;
                                     }
                                     if (prayer.isGroup && prayer.subchapters) {
-                                        const sub = prayer.subchapters.find(s => s.id === expandedChapter);
+                                        // 유니크 키 지원
+                                        const sub = prayer.subchapters.find(s => `${prayer.id}-${s.id}` === expandedChapter);
                                         if (sub) {
                                             foundChapter = sub;
                                             break;
@@ -194,7 +214,7 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                                                 }`}
                                         >
                                             <span className={`min-w-[40px] whitespace-nowrap font-bold text-xs mt-[3px] ${isActive ? 'text-gold-primary' : 'text-text-secondary/60 dark:text-dark-text-secondary/60'}`}>
-                                                {verse.id}
+                                                {verseGlobalIndices[verse.id] || verse.id}
                                             </span>
                                             <span className="truncate opacity-90 text-[13px] leading-relaxed font-inter">
                                                 {verse.chapterTitle || verse.title}

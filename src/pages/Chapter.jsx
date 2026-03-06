@@ -62,6 +62,7 @@ const Chapter = () => {
                     <ReadingPanel
                         key={activeVerse.id}
                         verse={activeVerse}
+                        globalIndex={currentIndex + 1}
                         hideAudio={false}
                         onPrevious={hasPrev ? () => handleNavigate('prev') : null}
                         onNext={hasNext ? () => handleNavigate('next') : null}

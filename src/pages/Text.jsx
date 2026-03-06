@@ -74,6 +74,7 @@ const Text = () => {
                     <ReadingPanel
                         key={`text-${activeTextVerse.id}`}
                         verse={activeTextVerse}
+                        globalIndex={currentIndex + 1}
                         hideAudio={true}
                         onPrevious={hasPrev ? () => handleNavigate('prev') : null}
                         onNext={hasNext ? () => handleNavigate('next') : null}
