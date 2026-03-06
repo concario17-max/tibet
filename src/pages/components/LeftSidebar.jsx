@@ -10,8 +10,8 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
     const uiContext = useUI() || { isSidebarOpen: true, setIsSidebarOpen: () => { } };
     const { isSidebarOpen, setIsSidebarOpen } = uiContext;
 
-    // 첫 번째 챕터를 기본으로 열어둠 (불변성)
-    const [expandedChapter, setExpandedChapter] = useState(prayers?.[0]?.id || null);
+    // 초기 상태는 열려있는 챕터 없이 (null) 깔끔하게 시작 (Zero Monolith, 불변성)
+    const [expandedChapter, setExpandedChapter] = useState(null);
 
     // 챕터 토글 핸들러 (재생성 방지)
     const toggleChapter = React.useCallback((chapterId) => {
