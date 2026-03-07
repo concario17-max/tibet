@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronRight, X } from 'lucide-react';
 import { useUI } from '../../context/UIContext';
+import SidebarHeader from '../../components/Sidebar/SidebarHeader';
+import SidebarChapterList from '../../components/Sidebar/SidebarChapterList';
+import SidebarVerseList from '../../components/Sidebar/SidebarVerseList';
 
 // Gita의 디자인 철학(Awwwards급)을 Tibet 프로젝트에 맞게 변환
 const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
@@ -85,147 +87,25 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
             <aside className={`fixed inset-y-0 left-0 z-50 w-80 bg-white/40 dark:bg-dark-surface/40 backdrop-blur-md border-r border-gold-primary/20 dark:border-dark-border/50 h-full lg:h-[calc(100vh-64px)] lg:sticky lg:top-16 transform transition-transform duration-300 lg:translate-x-0 ${isSidebarOpen ? 'translate-x-0 overflow-hidden shadow-2xl lg:shadow-none' : '-translate-x-full'} flex flex-col font-inter`}>
 
                 {/* 모바일 닫기 버튼 및 헤더 */}
-                <div className="lg:hidden flex items-center justify-between p-4 border-b border-gold-border/30 dark:border-[#333] shrink-0">
-                    <span className="font-crimson font-bold text-lg text-text-primary dark:text-dark-text-primary">챕터 목록</span>
-                    <button onClick={() => setIsSidebarOpen(false)} className="p-2 -mr-2 rounded-full hover:bg-gold-surface dark:hover:bg-dark-surface text-text-secondary dark:text-dark-text-secondary transition-colors">
-                        <X className="w-5 h-5" />
-                    </button>
-                </div>
+                <SidebarHeader setIsSidebarOpen={setIsSidebarOpen} />
 
                 {/* 상단: 챕터 목록 */}
-                <div className={`flex-none overflow-y-auto border-gold-border/40 dark:border-[#222] custom-scrollbar transition-all duration-500 ease-in-out ${expandedChapter ? 'max-h-[45%] border-b shadow-sm' : 'max-h-full h-full'}`}>
-                    <div className="p-4 bg-transparent sticky top-0 z-10 backdrop-blur-sm hidden lg:block">
-                        <h2 className="text-[11px] font-bold font-inter tracking-[0.2em] uppercase text-text-primary/70 dark:text-dark-text-primary/60 pl-1">
-                            장 (Chapter)
-                        </h2>
-                    </div>
-                    <div className="py-1 px-3 flex flex-col gap-0">
-                        {prayers && prayers.map((prayer) => {
-                            if (prayer.isGroup) {
-                                return (
-                                    <div key={prayer.id} className="mb-1">
-                                        <div className="px-3 py-1.5 text-text-secondary dark:text-dark-text-secondary text-[14px] font-bold tracking-tight rounded-lg bg-gold-surface/20 dark:bg-dark-bg/20 uppercase">
-                                            {prayer.chapterName}
-                                        </div>
-                                        <div className="mt-0 flex flex-col gap-0">
-                                            {prayer.subchapters.map(subGroup => {
-                                                const uniqueId = `${prayer.id}-${subGroup.id}`;
-                                                const isExpanded = expandedChapter === uniqueId;
-                                                return (
-                                                    <button
-                                                        key={subGroup.id}
-                                                        onClick={() => {
-                                                            toggleChapter(uniqueId);
-
-                                                            // 챕터 클릭 시 (이미 열려있든 아니든) 무조건 1절부터 강제 실행 (유저 요청)
-                                                            if (subGroup.verses && subGroup.verses.length > 0) {
-                                                                if (onSelectVerse) onSelectVerse(subGroup.verses[0]);
-                                                            }
-                                                        }}
-                                                        className={`w-full flex items-start justify-between gap-2 px-3 py-1.5 rounded-xl text-left transition-colors pl-6 ${isExpanded
-                                                            ? 'bg-white/60 dark:bg-dark-bg/60 shadow-sm border border-gold-primary/20 text-[#1C2B36] dark:text-gold-light'
-                                                            : 'text-[#5B7282] dark:text-dark-text-secondary hover:bg-gold-surface/40 dark:hover:bg-dark-bg/40 border border-transparent'
-                                                            }`}
-                                                    >
-                                                        <div className="flex-1 pr-2 flex flex-col gap-0">
-                                                            <span className={`text-[13px] leading-snug font-inter break-keep ${isExpanded ? 'font-bold text-[#1C2B36]' : 'font-medium'}`}>
-                                                                {subGroup.chapterName}
-                                                            </span>
-                                                        </div>
-                                                        <span className={`shrink-0 mt-0 text-[#A68B5C] px-2 py-0 rounded text-[10px] font-bold ${isExpanded ? 'opacity-100' : 'opacity-70'}`}>
-                                                            {subGroup.verses.length}
-                                                        </span>
-                                                    </button>
-                                                )
-                                            })}
-                                        </div>
-                                    </div>
-                                );
-                            }
-
-                            // Original flat mapping for prayers
-                            const isExpanded = expandedChapter === prayer.id;
-                            return (
-                                <button
-                                    key={prayer.id}
-                                    onClick={() => {
-                                        toggleChapter(prayer.id);
-
-                                        // 챕터 클릭 시 (이미 열려있든 아니든) 무조건 1절부터 강제 실행 (유저 요청)
-                                        if (prayer.verses && prayer.verses.length > 0) {
-                                            if (onSelectVerse) onSelectVerse(prayer.verses[0]);
-                                        }
-                                    }}
-                                    className={`w-full flex items-start justify-between gap-2 px-3 py-2 rounded-xl text-left transition-colors ${isExpanded
-                                        ? 'bg-white/60 dark:bg-dark-bg/60 shadow-sm border border-gold-primary/20 text-[#1C2B36] dark:text-gold-light'
-                                        : 'text-[#5B7282] dark:text-dark-text-secondary hover:bg-gold-surface/40 dark:hover:bg-dark-bg/40 border border-transparent'
-                                        }`}
-                                >
-                                    <div className="flex-1 pr-2 flex flex-col gap-0">
-                                        <span className={`text-[15px] leading-snug font-inter break-keep pl-1 ${isExpanded ? 'font-bold text-[#1C2B36]' : 'font-bold'}`}>
-                                            {prayer.id.startsWith('prayer-') ? `${prayer.id.replace('prayer-', '')}. ` : ''}{prayer.chapterName}
-                                        </span>
-                                    </div>
-                                    <span className={`shrink-0 mt-0 text-[#A68B5C] px-2 py-0 rounded text-xs font-bold ${isExpanded ? 'opacity-100' : 'opacity-70'}`}>
-                                        {prayer.verses.length}
-                                    </span>
-                                </button>
-                            );
-                        })}
-                    </div>
-                </div>
+                <SidebarChapterList
+                    prayers={prayers}
+                    expandedChapter={expandedChapter}
+                    toggleChapter={toggleChapter}
+                    onSelectVerse={onSelectVerse}
+                />
 
                 {/* 하단: 구절(Verse) 목록 - 챕터가 선택되었을 때만 렌더링 (메타 디자인) */}
-                {expandedChapter && (
-                    <div className="flex-1 overflow-y-auto bg-transparent custom-scrollbar h-full animate-[fadeIn_0.5s_ease-out]">
-                        <div className="py-2 px-3 space-y-0.5">
-                            {(() => {
-                                let foundChapter = null;
-                                for (const prayer of prayers) {
-                                    if (prayer.id === expandedChapter) {
-                                        foundChapter = prayer;
-                                        break;
-                                    }
-                                    if (prayer.isGroup && prayer.subchapters) {
-                                        // 유니크 키 지원
-                                        const sub = prayer.subchapters.find(s => `${prayer.id}-${s.id}` === expandedChapter);
-                                        if (sub) {
-                                            foundChapter = sub;
-                                            break;
-                                        }
-                                    }
-                                }
-
-                                if (!foundChapter || !foundChapter.verses) return null;
-
-                                return foundChapter.verses.map((verse) => {
-                                    const isActive = activeVerseId === verse.id;
-
-                                    return (
-                                        <button
-                                            key={verse.id}
-                                            onClick={() => {
-                                                if (onSelectVerse) onSelectVerse(verse);
-                                                if (window.innerWidth < 1024) setIsSidebarOpen(false);
-                                            }}
-                                            className={`w-full flex items-start text-left gap-3 px-3 py-2.5 rounded-lg text-sm transition-all ${isActive
-                                                ? 'bg-white/60 border border-gold-primary/30 text-text-primary font-medium shadow-sm dark:bg-dark-bg/60 dark:border-gold-primary/20 dark:text-gold-light'
-                                                : 'border border-transparent text-text-secondary dark:text-dark-text-secondary hover:text-text-primary hover:bg-gold-surface/30 dark:hover:bg-dark-bg/40'
-                                                }`}
-                                        >
-                                            <span className={`min-w-[40px] whitespace-nowrap font-bold text-xs mt-[3px] ${isActive ? 'text-gold-primary' : 'text-text-secondary/60 dark:text-dark-text-secondary/60'}`}>
-                                                {verseGlobalIndices[verse.id] || verse.id}
-                                            </span>
-                                            <span className="truncate opacity-90 text-[13px] leading-relaxed font-inter">
-                                                {verse.chapterTitle || verse.title}
-                                            </span>
-                                        </button>
-                                    );
-                                });
-                            })()}
-                        </div>
-                    </div>
-                )}
+                <SidebarVerseList
+                    prayers={prayers}
+                    expandedChapter={expandedChapter}
+                    activeVerseId={activeVerseId}
+                    verseGlobalIndices={verseGlobalIndices}
+                    onSelectVerse={onSelectVerse}
+                    setIsSidebarOpen={setIsSidebarOpen}
+                />
             </aside>
         </>
     );

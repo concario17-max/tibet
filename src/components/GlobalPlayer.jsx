@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Play, Pause, SkipForward, SkipBack, Repeat, Repeat1, Volume2, VolumeX, X } from 'lucide-react';
-
-const formatTime = (time) => {
-    if (isNaN(time)) return "0:00";
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-};
+import { X } from 'lucide-react';
+import { formatTime } from '../utils/audioUtils';
+import TrackInfo from './Player/TrackInfo';
+import ProgressBar from './Player/ProgressBar';
+import PlayerControls from './Player/PlayerControls';
+import VolumeControl from './Player/VolumeControl';
 
 const GlobalPlayer = ({ playbackRequest, setPlaybackRequest }) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -104,14 +102,14 @@ const GlobalPlayer = ({ playbackRequest, setPlaybackRequest }) => {
         }
     }, [album]);
 
-    const togglePlay = () => {
+    const togglePlay = useCallback(() => {
         if (isPlaying) {
             audioRef.current.pause();
         } else {
             audioRef.current.play();
         }
         setIsPlaying(!isPlaying);
-    };
+    }, [isPlaying]);
 
     useEffect(() => {
         if (audioRef.current) {
@@ -119,30 +117,40 @@ const GlobalPlayer = ({ playbackRequest, setPlaybackRequest }) => {
         }
     }, [volume, isMuted]);
 
-    const handleSeek = (e) => {
+    const handleSeek = useCallback((e) => {
         const rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const percentage = x / rect.width;
         const time = percentage * audioRef.current.duration;
         audioRef.current.currentTime = time;
         setProgress(percentage * 100);
-    };
+    }, []);
 
-    const handleVolumeSeek = (e) => {
+    const handleVolumeSeek = useCallback((e) => {
         const rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const percentage = Math.max(0, Math.min(1, x / rect.width));
         setVolume(percentage);
         if (isMuted && percentage > 0) setIsMuted(false);
-    };
+    }, [isMuted]);
 
-    const toggleMute = () => {
+    const toggleMute = useCallback(() => {
         setIsMuted(!isMuted);
-    };
+    }, [isMuted]);
 
-    const cycleRepeat = () => {
+    const cycleRepeat = useCallback(() => {
         setRepeatMode((prev) => (prev + 1) % 3);
-    };
+    }, []);
+
+    const handleTrackPrev = useCallback(() => {
+        if (!album) return;
+        handleTrackChange((currentTrackIndex - 1 + album.tracks.length) % album.tracks.length);
+    }, [album, currentTrackIndex, handleTrackChange]);
+
+    const handleTrackNext = useCallback(() => {
+        if (!album) return;
+        handleTrackChange((currentTrackIndex + 1) % album.tracks.length);
+    }, [album, currentTrackIndex, handleTrackChange]);
 
     const currentTrack = album?.tracks[currentTrackIndex];
 
@@ -167,90 +175,41 @@ const GlobalPlayer = ({ playbackRequest, setPlaybackRequest }) => {
                     <X size={16} />
                 </button>
 
-                {/* Cover Image */}
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden shrink-0 border border-gold-primary/30 shadow-md">
-                    {album.coverImage ? (
-                        <img src={album.coverImage} alt={album.title} className="w-full h-full object-cover" />
-                    ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-charcoal-main to-gold-primary/10 flex items-center justify-center">
-                            <span className="text-gold-primary/50 text-xs">No Art</span>
-                        </div>
-                    )}
+                {/* Track Information Area */}
+                <TrackInfo
+                    album={album}
+                    currentTrack={currentTrack}
+                    currentTime={currentTime}
+                    duration={duration}
+                    formatTime={formatTime}
+                />
+
+                {/* Main Control & Progress Area */}
+                <div className="flex-1 w-full flex flex-col">
+                    <ProgressBar
+                        progress={progress}
+                        handleSeek={handleSeek}
+                    />
                 </div>
 
-                {/* Track Info & Progress */}
-                <div className="flex-1 min-w-0 w-full flex flex-col justify-center">
-                    <div className="flex justify-between items-end mb-1">
-                        <div className="truncate pr-4">
-                            <h4 className="text-sand-primary font-medium text-sm sm:text-base truncate">{currentTrack.title}</h4>
-                            <p className="text-gold-primary/70 text-[10px] sm:text-xs truncate tracking-wider uppercase">{album.title}</p>
-                        </div>
-                        <div className="text-[10px] text-sand-primary/50 tabular-nums shrink-0 font-medium">
-                            {formatTime(currentTime)} / {formatTime(duration)}
-                        </div>
-                    </div>
-
-                    {/* Progress Bar */}
-                    <div className="h-1.5 w-full bg-black/40 rounded-full overflow-hidden cursor-pointer relative group/bar mt-2" onClick={handleSeek}>
-                        <div
-                            className="absolute top-0 left-0 h-full bg-gradient-to-r from-gold-primary to-gold-light rounded-full transition-all duration-100 ease-out"
-                            style={{ width: `${progress}%` }}
-                        />
-                        {/* Hover seeker dot */}
-                        <div
-                            className="absolute top-1/2 -mt-1.5 w-3 h-3 bg-white rounded-full shadow blur-[1px] opacity-0 group-hover/bar:opacity-100 transition-opacity"
-                            style={{ left: `calc(${progress}% - 6px)` }}
-                        />
-                    </div>
-                </div>
-
-                {/* Controls */}
                 <div className="flex items-center gap-3 sm:gap-5 shrink-0">
-                    <button onClick={cycleRepeat} className="text-sand-primary/50 hover:text-gold-primary transition-colors" title="Repeat Mode">
-                        {repeatMode === 0 ? <Repeat size={18} className="opacity-40" /> :
-                            repeatMode === 1 ? <Repeat size={18} className="text-gold-primary drop-shadow-[0_0_5px_rgba(166,139,92,0.5)]" /> :
-                                <Repeat1 size={18} className="text-gold-primary drop-shadow-[0_0_5px_rgba(166,139,92,0.5)]" />}
-                    </button>
-
-                    <button
-                        onClick={() => handleTrackChange((currentTrackIndex - 1 + album.tracks.length) % album.tracks.length)}
-                        className="text-sand-primary/80 hover:text-white transition-colors"
-                    >
-                        <SkipBack size={20} className="fill-current" />
-                    </button>
-
-                    <button
-                        onClick={togglePlay}
-                        className="w-10 h-10 sm:w-12 sm:h-12 bg-gold-primary text-charcoal-main rounded-full flex items-center justify-center hover:scale-105 hover:bg-gold-light transition-all shadow-[0_0_15px_rgba(166,139,92,0.3)]"
-                    >
-                        {isPlaying ? <Pause size={20} className="fill-current" /> : <Play size={20} className="fill-current ml-1" />}
-                    </button>
-
-                    <button
-                        onClick={() => handleTrackChange((currentTrackIndex + 1) % album.tracks.length)}
-                        className="text-sand-primary/80 hover:text-white transition-colors"
-                    >
-                        <SkipForward size={20} className="fill-current" />
-                    </button>
+                    <PlayerControls
+                        repeatMode={repeatMode}
+                        cycleRepeat={cycleRepeat}
+                        handleTrackPrev={handleTrackPrev}
+                        togglePlay={togglePlay}
+                        isPlaying={isPlaying}
+                        handleTrackNext={handleTrackNext}
+                    />
 
                     <div className="w-px h-6 bg-gold-primary/20 mx-1 hidden sm:block"></div>
 
-                    <div className="hidden sm:flex items-center gap-2 group/vol relative cursor-pointer">
-                        <button onClick={toggleMute} className="text-sand-primary/60 hover:text-gold-primary transition-colors shrink-0">
-                            {isMuted || volume === 0 ? <VolumeX size={18} /> : <Volume2 size={18} />}
-                        </button>
-                        <div
-                            className="w-0 overflow-hidden group-hover/vol:w-20 transition-all duration-300 ease-in-out flex items-center py-2"
-                            onClick={handleVolumeSeek}
-                        >
-                            <div className="h-1.5 w-full bg-black/40 rounded-full relative overflow-hidden">
-                                <div
-                                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-gold-primary to-gold-light rounded-full"
-                                    style={{ width: `${(isMuted ? 0 : volume) * 100}%` }}
-                                />
-                            </div>
-                        </div>
-                    </div>
+                    <VolumeControl
+                        isMuted={isMuted}
+                        volume={volume}
+                        toggleMute={toggleMute}
+                        handleVolumeSeek={handleVolumeSeek}
+                    />
                 </div>
             </div>
         </div>
