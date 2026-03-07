@@ -1,4 +1,4 @@
-# Universal Windows Script - Adds CDP Port to Antigravity
+# === Antigravity CDP Setup ===
 Write-Host "=== Antigravity CDP Setup ===" -ForegroundColor Cyan
 Write-Host "Searching for Antigravity shortcuts..." -ForegroundColor Yellow
 
@@ -20,7 +20,7 @@ foreach ($location in $searchLocations) {
     if (Test-Path $location) {
         Write-Host "Searching: $location"
         $shortcuts = Get-ChildItem -Path $location -Recurse -Filter "*.lnk" -ErrorAction SilentlyContinue |
-            Where-Object { $_.Name -like "*Antigravity*" }
+        Where-Object { $_.Name -like "*Antigravity*" }
         $foundShortcuts += $shortcuts
     }
 }
@@ -37,11 +37,13 @@ if ($foundShortcuts.Count -eq 0) {
         $shortcut.Arguments = "--remote-debugging-port=9000"
         $shortcut.Save()
         Write-Host "Created new shortcut: $shortcutPath" -ForegroundColor Green
-    } else {
+    }
+    else {
         Write-Host "ERROR: Antigravity.exe not found. Please install Antigravity first." -ForegroundColor Red
         exit 1
     }
-} else {
+}
+else {
     Write-Host "Found $($foundShortcuts.Count) shortcut(s)" -ForegroundColor Green
     foreach ($shortcutFile in $foundShortcuts) {
         $shortcut = $WshShell.CreateShortcut($shortcutFile.FullName)
@@ -49,7 +51,8 @@ if ($foundShortcuts.Count -eq 0) {
 
         if ($originalArgs -match "--remote-debugging-port=\d+") {
             $shortcut.Arguments = $originalArgs -replace "--remote-debugging-port=\d+", "--remote-debugging-port=9000"
-        } else {
+        }
+        else {
             $shortcut.Arguments = "--remote-debugging-port=9000 " + $originalArgs
         }
         $shortcut.Save()

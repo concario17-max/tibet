@@ -62,74 +62,125 @@ h6 {
 
 /* Glassmorphism Classes (Simsang Depth) - Highly refined for Meta-Design */
 .glass-panel {
-  background: rgba(15, 15, 15, 0.45);
-  backdrop-filter: blur(32px) saturate(180%);
-  -webkit-backdrop-filter: blur(32px) saturate(180%);
-  border: 1px solid rgba(197, 160, 89, 0.15);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(40px) saturate(150%);
+  -webkit-backdrop-filter: blur(40px) saturate(150%);
+  border: 1px solid rgba(197, 160, 89, 0.12);
+  border-radius: 20px;
   box-shadow:
-    0 10px 40px -10px rgba(0, 0, 0, 0.5),
-    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+    0 20px 50px -15px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
 }
 
 .noise-overlay {
   position: absolute;
-  inset: 0;
+  inset: -100%;
   z-index: 1;
-  opacity: 0.15;
+  opacity: 0.06;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  animation: noise-move 8s steps(10) infinite;
+}
+
+@keyframes noise-move {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-5%, -5%);
+  }
+
+  20% {
+    transform: translate(-10%, 5%);
+  }
+
+  30% {
+    transform: translate(5%, -10%);
+  }
+
+  40% {
+    transform: translate(-5%, 15%);
+  }
+
+  50% {
+    transform: translate(-10%, 5%);
+  }
+
+  60% {
+    transform: translate(15%, 0);
+  }
+
+  70% {
+    transform: translate(0, 10%);
+  }
+
+  80% {
+    transform: translate(-15%, 0);
+  }
+
+  90% {
+    transform: translate(10%, 5%);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .premium-card {
-  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-  background: rgba(15, 15, 15, 0.25);
-  border: 1px solid rgba(197, 160, 89, 0.08);
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+    border-color 0.4s ease;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(166, 139, 92, 0.1);
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 24px;
 }
 
 .premium-card::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
+  left: -150%;
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg,
       transparent,
-      rgba(197, 160, 89, 0.05),
+      rgba(166, 139, 92, 0.08),
       transparent);
-  transition: 0.8s;
+  transition: 1.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .premium-card:hover::before {
-  left: 100%;
+  left: 150%;
 }
 
 .premium-card:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
-  border-color: rgba(197, 160, 89, 0.4);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow:
+    0 50px 100px -20px rgba(0, 0, 0, 0.25),
+    0 30px 60px -30px rgba(166, 139, 92, 0.2);
+  border-color: rgba(166, 139, 92, 0.4);
 }
 
 .mask-image-bottom {
-  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
 .sanskrit-verse {
-  @apply font-serif text-xl leading-loose text-gold-primary dark:text-gold-light;
-  letter-spacing: 0.05em;
+  @apply font-serif text-2xl leading-relaxed text-gold-primary;
+  letter-spacing: 0.08em;
+  filter: drop-shadow(0 0 8px rgba(166, 139, 92, 0.2));
 }
 
 /* Custom Scrollbar - Minimalist & Elegant */
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 3px;
 }
 
 ::-webkit-scrollbar-track {
@@ -137,9 +188,12 @@ h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(166, 139, 92, 0.2);
+  background: rgba(166, 139, 92, 0.15);
   border-radius: 10px;
-  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(166, 139, 92, 0.4);
 }
 
 .dark ::-webkit-scrollbar-thumb {

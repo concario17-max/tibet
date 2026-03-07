@@ -19,9 +19,10 @@ const HomeNavigation = ({ setIsCompendiumOpen, setIsLexiconOpen, setIsCommentari
                 <button
                     key={i}
                     onClick={item.action}
-                    className="px-6 py-2.5 rounded-full border border-[#D6C7A2]/60 bg-white/40 backdrop-blur-md text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase text-[#1A1A1A]/70 hover:text-white hover:bg-[#B29A62] hover:border-[#B29A62] hover:shadow-lg hover:shadow-[#B29A62]/20 transition-all duration-500"
+                    className="group relative px-8 py-3 rounded-full border border-[#D6C7A2]/30 bg-white/10 backdrop-blur-xl text-[10px] sm:text-[11px] font-bold tracking-[0.3em] uppercase text-[#1A1A1A]/60 overflow-hidden transition-all duration-700 ease-premium hover:border-gold-primary/50 hover:text-gold-primary"
                 >
-                    {item.name}
+                    <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/0 via-gold-primary/5 to-gold-primary/0 opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-1000 ease-premium" />
+                    <span className="relative z-10">{item.name}</span>
                 </button>
             ))}
         </motion.nav>
