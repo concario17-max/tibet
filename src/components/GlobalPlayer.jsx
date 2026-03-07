@@ -157,9 +157,8 @@ const GlobalPlayer = ({ playbackRequest, setPlaybackRequest }) => {
     if (!isVisible || !currentTrack) return null;
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-50 transform translate-y-0 transition-transform duration-500 ease-in-out px-4 pb-4">
-            <div className="max-w-4xl mx-auto bg-charcoal-main/95 backdrop-blur-xl border border-gold-primary/20 rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.5)] p-4 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 relative overflow-hidden group">
-
+        <div className="fixed bottom-0 left-0 right-0 z-50 transform translate-y-0 transition-transform duration-500 ease-in-out px-2 sm:px-4 pb-2 sm:pb-4">
+            <div className="max-w-4xl mx-auto bg-charcoal-main/95 backdrop-blur-xl border border-gold-primary/20 rounded-xl sm:rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.5)] p-3 sm:p-4 flex flex-col sm:flex-row items-center gap-3 sm:gap-6 relative overflow-hidden group">
                 {/* Background glow matching cover image logic */}
                 <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/5 to-transparent opacity-50 pointer-events-none"></div>
 
@@ -170,29 +169,31 @@ const GlobalPlayer = ({ playbackRequest, setPlaybackRequest }) => {
                         setIsPlaying(false);
                         setPlaybackRequest(null);
                     }}
-                    className="absolute top-2 right-2 text-gold-primary/50 hover:text-gold-primary transition-colors p-1"
+                    className="absolute top-2 right-2 text-gold-primary/50 hover:text-gold-primary transition-colors p-1 z-10"
                 >
                     <X size={16} />
                 </button>
 
                 {/* Track Information Area */}
-                <TrackInfo
-                    album={album}
-                    currentTrack={currentTrack}
-                    currentTime={currentTime}
-                    duration={duration}
-                    formatTime={formatTime}
-                />
+                <div className="w-full sm:w-auto">
+                    <TrackInfo
+                        album={album}
+                        currentTrack={currentTrack}
+                        currentTime={currentTime}
+                        duration={duration}
+                        formatTime={formatTime}
+                    />
+                </div>
 
                 {/* Main Control & Progress Area */}
-                <div className="flex-1 w-full flex flex-col">
+                <div className="flex-1 w-full flex flex-col gap-1">
                     <ProgressBar
                         progress={progress}
                         handleSeek={handleSeek}
                     />
                 </div>
 
-                <div className="flex items-center gap-3 sm:gap-5 shrink-0">
+                <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-3 sm:gap-5 shrink-0">
                     <PlayerControls
                         repeatMode={repeatMode}
                         cycleRepeat={cycleRepeat}
@@ -202,14 +203,16 @@ const GlobalPlayer = ({ playbackRequest, setPlaybackRequest }) => {
                         handleTrackNext={handleTrackNext}
                     />
 
-                    <div className="w-px h-6 bg-gold-primary/20 mx-1 hidden sm:block"></div>
+                    <div className="hidden sm:block w-px h-6 bg-gold-primary/20 mx-1"></div>
 
-                    <VolumeControl
-                        isMuted={isMuted}
-                        volume={volume}
-                        toggleMute={toggleMute}
-                        handleVolumeSeek={handleVolumeSeek}
-                    />
+                    <div className="hidden xs:block sm:block">
+                        <VolumeControl
+                            isMuted={isMuted}
+                            volume={volume}
+                            toggleMute={toggleMute}
+                            handleVolumeSeek={handleVolumeSeek}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

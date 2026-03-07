@@ -20,8 +20,8 @@ const ReadingPanel = ({ verse, globalIndex, hideAudio = false, onPrevious, onNex
     const [chapterStr, verseStr] = verse.id.split('.');
 
     return (
-        <main className="flex-1 min-w-0 bg-transparent font-crimson text-text-primary dark:text-dark-text-primary transition-colors duration-500 overflow-y-auto scrollbar-hide relative z-10 pt-24 sm:pt-[100px] pb-48 sm:pb-32">
-            <div className="mx-auto max-w-[1000px] px-4 sm:px-6">
+        <main className="flex-1 min-w-0 bg-transparent font-crimson text-text-primary dark:text-dark-text-primary transition-colors duration-500 overflow-y-auto scrollbar-hide relative z-10 pt-20 sm:pt-24 pb-32 sm:pb-20">
+            <div className="mx-auto max-w-[1000px] px-4 sm:px-8">
 
                 {/* 챕터 네비게이션 브레드크럼 */}
                 <ReadingHeader

@@ -4,7 +4,7 @@ import { useState, useCallback, useRef } from 'react';
  * 전설적인 Meta-Design을 위한 프리미엄 인터랙션 훅
  * 마우스 위치를 추적하여 3D Tilt 효과와 마그네틱 효과를 계산함
  */
-export const usePremiumInteractions = (intensity = 15) => {
+export const usePremiumInteractions = (intensity = 10) => {
     const [style, setStyle] = useState({});
     const ref = useRef(null);
 

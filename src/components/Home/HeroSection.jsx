@@ -9,7 +9,7 @@ const HeroSection = ({ fadeUp }) => {
                 initial={{ scale: 1.15, opacity: 0 }}
                 animate={{ scale: 1, opacity: 0.12 }}
                 transition={{ duration: 4, ease: "premium" }}
-                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544923246-77307dd654ca?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center grayscale mix-blend-multiply"
+                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544923246-77307dd654ca?q=70&w=1600&auto=format&fit=crop&q=60')] bg-cover bg-center grayscale mix-blend-multiply"
             >
                 <div className="noise-overlay" />
             </motion.div>
