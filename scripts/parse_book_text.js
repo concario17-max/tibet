@@ -1,16 +1,22 @@
 import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { JSDOM } from 'jsdom';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * Ray Standard: Pure Functional Data Pipeline for Bardo Thodol Parsing
  * 명확한 책임 분리 및 불변성 유지를 목표로 함
  */
 
+const projectRoot = path.join(__dirname, '..');
 const paths = {
-    doc1: '../book/1.html',
-    doc2: '../book/2.html',
-    doc3: '../book/3.html',
-    output: '../src/data/book.json'
+    doc1: path.join(projectRoot, 'book', '1.html'),
+    doc2: path.join(projectRoot, 'book', '2.html'),
+    doc3: path.join(projectRoot, 'book', '3.html'),
+    output: path.join(projectRoot, 'src', 'data', 'book.json')
 };
 
 const CUSTOM_CHAPTERS = [
