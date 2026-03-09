@@ -27,7 +27,7 @@ const ReadingHeader = ({ chapterStr, verseStr, globalIndex, verseId }) => {
                 )}
             </nav>
 
-            <div className="w-8 h-8 rounded-full bg-gold-border/20 flex items-center justify-center mb-2 text-gold-primary">
+            <div className="w-8 h-8 rounded-full bg-gold-border/20 dark:bg-gold-primary/10 flex items-center justify-center mb-2 text-gold-primary dark:text-gold-light">
                 <span className="font-serif leading-none">֍</span>
             </div>
         </div>

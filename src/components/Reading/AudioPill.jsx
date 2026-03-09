@@ -4,7 +4,7 @@ import { Play, Pause } from 'lucide-react';
 const AudioPill = ({ isPlaying, progress, currentTime, duration, togglePlay, seek, audioUrl, formatTime }) => {
     return (
         <div className="mb-16 flex justify-center">
-            <div className="flex items-center justify-between w-full max-w-[400px] rounded-full border border-gold-primary/20 dark:border-dark-border/50 bg-white/40 dark:bg-[#111]/40 backdrop-blur-md px-5 py-2.5 shadow-sm hover:shadow-md transition-all hover:border-gold-primary/40">
+            <div className="flex items-center justify-between w-full max-w-[400px] rounded-full border border-gold-primary/20 dark:border-dark-border bg-white/60 dark:bg-dark-surface/80 backdrop-blur-xl px-5 py-2.5 shadow-sm hover:shadow-md transition-all hover:border-gold-primary/40">
                 <button
                     onClick={togglePlay}
                     disabled={!audioUrl}

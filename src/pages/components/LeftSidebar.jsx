@@ -84,7 +84,7 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
                 />
             )}
 
-            <aside className={`fixed inset-y-0 left-0 z-50 w-80 bg-white/40 dark:bg-dark-surface/40 backdrop-blur-md border-r border-gold-primary/20 dark:border-dark-border/50 h-full lg:h-[calc(100vh-64px)] lg:sticky lg:top-16 transform transition-transform duration-300 lg:translate-x-0 ${isSidebarOpen ? 'translate-x-0 overflow-hidden shadow-2xl lg:shadow-none' : '-translate-x-full'} flex flex-col font-inter`}>
+            <aside className={`fixed inset-y-0 left-0 z-50 w-80 bg-white/80 dark:bg-dark-bg/95 backdrop-blur-xl border-r border-gold-primary/20 dark:border-dark-border/50 h-full lg:h-[calc(100vh-64px)] lg:sticky lg:top-16 transform transition-transform duration-500 lg:translate-x-0 ${isSidebarOpen ? 'translate-x-0 overflow-hidden shadow-2xl lg:shadow-none' : '-translate-x-full'} flex flex-col font-inter`}>
 
                 {/* 모바일 닫기 버튼 및 헤더 */}
                 <SidebarHeader setIsSidebarOpen={setIsSidebarOpen} />

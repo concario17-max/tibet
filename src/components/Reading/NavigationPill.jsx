@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const NavigationPill = ({ globalIndex, verseId, onPrevious, onNext }) => {
     return (
         <div className="flex justify-center mt-12 mb-8">
-            <div className="flex items-center justify-between w-[200px] px-6 py-[14px] rounded-full bg-white/60 dark:bg-[#111] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-gold-border/10 dark:border-[#333] backdrop-blur-md transition-all duration-300">
+            <div className="flex items-center justify-between w-[200px] px-6 py-[14px] rounded-full bg-white/80 dark:bg-dark-surface/80 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] dark:shadow-none border border-gold-border/20 dark:border-dark-border backdrop-blur-xl transition-all duration-300">
                 <button
                     onClick={onPrevious}
                     disabled={!onPrevious}
