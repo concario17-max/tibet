@@ -7,15 +7,11 @@ import { motion, AnimatePresence } from 'framer-motion';
  */
 const PasswordGuard = ({ children }) => {
     const [password, setPassword] = useState('');
-    const [isAuthorized, setIsAuthorized] = useState(false);
+    const [isAuthorized, setIsAuthorized] = useState(() => {
+        // 초기화 시점에 바로 읽어서 Flash 현상 방지
+        return localStorage.getItem('tibet_authorized') === 'true';
+    });
     const [error, setError] = useState(false);
-
-    useEffect(() => {
-        const auth = localStorage.getItem('tibet_authorized');
-        if (auth === 'true') {
-            setIsAuthorized(true);
-        }
-    }, []);
 
     const handleLogin = (e) => {
         e.preventDefault();

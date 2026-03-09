@@ -12,7 +12,8 @@ const Header = () => {
     const location = useLocation();
     const isHome = location.pathname === '/';
     const isAlbum = location.pathname === '/album';
-    const isChapter = location.pathname.includes('/chapter');
+    // /text 와 /chapter 모두를 'ReadingMode'로 취급하여 일관된 내비 제공
+    const isReadingMode = location.pathname.includes('/chapter') || location.pathname.includes('/text');
 
     // UI 로직 안전 연동
     const uiContext = useUI() || {
@@ -60,17 +61,17 @@ const Header = () => {
     if (isHome || isAlbum) return null;
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-50 px-4 sm:px-8 flex justify-between sm:justify-center text-center items-center transition-all duration-500 border-b border-sand-tertiary dark:border-dark-border/50 ${scrolled ? 'glass-panel py-2' : 'bg-transparent py-2 sm:py-3'} ${isChapter ? 'bg-white/80 dark:bg-[#070707]/80 backdrop-blur-md' : ''}`}>
+        <header className={`fixed top-0 left-0 w-full z-50 px-4 sm:px-8 flex justify-between sm:justify-center text-center items-center transition-all duration-500 border-b border-sand-tertiary dark:border-dark-border/50 ${scrolled ? 'glass-panel py-2' : 'bg-transparent py-2 sm:py-3'} ${isReadingMode ? 'bg-white/80 dark:bg-[#070707]/80 backdrop-blur-md' : ''}`}>
 
             <MobileActions
-                isChapter={isChapter}
+                isReadingMode={isReadingMode}
                 toggleSidebar={toggleSidebar}
                 toggleReflections={toggleReflections}
             />
 
-            <Branding isChapter={isChapter} />
+            <Branding isReadingMode={isReadingMode} />
 
-            {isChapter && (
+            {isReadingMode && (
                 <div className="flex-1 flex justify-end items-center gap-4">
                     <ChapterNavigator
                         capsuleRef={capsuleRef}

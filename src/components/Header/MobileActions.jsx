@@ -1,11 +1,11 @@
 import React from 'react';
 import { Menu, Edit3 } from 'lucide-react';
 
-const MobileActions = ({ isChapter, toggleSidebar, toggleReflections }) => {
+const MobileActions = ({ isReadingMode, toggleSidebar, toggleReflections }) => {
     return (
         <>
-            {/* 왼쪽 모바일 토글 (Chapter 화면 전용) */}
-            {isChapter && (
+            {/* 왼쪽 모바일 토글 (독서 모드 전용) */}
+            {isReadingMode && (
                 <div className="flex justify-start lg:hidden mr-4">
                     <button
                         onClick={toggleSidebar}
@@ -16,8 +16,8 @@ const MobileActions = ({ isChapter, toggleSidebar, toggleReflections }) => {
                 </div>
             )}
 
-            {/* 모바일 우측 토글 (Chapter 화면 전용) */}
-            {isChapter && (
+            {/* 모바일 우측 토글 (독서 모드 전용) */}
+            {isReadingMode && (
                 <div className="flex xl:hidden">
                     <button
                         onClick={toggleReflections}
