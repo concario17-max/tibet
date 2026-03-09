@@ -15,6 +15,7 @@ const paths = {
     doc1: path.join(projectRoot, 'book', '1.txt'),
     doc2: path.join(projectRoot, 'book', '2.txt'),
     doc3: path.join(projectRoot, 'book', '3.txt'),
+    doc4: path.join(projectRoot, 'book', '4..txt'),
     output: path.join(projectRoot, 'src', 'data', 'book.json')
 };
 
@@ -29,7 +30,6 @@ const CUSTOM_CHAPTERS = [
 const parseStructure = (text) => {
     const lines = text.split('\n');
     const structure = [];
-    // (1-11) 또는 (15-34) 형태 추출. 제목은 괄호 앞의 텍스트.
     const rangeRegex = /(.*?)\s*\((\d+)-(\d+)\)/;
 
     let currentMainChapter = 0;
@@ -38,7 +38,6 @@ const parseStructure = (text) => {
         const trimmed = line.trim();
         if (!trimmed) return;
 
-        // 메인 챕터 감지 (1. , 2. 등)
         const mainMatch = trimmed.match(/^(\d+)\.\s+(.*)/);
         if (mainMatch) {
             currentMainChapter = parseInt(mainMatch[1]);
@@ -89,6 +88,26 @@ const parseKorean2 = (text, paragraphs) => {
 
         if (paragraphs[id]) {
             paragraphs[id].korean2 = content;
+        } else {
+            // Document 1 references might be broader than Doc 2
+            paragraphs[id] = { english: "", korean: "", korean2: content };
+        }
+    }
+    return paragraphs;
+};
+
+// 4..txt 파싱: 문단별 korean3 (류시화) 추출
+const parseKorean3 = (text, paragraphs) => {
+    const blocks = text.split(/\[문단 (\d+)\]/);
+
+    for (let i = 1; i < blocks.length; i += 2) {
+        const id = parseInt(blocks[i]);
+        const content = blocks[i + 1]?.trim() || "";
+
+        if (paragraphs[id]) {
+            paragraphs[id].korean3 = content;
+        } else {
+            paragraphs[id] = { english: "", korean: "", korean2: "", korean3: content };
         }
     }
     return paragraphs;
@@ -114,20 +133,21 @@ const buildFinalResult = (structure, paragraphs) => {
                 const p = paragraphs[id];
                 if (!p) continue;
 
-                const koreanTranslators = [
-                    { translator: "정창영", text: p.korean }
-                ];
-                if (p.korean2) {
-                    koreanTranslators.push({ translator: "중암 선혜", text: p.korean2 });
-                }
+                const koreanTranslators = [];
+                if (p.korean) koreanTranslators.push({ translator: "정창영", text: p.korean });
+                if (p.korean2) koreanTranslators.push({ translator: "중암 선혜", text: p.korean2 });
+                if (p.korean3) koreanTranslators.push({ translator: "류시화", text: p.korean3 });
+
+                // Fallback title if english is missing
+                const enText = p.english || (p.korean ? p.korean.substring(0, 30) : `Verse ${id}`);
 
                 verses.push({
                     id: id.toString(),
-                    title: p.english.substring(0, 45) + (p.english.length > 45 ? '...' : ''),
-                    chapterTitle: p.english,
+                    title: enText.substring(0, 45) + (enText.length > 45 ? '...' : ''),
+                    chapterTitle: enText,
                     text: {
                         tibetan: "",
-                        english: p.english,
+                        english: enText,
                         korean: koreanTranslators
                     }
                 });
@@ -152,15 +172,17 @@ const buildFinalResult = (structure, paragraphs) => {
 
 const run = () => {
     try {
-        console.log('[Ray-Data-Pipeline] Starting text-based parsing...');
+        console.log('[Ray-Data-Pipeline] Starting multi-translator parsing...');
 
         const txt1 = fs.readFileSync(paths.doc1, 'utf8');
         const txt2 = fs.readFileSync(paths.doc2, 'utf8');
         const txt3 = fs.readFileSync(paths.doc3, 'utf8');
+        const txt4 = fs.readFileSync(paths.doc4, 'utf8');
 
         const structure = parseStructure(txt1);
         let paragraphs = parseContent(txt2);
         paragraphs = parseKorean2(txt3, paragraphs);
+        paragraphs = parseKorean3(txt4, paragraphs);
 
         const result = buildFinalResult(structure, paragraphs);
 
@@ -173,3 +195,4 @@ const run = () => {
 };
 
 run();
+
