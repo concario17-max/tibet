@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useAudioPlayer } from '../../hooks/useAudioPlayer';
 import { formatTime } from '../../utils/audioUtils';
 import ReadingHeader from '../../components/Reading/ReadingHeader';
@@ -7,66 +8,97 @@ import AudioPill from '../../components/Reading/AudioPill';
 import TranslationSection from '../../components/Reading/TranslationSection';
 import NavigationPill from '../../components/Reading/NavigationPill';
 
-// 강제 불변성과 Zero Monolith 원칙을 준수하는 ReadingPanel
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+            cubicBezier: [0.16, 1, 0.3, 1]
+        }
+    }
+};
+
+/**
+ * ReadingPanel - 챕터 상세 내용 (Interaction Refined)
+ */
 const ReadingPanel = ({ verse, globalIndex, hideAudio = false, onPrevious, onNext }) => {
-    // 오디오 플레이어 로직 (Tibet 커스텀 훅 지원)
     const audioPlaylist = React.useMemo(() => {
         return verse.audioUrl ? [{ id: verse.id, title: verse.title, url: verse.audioUrl }] : [];
     }, [verse.id, verse.title, verse.audioUrl]);
 
     const { isPlaying, progress, currentTime, duration, togglePlay, seek } = useAudioPlayer(audioPlaylist);
 
-    // 장과 구절 번호 파싱
     const [chapterStr, verseStr] = verse.id.split('.');
 
     return (
-        <main className="flex-1 min-w-0 bg-transparent font-crimson text-text-primary dark:text-dark-text-primary transition-colors duration-500 overflow-y-auto scrollbar-hide relative z-10 pt-20 sm:pt-24 pb-32 sm:pb-20">
+        <motion.main
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+            className="flex-1 min-w-0 bg-transparent font-crimson text-text-primary dark:text-dark-text-primary transition-colors duration-500 overflow-y-auto scrollbar-hide relative z-10 pt-20 sm:pt-24 pb-32 sm:pb-20"
+        >
             <div className="mx-auto max-w-[1000px] px-4 sm:px-8">
-
-                {/* 챕터 네비게이션 브레드크럼 */}
-                <ReadingHeader
-                    chapterStr={chapterStr}
-                    verseStr={verseStr}
-                    globalIndex={globalIndex}
-                    verseId={verse.id}
-                />
-
-                {/* 티벳어 (Sanskrit 대체) */}
-                <TibetanSection
-                    tibetan={verse.text.tibetan}
-                    pronunciation={verse.text.pronunciation}
-                />
-
-                {/* 오디오 플레이어 (Gita 스타일 Pill 디자인 이식) */}
-                {!hideAudio && (
-                    <AudioPill
-                        isPlaying={isPlaying}
-                        progress={progress}
-                        currentTime={currentTime}
-                        duration={duration}
-                        togglePlay={togglePlay}
-                        seek={seek}
-                        audioUrl={verse.audioUrl}
-                        formatTime={formatTime}
+                <motion.div variants={itemVariants}>
+                    <ReadingHeader
+                        chapterStr={chapterStr}
+                        verseStr={verseStr}
+                        globalIndex={globalIndex}
+                        verseId={verse.id}
                     />
+                </motion.div>
+
+                <motion.div variants={itemVariants}>
+                    <TibetanSection
+                        tibetan={verse.text.tibetan}
+                        pronunciation={verse.text.pronunciation}
+                    />
+                </motion.div>
+
+                {!hideAudio && (
+                    <motion.div variants={itemVariants}>
+                        <AudioPill
+                            isPlaying={isPlaying}
+                            progress={progress}
+                            currentTime={currentTime}
+                            duration={duration}
+                            togglePlay={togglePlay}
+                            seek={seek}
+                            audioUrl={verse.audioUrl}
+                            formatTime={formatTime}
+                        />
+                    </motion.div>
                 )}
 
-                {/* 번역 렌더링 영역 */}
-                <TranslationSection
-                    english={verse.text.english}
-                    korean={verse.text.korean}
-                />
+                <motion.div variants={itemVariants}>
+                    <TranslationSection
+                        english={verse.text.english}
+                        korean={verse.text.korean}
+                    />
+                </motion.div>
 
-                {/* 하단 네비게이션 알약 버튼 */}
-                <NavigationPill
-                    globalIndex={globalIndex}
-                    verseId={verse.id}
-                    onPrevious={onPrevious}
-                    onNext={onNext}
-                />
-
+                <motion.div variants={itemVariants}>
+                    <NavigationPill
+                        globalIndex={globalIndex}
+                        verseId={verse.id}
+                        onPrevious={onPrevious}
+                        onNext={onNext}
+                    />
+                </motion.div>
             </div>
-        </main>
+        </motion.main>
     );
 };
 
