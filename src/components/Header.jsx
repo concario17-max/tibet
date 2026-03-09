@@ -61,31 +61,41 @@ const Header = () => {
     if (isHome || isAlbum) return null;
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-50 px-4 sm:px-8 flex justify-between sm:justify-center text-center items-center transition-all duration-500 border-b border-sand-tertiary dark:border-dark-border/50 ${scrolled ? 'glass-panel py-2' : 'bg-transparent py-2 sm:py-3'} ${isReadingMode ? 'bg-white/80 dark:bg-[#070707]/80 backdrop-blur-md' : ''}`}>
+        <header className={`fixed top-0 left-0 w-full z-50 px-4 sm:px-8 flex items-center transition-all duration-500 border-b border-sand-tertiary dark:border-dark-border/50 ${scrolled ? 'glass-panel py-2' : 'bg-transparent py-2 sm:py-3'} ${isReadingMode ? 'bg-white/80 dark:bg-[#070707]/80 backdrop-blur-md' : ''}`}>
 
-            <MobileActions
-                isReadingMode={isReadingMode}
-                toggleSidebar={toggleSidebar}
-                toggleReflections={toggleReflections}
-            />
+            {/* Left Section: Mobile Actions */}
+            <div className="flex-1 flex justify-start">
+                <MobileActions
+                    isReadingMode={isReadingMode}
+                    toggleSidebar={toggleSidebar}
+                    toggleReflections={toggleReflections}
+                />
+            </div>
 
-            <Branding isReadingMode={isReadingMode} />
+            {/* Center Section: Branding */}
+            <div className="flex-none">
+                <Branding isReadingMode={isReadingMode} />
+            </div>
 
-            {isReadingMode && (
-                <div className="flex-1 flex justify-end items-center gap-4">
-                    <ChapterNavigator
-                        capsuleRef={capsuleRef}
-                        isChapterMenuOpen={isChapterMenuOpen}
-                        setIsChapterMenuOpen={setIsChapterMenuOpen}
-                        isSutraMenuOpen={isSutraMenuOpen}
-                        setIsSutraMenuOpen={setIsSutraMenuOpen}
-                        activeVerse={activeVerse}
-                        setActiveVerse={setActiveVerse}
-                    />
-
-                    <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-                </div>
-            )}
+            {/* Right Section: Chapter Navigator & Theme Toggle */}
+            <div className="flex-1 flex justify-end items-center gap-4">
+                {isReadingMode ? (
+                    <>
+                        <ChapterNavigator
+                            capsuleRef={capsuleRef}
+                            isChapterMenuOpen={isChapterMenuOpen}
+                            setIsChapterMenuOpen={setIsChapterMenuOpen}
+                            isSutraMenuOpen={isSutraMenuOpen}
+                            setIsSutraMenuOpen={setIsSutraMenuOpen}
+                            activeVerse={activeVerse}
+                            setActiveVerse={setActiveVerse}
+                        />
+                        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+                    </>
+                ) : (
+                    <div className="w-[40px]" /> /* Spacer to balance layout if needed */
+                )}
+            </div>
         </header>
     );
 };
