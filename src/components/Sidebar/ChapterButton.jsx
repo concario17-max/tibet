@@ -24,8 +24,10 @@ const ChapterButton = ({ chapter, isExpanded, onClick, isSubchapter = false }) =
                 }`}
         >
             <div className="flex-1 pr-2 flex flex-col gap-0">
-                <span className={`text-[15px] leading-snug font-inter break-keep ${isExpanded ? 'font-bold text-[#1C2B36] dark:text-gold-light' : 'font-bold'
-                    } ${isSubchapter ? 'text-[13px] font-medium' : ''}`}>
+                <span className={`leading-snug font-inter break-keep ${isExpanded ? 'font-bold text-[#1C2B36] dark:text-gold-light' : 'font-bold'
+                    } ${isSubchapter ? 'text-[13px] font-medium' : 'text-[15px]'} ${chapter.chapterName.includes('몸밖에서')
+                        ? 'text-gold-primary/80 dark:text-gold-light/70 text-[11px] font-bold tracking-[0.2em] rounded-lg bg-gold-surface/30 dark:bg-dark-bg/30 uppercase !py-2 !px-3 w-fit mb-1 block'
+                        : ''}`}>
                     {!isSubchapter && chapter.id.startsWith('prayer-')
                         ? `${chapter.id.replace('prayer-', '')}. `
                         : ''}
