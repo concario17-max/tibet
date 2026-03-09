@@ -60,7 +60,7 @@ const parseStructure = (text) => {
 // 2.txt 파싱: 문단별 English/Korean 추출
 const parseContent = (text) => {
     const paragraphs = {};
-    const blocks = text.split(/\[문단 (\d+)\]/);
+    const blocks = text.split(/\[?문단\s+(\d+)\]?/);
 
     for (let i = 1; i < blocks.length; i += 2) {
         const id = parseInt(blocks[i]);
@@ -80,7 +80,7 @@ const parseContent = (text) => {
 
 // 3.txt 파싱: 문단별 korean2 추출
 const parseKorean2 = (text, paragraphs) => {
-    const blocks = text.split(/\[문단 (\d+)\]/);
+    const blocks = text.split(/\[?문단\s+(\d+)\]?/);
 
     for (let i = 1; i < blocks.length; i += 2) {
         const id = parseInt(blocks[i]);
@@ -89,7 +89,6 @@ const parseKorean2 = (text, paragraphs) => {
         if (paragraphs[id]) {
             paragraphs[id].korean2 = content;
         } else {
-            // Document 1 references might be broader than Doc 2
             paragraphs[id] = { english: "", korean: "", korean2: content };
         }
     }
@@ -98,7 +97,7 @@ const parseKorean2 = (text, paragraphs) => {
 
 // 4..txt 파싱: 문단별 korean3 (류시화) 추출
 const parseKorean3 = (text, paragraphs) => {
-    const blocks = text.split(/\[문단 (\d+)\]/);
+    const blocks = text.split(/\[?문단\s+(\d+)\]?/);
 
     for (let i = 1; i < blocks.length; i += 2) {
         const id = parseInt(blocks[i]);
@@ -112,6 +111,7 @@ const parseKorean3 = (text, paragraphs) => {
     }
     return paragraphs;
 };
+
 
 // 최종 JSON 구조 빌드
 const buildFinalResult = (structure, paragraphs) => {
