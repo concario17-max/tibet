@@ -5,20 +5,23 @@ import SidebarChapterList from '../../components/Sidebar/SidebarChapterList';
 import SidebarVerseList from '../../components/Sidebar/SidebarVerseList';
 
 // Gita의 디자인 철학(Awwwards급)을 Tibet 프로젝트에 맞게 변환
-const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
+const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId, isPrayerPage = false }) => {
     // 만약 useUI가 App 최상단에 Provider로 안 감싸져 있다면 에러가 나므로, 
     // 실제 통합 전까지는 UIContext를 우선 임시로 써도 되지만, 에러 방지를 위해 optional chaining 처리.
     // 하지만 Zero Monolith & 강제 Immutability 원칙에 따라 UIContext는 외부에서 반드시 주입됨.
     const uiContext = useUI() || { isSidebarOpen: true, setIsSidebarOpen: () => { } };
     const { isSidebarOpen, setIsSidebarOpen } = uiContext;
 
-    // 전역 구절 인덱스 맵 생성 (1부터 시작하는 연속된 번호 보장)
+    // 전역 구절 인덱스 맵 생성 (isPrayerPage가 true면 챕터별로 1부터 시작)
     const verseGlobalIndices = React.useMemo(() => {
         const map = {};
         let count = 1;
         prayers?.forEach(p => {
+            if (isPrayerPage) count = 1; // 챕터 시작 시 초기화
+
             if (p.isGroup && p.subchapters) {
                 p.subchapters.forEach(s => {
+                    if (isPrayerPage) count = 1; // 소제목(Subchapter) 시작 시에도 초기화
                     s.verses?.forEach(v => {
                         map[v.id] = count++;
                     });
@@ -30,7 +33,7 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId }) => {
             }
         });
         return map;
-    }, [prayers]);
+    }, [prayers, isPrayerPage]);
 
     // activeVerseId를 기반으로 초기 확장 챕터 설정 (새로고침 대응, 고유 키 사용)
     const [expandedChapter, setExpandedChapter] = useState(() => {

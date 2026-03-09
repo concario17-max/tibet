@@ -55,7 +55,7 @@ const Chapter = () => {
             {/* 배경 그라데이션 (Gita 스타일 이식) */}
             <div className="fixed inset-0 pointer-events-none bg-grid-slate-900/[0.04] dark:bg-grid-slate-100/[0.03] bg-[bottom_1px_center] z-[-1] transition-opacity duration-500"></div>
 
-            <LeftSidebar onSelectVerse={setActiveVerse} activeVerseId={activeVerse?.id} prayers={prayersData} />
+            <LeftSidebar onSelectVerse={setActiveVerse} activeVerseId={activeVerse?.id} prayers={prayersData} isPrayerPage={true} />
 
             {activeVerse ? (
                 <>

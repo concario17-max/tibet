@@ -67,7 +67,7 @@ const Text = () => {
             {/* Background Grid */}
             <div className="fixed inset-0 pointer-events-none bg-grid-slate-900/[0.04] dark:bg-grid-slate-100/[0.03] bg-[bottom_1px_center] z-[-1] transition-opacity duration-500"></div>
 
-            <LeftSidebar onSelectVerse={setActiveTextVerse} activeVerseId={activeTextVerse?.id} prayers={bookData} />
+            <LeftSidebar onSelectVerse={setActiveTextVerse} activeVerseId={activeTextVerse?.id} prayers={bookData} isPrayerPage={false} />
 
             {activeTextVerse ? (
                 <>
