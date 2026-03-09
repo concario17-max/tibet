@@ -41,8 +41,8 @@ const SidebarVerseList = ({ prayers, expandedChapter, activeVerseId, verseGlobal
                             <span className={`min-w-[40px] whitespace-nowrap font-bold text-xs mt-[3px] ${isActive ? 'text-gold-primary' : 'text-text-secondary/60 dark:text-dark-text-secondary/60'}`}>
                                 {verseGlobalIndices[verse.id] || verse.id}
                             </span>
-                            <span className="truncate opacity-90 text-[13px] leading-relaxed font-inter">
-                                {verse.chapterTitle || verse.title}
+                            <span className="truncate opacity-90 text-[13px] leading-relaxed font-noto break-keep">
+                                {verse.text?.tibetan || verse.chapterTitle || verse.title}
                             </span>
                         </button>
                     );
