@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Chapter from './pages/Chapter';
 import Album from './pages/Album';
 import Text from './pages/Text';
+import PasswordGuard from './components/PasswordGuard';
 import { UIProvider } from './context/UIContext';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -15,16 +16,18 @@ function App() {
     return (
         <ThemeProvider>
             <UIProvider>
-                <Router>
-                    <Routes>
-                        <Route element={<Layout playbackRequest={playbackRequest} setPlaybackRequest={setPlaybackRequest} />}>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/text" element={<Text />} />
-                            <Route path="/chapter" element={<Chapter />} />
-                            <Route path="/album" element={<Album />} />
-                        </Route>
-                    </Routes>
-                </Router>
+                <PasswordGuard>
+                    <Router>
+                        <Routes>
+                            <Route element={<Layout playbackRequest={playbackRequest} setPlaybackRequest={setPlaybackRequest} />}>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/text" element={<Text />} />
+                                <Route path="/chapter" element={<Chapter />} />
+                                <Route path="/album" element={<Album />} />
+                            </Route>
+                        </Routes>
+                    </Router>
+                </PasswordGuard>
             </UIProvider>
         </ThemeProvider>
     );
