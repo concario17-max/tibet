@@ -16,6 +16,7 @@ const paths = {
     doc2: path.join(projectRoot, 'book', '2.txt'),
     doc3: path.join(projectRoot, 'book', '3.txt'),
     doc4: path.join(projectRoot, 'book', '4..txt'),
+    doc5: path.join(projectRoot, 'book', '5.txt'),
     output: path.join(projectRoot, 'src', 'data', 'book.json')
 };
 
@@ -89,7 +90,7 @@ const parseKorean2 = (text, paragraphs) => {
         if (paragraphs[id]) {
             paragraphs[id].korean2 = content;
         } else {
-            paragraphs[id] = { english: "", korean: "", korean2: content };
+            paragraphs[id] = { english: "", korean: "", korean2: content, korean3: "", tibetan: "" };
         }
     }
     return paragraphs;
@@ -106,7 +107,24 @@ const parseKorean3 = (text, paragraphs) => {
         if (paragraphs[id]) {
             paragraphs[id].korean3 = content;
         } else {
-            paragraphs[id] = { english: "", korean: "", korean2: "", korean3: content };
+            paragraphs[id] = { english: "", korean: "", korean2: "", korean3: content, tibetan: "" };
+        }
+    }
+    return paragraphs;
+};
+
+// 5.txt 파싱: 문단별 tibetan 추출
+const parseTibetan = (text, paragraphs) => {
+    const blocks = text.split(/\[?문단\s+(\d+)\]?/);
+
+    for (let i = 1; i < blocks.length; i += 2) {
+        const id = parseInt(blocks[i]);
+        const content = blocks[i + 1]?.trim() || "";
+
+        if (paragraphs[id]) {
+            paragraphs[id].tibetan = content;
+        } else {
+            paragraphs[id] = { english: "", korean: "", korean2: "", korean3: "", tibetan: content };
         }
     }
     return paragraphs;
@@ -146,7 +164,7 @@ const buildFinalResult = (structure, paragraphs) => {
                     title: enText.substring(0, 45) + (enText.length > 45 ? '...' : ''),
                     chapterTitle: enText,
                     text: {
-                        tibetan: "",
+                        tibetan: p.tibetan || "",
                         english: enText,
                         korean: koreanTranslators
                     }
@@ -172,17 +190,19 @@ const buildFinalResult = (structure, paragraphs) => {
 
 const run = () => {
     try {
-        console.log('[Ray-Data-Pipeline] Starting multi-translator parsing...');
+        console.log('[Ray-Data-Pipeline] Starting multi-translator parsing including Tibetan...');
 
         const txt1 = fs.readFileSync(paths.doc1, 'utf8');
         const txt2 = fs.readFileSync(paths.doc2, 'utf8');
         const txt3 = fs.readFileSync(paths.doc3, 'utf8');
         const txt4 = fs.readFileSync(paths.doc4, 'utf8');
+        const txt5 = fs.readFileSync(paths.doc5, 'utf8');
 
         const structure = parseStructure(txt1);
         let paragraphs = parseContent(txt2);
         paragraphs = parseKorean2(txt3, paragraphs);
         paragraphs = parseKorean3(txt4, paragraphs);
+        paragraphs = parseTibetan(txt5, paragraphs);
 
         const result = buildFinalResult(structure, paragraphs);
 

@@ -5,14 +5,14 @@ const TibetanSection = ({ tibetan, pronunciation }) => {
 
     return (
         <>
-            <section className="mb-4 text-center px-2 sm:px-0 mt-8">
+            <section id="tibetan-original" className="mb-4 text-center px-4 sm:px-0 mt-12 bg-transparent">
                 {tibetan && (
-                    <p className="font-noto text-[#1F2937] dark:text-[#E5E7EB] text-xl sm:text-3xl leading-[1.8] tracking-wide font-bold drop-shadow-sm break-keep">
+                    <p className="font-noto text-[#4A0404] dark:text-[#E27070] text-xl sm:text-[32px] leading-[1.8] tracking-[0.02em] font-bold drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)] break-keep max-w-[90%] mx-auto antialiased">
                         {tibetan.replace(/[\r\n]+/g, ' ')}
                     </p>
                 )}
                 {pronunciation && (
-                    <p className="font-inter italic text-gold-muted/80 dark:text-gold-muted/80 text-sm sm:text-base leading-relaxed tracking-widest mt-6">
+                    <p className="font-inter italic text-gold-muted/90 dark:text-gold-muted/80 text-sm sm:text-[15px] leading-relaxed tracking-[0.15em] mt-8 opacity-80 uppercase font-medium">
                         {pronunciation.split('\n').map((line, i) => (
                             <React.Fragment key={i}>
                                 {line}<br />
@@ -21,7 +21,7 @@ const TibetanSection = ({ tibetan, pronunciation }) => {
                     </p>
                 )}
             </section>
-            <div className="w-8 h-[1px] bg-gold-border/60 mx-auto my-8"></div>
+            <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-gold-border/40 to-transparent mx-auto my-12"></div>
         </>
     );
 };
