@@ -25,7 +25,7 @@ const ChapterButton = ({ chapter, isExpanded, onClick, isSubchapter = false }) =
         >
             <div className="flex-1 pr-2 flex flex-col gap-0">
                 <span className={`text-[15px] leading-snug font-inter break-keep ${isExpanded ? 'font-bold text-[#1C2B36] dark:text-gold-light' : 'font-bold'
-                    } ${isSubchapter ? 'text-[13px] font-medium' : ''}`}>
+                    } ${isSubchapter ? 'text-[11px] font-medium tracking-wide' : ''}`}>
                     {!isSubchapter && chapter.id.startsWith('prayer-')
                         ? `${chapter.id.replace('prayer-', '')}. `
                         : ''}
