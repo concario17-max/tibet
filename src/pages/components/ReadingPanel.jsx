@@ -14,9 +14,9 @@ const containerVariants = {
         opacity: 1,
         transition: {
             staggerChildren: 0.15,
-            delayChildren: 0.2
-        }
-    }
+            delayChildren: 0.2,
+        },
+    },
 };
 
 const itemVariants = {
@@ -26,21 +26,17 @@ const itemVariants = {
         y: 0,
         transition: {
             duration: 0.8,
-            cubicBezier: [0.16, 1, 0.3, 1]
-        }
-    }
+            cubicBezier: [0.16, 1, 0.3, 1],
+        },
+    },
 };
 
-/**
- * ReadingPanel - 챕터 상세 내용 (Interaction Refined)
- */
 const ReadingPanel = ({ verse, globalIndex, hideAudio = false, onPrevious, onNext }) => {
     const audioPlaylist = React.useMemo(() => {
         return verse.audioUrl ? [{ id: verse.id, title: verse.title, url: verse.audioUrl }] : [];
     }, [verse.id, verse.title, verse.audioUrl]);
 
     const { isPlaying, progress, currentTime, duration, togglePlay, seek } = useAudioPlayer(audioPlaylist);
-
     const [chapterStr, verseStr] = verse.id.split('.');
 
     return (
@@ -48,23 +44,22 @@ const ReadingPanel = ({ verse, globalIndex, hideAudio = false, onPrevious, onNex
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className="flex-1 min-w-0 bg-transparent font-crimson text-text-primary dark:text-dark-text-primary transition-colors duration-500 overflow-y-auto scrollbar-hide relative z-10 pt-20 sm:pt-24 pb-32 sm:pb-20"
+            className="relative z-10 flex-1 min-w-0 overflow-y-auto bg-transparent pb-28 pt-16 font-crimson text-text-primary transition-colors duration-500 scrollbar-hide dark:text-dark-text-primary sm:pb-20 sm:pt-24"
         >
-            <div className="mx-auto max-w-[1000px] px-4 sm:px-8">
+            <div className="mx-auto max-w-[980px] px-4 sm:px-8">
                 <motion.div variants={itemVariants}>
                     <ReadingHeader
                         chapterStr={chapterStr}
                         verseStr={verseStr}
                         globalIndex={globalIndex}
                         verseId={verse.id}
+                        title={verse.title}
+                        chapterTitle={verse.chapterTitle}
                     />
                 </motion.div>
 
                 <motion.div variants={itemVariants}>
-                    <TibetanSection
-                        tibetan={verse.text.tibetan}
-                        pronunciation={verse.text.pronunciation}
-                    />
+                    <TibetanSection tibetan={verse.text.tibetan} pronunciation={verse.text.pronunciation} />
                 </motion.div>
 
                 {!hideAudio && (
@@ -83,10 +78,7 @@ const ReadingPanel = ({ verse, globalIndex, hideAudio = false, onPrevious, onNex
                 )}
 
                 <motion.div variants={itemVariants}>
-                    <TranslationSection
-                        english={verse.text.english}
-                        korean={verse.text.korean}
-                    />
+                    <TranslationSection english={verse.text.english} korean={verse.text.korean} />
                 </motion.div>
 
                 <motion.div variants={itemVariants}>

@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Edit3, Trash2 } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowUpRight, BookMarked, Edit3, Trash2, X } from 'lucide-react';
 import { useUI } from '../context/UIContext';
 import { flattenVerses } from '../utils/textUtils';
 import prayersDataUrl from '../data/prayers.json?url';
@@ -15,17 +15,15 @@ const NOTE_PREFIXES = {
 const NOTE_META = {
     prayer: {
         label: 'Prayer',
-        emptyHint: 'Save notes from the prayer reading view to see them here.',
+        emptyHint: '기도문 읽기 화면에서 남긴 메모가 이곳에 모입니다.',
     },
     book: {
         label: 'Text',
-        emptyHint: 'Save notes from the text reading view to see them here.',
+        emptyHint: '본문 읽기 화면에서 남긴 메모가 이곳에 모입니다.',
     },
 };
 
-const buildVerseMap = (verses) => {
-    return new Map(verses.map((verse) => [verse.id, verse]));
-};
+const buildVerseMap = (verses) => new Map(verses.map((verse) => [verse.id, verse]));
 
 const buildSavedNotes = ({ prayerVerseMap, bookVerseMap }) => {
     const notes = [];
@@ -82,21 +80,12 @@ const CommentariesModal = () => {
             document.body.style.overflow = 'hidden';
             setIsLoading(true);
 
-            const [prayersResponse, bookResponse] = await Promise.all([
-                fetch(prayersDataUrl),
-                fetch(bookDataUrl),
-            ]);
-
-            const [prayersData, bookData] = await Promise.all([
-                prayersResponse.json(),
-                bookResponse.json(),
-            ]);
+            const [prayersResponse, bookResponse] = await Promise.all([fetch(prayersDataUrl), fetch(bookDataUrl)]);
+            const [prayersData, bookData] = await Promise.all([prayersResponse.json(), bookResponse.json()]);
 
             if (!isMounted) return;
 
-            const nextPrayerVerseMap = buildVerseMap(
-                prayersData.flatMap((chapter) => chapter.verses.map((verse) => verse)),
-            );
+            const nextPrayerVerseMap = buildVerseMap(prayersData.flatMap((chapter) => chapter.verses.map((verse) => verse)));
             const nextBookVerseMap = buildVerseMap(flattenVerses(bookData));
 
             setPrayerVerseMap(nextPrayerVerseMap);
@@ -113,9 +102,7 @@ const CommentariesModal = () => {
         };
     }, [isCommentariesOpen]);
 
-    const emptyHint = useMemo(() => {
-        return `${NOTE_META.prayer.emptyHint} ${NOTE_META.book.emptyHint}`;
-    }, []);
+    const emptyHint = useMemo(() => `${NOTE_META.prayer.emptyHint} ${NOTE_META.book.emptyHint}`, []);
 
     const handleJumpToNote = (note) => {
         if (note.type === 'prayer') {
@@ -152,7 +139,7 @@ const CommentariesModal = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 bg-charcoal-main/60 backdrop-blur-sm z-[100]"
+                        className="modal-backdrop fixed inset-0 z-[100]"
                         onClick={() => setIsCommentariesOpen(false)}
                     />
 
@@ -162,62 +149,81 @@ const CommentariesModal = () => {
                             animate={{ y: 0, opacity: 1, scale: 1 }}
                             exit={{ y: 20, opacity: 0, scale: 0.95 }}
                             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                            className="bg-sand-primary w-full max-w-4xl max-h-[90vh] rounded-xl shadow-2xl flex flex-col pointer-events-auto border border-gold-primary/20 overflow-hidden"
+                            className="modal-shell w-full max-w-4xl max-h-[90vh] flex flex-col rounded-[2rem] pointer-events-auto overflow-hidden"
                         >
-                            <div className="flex justify-between items-center px-5 py-4 sm:px-8 sm:py-6 border-b border-sand-tertiary bg-[#fdfaf6] shrink-0">
-                                <h2 className="serif-title text-xl sm:text-2xl text-[#9A7B4F] font-medium tracking-wide">My Reflections</h2>
-                                <button
-                                    onClick={() => setIsCommentariesOpen(false)}
-                                    className="p-1 rounded-full text-charcoal-muted hover:text-charcoal-main hover:bg-sand-secondary transition-colors"
-                                >
-                                    <X className="w-5 h-5" />
-                                </button>
+                            <div className="modal-header shrink-0 px-5 py-4 sm:px-8 sm:py-6">
+                                <div className="flex items-start justify-between gap-4">
+                                    <div className="space-y-3">
+                                        <p className="modal-kicker">Personal Notes</p>
+                                        <div className="flex items-center gap-3">
+                                            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-gold-border/25 bg-gold-surface/35 text-gold-deep">
+                                                <BookMarked className="h-5 w-5" />
+                                            </div>
+                                            <div>
+                                                <h2 className="serif-title text-2xl text-[#9A7B4F] font-medium tracking-[0.08em]">My Reflections</h2>
+                                                <p className="mt-1 text-sm text-charcoal-muted">Notes from the text and prayer journeys, gathered in one place.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button onClick={() => setIsCommentariesOpen(false)} className="modal-close rounded-full p-2">
+                                        <X className="w-5 h-5" />
+                                    </button>
+                                </div>
                             </div>
 
-                            <div className="flex-1 overflow-y-auto p-5 sm:p-8 custom-scrollbar bg-sand-secondary/30">
+                            <div className="modal-body flex-1 overflow-y-auto p-5 sm:p-8 custom-scrollbar">
                                 {isLoading ? (
-                                    <div className="flex flex-col items-center justify-center h-full text-charcoal-muted/60 space-y-4 py-16 sm:py-20 text-center">
-                                        <p className="font-serif text-base sm:text-lg">Loading your saved reflections...</p>
+                                    <div className="empty-state-card flex min-h-[320px] flex-col items-center justify-center rounded-[1.8rem] px-6 py-12 text-center text-charcoal-muted/75">
+                                        <div className="h-14 w-14 rounded-full border border-gold-border/20 bg-gold-surface/30" />
+                                        <p className="mt-5 font-serif text-lg text-charcoal-main">Collecting your saved reflections</p>
+                                        <p className="mt-2 max-w-sm text-sm leading-7">기도문과 본문 메모를 차분히 정리해서 보여주고 있습니다.</p>
                                     </div>
                                 ) : savedNotes.length === 0 ? (
-                                    <div className="flex flex-col items-center justify-center h-full text-charcoal-muted/50 space-y-4 py-16 sm:py-20 text-center">
-                                        <Edit3 className="w-12 h-12 sm:w-16 sm:h-16 opacity-20" />
-                                        <p className="font-serif text-base sm:text-lg">No saved reflections yet.</p>
-                                        <p className="text-xs sm:text-sm font-sans mx-4 max-w-md">{emptyHint}</p>
+                                    <div className="empty-state-card flex min-h-[320px] flex-col items-center justify-center rounded-[1.8rem] px-6 py-12 text-center text-charcoal-muted/70">
+                                        <Edit3 className="h-12 w-12 opacity-35 text-gold-primary/60" />
+                                        <p className="mt-5 font-serif text-lg text-charcoal-main">아직 저장된 메모가 없습니다</p>
+                                        <p className="mt-2 max-w-md text-sm leading-7">{emptyHint}</p>
                                     </div>
                                 ) : (
-                                    <div className="flex flex-col gap-4 sm:gap-6">
+                                    <div className="flex flex-col gap-4 sm:gap-5">
                                         {savedNotes.map((note) => (
                                             <div
                                                 key={note.noteKey}
-                                                className="bg-white border text-charcoal-main border-sand-tertiary rounded-md p-5 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col font-serif"
+                                                className="rounded-[1.5rem] border border-gold-border/14 bg-white/70 p-5 shadow-[0_20px_45px_rgba(120,93,48,0.05)] transition-all duration-300 hover:shadow-[0_25px_55px_rgba(120,93,48,0.08)]"
                                             >
-                                                <div className="flex flex-col sm:flex-row sm:items-center items-start gap-3 sm:gap-4 mb-4 sm:mb-5 pb-4 sm:pb-5 border-b border-sand-secondary relative">
-                                                    <span className="bg-[#f2efe9] text-[#9A7B4F] text-[11px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-sm shrink-0">
-                                                        [{NOTE_META[note.type].label}] {note.id}
-                                                    </span>
-                                                    <p className="text-[15px] leading-relaxed text-[#9A7B4F] flex-1 line-clamp-2">
-                                                        {note.title}
-                                                    </p>
-                                                    <div className="absolute top-0 right-0 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white pl-2">
+                                                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                                                    <div className="min-w-0 flex-1">
+                                                        <div className="flex flex-wrap items-center gap-2">
+                                                            <span className="rounded-full bg-gold-surface/45 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.25em] text-[#9A7B4F]">
+                                                                {NOTE_META[note.type].label}
+                                                            </span>
+                                                            <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-charcoal-muted/60">
+                                                                {note.id}
+                                                            </span>
+                                                        </div>
+                                                        <p className="mt-4 font-serif text-lg leading-snug text-[#9A7B4F]">{note.title}</p>
+                                                        <p className="mt-4 whitespace-pre-wrap font-korean text-[15px] leading-[1.9] text-charcoal-main">
+                                                            {note.content}
+                                                        </p>
+                                                    </div>
+
+                                                    <div className="flex shrink-0 items-center gap-2 sm:ml-4">
                                                         <button
                                                             onClick={() => handleJumpToNote(note)}
-                                                            className="text-[10px] font-bold uppercase tracking-widest text-[#9A7B4F] hover:text-charcoal-main transition-colors bg-gold-surface px-3 py-1.5 rounded-sm"
+                                                            className="inline-flex items-center gap-2 rounded-full border border-gold-border/20 bg-gold-surface/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#9A7B4F] transition-colors hover:bg-gold-surface/55 hover:text-charcoal-main"
                                                         >
-                                                            Jump To
+                                                            Open
+                                                            <ArrowUpRight className="h-3.5 w-3.5" />
                                                         </button>
                                                         <button
                                                             onClick={() => handleDeleteNote(note)}
-                                                            className="text-[10px] font-bold uppercase tracking-widest text-red-400 hover:text-red-600 transition-colors bg-red-50 px-2 py-1.5 rounded-sm"
+                                                            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-red-100 bg-red-50 text-red-400 transition-colors hover:bg-red-100 hover:text-red-600"
                                                             title="Delete"
                                                         >
-                                                            <Trash2 className="w-3.5 h-3.5" />
+                                                            <Trash2 className="h-4 w-4" />
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <p className="font-sans text-[15px] leading-[1.8] text-charcoal-main whitespace-pre-wrap flex-1">
-                                                    {note.content}
-                                                </p>
                                             </div>
                                         ))}
                                     </div>

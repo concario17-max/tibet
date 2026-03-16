@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Search } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Search, Sparkles, X } from 'lucide-react';
 import { useUI } from '../context/UIContext';
 import lexiconDataUrl from '../data/lexicon.json?url';
 
@@ -52,9 +52,7 @@ const LexiconModal = () => {
         filtered.forEach((item) => {
             const firstChar = item.term.charAt(0).toUpperCase();
             const key = /[A-Z]/.test(firstChar) ? firstChar : '#';
-            if (!groups[key]) {
-                groups[key] = [];
-            }
+            if (!groups[key]) groups[key] = [];
             groups[key].push(item);
         });
 
@@ -75,7 +73,7 @@ const LexiconModal = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 bg-charcoal-main/60 backdrop-blur-sm z-[100]"
+                        className="modal-backdrop fixed inset-0 z-[100]"
                         onClick={() => setIsLexiconOpen(false)}
                     />
 
@@ -85,21 +83,29 @@ const LexiconModal = () => {
                             animate={{ y: 0, opacity: 1, scale: 1 }}
                             exit={{ y: 20, opacity: 0, scale: 0.95 }}
                             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                            className="bg-sand-primary w-full max-w-3xl max-h-[90vh] rounded-xl shadow-2xl flex flex-col pointer-events-auto border border-gold-primary/20 overflow-hidden"
+                            className="modal-shell w-full max-w-4xl max-h-[90vh] rounded-[2rem] flex flex-col pointer-events-auto overflow-hidden"
                         >
-                            <div className="flex flex-col gap-4 px-5 py-4 sm:px-8 sm:py-6 border-b border-sand-tertiary bg-white/50 shrink-0">
-                                <div className="flex justify-between items-center">
-                                    <h2 className="serif-title text-2xl text-[#9A7B4F] font-medium tracking-wide">Lexicon</h2>
-                                    <button
-                                        onClick={() => setIsLexiconOpen(false)}
-                                        className="p-1 rounded-full text-charcoal-muted hover:text-charcoal-main hover:bg-sand-secondary transition-colors"
-                                    >
+                            <div className="modal-header shrink-0 px-5 py-4 sm:px-8 sm:py-6">
+                                <div className="flex items-start justify-between gap-4">
+                                    <div className="space-y-3">
+                                        <p className="modal-kicker">Glossary Index</p>
+                                        <div className="flex items-center gap-3">
+                                            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-gold-border/25 bg-gold-surface/35 text-gold-deep">
+                                                <Sparkles className="h-5 w-5" />
+                                            </div>
+                                            <div>
+                                                <h2 className="serif-title text-2xl text-[#9A7B4F] font-medium tracking-[0.08em]">Lexicon</h2>
+                                                <p className="mt-1 text-sm text-charcoal-muted">Search terms, names, and doctrinal references while you read.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button onClick={() => setIsLexiconOpen(false)} className="modal-close rounded-full p-2">
                                         <X className="w-5 h-5" />
                                     </button>
                                 </div>
 
-                                <div className="relative">
-                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <div className="relative mt-5">
+                                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
                                         <Search className="h-4 w-4 text-charcoal-muted/70" />
                                     </div>
                                     <input
@@ -107,40 +113,41 @@ const LexiconModal = () => {
                                         placeholder="Search terms or definitions..."
                                         value={searchTerm}
                                         onChange={(e) => setSearchTerm(e.target.value)}
-                                        className="block w-full pl-10 pr-3 py-2 border border-sand-tertiary rounded-lg leading-5 bg-white/80 placeholder-charcoal-muted/50 focus:outline-none focus:ring-1 focus:ring-[#9A7B4F] focus:border-[#9A7B4F] sm:text-sm transition-colors text-charcoal-main"
+                                        className="block w-full rounded-[1.1rem] border border-sand-tertiary bg-white/80 py-3 pl-11 pr-4 leading-5 text-charcoal-main placeholder-charcoal-muted/50 transition-colors focus:border-[#9A7B4F] focus:outline-none focus:ring-1 focus:ring-[#9A7B4F] sm:text-sm"
                                     />
                                 </div>
                             </div>
 
-                            <div className="overflow-y-auto px-5 py-6 sm:px-8 sm:py-8 space-y-8 sm:space-y-10 text-charcoal-main font-sans scroll-smooth custom-scrollbar">
+                            <div className="modal-body overflow-y-auto px-5 py-6 sm:px-8 sm:py-8 space-y-8 text-charcoal-main font-sans scroll-smooth custom-scrollbar">
                                 {isLoading ? (
-                                    <div className="text-center py-10 text-charcoal-muted">
-                                        Loading lexicon...
+                                    <div className="empty-state-card flex min-h-[320px] flex-col items-center justify-center rounded-[1.8rem] px-6 py-12 text-center text-charcoal-muted/75">
+                                        <p className="font-serif text-lg text-charcoal-main">Preparing the lexicon</p>
+                                        <p className="mt-2 max-w-sm text-sm leading-7">용어와 해설을 차분히 정리해 불러오고 있습니다.</p>
                                     </div>
                                 ) : groupedLexicon.length > 0 ? (
                                     groupedLexicon.map((group) => (
                                         <div key={group.letter} className="space-y-4">
-                                            <h3 className="serif-title text-2xl text-[#9A7B4F]/40 font-bold border-b border-sand-tertiary/50 pb-2 sticky top-0 bg-sand-primary/95 backdrop-blur-sm z-10 py-1">
-                                                {group.letter}
-                                            </h3>
+                                            <div className="sticky top-0 z-10 -mx-2 rounded-xl bg-sand-primary/92 px-2 py-2 backdrop-blur-sm">
+                                                <h3 className="serif-title text-2xl font-bold text-[#9A7B4F]/45">{group.letter}</h3>
+                                            </div>
 
-                                            <div className="space-y-6 sm:space-y-8 pl-1">
+                                            <div className="space-y-5">
                                                 {group.items.map((item, index) => {
                                                     const termParts = item.term.split(' ');
                                                     const primaryTerm = termParts[0];
                                                     const secondaryTerm = termParts.slice(1).join(' ');
 
                                                     return (
-                                                        <div key={index} className="space-y-1 sm:space-y-2 group">
-                                                            <h4 className="text-[16px] sm:text-[17px] font-medium text-[#9A7B4F] flex flex-wrap items-baseline gap-x-2">
-                                                                <span className="font-bold">{primaryTerm}</span>
-                                                                {secondaryTerm && (
-                                                                    <span className="text-charcoal-muted text-[13px] sm:text-[14px] italic font-normal">
+                                                        <div key={index} className="rounded-[1.4rem] border border-gold-border/12 bg-white/70 px-4 py-4 shadow-[0_14px_30px_rgba(120,93,48,0.04)] sm:px-5">
+                                                            <h4 className="flex flex-wrap items-baseline gap-x-2 text-[#9A7B4F]">
+                                                                <span className="font-serif text-[20px] font-semibold">{primaryTerm}</span>
+                                                                {secondaryTerm ? (
+                                                                    <span className="text-[13px] italic text-charcoal-muted sm:text-[14px]">
                                                                         {secondaryTerm}
                                                                     </span>
-                                                                )}
+                                                                ) : null}
                                                             </h4>
-                                                            <p className="text-[14px] sm:text-[15px] leading-relaxed text-charcoal-main/90 group-hover:text-charcoal-main transition-colors text-justify">
+                                                            <p className="mt-3 text-[14px] leading-[1.9] text-charcoal-main/92 sm:text-[15px]">
                                                                 {item.definition}
                                                             </p>
                                                         </div>
@@ -150,8 +157,9 @@ const LexiconModal = () => {
                                         </div>
                                     ))
                                 ) : (
-                                    <div className="text-center py-10 text-charcoal-muted">
-                                        No terms found matching "{searchTerm}"
+                                    <div className="empty-state-card flex min-h-[320px] flex-col items-center justify-center rounded-[1.8rem] px-6 py-12 text-center text-charcoal-muted/75">
+                                        <p className="font-serif text-lg text-charcoal-main">No matching terms</p>
+                                        <p className="mt-2 max-w-sm text-sm leading-7">"{searchTerm}"에 해당하는 결과를 찾지 못했습니다.</p>
                                     </div>
                                 )}
                             </div>

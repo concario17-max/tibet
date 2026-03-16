@@ -19,6 +19,59 @@
   .nav-divider:last-child::after {
     content: "";
   }
+
+  .modal-backdrop {
+    background:
+      radial-gradient(circle at top, rgba(214, 199, 162, 0.14), transparent 35%),
+      rgba(24, 21, 16, 0.64);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .modal-shell {
+    background:
+      linear-gradient(180deg, rgba(255, 252, 246, 0.96), rgba(247, 242, 232, 0.98));
+    border: 1px solid rgba(166, 139, 92, 0.2);
+    box-shadow:
+      0 36px 80px rgba(34, 28, 18, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+
+  .modal-header {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(250, 245, 236, 0.9));
+    border-bottom: 1px solid rgba(166, 139, 92, 0.14);
+  }
+
+  .modal-body {
+    background:
+      linear-gradient(180deg, rgba(249, 245, 237, 0.84), rgba(247, 242, 232, 0.68));
+  }
+
+  .modal-kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(154, 123, 79, 0.78);
+  }
+
+  .modal-close {
+    color: rgba(74, 63, 44, 0.6);
+    transition: all 0.25s ease;
+  }
+
+  .modal-close:hover {
+    color: rgba(34, 28, 18, 0.96);
+    background: rgba(214, 199, 162, 0.25);
+  }
+
+  .empty-state-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(247, 242, 232, 0.7));
+    border: 1px solid rgba(166, 139, 92, 0.14);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  }
 }
 
 :root {

@@ -3,25 +3,30 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const NavigationPill = ({ globalIndex, verseId, onPrevious, onNext }) => {
     return (
-        <div className="flex justify-center mt-12 mb-8">
-            <div className="flex items-center justify-between w-[200px] px-6 py-[14px] rounded-full bg-white/80 dark:bg-dark-surface/80 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] dark:shadow-none border border-gold-border/20 dark:border-dark-border backdrop-blur-xl transition-all duration-300">
+        <div className="mb-8 mt-10 flex justify-center sm:mt-12">
+            <div className="flex w-full max-w-[360px] items-center justify-between rounded-[1.6rem] border border-gold-border/22 bg-white/72 px-4 py-3 shadow-[0_20px_50px_rgba(120,93,48,0.08)] backdrop-blur-xl dark:border-dark-border/60 dark:bg-dark-surface/58 sm:max-w-[420px] sm:px-5">
                 <button
                     onClick={onPrevious}
                     disabled={!onPrevious}
-                    className="text-slate-400 dark:text-slate-500 hover:text-gold-primary dark:hover:text-gold-light disabled:opacity-30 disabled:hover:text-slate-400 transition-colors outline-none focus:outline-none"
+                    className="flex h-10 w-10 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-gold-surface/35 hover:text-gold-primary disabled:opacity-30 disabled:hover:bg-transparent dark:text-slate-500 dark:hover:text-gold-light"
                     aria-label="Previous Verse"
                 >
                     <ChevronLeft size={20} strokeWidth={1.5} />
                 </button>
 
-                <span className="font-inter font-[600] text-[15px] letter-spacing-tight text-slate-700 dark:text-gray-200">
-                    {globalIndex || verseId.replace('chapter-', '')}
-                </span>
+                <div className="text-center">
+                    <p className="font-inter text-[10px] font-semibold uppercase tracking-[0.28em] text-gold-deep/70 dark:text-gold-light/65">
+                        Continue Reading
+                    </p>
+                    <span className="mt-1 block font-serif text-lg text-slate-700 dark:text-gray-200">
+                        {globalIndex || verseId.replace('chapter-', '')}
+                    </span>
+                </div>
 
                 <button
                     onClick={onNext}
                     disabled={!onNext}
-                    className="text-slate-400 dark:text-slate-500 hover:text-gold-primary dark:hover:text-gold-light disabled:opacity-30 disabled:hover:text-slate-400 transition-colors outline-none focus:outline-none"
+                    className="flex h-10 w-10 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-gold-surface/35 hover:text-gold-primary disabled:opacity-30 disabled:hover:bg-transparent dark:text-slate-500 dark:hover:text-gold-light"
                     aria-label="Next Verse"
                 >
                     <ChevronRight size={20} strokeWidth={1.5} />

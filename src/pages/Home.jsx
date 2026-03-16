@@ -1,21 +1,17 @@
 import React from 'react';
-import { useUI } from '../context/UIContext';
 import { motion } from 'framer-motion';
+import { useUI } from '../context/UIContext';
 import HeroSection from '../components/Home/HeroSection';
 import HomeNavigation from '../components/Home/HomeNavigation';
 import NavigationCard from '../components/Home/NavigationCard';
 
 const Home = () => {
     const uiContext = useUI() || {
-        setIsCompendiumOpen: () => { },
-        setIsCommentariesOpen: () => { },
-        setIsLexiconOpen: () => { },
+        setIsCompendiumOpen: () => {},
+        setIsCommentariesOpen: () => {},
+        setIsLexiconOpen: () => {},
     };
-    const {
-        setIsCompendiumOpen,
-        setIsCommentariesOpen,
-        setIsLexiconOpen,
-    } = uiContext;
+    const { setIsCompendiumOpen, setIsCommentariesOpen, setIsLexiconOpen } = uiContext;
 
     const fadeUp = {
         hidden: { opacity: 0, y: 40 },
@@ -31,10 +27,10 @@ const Home = () => {
     };
 
     return (
-        <div className="relative min-h-[100dvh] bg-[#F7F5F0] text-[#1A1A1A] flex flex-col items-center justify-center overflow-hidden selection:bg-gold-primary/30">
+        <div className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden bg-[#F7F5F0] text-[#1A1A1A] selection:bg-gold-primary/30">
             <HeroSection fadeUp={fadeUp} />
 
-            <main className="relative z-10 w-full max-w-7xl px-4 sm:px-8 flex flex-col items-center mt-12 sm:mt-8 pb-16 md:pb-24">
+            <main className="relative z-10 mt-12 flex w-full max-w-7xl flex-col items-center px-4 pb-16 sm:mt-8 sm:px-8 md:pb-24">
                 <HomeNavigation
                     setIsCompendiumOpen={setIsCompendiumOpen}
                     setIsLexiconOpen={setIsLexiconOpen}
@@ -45,13 +41,13 @@ const Home = () => {
                     variants={staggerCards}
                     initial="hidden"
                     animate="visible"
-                    className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl"
+                    className="grid w-full max-w-5xl grid-cols-1 gap-6 sm:grid-cols-3 md:gap-8"
                 >
                     <NavigationCard
                         to="/text"
                         label="Main Text"
                         title="The Text"
-                        description="사자의 서 본문을 차분하게 읽고 비교하며 탐독합니다."
+                        description="사자의 서 본문을 차분히 읽고 여러 번역을 나란히 비교하며 따라갑니다."
                         icon="auto_stories"
                         exploreLabel="Explore"
                         exploreIcon="arrow_right_alt"
@@ -62,7 +58,7 @@ const Home = () => {
                         to="/chapter"
                         label="Sacred Prayers"
                         title="The Prayer"
-                        description="기도문과 독송 구절을 음성과 함께 따라가며 읽습니다."
+                        description="기도문과 낭송 구절을 음성과 발음 가이드와 함께 천천히 따라갑니다."
                         icon="self_improvement"
                         exploreLabel="Discover"
                         exploreIcon="arrow_right_alt"
@@ -73,7 +69,7 @@ const Home = () => {
                         to="/album"
                         label="Sonic Journey"
                         title="The Chants"
-                        description="티베트 전통 찬트와 의식 음악을 깊이 있게 감상합니다."
+                        description="티베트 전통 챈트와 의식 음악을 깊이 있는 분위기 속에서 감상합니다."
                         icon="graphic_eq"
                         exploreLabel="Listen"
                         exploreIcon="headphones"

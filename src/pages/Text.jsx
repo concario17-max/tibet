@@ -1,9 +1,22 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import bookDataUrl from '../data/book.json?url';
 import LeftSidebar from './components/LeftSidebar';
 import ReadingPanel from './components/ReadingPanel';
 import RightSidebar from './components/RightSidebar';
 import { flattenVerses } from '../utils/textUtils';
-import bookDataUrl from '../data/book.json?url';
+
+const StatePanel = ({ kicker, title, description }) => (
+    <div className="flex h-full w-full flex-1 items-center justify-center p-6 sm:p-8">
+        <div className="empty-state-card max-w-lg rounded-[2rem] px-8 py-10 text-center shadow-[0_30px_70px_rgba(120,93,48,0.08)]">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-gold-border/25 bg-gold-surface/35 text-gold-deep shadow-inner">
+                <span className="font-serif text-2xl">✦</span>
+            </div>
+            <p className="mt-5 font-inter text-[10px] font-semibold uppercase tracking-[0.4em] text-gold-deep/72">{kicker}</p>
+            <h3 className="mt-4 font-serif text-[1.8rem] leading-tight text-text-primary">{title}</h3>
+            <p className="mt-4 font-korean text-[15px] leading-[1.9] text-text-secondary/85">{description}</p>
+        </div>
+    </div>
+);
 
 const Text = () => {
     const [bookData, setBookData] = useState([]);
@@ -27,9 +40,7 @@ const Text = () => {
                 if (!isMounted) return;
                 setBookData(data);
             } finally {
-                if (isMounted) {
-                    setIsLoading(false);
-                }
+                if (isMounted) setIsLoading(false);
             }
         };
 
@@ -63,47 +74,18 @@ const Text = () => {
     const hasPrev = currentIndex > 0;
     const hasNext = currentIndex !== -1 && currentIndex < flatVerses.length - 1;
 
-    const EmptyState = () => (
-        <div className="flex-1 flex flex-col items-center justify-center p-8 bg-transparent transition-all duration-700 h-full w-full">
-            <div className="max-w-md w-full text-center space-y-6 opacity-0 animate-[fadeIn_1s_ease-out_0.3s_forwards]">
-                <div className="w-16 h-16 mx-auto rounded-2xl bg-gold-surface/30 dark:bg-dark-surface/50 border border-gold-border/30 dark:border-dark-border/40 flex items-center justify-center backdrop-blur-md shadow-inner transition-transform hover:scale-105">
-                    <svg className="w-8 h-8 text-gold-primary/70 dark:text-gold-light/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
-                </div>
-                <div className="space-y-2">
-                    <h3 className="text-xl font-crimson font-bold text-text-primary dark:text-dark-text-primary tracking-wide">
-                        읽고 싶은 구절을 선택해 주세요
-                    </h3>
-                    <p className="text-sm text-text-secondary/80 dark:text-dark-text-secondary/80 font-inter leading-relaxed max-w-sm mx-auto">
-                        왼쪽 메뉴에서 장과 구절을 선택하면
-                        <br />
-                        해당 내용과 번역, 메모 영역이 함께 열립니다.
-                    </p>
-                </div>
-            </div>
-        </div>
-    );
-
-    const LoadingState = () => (
-        <div className="flex-1 flex flex-col items-center justify-center p-8 bg-transparent transition-all duration-700 h-full w-full">
-            <div className="max-w-md w-full text-center space-y-4">
-                <p className="text-sm uppercase tracking-[0.35em] text-gold-deep/80 dark:text-gold-light/80">Loading Text</p>
-                <p className="text-sm text-text-secondary/80 dark:text-dark-text-secondary/80 font-inter leading-relaxed">
-                    본문 데이터를 불러오는 중입니다.
-                </p>
-            </div>
-        </div>
-    );
-
     return (
-        <div className="flex w-full min-h-screen h-screen overflow-hidden bg-sand-primary dark:bg-dark-bg relative z-10 transition-colors duration-500 xl:bg-transparent dark:xl:bg-transparent">
-            <div className="fixed inset-0 pointer-events-none bg-grid-slate-900/[0.04] dark:bg-grid-slate-100/[0.03] bg-[bottom_1px_center] z-[-1] transition-opacity duration-500"></div>
+        <div className="relative z-10 flex h-screen min-h-screen w-full overflow-hidden bg-sand-primary transition-colors duration-500 dark:bg-dark-bg xl:bg-transparent dark:xl:bg-transparent">
+            <div className="fixed inset-0 pointer-events-none bg-grid-slate-900/[0.04] bg-[bottom_1px_center] transition-opacity duration-500 dark:bg-grid-slate-100/[0.03] z-[-1]" />
 
             <LeftSidebar onSelectVerse={setActiveTextVerse} activeVerseId={activeTextVerse?.id} prayers={bookData} isPrayerPage={false} />
 
             {isLoading ? (
-                <LoadingState />
+                <StatePanel
+                    kicker="Loading Text"
+                    title="본문을 준비하고 있습니다"
+                    description="긴 읽기 흐름을 위해 본문 데이터와 번역을 차분히 불러오고 있습니다."
+                />
             ) : activeTextVerse ? (
                 <>
                     <ReadingPanel
@@ -117,7 +99,11 @@ const Text = () => {
                     <RightSidebar activeVerseId={activeTextVerse.id} storagePrefix="book" />
                 </>
             ) : (
-                <EmptyState />
+                <StatePanel
+                    kicker="Select A Passage"
+                    title="읽고 싶은 구절을 선택해 주세요"
+                    description="왼쪽 메뉴에서 장과 구절을 고르면 본문, 번역, 메모 영역이 하나의 호흡으로 열립니다."
+                />
             )}
         </div>
     );
