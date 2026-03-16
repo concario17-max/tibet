@@ -1,28 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
-/**
- * PasswordGuard - 앱 진입 보안 레이어 (Meta-Design)
- * @param {Object} children - 인증 후 렌더링할 자식 컴포넌트
- */
 const PasswordGuard = ({ children }) => {
     const [password, setPassword] = useState('');
     const [isAuthorized, setIsAuthorized] = useState(() => {
-        // 초기화 시점에 바로 읽어서 Flash 현상 방지
         return localStorage.getItem('tibet_authorized') === 'true';
     });
     const [error, setError] = useState(false);
 
     const handleLogin = (e) => {
         e.preventDefault();
+
         if (password === '0228') {
             setIsAuthorized(true);
             localStorage.setItem('tibet_authorized', 'true');
             setError(false);
-        } else {
-            setError(true);
-            setTimeout(() => setError(false), 500);
+            return;
         }
+
+        setError(true);
+        setTimeout(() => setError(false), 500);
     };
 
     if (isAuthorized) {
@@ -31,9 +28,8 @@ const PasswordGuard = ({ children }) => {
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#FDFCF9] dark:bg-[#0A0A0A] font-inter overflow-hidden">
-            {/* Background Texture */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none">
-                <div className="absolute inset-0 bg-grid-slate-900/[0.1] dark:bg-grid-white/[0.1]"></div>
+                <div className="absolute inset-0 bg-grid-slate-900/[0.1] dark:bg-grid-white/[0.1]" />
             </div>
 
             <motion.div
@@ -42,7 +38,6 @@ const PasswordGuard = ({ children }) => {
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="w-full max-w-[440px] px-6 text-center space-y-12"
             >
-                {/* Icon & Title */}
                 <div className="space-y-6">
                     <motion.div
                         initial={{ scale: 0.8, opacity: 0 }}
@@ -60,12 +55,11 @@ const PasswordGuard = ({ children }) => {
                             Access Restricted
                         </h1>
                         <p className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#B29A62]/60">
-                            LIGHT OF YOGA
+                            LIGHT OF BARDO
                         </p>
                     </div>
                 </div>
 
-                {/* Input Form */}
                 <form onSubmit={handleLogin} className="space-y-4">
                     <motion.div
                         animate={error ? { x: [-10, 10, -10, 10, 0] } : {}}
@@ -91,14 +85,13 @@ const PasswordGuard = ({ children }) => {
                     </button>
                 </form>
 
-                {/* Footer Info */}
                 <div className="space-y-8 pt-4">
                     <div className="text-[11px] text-[#A1A1A1] flex items-center justify-center gap-1">
                         문의: <span className="text-[#B29A62] italic">roadsea@naver.com</span>
                     </div>
 
-                    <div className="text-[9px] font-bold tracking-[0.2em] text-[#A1A1A1]/40 uppercase max-w-[200px] mx-auto leading-relaxed">
-                        Dedicated to the timeless wisdom of patanjali
+                    <div className="text-[9px] font-bold tracking-[0.2em] text-[#A1A1A1]/40 uppercase max-w-[220px] mx-auto leading-relaxed">
+                        Dedicated to the timeless wisdom of the Bardo teachings
                     </div>
                 </div>
             </motion.div>

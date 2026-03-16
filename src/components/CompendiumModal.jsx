@@ -9,13 +9,8 @@ const CompendiumModal = () => {
 
     const { isCompendiumOpen, setIsCompendiumOpen } = uiContext;
 
-    // Lock scroll when modal is open
     useEffect(() => {
-        if (isCompendiumOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
+        document.body.style.overflow = isCompendiumOpen ? 'hidden' : 'unset';
         return () => {
             document.body.style.overflow = 'unset';
         };
@@ -25,7 +20,6 @@ const CompendiumModal = () => {
         <AnimatePresence>
             {isCompendiumOpen && (
                 <>
-                    {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -35,7 +29,6 @@ const CompendiumModal = () => {
                         onClick={() => setIsCompendiumOpen(false)}
                     />
 
-                    {/* Modal Content */}
                     <div className="fixed inset-0 z-[101] flex items-center justify-center p-3 sm:p-6 pointer-events-none">
                         <motion.div
                             initial={{ y: 20, opacity: 0, scale: 0.95 }}
@@ -44,7 +37,6 @@ const CompendiumModal = () => {
                             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
                             className="bg-sand-primary w-full max-w-2xl max-h-[90vh] rounded-xl shadow-2xl flex flex-col pointer-events-auto border border-gold-primary/20 overflow-hidden"
                         >
-                            {/* Header */}
                             <div className="flex justify-between items-center px-5 py-4 sm:px-8 sm:py-6 border-b border-sand-tertiary bg-white/50 shrink-0">
                                 <h2 className="serif-title text-2xl text-[#9A7B4F] font-medium tracking-wide">Compendium</h2>
                                 <button
@@ -55,84 +47,56 @@ const CompendiumModal = () => {
                                 </button>
                             </div>
 
-                            {/* Body */}
                             <div className="overflow-y-auto px-5 py-6 sm:px-8 sm:py-8 space-y-8 sm:space-y-10 text-charcoal-main leading-relaxed font-sans scroll-smooth custom-scrollbar text-[14px] sm:text-[15px]">
-
                                 <div className="space-y-3 sm:space-y-4">
                                     <p className="font-medium">
-                                        죽음은 멀리 있는 주제가 아니라, 우리가 살아가는 방식을 비추는 가장 선명한 거울일지 모릅니다.
+                                        이 프로젝트는 『티베트 사자의 서』와 관련 기도문, 찬트, 해설 자료를 한 자리에서 읽고 듣기 위한 정적 아카이브입니다.
                                     </p>
                                     <p>
-                                        이 사이트는 <strong>『티벳 사자의 서』(바르도 쉐돌)</strong>를 "낯설고 어려운 신비서"가 아니라, 삶과 죽음을 잇는 안내서로 다시 읽고 배우기 위한 학습 공간입니다.
+                                        단순히 텍스트를 나열하는 것이 아니라, 본문과 기도문, 번역본, 음원, 개인 메모를 함께 두어 천천히 따라가며 읽을 수 있는 디지털 독서 공간을 지향합니다.
                                     </p>
                                 </div>
 
                                 <div className="space-y-4">
-                                    <h3 className="serif-title text-xl text-[#9A7B4F] font-medium border-b border-sand-tertiary pb-2">왜 ‘티벳 사자의 서’인가요?</h3>
+                                    <h3 className="serif-title text-xl text-[#9A7B4F] font-medium border-b border-sand-tertiary pb-2">Bardo Thodol이란?</h3>
                                     <p>
-                                        『티벳 사자의 서』는 죽음 이후부터 다시 태어나기 전까지의 과정, 즉 <strong>‘중간계(바르도)’</strong>를 다룹니다.
-                                        그리고 그 여정에서 우리가 무엇을 보고, 어떻게 이해하며, 어떤 태도로 통과할 수 있는지를 차분히 안내합니다.
+                                        흔히 『티베트 사자의 서』로 알려진 이 전승은 죽음과 죽음 이후의 중간 상태를 다루는 가르침으로 널리 소개되어 왔습니다.
                                     </p>
                                     <p>
-                                        이 가르침은 특정 문화의 전통을 넘어, 인간이라면 누구나 마주하는 질문—"나는 누구인가, 어떻게 살아야 하는가"—에 닿아 있습니다.
+                                        여기서는 공포나 신비화보다, 죽음과 의식, 전이, 인도, 기억, 기도라는 주제를 차분히 읽고 비교할 수 있도록 자료를 재구성했습니다.
                                     </p>
                                 </div>
 
                                 <div className="bg-sand-secondary/50 rounded-lg p-5 sm:p-6 border-l-4 border-[#9A7B4F] space-y-3 sm:space-y-4">
-                                    <h3 className="font-bold text-base sm:text-lg text-charcoal-main">이 사이트는 무엇을 돕나요?</h3>
-                                    <p>목차는 단순해 보이지만, 핵심은 분명합니다.</p>
+                                    <h3 className="font-bold text-base sm:text-lg text-charcoal-main">이 공간에서 할 수 있는 것</h3>
                                     <ul className="space-y-2 list-disc pl-5 text-[14px] sm:text-[15px]">
-                                        <li>앞부분의 예비기도는 도움과 지지를 청하며 마음의 방향을 세우는 준비 과정이고,</li>
-                                        <li>중심부의 중간계 안내는 ‘죽음 이후의 길’을 실제적으로 조망하게 해주며,</li>
-                                        <li>마지막의 핵심 논설은 <strong>“있는 그대로 봄”</strong>이라는 해탈의 열쇠를 깊이 다룹니다.</li>
+                                        <li>본문과 기도문을 장별로 읽기</li>
+                                        <li>영문과 한글 번역본 비교하기</li>
+                                        <li>일부 기도문의 발음과 음원 따라가기</li>
+                                        <li>찬트 앨범을 이어서 감상하기</li>
+                                        <li>구절마다 메모를 남기고 다시 찾아보기</li>
                                     </ul>
-                                    <p className="pt-2 text-[15px] font-medium text-charcoal-main/80">
-                                        이 사이트는 그 흐름을 따라, 어렵지 않게—그러나 얕지 않게 안내합니다.
-                                    </p>
                                 </div>
 
                                 <div className="space-y-4">
-                                    <h3 className="serif-title text-xl text-[#9A7B4F] font-medium border-b border-sand-tertiary pb-2">“아는 것”에서 “삶에 스며드는 것”으로</h3>
+                                    <h3 className="serif-title text-xl text-[#9A7B4F] font-medium border-b border-sand-tertiary pb-2">읽는 방법</h3>
                                     <p>
-                                        용어가 낯설고, 상징이 복잡해 보일 수 있습니다. 그래서 우리는 단순한 요약보다, <strong>이해 → 예시 → 내 삶의 적용</strong>으로 이어지는 학습을 지향합니다.
+                                        먼저 `The Text`에서 본문 흐름을 따라가고, 필요할 때 `The Prayer`에서 관련 기도문과 발음을 확인하는 방식이 가장 자연스럽습니다.
                                     </p>
                                     <p>
-                                        책 속 가르침이 어느 순간, 일상 속 선택과 관계, 두려움과 애도, 그리고 마음의 훈련으로 자연스럽게 연결되도록 돕습니다.
-                                    </p>
-                                </div>
-
-                                <div className="space-y-4">
-                                    <h3 className="serif-title text-xl text-[#9A7B4F] font-medium border-b border-sand-tertiary pb-2">닫힌 책이 아니라, 열려야 할 책</h3>
-                                    <p>
-                                        『티벳 사자의 서』는 종종 "어려운 책, 닫힌 책"으로 남아왔습니다. 하지만 죽음과 삶을 다루는 안내서라면, 결국 더 많은 이들에게 열려야 합니다.
-                                    </p>
-                                    <p>
-                                        이 사이트는 그 문을 조금 더 넓히기 위해—현대의 언어로 정리하고, 누구나 따라갈 수 있는 구조로 재구성합니다.
+                                        `The Chants`는 집중을 유지하거나 분위기를 전환할 때 유용하며, 메모 기능은 개인적인 해석이나 질문을 남기는 데 적합합니다.
                                     </p>
                                 </div>
 
                                 <div className="space-y-4 pb-4">
-                                    <h3 className="font-bold text-lg text-charcoal-main">이런 분들에게 추천합니다</h3>
+                                    <h3 className="font-bold text-lg text-charcoal-main">누구에게 적합한가</h3>
                                     <ul className="space-y-3">
-                                        <li className="flex items-start gap-3">
-                                            <span className="text-[#9A7B4F] mt-1 text-[10px]">♦</span>
-                                            <span>『티벳 사자의 서』를 처음부터 제대로 읽고 싶어요</span>
-                                        </li>
-                                        <li className="flex items-start gap-3">
-                                            <span className="text-[#9A7B4F] mt-1 text-[10px]">♦</span>
-                                            <span>“중간계/바르도”가 무엇인지 정리된 지도가 필요해요</span>
-                                        </li>
-                                        <li className="flex items-start gap-3">
-                                            <span className="text-[#9A7B4F] mt-1 text-[10px]">♦</span>
-                                            <span>종교를 떠나, 죽음·상실·삶의 태도를 깊이 성찰하고 싶어요</span>
-                                        </li>
-                                        <li className="flex items-start gap-3">
-                                            <span className="text-[#9A7B4F] mt-1 text-[10px]">♦</span>
-                                            <span>어렵지 않게, 하지만 핵심을 놓치지 않는 안내를 원해요</span>
-                                        </li>
+                                        <li>『티베트 사자의 서』를 처음부터 차근히 읽고 싶은 사람</li>
+                                        <li>본문, 번역, 기도문, 음원을 한 곳에서 보고 싶은 사람</li>
+                                        <li>티베트 불교 의례와 독송 전통에 관심이 있는 사람</li>
+                                        <li>개인 메모를 남기며 천천히 공부하고 싶은 사람</li>
                                     </ul>
                                 </div>
-
                             </div>
                         </motion.div>
                     </div>

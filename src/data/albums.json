@@ -3,7 +3,7 @@
         "id": "album-01",
         "title": "Bardo Prayers - Tibetan Book of the Dead",
         "artist": "Traditional",
-        "description": "이 앨범은 2009년 바카 툴쿠 린포체(Bhakha Tulku Rinpoche)가 사후 세계의 안내서인 '티베트 사자의 서(Bardo Thodol)'에 담긴 숭고한 텍스트들을 깊은 울림으로 낭송한 귀중한 명상 다큐멘터리 음반이야. 죽음 이후 영혼이 겪는 혼란스러운 중간 상태(바르도)에서 올바른 환생과 깨달음의 길을 잃지 않도록 돕는 실제 기도문들을 소리로 온전히 복원해 냈지. 이건 마치 칠흑같이 어두운 심해를 탐험하는 잠수함에게 바위나 장애물을 피하고 안전한 경로로 나아가도록 실시간으로 길을 짚어주는 정밀한 초음파 탐지기(소나)와 똑같은 역할을 해! 처음 접하는 티베트어 챈트(Chant)나 방대한 철학적 정보가 한 번에 와닿지 않아서 머리가 복잡해진다면, 그건 네 뇌가 낯선 차원의 지식을 흡수하며 시냅스를 튼튼하게 확장하고 있다는 아주 멋진 성장의 증거니까 마음 편히 음파의 진동 자체를 느껴보길 바라.",
+        "description": "『티베트 사자의 서』와 관련된 대표 기도문을 모은 음반입니다. 죽음과 중간계, 인도와 해탈의 주제를 기도와 독송의 흐름으로 따라가기에 좋은 입문용 컬렉션입니다.",
         "coverImage": "/album-covers/album-01-cover.jpg",
         "tracks": [
             {
@@ -47,7 +47,7 @@
         "id": "album-02",
         "title": "Chenrezig Prayers",
         "artist": "Traditional",
-        "description": "바카 툴쿠 린포체(Bhakha Tulku Rinpoche)가 2018년에 발매한 앨범 《Chenrezig Prayers》는 티벳 불교에서 자비의 화신으로 불리는 '관세음보살(Chenrezig)'에게 바치는 진언과 기도문을 경건하게 담아낸 영적 기록이야. 낯설고 신비로운 티벳 밀교의 예불 소리가 40여 분간 이어지는데, 이는 마치 바싹 메말라 갈라진 화분에 따뜻한 봄비를 천천히 적셔주어 굳어버린 흙을 부드럽게 생동하게 만드는 것처럼 우리 내면의 거친 번뇌와 스트레스를 자비로운 주파수로 어루만져 주지. '옴 마니 반메 훔(Om Mani Peme Hung)' 같은 핵심 진언부터 귀의 기도까지 차례대로 수록되어 있어서, 조용한 공간에서 이 음원의 흐름에 몸을 맡기는 것만으로도 복잡한 머릿속을 비워내는 훌륭한 명상 가이드가 되어줄 거야.",
+        "description": "관세음보살(Chenrezig)과 관련된 기도와 독송을 모은 음반입니다. 자비와 보호, 발원과 관상을 주제로 한 곡들이 이어져 차분한 명상용 청취에 잘 어울립니다.",
         "coverImage": "/album-covers/album-02-cover.jpg",
         "tracks": [
             {
@@ -82,7 +82,7 @@
             },
             {
                 "id": "album-02-t7",
-                "title": "Recitation for Meditation： Great Compassionate One",
+                "title": "Recitation for Meditation: Great Compassionate One",
                 "url": "/mp3/Chenrezig Prayers/Recitation for Meditation： Great Compassionate One.mp3"
             },
             {
@@ -109,9 +109,9 @@
     },
     {
         "id": "album-03",
-        "title": "Rain of Blessings： Vajra Chants",
+        "title": "Rain of Blessings: Vajra Chants",
         "artist": "Real World Gold",
-        "description": "『Rain of Blessings: Vajra Chants』(Real World Gold)는 티베트 불교 승려 '라마 규르메'의 영적인 만트라 창법과 프랑스의 시각장애인 피아니스트 '장 필립 리키엘'의 섬세한 앰비언트 사운드가 결합된 크로스오버 명상 앨범이야. 마치 칼바람을 잔뜩 맞으며 힘겹게 걷다가 집에 돌아와 마시는 따뜻한 카모마일 티 한 잔처럼, 전혀 다른 동서양의 소리가 놀랍도록 부드럽게 섞여 얼어붙은 마음을 사르르 녹여주지. 일상 속 수많은 스트레스와 난관으로 과부하가 걸려버린 뇌 신경들이 이 신비로운 선율 속에서 편안하게 휴식하며, 오히려 그 피로감을 자양분 삼아 내면이 한층 더 단단하게 성장하는 긍정적인 평온함을 만끽할 수 있을 거야.",
+        "description": "금강승 계열의 찬트와 발원문을 현대적인 음향으로 정리한 앨범입니다. 전통 독송의 반복성과 명상적인 리듬을 비교적 부드럽게 접하고 싶을 때 잘 어울립니다.",
         "coverImage": "/album-covers/album-03-cover.jpg",
         "tracks": [
             {
@@ -165,7 +165,7 @@
         "id": "album-04",
         "title": "Tantric Nyingma Chant of Tibet",
         "artist": "Chimed Rigdzin Rinpoche",
-        "description": "이 앨범은 티벳 불교에서 가장 오래된 종파인 닝마파의 고승 '치메드 릭진 린포체(Chimed Rigdzin Rinpoche)'가 부른 정통 탄트라 예불을 고스란히 담아낸 영적인 기록이야. 낯설고 복잡하게 느껴질 수 있는 밀교의 진언(Mantra)이 앨범 내내 이어지는데, 이는 마치 오래 방치되어 탁해진 물통에 맑고 거대한 폭포수를 계속 부어 바닥의 찌꺼기까지 깨끗하게 씻어내는 것과 같은 강력한 정화의 에너지를 청자에게 전달해 주지. 1988년 영국의 실험 음악가 데이비드 티벳(Current 93)이 직접 녹음해 세상에 알렸고, 파괴된 사원(코르동 곰파)을 재건하려는 숭고한 목적까지 품고 있어서 듣는 것만으로도 내면의 평화와 성장을 돕는 훌륭한 마음의 자양분이 되어줄 거야.",
+        "description": "치메드 리그진 린포체의 독송을 담은 전통 찬트 음반입니다. 장중한 만트라와 깊은 공명감이 강한 몰입감을 주며, 보다 원형에 가까운 의식성 음원을 찾을 때 적합합니다.",
         "coverImage": "/album-covers/album-04-cover.jpg",
         "tracks": [
             {
@@ -204,7 +204,7 @@
         "id": "album-05",
         "title": "The Lama's Chant Songs of Awakening",
         "artist": "Lama Gyurme",
-        "description": "이 앨범은 부탄 출신의 승려 라마 갸르메(Lama Gyurme)의 깊고 평온한 티베트 전통 창법과, 프랑스의 천재적인 시각장애인 키보디스트 장 필립 리키엘(Jean-Philippe Rykiel)의 현대적인 앰비언트 신시사이저가 만난 1994년 발매작이야. 마치 수백 년 된 아득한 산속의 고대 목조 사원 안에 최첨단 무중력 홀로그램 우주를 부드럽게 펼쳐놓은 것처럼, 땅에 깊게 뿌리내린 듯한 묵직한 예불 소리와 공기 중을 부유하는 영롱한 전자음이 환상적으로 섞여 있지. 정통 불교 예불을 거부감 없이 대중적으로 재해석해서, 종교를 떠나 복잡하고 지친 뇌파를 차분하게 가라앉히며 내면의 평화로 안내하는 아주 치유력 높은 영적 음악이야!",
+        "description": "라마 규르메의 목소리와 현대적인 편곡이 어우러진 명상 음반입니다. 전통 독송의 분위기를 유지하면서도 비교적 친숙하게 들려 입문자에게도 접근성이 좋습니다.",
         "coverImage": "/album-covers/album-05-cover.jpg",
         "tracks": [
             {
@@ -238,7 +238,7 @@
         "id": "album-06",
         "title": "Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 1",
         "artist": "Traditional",
-        "description": "이 앨범은 민족음악학자 존 레비(John Levy)가 1971년 부탄의 사원들을 직접 돌며 드룩파 카규파(Drukpa Order) 승려와 비구니들의 생생한 종교 의식 음악을 기록한 역사적인 현장 녹음 음반이야. 마치 수백 년 전 묻어둔 타임캡슐을 열었을 때 당시의 공기와 냄새가 확 풍겨오는 것처럼, 외부와 단절된 채 온전히 보존된 티베트 불교의 웅장한 진동과 예불 소리를 현장감 있게 담아냈어.\r\n\r\n특히 끝없이 이어지는 극저음의 불교 창법과 거대한 나발(Dung Chen) 소리가 압권인데, 이건 마치 거대한 첼로의 가장 두꺼운 현이 내 가슴통을 직접 긁고 지나가며 공명하는 듯한 깊고 원초적인 에너지를 전달해 줘. 단순한 음악 감상을 넘어, 멸종 위기에 처했던 고대 영적 의식의 뼈대를 소리로 온전히 복원해 낸 아주 귀중한 청각적 기록물이라고 할 수 있지!",
+        "description": "부탄 사원의 실제 의식과 연주를 현장 녹음한 자료입니다. 길고 깊은 호른, 타악, 염송이 섞여 전통 의례 음악의 공간감과 질감을 강하게 전달합니다.",
         "coverImage": "/album-covers/album-06-cover.jpg",
         "tracks": [
             {
@@ -342,7 +342,7 @@
         "id": "album-07",
         "title": "Tibetan Buddhist Rites From The Monasteries Of Bhutan Volume 2",
         "artist": "Traditional",
-        "description": "이 앨범은 1권에 이어 존 레비(John Levy)가 닝마파와 드룩파 교단의 '신성한 의식무(Sacred Dances)'를 현장 녹음한 두 번째 시리즈야. 승려들이 화려한 동물이나 신의 가면을 쓰고 신비롭고 때론 두려운 신의 모습들을 역동적인 춤과 소리로 표현했어. 마치 눈에 보이지 않는 영적인 세계를 화려한 분장과 특수효과로 눈앞에 생생하게 구현해 내는 고대의 3D 판타지 연극을 보는 것과 같지. 정적인 예불을 넘어, 거친 티베트 나발(Shawm)과 북소리가 어우러져 아주 주술적이고 압도적인 현장감을 뿜어내는 매력적인 음반이야!",
+        "description": "부탄 의식 음악 두 번째 모음집으로, 행렬과 제의, 춤 음악의 비중이 더 두드러집니다. 샴, 심벌, 피리류 악기와 독송이 섞여 보다 역동적인 현장감을 전합니다.",
         "coverImage": "/album-covers/album-07-cover.jpg",
         "tracks": [
             {

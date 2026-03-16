@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import LeftSidebar from './components/LeftSidebar';
 import ReadingPanel from './components/ReadingPanel';
 import RightSidebar from './components/RightSidebar';
-import bookData from '../data/book.json';
 import { flattenVerses } from '../utils/textUtils';
 
 const Text = () => {
+    const [bookData, setBookData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     const [activeTextVerse, setActiveTextVerse] = useState(() => {
         try {
             const saved = localStorage.getItem('tibet_active_text_verse');
@@ -15,19 +16,38 @@ const Text = () => {
         }
     });
 
-    // activeTextVerse 변경 시 localStorage 동기화
+    useEffect(() => {
+        let isMounted = true;
+
+        const loadBook = async () => {
+            try {
+                const module = await import('../data/book.json');
+                if (!isMounted) return;
+                setBookData(module.default);
+            } finally {
+                if (isMounted) {
+                    setIsLoading(false);
+                }
+            }
+        };
+
+        loadBook();
+
+        return () => {
+            isMounted = false;
+        };
+    }, []);
+
     useEffect(() => {
         if (activeTextVerse === undefined) return;
         localStorage.setItem('tibet_active_text_verse', JSON.stringify(activeTextVerse));
     }, [activeTextVerse]);
 
-    // 강제 구절 선택 로직 제거, 유저가 직접 선택하도록 유도 (Meta-Design)
-
-    const flatVerses = React.useMemo(() => flattenVerses(bookData), []);
+    const flatVerses = useMemo(() => flattenVerses(bookData), [bookData]);
 
     const handleNavigate = (direction) => {
         if (!activeTextVerse) return;
-        const currentIndex = flatVerses.findIndex(v => v.id === activeTextVerse.id);
+        const currentIndex = flatVerses.findIndex((verse) => verse.id === activeTextVerse.id);
         if (currentIndex === -1) return;
 
         if (direction === 'prev' && currentIndex > 0) {
@@ -37,11 +57,10 @@ const Text = () => {
         }
     };
 
-    const currentIndex = activeTextVerse ? flatVerses.findIndex(v => v.id === activeTextVerse.id) : -1;
+    const currentIndex = activeTextVerse ? flatVerses.findIndex((verse) => verse.id === activeTextVerse.id) : -1;
     const hasPrev = currentIndex > 0;
     const hasNext = currentIndex !== -1 && currentIndex < flatVerses.length - 1;
 
-    // 빈 상태 (Empty State) 컴포넌트
     const EmptyState = () => (
         <div className="flex-1 flex flex-col items-center justify-center p-8 bg-transparent transition-all duration-700 h-full w-full">
             <div className="max-w-md w-full text-center space-y-6 opacity-0 animate-[fadeIn_1s_ease-out_0.3s_forwards]">
@@ -52,24 +71,38 @@ const Text = () => {
                 </div>
                 <div className="space-y-2">
                     <h3 className="text-xl font-crimson font-bold text-text-primary dark:text-dark-text-primary tracking-wide">
-                        원하시는 장을 선택해주세요
+                        읽고 싶은 구절을 선택해 주세요
                     </h3>
                     <p className="text-sm text-text-secondary/80 dark:text-dark-text-secondary/80 font-inter leading-relaxed max-w-sm mx-auto">
-                        좌측 메뉴에서 챕터를 선택하시면<br />해당 구절의 상세 내용을 확인하실 수 있습니다.
+                        왼쪽 메뉴에서 장과 구절을 선택하면
+                        <br />
+                        해당 내용과 번역, 메모 영역이 함께 열립니다.
                     </p>
                 </div>
             </div>
         </div>
     );
 
+    const LoadingState = () => (
+        <div className="flex-1 flex flex-col items-center justify-center p-8 bg-transparent transition-all duration-700 h-full w-full">
+            <div className="max-w-md w-full text-center space-y-4">
+                <p className="text-sm uppercase tracking-[0.35em] text-gold-deep/80 dark:text-gold-light/80">Loading Text</p>
+                <p className="text-sm text-text-secondary/80 dark:text-dark-text-secondary/80 font-inter leading-relaxed">
+                    본문 데이터를 불러오는 중입니다.
+                </p>
+            </div>
+        </div>
+    );
+
     return (
         <div className="flex w-full min-h-screen h-screen overflow-hidden bg-sand-primary dark:bg-dark-bg relative z-10 transition-colors duration-500 xl:bg-transparent dark:xl:bg-transparent">
-            {/* Background Grid */}
             <div className="fixed inset-0 pointer-events-none bg-grid-slate-900/[0.04] dark:bg-grid-slate-100/[0.03] bg-[bottom_1px_center] z-[-1] transition-opacity duration-500"></div>
 
             <LeftSidebar onSelectVerse={setActiveTextVerse} activeVerseId={activeTextVerse?.id} prayers={bookData} isPrayerPage={false} />
 
-            {activeTextVerse ? (
+            {isLoading ? (
+                <LoadingState />
+            ) : activeTextVerse ? (
                 <>
                     <ReadingPanel
                         key={`text-${activeTextVerse.id}`}

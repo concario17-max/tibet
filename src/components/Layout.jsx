@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import GlobalPlayer from './GlobalPlayer';
-import CompendiumModal from './CompendiumModal';
-import CommentariesModal from './CommentariesModal';
-import LexiconModal from './LexiconModal';
+
+const CompendiumModal = lazy(() => import('./CompendiumModal'));
+const CommentariesModal = lazy(() => import('./CommentariesModal'));
+const LexiconModal = lazy(() => import('./LexiconModal'));
 
 const Layout = ({ playbackRequest, setPlaybackRequest }) => {
     return (
@@ -16,9 +17,11 @@ const Layout = ({ playbackRequest, setPlaybackRequest }) => {
             </main>
 
             <GlobalPlayer playbackRequest={playbackRequest} setPlaybackRequest={setPlaybackRequest} />
-            <CompendiumModal />
-            <CommentariesModal />
-            <LexiconModal />
+            <Suspense fallback={null}>
+                <CompendiumModal />
+                <CommentariesModal />
+                <LexiconModal />
+            </Suspense>
         </div>
     );
 };

@@ -1,115 +1,205 @@
 const fs = require('fs');
 
-const raw = fs.readFileSync('Lexicon.txt', 'utf8');
-const lines = raw.split('\n').map(l => l.trimRight());
+const raw = fs.readFileSync('Lexicon.txt', 'utf8').replace(/^\uFEFF/, '');
+const sourceLines = raw.split(/\r?\n/).map((line) => line.trimRight());
 
 const glossary = [];
-let currentTerm = null;
-let currentDefinition = [];
 
-// Helper to determine if a line looks like a term
-function isTermLine(line, prevLine) {
+const definitionStarters = [
+    'A ',
+    'An ',
+    'According ',
+    'Among ',
+    'Any ',
+    'As ',
+    'Based ',
+    'Birth ',
+    'Both ',
+    'Broadly ',
+    'Buddhist ',
+    'By ',
+    'Compassion ',
+    'Contrasted ',
+    'Derived ',
+    'Every ',
+    'Finally, ',
+    'Following ',
+    'Generally, ',
+    'Generally ',
+    'Here ',
+    'From ',
+    'In ',
+    'Immeasurable ',
+    'It ',
+    'Meditative ',
+    'Male ',
+    'Moreover, ',
+    'Nothing ',
+    'Often ',
+    'One ',
+    'Our ',
+    'Rather, ',
+    'See ',
+    'Signlessness, ',
+    'Spiritual ',
+    'States ',
+    'The ',
+    'There ',
+    'These ',
+    'This ',
+    'Those ',
+    'Thus, ',
+    'Sometimes ',
+    'While ',
+    'When ',
+    'With ',
+];
+
+const sentenceEndPattern = /[.!?]$|[.!?][’'")\]]$/;
+const inlineVerbPattern = /\b(?:is|are|refers to|refers|comprises|includes|encompasses|denotes|means|should|may|can|symbolises|symbolizes|embodies|represents|arises|contains|describes)\b/;
+
+const cleanText = (text) => text.replace(/\s+/g, ' ').trim();
+
+const startsLikeDefinition = (line) => {
+    return definitionStarters.some((prefix) => line.startsWith(prefix));
+};
+
+const startsLikeVerbDefinition = (line) => {
+    return /^[A-Z][^\s]{2,}(?: [A-Za-zĀāĪīŪūṚṛṜṝḶḷḸḹṂṃṄṅÑñṬṭḌḍṆṇŚśṢṣḤḥÇçÉéÓóÖöÜüâêîôû`'’.,()[\]/-]+){0,6}\s/.test(line) &&
+        inlineVerbPattern.test(line);
+};
+
+const endsLikeSentence = (line) => {
+    return sentenceEndPattern.test(line.trim());
+};
+
+const isLikelyTermLine = (line) => {
     if (!line) return false;
-    // Definitions always end with a period '.', '?', or '"' generally.
-    // If the previous line is empty or ends with a sentence ender, this might be a term.
-    const isAfterSentenceEnd = prevLine === undefined || prevLine.trim() === '' || /[.!?”"']$/.test(prevLine.trim());
+    if (!/^[A-Z]/.test(line)) return false;
+    if (startsLikeDefinition(line) || startsLikeVerbDefinition(line)) return false;
+    if (line.length > 160) return false;
+    return true;
+};
 
-    // A term line doesn't end with a period usually.
-    const endsWithPeriod = line.trim().endsWith('.');
+const splitInlineTermAndDefinition = (line) => {
+    if (!line || !/^[A-Z]/.test(line)) return null;
 
-    // A term line usually starts with a Capital letter (English term) or is mostly short.
-    const startsWithCapital = /^[A-Z]/.test(line.trim());
+    for (const starter of definitionStarters) {
+        const idx = line.indexOf(` ${starter}`);
+        if (idx > 10) {
+            const term = cleanText(line.slice(0, idx));
+            const definition = cleanText(line.slice(idx + 1));
+            if (term && definition) {
+                return { term, definition };
+            }
+        }
+    }
 
-    // Some lines are continuing the term name, e.g.
-    // Coemergent 
-    // Delight 
-    // sahajasukha/sahajānanda
+    const wordPattern = /[A-Z][A-Za-zĀāĪīŪūṚṛṜṝḶḷḸḹṂṃṄṅÑñṬṭḌḍṆṇŚśṢṣḤḥÇçÉéÓóÖöÜüâêîôû`'’.-]*/g;
+    let match;
+    while ((match = wordPattern.exec(line)) !== null) {
+        if (match.index <= 10) continue;
+        const remainder = line.slice(match.index);
+        if (!startsLikeVerbDefinition(remainder)) continue;
+        const term = cleanText(line.slice(0, match.index));
+        const definition = cleanText(remainder);
+        if (term && definition) {
+            return { term, definition };
+        }
+    }
 
-    return isAfterSentenceEnd && !endsWithPeriod && startsWithCapital && line.length < 150;
-}
+    return null;
+};
+
+const getNextNonEmptyLine = (lines, startIndex) => {
+    for (let i = startIndex; i < lines.length; i++) {
+        if (lines[i]) return lines[i];
+    }
+    return '';
+};
+
+const normalizeLines = (lines) => {
+    const normalized = [];
+
+    for (const rawLine of lines) {
+        const line = rawLine.trim();
+        if (!line) continue;
+
+        const inline = splitInlineTermAndDefinition(line);
+        if (inline) {
+            normalized.push(inline.term);
+            normalized.push(inline.definition);
+            continue;
+        }
+
+        normalized.push(line);
+    }
+
+    return normalized;
+};
+
+const flushEntry = (entry) => {
+    if (!entry) return;
+
+    const term = cleanText(entry.termParts.join(' '));
+    const definition = cleanText(entry.definitionParts.join(' '));
+
+    if (!term || !definition) return;
+    glossary.push({ term, definition });
+};
+
+const lines = normalizeLines(sourceLines);
 
 let i = 0;
-// skip header
 while (i < lines.length && !lines[i].startsWith('Abhidhrma')) {
     i++;
 }
 
-let prevLine = '';
-
-// Because terms can span multiple lines (as seen with Coemergent Delight), we need a state machine.
-let state = 'TERM'; // TERM or DEF
-let tempTermLines = [];
+let entry = null;
 
 for (; i < lines.length; i++) {
-    let line = lines[i];
+    const line = lines[i];
+    const nextLine = getNextNonEmptyLine(lines, i + 1);
 
-    if (line.trim() === '') {
-        prevLine = line;
+    if (!entry) {
+        if (isLikelyTermLine(line)) {
+            entry = { termParts: [line], definitionParts: [] };
+        }
         continue;
     }
 
-    if (state === 'TERM') {
-        const isNextLineCapital = i + 1 < lines.length && /^[A-Z]/.test(lines[i + 1].trim());
-        const isNextLineUsuallyDef = i + 1 < lines.length && (/^The /.test(lines[i + 1].trim()) || /^A /.test(lines[i + 1].trim()) || /^[A-Z]/.test(lines[i + 1].trim()));
-
-        // Let's just collect until we hit a clear sentence start.
-        // Actually, looking at the text, the definition lines generally form paragraphs.
-
-        if (tempTermLines.length === 0) {
-            tempTermLines.push(line.trim());
-        } else {
-            // Is this line part of the term or start of def?
-            // "sahajasukha/sahajānanda" is lowercase, part of term.
-            // "The coemergent delight is..." is uppercase, part of def!
-            if (/^[a-z_/'’`-]+$/.test(line.trim().split(' ')[0]) || /^Skt\./.test(line.trim()) || line.trim().startsWith('lhan-cig')) {
-                tempTermLines.push(line.trim());
-            } else if (line.trim().startsWith('See ')) {
-                // "See something." is a definition (cross reference)
-                if (currentTerm) {
-                    glossary.push({ term: currentTerm.join(' '), definition: currentDefinition.join(' ') });
-                }
-                currentTerm = tempTermLines;
-                currentDefinition = [line.trim()];
-                tempTermLines = [];
-                state = 'DEF';
-            } else if (/^[A-Z]/.test(line.trim()) && line.trim().length > 30) {
-                // Looks like the start of a definition
-                if (currentTerm) {
-                    glossary.push({ term: currentTerm.join(' '), definition: currentDefinition.join(' ') });
-                }
-                currentTerm = tempTermLines;
-                currentDefinition = [line.trim()];
-                tempTermLines = [];
-                state = 'DEF';
-            } else {
-                tempTermLines.push(line.trim());
-            }
+    if (entry.definitionParts.length === 0) {
+        if (startsLikeDefinition(line) || startsLikeVerbDefinition(line) || line.length > 180) {
+            entry.definitionParts.push(line);
+            continue;
         }
-    } else if (state === 'DEF') {
-        // We are reading definition. We remain in DEF until we find a new term.
-        // A new term line starts with Capital, is usually short, and the previous line ends with a period.
-        if (isTermLine(line, prevLine)) {
-            tempTermLines.push(line.trim());
-            state = 'TERM';
+
+        const lineLooksLikeTerm = isLikelyTermLine(line);
+        const nextLooksLikeDefinition = startsLikeDefinition(nextLine) || startsLikeVerbDefinition(nextLine);
+
+        if (lineLooksLikeTerm && !nextLooksLikeDefinition) {
+            entry.termParts.push(line);
         } else {
-            currentDefinition.push(line.trim());
+            entry.definitionParts.push(line);
         }
+        continue;
     }
 
-    prevLine = line;
+    const canStartNewEntry =
+        isLikelyTermLine(line) &&
+        (startsLikeDefinition(nextLine) || startsLikeVerbDefinition(nextLine) || !nextLine || !endsLikeSentence(line)) &&
+        endsLikeSentence(entry.definitionParts[entry.definitionParts.length - 1] || '');
+
+    if (canStartNewEntry) {
+        flushEntry(entry);
+        entry = { termParts: [line], definitionParts: [] };
+        continue;
+    }
+
+    entry.definitionParts.push(line);
 }
 
-if (currentTerm) {
-    glossary.push({ term: currentTerm.join(' '), definition: currentDefinition.join(' ') });
-}
+flushEntry(entry);
 
-// Clean up the JSON
-const finalGlossary = glossary.map(item => {
-    return {
-        term: item.term.replace(/\s+/g, ' ').trim(),
-        definition: item.definition.replace(/\s+/g, ' ').trim()
-    };
-});
-
-fs.writeFileSync('src/data/lexicon.json', JSON.stringify(finalGlossary, null, 2), 'utf8');
-console.log('Successfully wrote', finalGlossary.length, 'terms');
+fs.writeFileSync('src/data/lexicon.json', JSON.stringify(glossary, null, 2), 'utf8');
+console.log('Successfully wrote', glossary.length, 'terms');
