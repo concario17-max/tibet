@@ -3,6 +3,7 @@ import LeftSidebar from './components/LeftSidebar';
 import ReadingPanel from './components/ReadingPanel';
 import RightSidebar from './components/RightSidebar';
 import { flattenVerses } from '../utils/textUtils';
+import bookDataUrl from '../data/book.json?url';
 
 const Text = () => {
     const [bookData, setBookData] = useState([]);
@@ -21,9 +22,10 @@ const Text = () => {
 
         const loadBook = async () => {
             try {
-                const module = await import('../data/book.json');
+                const response = await fetch(bookDataUrl);
+                const data = await response.json();
                 if (!isMounted) return;
-                setBookData(module.default);
+                setBookData(data);
             } finally {
                 if (isMounted) {
                     setIsLoading(false);

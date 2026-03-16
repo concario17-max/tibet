@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Edit3, Trash2 } from 'lucide-react';
 import { useUI } from '../context/UIContext';
-import prayersData from '../data/prayers.json';
-import bookData from '../data/book.json';
 import { flattenVerses } from '../utils/textUtils';
+import prayersDataUrl from '../data/prayers.json?url';
+import bookDataUrl from '../data/book.json?url';
 
 const NOTE_PREFIXES = {
     prayer: 'tibet-prayer-note-',
@@ -23,15 +23,11 @@ const NOTE_META = {
     },
 };
 
-const prayerVerseMap = new Map(
-    prayersData.flatMap((chapter) => chapter.verses.map((verse) => [verse.id, verse])),
-);
+const buildVerseMap = (verses) => {
+    return new Map(verses.map((verse) => [verse.id, verse]));
+};
 
-const bookVerseMap = new Map(
-    flattenVerses(bookData).map((verse) => [verse.id, verse]),
-);
-
-const buildSavedNotes = () => {
+const buildSavedNotes = ({ prayerVerseMap, bookVerseMap }) => {
     const notes = [];
 
     Object.entries(NOTE_PREFIXES).forEach(([type, prefix]) => {
@@ -61,6 +57,9 @@ const buildSavedNotes = () => {
 const CommentariesModal = () => {
     const uiContext = useUI();
     const [savedNotes, setSavedNotes] = useState([]);
+    const [prayerVerseMap, setPrayerVerseMap] = useState(() => new Map());
+    const [bookVerseMap, setBookVerseMap] = useState(() => new Map());
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
     if (!uiContext) return null;
@@ -71,15 +70,45 @@ const CommentariesModal = () => {
         if (!isCommentariesOpen) {
             document.body.style.overflow = 'unset';
             setSavedNotes([]);
+            setIsLoading(false);
             return () => {
                 document.body.style.overflow = 'unset';
             };
         }
 
-        document.body.style.overflow = 'hidden';
-        setSavedNotes(buildSavedNotes());
+        let isMounted = true;
+
+        const loadNotes = async () => {
+            document.body.style.overflow = 'hidden';
+            setIsLoading(true);
+
+            const [prayersResponse, bookResponse] = await Promise.all([
+                fetch(prayersDataUrl),
+                fetch(bookDataUrl),
+            ]);
+
+            const [prayersData, bookData] = await Promise.all([
+                prayersResponse.json(),
+                bookResponse.json(),
+            ]);
+
+            if (!isMounted) return;
+
+            const nextPrayerVerseMap = buildVerseMap(
+                prayersData.flatMap((chapter) => chapter.verses.map((verse) => verse)),
+            );
+            const nextBookVerseMap = buildVerseMap(flattenVerses(bookData));
+
+            setPrayerVerseMap(nextPrayerVerseMap);
+            setBookVerseMap(nextBookVerseMap);
+            setSavedNotes(buildSavedNotes({ prayerVerseMap: nextPrayerVerseMap, bookVerseMap: nextBookVerseMap }));
+            setIsLoading(false);
+        };
+
+        loadNotes();
 
         return () => {
+            isMounted = false;
             document.body.style.overflow = 'unset';
         };
     }, [isCommentariesOpen]);
@@ -146,7 +175,11 @@ const CommentariesModal = () => {
                             </div>
 
                             <div className="flex-1 overflow-y-auto p-5 sm:p-8 custom-scrollbar bg-sand-secondary/30">
-                                {savedNotes.length === 0 ? (
+                                {isLoading ? (
+                                    <div className="flex flex-col items-center justify-center h-full text-charcoal-muted/60 space-y-4 py-16 sm:py-20 text-center">
+                                        <p className="font-serif text-base sm:text-lg">Loading your saved reflections...</p>
+                                    </div>
+                                ) : savedNotes.length === 0 ? (
                                     <div className="flex flex-col items-center justify-center h-full text-charcoal-muted/50 space-y-4 py-16 sm:py-20 text-center">
                                         <Edit3 className="w-12 h-12 sm:w-16 sm:h-16 opacity-20" />
                                         <p className="font-serif text-base sm:text-lg">No saved reflections yet.</p>
