@@ -19,6 +19,7 @@ const Album = () => {
             trackIndex,
             timestamp: Date.now()
         });
+        setViewingAlbum(null);
     }, [viewingAlbum, setPlaybackRequest]);
 
     return (
