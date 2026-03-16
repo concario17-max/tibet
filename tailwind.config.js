@@ -39,7 +39,7 @@ export default {
             },
             fontFamily: {
                 "sans": ["Inter", "sans-serif"],
-                "serif": ["Playfair Display", "serif"],
+                "serif": ["Cormorant Garamond", "serif"],
                 "crimson": ["Crimson Pro", "Noto Serif", "serif"],
                 "noto": ["Noto Serif", "serif"],
                 "noto-kr": ["Noto Serif KR", "serif"],
