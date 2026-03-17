@@ -19,16 +19,7 @@ function App() {
             <UIProvider>
                 <PasswordGuard>
                     <Router>
-                        <Suspense
-                            fallback={
-                                <div className="min-h-screen bg-sand-primary dark:bg-dark-bg text-charcoal-main dark:text-dark-text-primary flex items-center justify-center px-6">
-                                    <div className="text-center">
-                                        <p className="text-sm uppercase tracking-[0.35em] text-gold-deep/80 dark:text-gold-light/80">Loading</p>
-                                        <p className="mt-4 text-base md:text-lg">Preparing the next reading space...</p>
-                                    </div>
-                                </div>
-                            }
-                        >
+                        <Suspense fallback={null}>
                             <Routes>
                                 <Route element={<Layout playbackRequest={playbackRequest} setPlaybackRequest={setPlaybackRequest} />}>
                                     <Route path="/" element={<Home />} />
