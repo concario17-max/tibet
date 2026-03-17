@@ -10,7 +10,7 @@ const SidebarChapterList = ({ prayers, expandedChapter, toggleChapter, onSelectV
     return (
         <motion.div
             layout
-            className={`flex-none overflow-y-auto border-gold-border/40 dark:border-[#222] custom-scrollbar transition-all duration-500 ease-in-out ${expandedChapter ? 'max-h-[45%] border-b shadow-sm' : 'max-h-full h-full'
+            className={`flex-none overflow-y-auto border-gold-border/40 dark:border-[#222] custom-scrollbar transition-all duration-500 ease-in-out ${expandedChapter ? 'h-[30%] min-h-[30%] border-b shadow-sm' : 'max-h-full h-full'
                 }`}
         >
             <div className="p-4 bg-transparent sticky top-0 z-10 backdrop-blur-sm hidden lg:block">
