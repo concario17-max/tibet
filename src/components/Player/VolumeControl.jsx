@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Volume2, VolumeX } from 'lucide-react';
 
 const VolumeControl = ({ isMuted, volume, toggleMute, handleVolumeSeek }) => {
