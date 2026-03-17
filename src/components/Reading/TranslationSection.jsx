@@ -12,10 +12,21 @@ const SectionLabel = ({ children }) => (
     </p>
 );
 
-const TranslationSection = ({ korean }) => {
+const TranslationSection = ({ english, korean }) => {
     return (
         <section className="mb-10 space-y-8 sm:space-y-10">
-            {korean && (
+            {english ? (
+                <div className="rounded-[1.8rem] border border-gold-border/18 bg-white/55 px-5 py-6 shadow-[0_20px_50px_rgba(120,93,48,0.05)] backdrop-blur-lg dark:border-dark-border/55 dark:bg-dark-surface/35 sm:px-8 sm:py-8">
+                    <SectionLabel>English Rendering</SectionLabel>
+                    <div className="mx-auto mt-4 max-w-4xl">
+                        <p className="text-left font-serif text-[18px] leading-[1.85] tracking-[0.005em] text-text-primary/92 dark:text-dark-text-primary/92 sm:text-[21px] sm:leading-[1.9]">
+                            {english.replace(/[\r\n]+/g, ' ')}
+                        </p>
+                    </div>
+                </div>
+            ) : null}
+
+            {korean ? (
                 <div className="rounded-[1.8rem] border border-gold-border/18 bg-gradient-to-b from-sand-primary/75 to-white/60 px-5 py-6 shadow-[0_20px_50px_rgba(120,93,48,0.06)] backdrop-blur-lg dark:border-dark-border/55 dark:from-dark-surface/45 dark:to-dark-bg/35 sm:px-8 sm:py-8">
                     <SectionLabel>Korean Translation</SectionLabel>
 
@@ -48,7 +59,7 @@ const TranslationSection = ({ korean }) => {
                         </p>
                     )}
                 </div>
-            )}
+            ) : null}
         </section>
     );
 };
