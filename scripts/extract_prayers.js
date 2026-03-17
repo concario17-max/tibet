@@ -21,15 +21,33 @@ const titleMap = {
 const isTibetan = (text) => /[\u0F00-\u0FFF]/.test(text);
 const isKorean = (text) => /[\u3131-\uD79D]/.test(text);
 const isEnglish = (text) => /[a-zA-Z]/.test(text) && !isTibetan(text) && !isKorean(text);
-const isSectionHeader = (text) => {
-    return /^(\[제\s*\d+연\]|(?:\d+)\.)\s*/.test(text.trim());
+
+const parseSectionHeader = (text) => {
+    const trimmed = text.trim();
+    const patterns = [
+        /^\[\s*제\s*(\d+)연\s*\]\s*(.+)$/,
+        /^(\d+)\.\s*(.+)$/,
+        /^(\d+)\s+(.+)$/,
+    ];
+
+    for (const pattern of patterns) {
+        const match = trimmed.match(pattern);
+        if (match) {
+            return {
+                number: match[1],
+                title: match[2].trim(),
+            };
+        }
+    }
+
+    return null;
 };
 
 const parseFile = (fileName) => {
     const fullPath = path.join(inputDir, fileName);
     if (!fs.existsSync(fullPath)) return null;
 
-    const lines = fs.readFileSync(fullPath, 'utf8').split(/\r?\n/);
+    const lines = fs.readFileSync(fullPath, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/);
     const sections = [];
     let currentSection = null;
 
@@ -37,16 +55,13 @@ const parseFile = (fileName) => {
         const line = rawLine.trim();
         if (!line) continue;
 
-        const sectionMatch = line.match(/^(?:\[제\s*(\d+)연\]|(\d+)\.)\s*(.*)$/);
-        if (sectionMatch) {
+        const header = parseSectionHeader(line);
+        if (header) {
             if (currentSection) sections.push(currentSection);
 
-            const num = sectionMatch[1] || sectionMatch[2];
-            const titlePart = sectionMatch[3]?.trim() || '';
-
             currentSection = {
-                id: `${fileName.replace('.txt', '')}.${num}`,
-                title: titlePart,
+                id: `${fileName.replace('.txt', '')}.${header.number}`,
+                title: header.title,
                 tibetan: [],
                 english: [],
                 korean: [],
@@ -66,7 +81,7 @@ const parseFile = (fileName) => {
             continue;
         }
 
-        if (isEnglish(line) || !isSectionHeader(line)) {
+        if (isEnglish(line)) {
             currentSection.english.push(line);
         }
     }
