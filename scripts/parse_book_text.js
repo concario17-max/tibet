@@ -68,8 +68,8 @@ const parseContent = (text) => {
         const content = blocks[i + 1];
         if (!content) continue;
 
-        const englishMatch = content.match(/\* English:\s*([\s\S]*?)(?=\* Korean:|$)/);
-        const koreanMatch = content.match(/\* Korean:\s*([\s\S]*?)$/);
+        const englishMatch = content.match(/(?:^|\n)\*?\s*English:\s*([\s\S]*?)(?=(?:\n\*?\s*Korean:)|$)/);
+        const koreanMatch = content.match(/(?:^|\n)\*?\s*Korean:\s*([\s\S]*?)$/);
 
         paragraphs[id] = {
             english: englishMatch ? englishMatch[1].trim() : "",
