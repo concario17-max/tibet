@@ -13,7 +13,7 @@ const TibetanSection = ({ tibetan, pronunciation }) => {
                     </p>
 
                     {tibetan && (
-                        <p className="mx-auto mt-5 max-w-[92%] break-keep font-noto text-[1.2rem] font-bold leading-[2.1] tracking-[0.03em] text-[#4A0404] antialiased drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)] dark:text-[#F0A2A2] sm:text-[1.85rem] sm:leading-[2.15]">
+                        <p className="mx-auto mt-4 max-w-[92%] break-keep font-noto text-[1.2rem] font-bold leading-[1.5] tracking-[0.02em] text-[#4A0404] antialiased drop-shadow-[0_1px_1px_rgba(0,0,0,0.05)] dark:text-[#F0A2A2] sm:text-[1.85rem] sm:leading-[1.62]">
                             {tibetan.replace(/[\r\n]+/g, ' ')}
                         </p>
                     )}
