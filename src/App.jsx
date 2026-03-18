@@ -1,7 +1,6 @@
 import { Suspense, lazy, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import PasswordGuard from './components/PasswordGuard';
 import { UIProvider } from './context/UIContext';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -17,20 +16,18 @@ function App() {
     return (
         <ThemeProvider>
             <UIProvider>
-                <PasswordGuard>
-                    <Router>
-                        <Suspense fallback={null}>
-                            <Routes>
-                                <Route element={<Layout playbackRequest={playbackRequest} setPlaybackRequest={setPlaybackRequest} />}>
-                                    <Route path="/" element={<Home />} />
-                                    <Route path="/text" element={<Text />} />
-                                    <Route path="/chapter" element={<Chapter />} />
-                                    <Route path="/album" element={<Album />} />
-                                </Route>
-                            </Routes>
-                        </Suspense>
-                    </Router>
-                </PasswordGuard>
+                <Router>
+                    <Suspense fallback={null}>
+                        <Routes>
+                            <Route element={<Layout playbackRequest={playbackRequest} setPlaybackRequest={setPlaybackRequest} />}>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/text" element={<Text />} />
+                                <Route path="/chapter" element={<Chapter />} />
+                                <Route path="/album" element={<Album />} />
+                            </Route>
+                        </Routes>
+                    </Suspense>
+                </Router>
             </UIProvider>
         </ThemeProvider>
     );
