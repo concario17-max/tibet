@@ -1,755 +1,650 @@
 # Tibet Project Research Report
 
+Updated: 2026-03-18
+Workspace: `C:\Users\roadsea\Desktop\tibet`
+
 ## 1. Executive Summary
 
-This repository is a Vite + React single-page application that presents Tibetan Buddhist source material in three primary experiences:
+This project is a static React/Vite reading and listening app for Tibetan Buddhist source material. It has no backend and no server-side rendering. The app is built around four primary user flows:
 
-- `The Text`: a structured reading interface for the Bardo Thodol main text
-- `The Prayer`: a structured reading interface for prayer collections, some with audio and pronunciation
-- `The Chants`: an album-style audio library with a persistent global player
+1. Home landing page
+2. Main text reading (`/text`)
+3. Prayer reading (`/chapter`)
+4. Chant album browsing and playback (`/album`)
 
-The project is fundamentally a static-site content experience. There is no backend, no API layer, no database, and no server-side rendering. All runtime content is shipped as static JSON and media files. User-specific state is stored in `localStorage`.
+The runtime is relatively simple. Most of the real complexity lives in the data layer:
 
-At a high level:
+- `book/*.txt` -> `src/data/book.json`
+- `Prayer/*.txt` -> `src/data/prayers.json`
+- `Lexicon.txt` -> `src/data/lexicon.json`
+- `mp3/*` -> `public/mp3/*` and `src/data/albums.json`
 
-- Framework/runtime: React 18, React Router 6, Vite 5
-- Styling: Tailwind CSS with a custom luxury/editorial visual layer
-- Motion: Framer Motion
-- Persistence: browser `localStorage`
-- Deployment target: Cloudflare Pages
+The app is effectively a curated document browser with side notes, modal study tools, and two separate audio systems:
 
-The application is content-heavy and data-driven. Most of the repository complexity is not in business logic, but in turning text/audio source material into JSON files that the frontend can render.
+- per-verse local audio player for prayer pages
+- persistent global album player for chant playback
 
-## 2. Repository Shape
+## 2. Stack And Build
 
-Top-level directories and their roles:
+### Core stack
 
-- `src/`: frontend application code
-- `src/data/`: generated runtime datasets consumed by the app
-- `public/`: static assets served directly by Vite/Pages, especially audio files and album covers
-- `book/`: source text files used to build `src/data/book.json`
-- `Prayer/`: source prayer texts and some prayer-specific audio/pronunciation inputs
-- `mp3/`: source audio album directories used to build/copy public audio assets
-- `scripts/`: data extraction and transformation scripts
-- `PNG/`: reference images/html artifacts, likely supporting/manual assets
+- React 18
+- React Router 6
+- Vite 5
+- Tailwind CSS 3
+- Framer Motion
+- Lucide React
+- Vitest + Testing Library
 
-Notable top-level files:
+### Package scripts
 
-- `package.json`: scripts and dependencies
-- `vite.config.js`: Vite and Vitest config
-- `tailwind.config.js`: theme tokens and typography/color setup
-- `postcss.config.js`: Tailwind + Autoprefixer
-- `parseLexicon.cjs`, `rebuild_albums.cjs`, `update_album.cjs`, `fix_3_1_mapping.cjs`: one-off and recurring content pipeline scripts
-
-## 3. Build and Tooling
-
-### Package Scripts
-
-From `package.json`:
-
-- `npm run dev`: local Vite dev server
+- `npm run dev`: Vite dev server
 - `npm run build`: production build
-- `npm run preview`: local preview of build output
-- `npm run lint`: ESLint
-- `npm run test`: Vitest
+- `npm run test -- --run`: test suite
+- `npm run typecheck`: strict JS/JSDoc typecheck for pipeline and validation modules
+- `npm run regen:data`: regenerate book, prayer, and lexicon data, then validate output
 
-### Dependencies
+### Current verification status
 
-Runtime dependencies:
+Verified during this research pass:
 
-- `react`, `react-dom`
-- `react-router-dom`
-- `framer-motion`
-- `lucide-react`
+- `npm run build`: passed
+- `npm test -- --run`: passed
+- `node scripts/extract_prayers.js`: passed
+- `node parseLexicon.cjs`: passed
 
-Dev dependencies:
+## 3. Project Layout
 
-- Vite and `@vitejs/plugin-react`
-- Tailwind, PostCSS, Autoprefixer
-- ESLint and React-related plugins
-- Vitest, Testing Library, JSDOM
+### Primary runtime folders
 
-### Build Characteristics
+- `src/`: app code
+- `public/`: deploy-time static assets and Pages headers
+- `src/data/`: generated JSON consumed by the app
+- `book/`: source text corpus for main text
+- `Prayer/`: source text corpus for prayer pages
+- `mp3/`: source audio album folders
 
-The project builds successfully with Vite. The latest build produced:
+### Primary script and utility files
 
-- `dist/index.html`
-- one CSS bundle around 63 KB pre-gzip
-- one large JS bundle around 1.4 MB pre-gzip
+- `scripts/parse_book_text.js`
+- `scripts/extract_prayers.js`
+- `scripts/validate_generated_data.js`
+- `parseLexicon.cjs`
+- `rebuild_albums.cjs`
 
-Vite emitted a chunk-size warning, so the app currently ships as a relatively large mostly-monolithic JS bundle. There is no meaningful route-level code splitting in the current structure.
+### Deployment-related files
 
-### Test Status
+- `index.html`
+- `public/manifest.json`
+- `public/_headers`
 
-The test suite currently passes:
+`public/_headers` is important: it forces low-cache behavior for `/`, `/index.html`, and `/manifest.json`, which helps Cloudflare Pages serve fresh app shells after deployment.
 
-- 1 test file
-- 3 tests
-- all passing
+## 4. Application Entry And Top-Level Flow
 
-Coverage is narrow and focuses only on the custom `useAudioPlayer` hook.
+### Entry
 
-## 4. Runtime Architecture
+- `src/main.jsx` mounts `<App />`
+- `src/App.jsx` sets up:
+  - `ThemeProvider`
+  - `UIProvider`
+  - `BrowserRouter`
+  - route-level `React.lazy` loading for the four pages
 
-### Entry Point
+The old password gate has already been removed. There is no login/auth flow now.
 
-`src/main.jsx` mounts `App` under React `StrictMode`.
+### Top-level layout
 
-### Root App Composition
-
-`src/App.jsx` composes the app in this order:
-
-1. `ThemeProvider`
-2. `UIProvider`
-3. `PasswordGuard`
-4. `BrowserRouter`
-5. shared `Layout`
-
-The app maintains one root-level state object:
-
-- `playbackRequest`
-
-This is used to trigger the bottom global player from anywhere that has access to the outlet context, especially the album page.
-
-### Routing
-
-The app has four routes:
-
-- `/` -> `Home`
-- `/text` -> `Text`
-- `/chapter` -> `Chapter`
-- `/album` -> `Album`
-
-There are no route params, loaders, or nested data APIs. The routing model is very simple.
-
-### Layout
-
-`src/components/Layout.jsx` renders:
+`src/components/Layout.jsx` provides the shared shell:
 
 - `Header`
-- nested route content via `Outlet`
+- routed page content via `Outlet`
 - `GlobalPlayer`
-- three modal overlays:
+- lazy-loaded global modals:
   - `CompendiumModal`
   - `CommentariesModal`
   - `LexiconModal`
 
-This means the major modal and audio surfaces are globally mounted and can be toggled without route transitions.
+This means modals and the album player live outside any single page and persist across route changes.
 
-## 5. Global State and Persistence
+## 5. Routes And User-Facing Behavior
 
-### Theme State
+### `/`
 
-`src/context/ThemeContext.jsx` manages:
+Home landing page in `src/pages/Home.jsx`
+
+Responsibilities:
+
+- hero presentation
+- open study modals
+- route users into text, prayer, or album sections
+
+The page is heavily motion-driven and mostly presentational.
+
+### `/text`
+
+Main text reader in `src/pages/Text.jsx`
+
+Responsibilities:
+
+- fetch `book.json` lazily via `?url` and `fetch`
+- restore current verse from `localStorage`
+- render left navigation, reading panel, and right notes sidebar
+- allow sequential previous/next navigation over flattened verse order
+
+Persistence key:
+
+- `tibet_active_text_verse`
+
+### `/chapter`
+
+Prayer reader in `src/pages/Chapter.jsx`
+
+Responsibilities:
+
+- import `prayers.json` directly
+- use `UIContext.activeVerse` as current prayer verse
+- flatten prayer verses for previous/next navigation
+- render left navigation, reading panel, and notes sidebar
+
+Prayer pages can expose verse-level audio.
+
+### `/album`
+
+Album browser in `src/pages/Album.jsx`
+
+Responsibilities:
+
+- render album cards from `ALBUMS`
+- open album detail modal
+- send playback requests to the global player
+
+When a track is selected, the album modal closes and the global bottom player becomes the active playback surface.
+
+## 6. State Management
+
+There is no Redux, Zustand, or server state library. State is handled through React local state plus two contexts.
+
+### `ThemeContext`
+
+File: `src/context/ThemeContext.jsx`
+
+Responsibilities:
+
+- store `light` or `dark`
+- persist to `localStorage`
+- apply theme class to `document.documentElement`
+
+Persistence key:
 
 - `theme`
-- `toggleTheme()`
 
-Behavior:
+### `UIContext`
 
-- initializes from `localStorage.theme`
-- defaults to `light`
-- applies `light` or `dark` as a class on `document.documentElement`
-- persists back to `localStorage`
+File: `src/context/UIContext.jsx`
 
-### UI State
+Responsibilities:
 
-`src/context/UIContext.jsx` manages UI toggles and shared reading state:
+- left sidebar open/close
+- right reflections drawer open/close
+- Compendium modal open/close
+- Commentaries modal open/close
+- Lexicon modal open/close
+- active prayer verse persistence
 
-- `isSidebarOpen`
-- `isReflectionsOpen`
-- `isCompendiumOpen`
-- `isCommentariesOpen`
-- `isLexiconOpen`
-- `activeVerse`
+Persistence key:
 
-`activeVerse` is the shared selected verse used primarily by the prayer-reading flow and the header navigator. It is persisted to `localStorage` under `tibet_active_verse`.
+- `tibet_active_verse`
 
-### Additional Local Persistence
+Important design note:
 
-The app also stores:
+- prayer active verse is global in `UIContext`
+- main text active verse is managed separately inside `Text.jsx`
 
-- `tibet_authorized`: set by the password gate
-- `tibet_active_text_verse`: current `/text` selection
-- `tibet-prayer-note-<id>`: notes for prayer verses
-- `tibet-book-note-<id>`: notes for text verses
+This split is intentional but creates two navigation systems that must stay manually consistent.
 
-The app therefore behaves like a static offline-capable study interface with local-only personalization.
+## 7. Reading Experience Architecture
 
-## 6. Access Control
-
-`src/components/PasswordGuard.jsx` blocks the entire app until the correct password is entered.
-
-Behavior:
-
-- checks `localStorage.getItem('tibet_authorized') === 'true'`
-- password is hardcoded as `0228`
-- if correct, persists authorization in `localStorage`
-
-This is not real security. It is client-side gating only. Anyone with source access or devtools can discover or bypass it. It functions more like a courtesy lock than authentication.
-
-## 7. Page-by-Page Behavior
-
-### Home (`src/pages/Home.jsx`)
-
-The home page is a branded landing page with:
-
-- `HeroSection`
-- `HomeNavigation`
-- three `NavigationCard` entries linking to the three main experiences
-
-Secondary actions open global modals:
-
-- Compendium
-- Lexicon
-- Commentaries
-
-### Text (`src/pages/Text.jsx`)
-
-This page is the main-text reading experience using `src/data/book.json`.
-
-Layout:
+The reading experience is composed from three page-level pieces:
 
 - `LeftSidebar`
 - `ReadingPanel`
 - `RightSidebar`
 
+### Left sidebar
+
+File: `src/pages/components/LeftSidebar.jsx`
+
+Responsibilities:
+
+- chapter/subchapter expansion logic
+- mobile slide-out behavior
+- active verse highlighting
+- verse numbering map generation
+
+It supports two shapes of data:
+
+- flat chapter-with-verses (`prayers.json`)
+- grouped chapter -> subchapter -> verses (`book.json`)
+
+### Reading panel
+
+File: `src/pages/components/ReadingPanel.jsx`
+
+Responsibilities:
+
+- render one verse at a time
+- compute one-track playlist for prayer audio
+- compose:
+  - `ReadingHeader`
+  - `TibetanSection`
+  - `AudioPill`
+  - `TranslationSection`
+  - `NavigationPill`
+
+### Right sidebar
+
+File: `src/pages/components/RightSidebar.jsx`
+
+Responsibilities:
+
+- verse note editing
+- save/export current note
+- export all notes for one storage prefix
+
+Persistence keys:
+
+- prayer notes: `tibet-prayer-note-{verseId}`
+- text notes: `tibet-book-note-{verseId}`
+
+## 8. Audio Architecture
+
+This app has two different audio stacks.
+
+### A. Verse-level reader audio
+
+Used inside `ReadingPanel` through `useAudioPlayer`.
+
+Files:
+
+- `src/hooks/useAudioPlayer.js`
+- `src/components/Reading/AudioPill.jsx`
+
 Behavior:
 
-- selected verse is stored separately as `activeTextVerse`
-- selection persists in `localStorage` under `tibet_active_text_verse`
-- all verses are flattened via `flattenVerses(bookData)`
-- previous/next navigation walks the flattened list
-- audio is disabled for text entries via `hideAudio={true}`
+- one `Audio` instance per mounted reading panel
+- single-track playlist for a prayer verse
+- local controls for play/pause/progress
 
-The `/text` flow is independent from the prayer `activeVerse` in `UIContext`.
+This is only used when the verse has `audioUrl`, mainly in prayer content.
 
-### Chapter (`src/pages/Chapter.jsx`)
+### B. Global album player
 
-This page is the prayer-reading experience using `src/data/prayers.json`.
+Files:
 
-Layout is the same three-column pattern:
-
-- `LeftSidebar`
-- `ReadingPanel`
-- `RightSidebar`
-
-Key difference:
-
-- it uses `activeVerse` from `UIContext`
-- previous/next navigation walks flattened prayer verses
-- audio is enabled when `verse.audioUrl` exists
-
-The shared `activeVerse` allows the header chapter navigator and the commentaries modal to coordinate with this page.
-
-### Album (`src/pages/Album.jsx`)
-
-This page renders album cards from `ALBUMS` (`src/data/albums.json`).
+- `src/components/GlobalPlayer.jsx`
+- `src/pages/Album.jsx`
 
 Behavior:
 
-- clicking an album opens `AlbumDetail`
-- clicking a track inside `AlbumDetail` sends a `playbackRequest`
-- `playbackRequest` is passed through outlet context back to `Layout`
-- `GlobalPlayer` consumes the request and begins playback
+- persistent bottom-fixed player
+- track switching across album tracks
+- repeat modes
+- mute/volume/progress
+- survives page navigation because it lives in `Layout`
 
-This creates a persistent cross-route audio experience for albums, separate from the inline verse player used in reading pages.
+Playback is triggered via a `playbackRequest` object stored in `App.jsx` and passed down through route outlet context.
 
-## 8. Reading Experience Internals
+## 9. Modal System
 
-### Left Sidebar
+Three global modals are lazy-loaded in `Layout`.
 
-`src/pages/components/LeftSidebar.jsx` is responsible for:
+### `CompendiumModal`
 
-- chapter/subchapter expansion
-- computing verse indices
-- showing grouped chapters and verses
-- mobile slide-in behavior
+Static informational modal. Mostly descriptive content.
 
-It supports both:
+### `CommentariesModal`
 
-- grouped text data (`book.json` with `subchapters`)
-- flat prayer chapter data (`prayers.json` with direct `verses`)
+Aggregates saved notes from `localStorage`.
 
-Important detail:
+Important behavior:
 
-- when `isPrayerPage` is true, verse numbering resets per chapter/subchapter
-- when false, text paragraphs are flattened into one continuous numbering sequence
+- loads both prayer and book datasets on open
+- constructs verse maps
+- displays saved note cards
+- can jump directly to the source verse
+- can delete stored notes
 
-### Reading Panel
+The earlier note-key mismatch has already been fixed. It now reads:
 
-`src/pages/components/ReadingPanel.jsx` is the central reading surface.
+- `tibet-prayer-note-*`
+- `tibet-book-note-*`
 
-It renders:
+### `LexiconModal`
 
-- `ReadingHeader`
-- `TibetanSection`
-- `AudioPill` when audio exists and is not hidden
-- `TranslationSection`
-- `NavigationPill`
+Lazily fetches `lexicon.json`, groups entries alphabetically, and filters them via a client-side search field.
 
-For prayer entries, it creates a one-item playlist from `verse.audioUrl` and uses the `useAudioPlayer` hook. This is a local inline player, separate from the bottom global player used for albums.
+## 10. Data Assets And Scale
 
-### Right Sidebar
+Current generated data counts:
 
-`src/pages/components/RightSidebar.jsx` is a note-taking panel.
+### Prayer corpus
 
-Capabilities:
+- chapters: 5
+- verses: 52
+- verses with audio: 33
+- verses with pronunciation field: 0
 
-- edit current note
-- save to `localStorage`
-- export current note as text file
-- export all notes for that storage prefix as one text file
+Important note:
 
-Prefix-based namespacing:
+Prayer pronunciation support has been intentionally removed from the active runtime path. The current prayer experience exposes original text, translation, and audio only.
 
-- `storagePrefix="prayer"` on `/chapter`
-- `storagePrefix="book"` on `/text`
+### Main text corpus
 
-This is the app’s only user-generated content feature.
-
-## 9. Audio System
-
-There are effectively two audio systems.
-
-### A. Inline verse audio
-
-Used by prayer reading pages via:
-
-- `ReadingPanel`
-- `useAudioPlayer`
-- `AudioPill`
-
-Characteristics:
-
-- creates its own `Audio()` object
-- supports play/pause
-- tracks progress, current time, duration
-- supports seeking
-- auto-advances within a playlist
-
-In practice, on reading pages the playlist usually contains a single verse track.
-
-### B. Global album audio
-
-Used by album browsing via:
-
-- `Album`
- - `AlbumDetail`
-- root `playbackRequest`
-- `GlobalPlayer`
-
-Characteristics:
-
-- persistent bottom player
-- maintains album and track index
-- supports repeat modes:
-  - no repeat
-  - repeat all
-  - repeat one
-- supports mute and volume
-- survives route transitions because it lives in the global layout
-
-### Supporting Utilities
-
-`src/utils/audioUtils.js` contains `formatTime()`.
-
-### Tests
-
-`src/hooks/useAudioPlayer.test.jsx` validates:
-
-- initial track selection
-- play/pause toggling
-- direct track selection
-
-## 10. Modal System
-
-### Compendium
-
-`src/components/CompendiumModal.jsx`
-
-Purpose:
-
-- editorial/introductory explanation of the text and its spiritual framing
-
-The content is embedded directly in the component rather than sourced from JSON or markdown.
+- top-level groups: 4
+- subchapters: 25
+- verses: 279
+- english fallback verses (`Verse n`): 0
 
 ### Lexicon
 
-`src/components/LexiconModal.jsx`
+- entries: 513
 
-Purpose:
+### Album library
 
-- searchable glossary
+- albums: 7
+- total tracks: 73
+- covers present: 7
 
-Behavior:
+## 11. Data Pipeline Details
 
-- loads `src/data/lexicon.json`
-- filters by term or definition
-- sorts alphabetically
-- groups by first letter
+This is the most important subsystem in the repository.
 
-### Commentaries
+### A. Main text pipeline
 
-`src/components/CommentariesModal.jsx`
+Script: `scripts/parse_book_text.js`
 
-Purpose:
+Input files:
 
-- aggregate view of saved notes
+- `book/1.txt`: structure and ranges
+- `book/2.txt`: English + Korean translator 1
+- `book/3.txt`: Korean translator 2
+- `book/4..txt`: Korean translator 3
+- `book/5.txt`: Tibetan
 
-Behavior:
-
-- scans `localStorage`
-- attempts to list saved reflections
-- allows jump-to-verse and deletion
-
-Important architectural note:
-
-- this modal is wired only against prayer data, not book data
-- it appears designed around prayer commentary browsing
-
-Important implementation note:
-
-- note key conventions do not fully align with `RightSidebar`
-- `RightSidebar` writes keys like `tibet-prayer-note-<id>` and `tibet-book-note-<id>`
-- `CommentariesModal` looks for keys starting with `tibet-note-`
-
-Because of that mismatch, the modal likely misses notes created by the current sidebar implementation unless other historical keys still exist in storage.
-
-## 11. Data Model
-
-### Runtime Datasets
-
-The runtime app consumes four generated JSON files:
+Output:
 
 - `src/data/book.json`
+
+Observed behavior:
+
+- `book/1.txt` defines section ranges
+- paragraph blocks are keyed by numbered markers
+- English parsing now supports both `* English:` and `English:`
+- fallback title logic is still present: if English is missing, it falls back to Korean preview or `Verse {id}`
+
+This fallback is useful defensively, but it can hide source parsing regressions unless explicitly audited.
+
+### B. Prayer pipeline
+
+Script: `scripts/extract_prayers.js`
+
+Input files:
+
+- `Prayer/1.txt` through `Prayer/5.txt`
+
+Output:
+
 - `src/data/prayers.json`
-- `src/data/albums.json`
+
+Observed behavior:
+
+- supports three header styles:
+  - `1. title`
+  - `[제 1연] title`
+  - `1 title`
+- classifies lines into Tibetan / English / Korean
+- attaches audio for chapters 3, 4, and 5
+- validates expected verse counts before writing output
+
+This pipeline was recently critical: chapter 4 disappeared because the script did not properly handle the `1 title` format.
+
+### C. Lexicon pipeline
+
+Script: `parseLexicon.cjs`
+
+Input:
+
+- `Lexicon.txt`
+
+Output:
+
 - `src/data/lexicon.json`
 
-Observed counts:
+Observed behavior:
 
-- `book.json`: 4 top-level groups, 279 verses/paragraphs
-- `prayers.json`: 5 prayer chapters, 52 verses
-- `prayers.json`: 33 verses with audio
-- `prayers.json`: 33 verses with pronunciation
-- `albums.json`: 7 albums, 73 tracks
-- `lexicon.json`: 532 entries
+- heuristic parser
+- identifies likely term lines
+- splits inline `term + definition`
+- groups following definition lines until a new term is detected
 
-### Book Data Shape
+This is not a schema-driven parser. It is a best-effort text parser over irregular source material.
 
-`book.json` contains grouped sections like:
+### D. Album pipeline
 
-- top-level group
-- `subchapters`
-- `verses`
+Script: `rebuild_albums.cjs`
 
-Each verse typically includes:
+Inputs:
 
-- `id`
-- `title`
-- `chapterTitle`
-- `text.tibetan`
-- `text.english`
-- `text.korean` as an array of translator objects
+- folder structure under `mp3/`
+- optional cover images
+- optional txt descriptions
 
-### Prayer Data Shape
+Outputs:
 
-`prayers.json` is flatter:
+- copied audio into `public/mp3/`
+- copied cover art into `public/album-covers/`
+- `src/data/albums.json`
 
-- top-level prayer chapter
-- direct `verses`
+## 12. Performance Characteristics
 
-Each verse may include:
+The project has already been partly optimized.
 
-- `id` like `3.1`
-- `title`
-- `chapterTitle`
-- `text.tibetan`
-- `text.english`
-- `text.korean`
-- optional `text.pronunciation`
-- optional `audioUrl`
+### Positive changes already in place
 
-### Album Data Shape
+- route-level lazy loading for main pages
+- modal lazy loading
+- large datasets are served as JSON assets and fetched on demand
+  - `book.json`
+  - `lexicon.json`
+  - modal-driven `prayers.json` loads
 
-`albums.json` entries include:
+### Current build shape
 
-- `id`
-- `title`
-- `artist`
-- `description`
-- `coverImage`
-- `tracks[]`
+- largest JS chunk: about 344 kB before gzip
+- `book.json` remains the biggest payload at about 1.3 MB before gzip
 
-Track entries include:
+Interpretation:
 
-- `id`
-- `title`
-- `url`
+- code splitting is meaningfully improved
+- data size, not JS code, is now the main payload concern
 
-### Lexicon Data Shape
+## 13. Persistence Model
 
-`lexicon.json` is a simple list:
+The app relies heavily on browser storage.
 
-- `term`
-- `definition`
+### Known keys
 
-## 12. Content Pipeline and Generation Scripts
+- `theme`
+- `tibet_active_verse`
+- `tibet_active_text_verse`
+- `tibet-prayer-note-{id}`
+- `tibet-book-note-{id}`
 
-This repo contains a real content pipeline, even though runtime is static.
+There is no backend sync, no login, and no cloud persistence. Notes are entirely device-local.
 
-### Book Pipeline
+## 14. Design System And Styling Direction
 
-Primary script:
+The visual system is defined through:
 
-- `scripts/parse_book_text.js`
-
-Source files:
-
-- `book/1.txt`
-- `book/2.txt`
-- `book/3.txt`
-- `book/4..txt`
-- `book/5.txt`
-
-Behavior:
-
-- parses chapter/subchapter structure from one file
-- parses English/Korean translation blocks from another
-- merges additional Korean translations
-- merges Tibetan text
-- emits `src/data/book.json`
-
-Important detail:
-
-- there is also an older `scripts/parse_book_txt.js`
-- this older version uses `jsdom` and HTML parsing
-- it looks like a superseded pipeline kept in the repo for fallback/history
-
-### Prayer Pipeline
-
-Primary scripts:
-
-- `scripts/extract_prayers.js`
-- `scripts/add_romanized.js`
-
-Behavior:
-
-- parses prayer source text files in `Prayer/`
-- classifies lines into Tibetan / English / Korean heuristically
-- writes `src/data/prayers.json`
-- then enriches specific chapters with pronunciation blocks and audio URLs
-
-Audio/pronunciation enrichment covers:
-
-- Prayer 3
-- Prayer 4
-- Prayer 5
-
-There is also:
-
-- `fix_3_1_mapping.cjs`
-
-This appears to be a targeted repair script for a chapter-3 pronunciation mapping problem.
-
-### Lexicon Pipeline
-
-Primary script:
-
-- `parseLexicon.cjs`
-
-Behavior:
-
-- reads `Lexicon.txt`
-- heuristically decides which lines are terms vs definitions
-- assembles a glossary array
-- writes `src/data/lexicon.json`
-
-This parser is stateful and heuristic-heavy, which explains some malformed entries in the output.
-
-### Album Pipeline
-
-Primary script:
-
-- `rebuild_albums.cjs`
-
-Behavior:
-
-- scans subfolders in `mp3/`
-- copies images into `public/album-covers`
-- copies audio into `public/mp3`
-- generates `src/data/albums.json`
-- derives album title/artist from folder names
-- imports descriptions from `INTRO.txt` or similar text files
-
-There is also:
-
-- `update_album.cjs`
-
-This looks like a one-off script written for a specific Bhutan Volume 2 import/update path, rather than part of the normalized pipeline.
-
-## 13. Styling and Visual Language
-
-The visual system is strong and intentionally atmospheric.
-
-Characteristics:
-
-- warm paper-and-gold palette for light mode
-- dark ink-like palette for dark mode
-- serif-heavy editorial typography with supporting sans fonts
-- glassmorphism panels, blur, noise overlays, gradients
-- Framer Motion entrance animations
-
-Primary styling sources:
-
-- `tailwind.config.js`
 - `src/index.css`
+- `tailwind.config.js`
 
-Notable design choices:
+Current design direction:
 
-- custom color tokens such as `sand-*`, `gold-*`, `dark-*`
-- a large amount of handcrafted CSS on top of Tailwind utilities
-- home page background image pulled from a remote Unsplash URL
+- light sand / gold palette
+- optional dark mode
+- serif headline typography via `Cormorant Garamond`
+- sans/UI text via `Inter`
+- Korean body font via `Pretendard Variable`
+- glassmorphism and layered parchment surfaces
 
-The UI direction is not generic dashboard/application design. It is closer to a curated reading installation or museum-like study interface.
+Shared visual primitives include:
 
-## 14. Encoding and Data Quality Observations
+- `.modal-backdrop`
+- `.modal-shell`
+- `.modal-header`
+- `.modal-body`
+- `.empty-state-card`
+- `.serif-title`
 
-One of the most important findings in this repository is that several files show mojibake or encoding corruption.
+## 15. Cloudflare/Deploy Posture
 
-Visible symptoms:
+This is a static-site deployment shape and is suitable for Cloudflare Pages.
 
-- many Korean strings render as broken glyph sequences in code and JSON
-- some album titles/descriptions contain malformed punctuation like `竊?`
-- some JSON values appear to include BOM or encoding artifacts
-- some inline component labels are visibly corrupted
+Important deploy behavior:
 
-This affects:
+- app shell served from Vite build output
+- static JSON and media served from built assets/public
+- `_headers` file reduces stale HTML/manifest caching
 
-- `src/data/prayers.json`
-- `src/data/albums.json`
-- `src/data/lexicon.json`
-- portions of React component source files
-- some Tailwind comments and UI strings
+There is no server runtime in the app itself.
 
-Probable cause:
+## 16. Test Coverage And Gaps
 
-- text passed through mismatched UTF-8 / CP949 / UTF-16 or similar conversions during source preparation or editing
+Current automated coverage is still modest, but no longer minimal.
 
-Operational consequence:
+Current test files:
 
-- the app still runs because the JSON is syntactically valid enough for JavaScript parsing
-- however, content fidelity is degraded in multiple places
-- some tooling, such as PowerShell `ConvertFrom-Json`, fails on at least part of the dataset because of malformed string content
+- `src/hooks/useAudioPlayer.test.jsx`
+- `src/utils/textUtils.test.js`
+- `src/utils/commentaryNotes.test.js`
+- `src/utils/generatedContentValidators.test.js`
+- `src/utils/pipelineParsers.test.js`
 
-This is one of the highest-value cleanup opportunities in the codebase.
+Covered behaviors now include:
 
-## 15. Architectural Oddities and Technical Debt
+- audio hook initialization and track control
+- flattening flat and grouped verse structures
+- note-key aggregation for prayer and book notes
+- detection of fallback English verses
+- prayer count validation
+- parser support for mixed `English:` / `* English:` formats
+- parser support for three prayer section-header formats
 
-### 1. Duplicate or superseded scripts
+## 17. Important Risks And Weak Spots
 
-There are clearly old and new versions of some content-processing logic living side by side.
+### 1. Source text inputs are still parser-sensitive
 
-Examples:
+The biggest ongoing reliability risk is still the input format of the source text corpus.
 
-- `scripts/parse_book_text.js`
-- `scripts/parse_book_txt.js`
-- targeted repair scripts like `fix_3_1_mapping.cjs`
-- one-off importer `update_album.cjs`
+Even after hardening, the book and prayer generators remain dependent on recognizable human-edited markers such as:
 
-This suggests an evolving manual pipeline rather than a clean single-source process.
+- paragraph labels
+- section headers
+- range declarations
+- translator label markers
 
-### 2. Mixed note-key conventions
+### 2. Data generation is heuristic and brittle
 
-The note editor and commentaries modal do not agree on `localStorage` key prefixes.
+Both the book and lexicon pipelines depend on loose text parsing rather than strongly structured source inputs.
 
-This likely makes the “My Reflections” modal incomplete or stale.
+This means minor source format changes can silently break output.
 
-### 3. Hardcoded password gate
+Recent real examples:
 
-The gate is purely cosmetic from a security standpoint.
+- prayer chapter 4 vanishing because of header format mismatch
+- main text English falling back to `Verse {id}` because label format changed
 
-### 4. Large JS bundle
+### 3. Prayer pronunciation is intentionally absent
 
-The current build emits a large main chunk and no meaningful route-level code splitting.
+This is no longer an accidental gap. The obsolete pronunciation patch scripts were removed, UI copy was updated, and the current canonical prayer experience is:
 
-### 5. Runtime content embedded in components
+- Tibetan original
+- English rendering
+- Korean translation
+- optional prayer audio
 
-Some long-form explanatory content lives directly in JSX instead of external content files, which makes editorial updates more cumbersome.
+### 4. `book.json` remains large
 
-### 6. Potential dead or legacy components
+Code splitting is now reasonable, but the main text JSON payload is still large enough to affect first-use load time on `/text`.
 
-`src/components/PlayerContainer.jsx` and older player abstractions suggest the audio system may have gone through refactors, leaving some code paths semi-detached from the current layout-driven player design.
+### 5. The runtime still depends heavily on localStorage
 
-## 16. How the App Actually Works End-to-End
+This is functional, but it means note persistence and active verse recovery remain device-local and are worth regression testing whenever navigation logic changes.
 
-### Reading flow for `/chapter`
+## 18. How The App Actually Works End-To-End
 
-1. User passes `PasswordGuard`
-2. `Chapter` loads `prayers.json`
-3. `LeftSidebar` lists prayer chapters and verses
-4. User selects a verse
-5. `activeVerse` is saved into shared UI context and `localStorage`
-6. `ReadingPanel` renders Tibetan, pronunciation, English, Korean, and optional audio
-7. `RightSidebar` lets the user save/export reflections
-8. `Header` chapter navigator reads the same `activeVerse` and can change it
+### Text page flow
 
-### Reading flow for `/text`
+1. User opens `/text`
+2. app fetches `book.json`
+3. left sidebar shows grouped chapter structure
+4. selecting a verse stores it in `localStorage`
+5. reading panel renders Tibetan + English + Korean
+6. right sidebar stores local notes for the verse
 
-1. `Text` loads `book.json`
-2. Selected text paragraph is maintained separately from prayer state
-3. `LeftSidebar` presents grouped subchapters
-4. `ReadingPanel` renders text without audio
-5. `RightSidebar` stores notes under the `book` namespace
+### Prayer page flow
+
+1. User opens `/chapter`
+2. prayer data is already bundled/imported
+3. left sidebar selects a prayer verse
+4. active verse is stored in `UIContext` and persisted
+5. reading panel renders Tibetan, optional audio, English, Korean
+6. notes are saved under prayer-specific keys
 
 ### Album flow
 
-1. `Album` renders cards from `albums.json`
-2. User opens `AlbumDetail`
-3. User clicks a track
-4. Page calls `setPlaybackRequest`
-5. Global layout-level player receives request
-6. `GlobalPlayer` loads the album track and continues across route changes
+1. User opens `/album`
+2. selects an album card
+3. album detail modal opens
+4. selects a track
+5. `setPlaybackRequest` updates root state
+6. `GlobalPlayer` receives request and begins playback
+7. player persists while routes change
 
-### Lexicon flow
+## 19. Practical Maintenance Notes
 
-1. User opens the global lexicon modal
-2. Static `lexicon.json` is filtered in memory
-3. Grouped results render alphabetically
+If someone needed to maintain this codebase safely, the highest-value habits would be:
 
-## 17. Verification Performed During Research
+1. Treat `src/data/*.json` as generated artifacts, not primary sources.
+2. Verify parser scripts after any change to source text formatting.
+3. Audit for `Verse n` fallbacks whenever book data is regenerated.
+4. Audit prayer verse counts whenever `prayers.json` is regenerated.
+5. Expect localStorage to be part of functional behavior, not just preference storage.
 
-I verified the following directly:
+## 20. Recommended Next Work
 
-- repository structure
-- package configuration
-- app routing and component tree
-- context and persistence behavior
-- reading/audio/modal flows
-- data generation scripts
-- production build success
-- test suite success
-- current dataset counts
+Highest-impact cleanup items from an engineering perspective:
 
-Commands effectively validated:
+1. Keep cleaning residual source comments and labels when they are touched.
+2. If pronunciation support is ever needed again, reintroduce it as a documented generator rather than an ad-hoc patch.
+3. Add regression checks for:
+   - missing book English
+   - missing prayer chapter verses
+   - broken note key lookups
+4. Keep the documented regeneration workflow in [DATA_PIPELINE.md](C:\Users\roadsea\Desktop\tibet\DATA_PIPELINE.md) aligned with the actual scripts.
+5. Consider breaking `book.json` into smaller route- or chapter-level assets.
 
-- project build: passed
-- test suite: passed
+## 21. Final Assessment
 
-## 18. Recommended Next Cleanup Areas
+This is a content-heavy static application with a clear aesthetic identity and a workable runtime architecture. The React app itself is straightforward. The real engineering challenge is content ingestion, data integrity, and keeping generated assets aligned with UI assumptions.
 
-If this project is going to be maintained actively, the best next investments would be:
+In short:
 
-1. Normalize text encoding across source files and generated JSON
-2. Unify the note/commentary `localStorage` key scheme
-3. Consolidate content pipeline scripts into one documented workflow per dataset
-4. Add route-level code splitting to reduce the giant JS bundle
-5. Move long-form modal prose into content files instead of hardcoded JSX
-6. Add more tests around reading navigation, note persistence, and global player behavior
+- runtime architecture: moderate complexity
+- data pipeline complexity: high relative to app size
+- backend complexity: none
+- maintenance risk: mainly data parsing and source encoding
 
-## 19. Final Assessment
-
-This is a static but carefully art-directed spiritual reading/listening application with a surprisingly substantial content-preparation pipeline behind it. The frontend runtime is relatively simple: route-based pages over static JSON, modals, local persistence, and two distinct audio playback models. The real complexity is in content assembly and the quality of the text/audio datasets.
-
-The project is already deployable and functional, but it carries visible signs of iterative manual curation: encoding issues, one-off patch scripts, overlapping parser generations, and some state/key mismatches. Those are not fatal, but they are the main factors that would slow future maintenance if left unaddressed.
+The project is functional, deployable, and coherent, but long-term reliability depends more on fixing the text/data toolchain than on changing the React UI layer.

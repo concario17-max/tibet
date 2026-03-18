@@ -1,3 +1,12 @@
+/**
+ * @typedef {{ id?: string }} FlatVerse
+ * @typedef {{ verses?: FlatVerse[], isGroup?: boolean, subchapters?: Array<{ verses?: FlatVerse[] }> }} VerseContainer
+ */
+
+/**
+ * @param {VerseContainer[] | null | undefined} data
+ * @returns {FlatVerse[]}
+ */
 export const flattenVerses = (data) => {
     if (!data) return [];
 

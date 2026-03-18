@@ -58,7 +58,7 @@ const Home = () => {
                         to="/chapter"
                         label="Sacred Prayers"
                         title="The Prayer"
-                        description="기도문과 낭송 구절을 음성과 발음 가이드와 함께 천천히 따라갑니다."
+                        description="기도문과 낭송 구절을 음성과 함께 천천히 따라가며 읽고 들을 수 있습니다."
                         icon="self_improvement"
                         exploreLabel="Discover"
                         exploreIcon="arrow_right_alt"

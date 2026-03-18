@@ -61,7 +61,7 @@ const Chapter = () => {
                 <StatePanel
                     kicker="Select A Prayer"
                     title="읽고 싶은 기도문을 선택해 주세요"
-                    description="왼쪽 메뉴에서 장과 구절을 고르면 티베트어 원문, 번역, 발음, 오디오가 함께 열립니다."
+                    description="왼쪽 메뉴에서 장과 구절을 고르면 티베트어 원문, 번역, 오디오가 함께 열립니다."
                 />
             )}
         </div>

@@ -33,9 +33,9 @@ const TranslationSection = ({ english, korean }) => {
                     {Array.isArray(korean) ? (
                         <div className="mt-5 space-y-8 sm:space-y-10">
                             {[...korean]
-                                .sort((a, b) => (TRANSLATOR_ORDER[a.translator] || 99) - (TRANSLATOR_ORDER[b.translator] || 99))
-                                .map((ko, index) => (
-                                    <div key={index} className="relative">
+                                .sort((left, right) => (TRANSLATOR_ORDER[left.translator] || 99) - (TRANSLATOR_ORDER[right.translator] || 99))
+                                .map((entry, index) => (
+                                    <div key={`${entry.translator}-${index}`} className="relative">
                                         {index > 0 ? (
                                             <div className="mb-8 flex items-center gap-3">
                                                 <div className="h-px flex-1 bg-gold-border/25 dark:bg-dark-border/70" />
@@ -45,10 +45,10 @@ const TranslationSection = ({ english, korean }) => {
                                         ) : null}
 
                                         <p className="font-inter text-[10px] font-semibold uppercase tracking-[0.34em] text-gold-deep/72 dark:text-gold-light/65">
-                                            {ko.translator}
+                                            {entry.translator}
                                         </p>
                                         <p className="mt-3 font-korean break-keep text-[16px] leading-[2] tracking-[-0.01em] text-text-primary dark:text-dark-text-primary sm:text-[18px] sm:leading-[2.1]">
-                                            {ko.text.replace(/[\r\n]+/g, ' ')}
+                                            {entry.text.replace(/[\r\n]+/g, ' ')}
                                         </p>
                                     </div>
                                 ))}

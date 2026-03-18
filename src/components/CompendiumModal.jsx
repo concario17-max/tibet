@@ -82,7 +82,7 @@ const CompendiumModal = () => {
                                             <p className="modal-kicker">How To Use</p>
                                             <h3 className="mt-3 font-serif text-xl text-[#9A7B4F]">Suggested Path</h3>
                                             <p className="mt-3 leading-[1.9] text-charcoal-main/88">
-                                                `The Text`에서 본문을 읽고, `The Prayer`에서 관련 기도문과 발음을 따라가고, `The Chants`에서 소리의 분위기를 이어 들으면 가장 자연스럽습니다.
+                                                `The Text`에서 본문을 읽고, `The Prayer`에서 관련 기도문을 이어 읽고, `The Chants`에서 소리의 분위기를 이어 들으면 가장 자연스럽습니다.
                                             </p>
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@ const CompendiumModal = () => {
                                         <ul className="mt-4 space-y-3 text-charcoal-main/88">
                                             <li>본문과 기도문을 오가며 맥락을 비교해 읽기</li>
                                             <li>영문과 한글 번역을 나란히 살펴보기</li>
-                                            <li>오디오와 발음 가이드를 통해 리듬 따라가기</li>
+                                            <li>오디오를 통해 낭송의 리듬 따라가기</li>
                                             <li>구절별 메모를 남기고 다시 찾아오기</li>
                                         </ul>
                                     </div>

@@ -4,53 +4,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUpRight, BookMarked, Edit3, Trash2, X } from 'lucide-react';
 import { useUI } from '../context/UIContext';
 import { flattenVerses } from '../utils/textUtils';
+import { buildSavedNotes, buildVerseMap, NOTE_META } from '../utils/commentaryNotes';
 import prayersDataUrl from '../data/prayers.json?url';
 import bookDataUrl from '../data/book.json?url';
-
-const NOTE_PREFIXES = {
-    prayer: 'tibet-prayer-note-',
-    book: 'tibet-book-note-',
-};
-
-const NOTE_META = {
-    prayer: {
-        label: 'Prayer',
-        emptyHint: '기도문 읽기 화면에서 남긴 메모가 이곳에 모입니다.',
-    },
-    book: {
-        label: 'Text',
-        emptyHint: '본문 읽기 화면에서 남긴 메모가 이곳에 모입니다.',
-    },
-};
-
-const buildVerseMap = (verses) => new Map(verses.map((verse) => [verse.id, verse]));
-
-const buildSavedNotes = ({ prayerVerseMap, bookVerseMap }) => {
-    const notes = [];
-
-    Object.entries(NOTE_PREFIXES).forEach(([type, prefix]) => {
-        Object.keys(localStorage)
-            .filter((key) => key.startsWith(prefix))
-            .sort((a, b) => a.localeCompare(b))
-            .forEach((key) => {
-                const id = key.replace(prefix, '');
-                const content = localStorage.getItem(key);
-                const verse = type === 'prayer' ? prayerVerseMap.get(id) : bookVerseMap.get(id);
-
-                if (!content || !content.trim()) return;
-
-                notes.push({
-                    id,
-                    type,
-                    noteKey: key,
-                    content,
-                    title: verse?.chapterTitle || verse?.title || 'Untitled',
-                });
-            });
-    });
-
-    return notes.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
-};
 
 const CommentariesModal = () => {
     const uiContext = useUI();
@@ -58,6 +14,7 @@ const CommentariesModal = () => {
     const [prayerVerseMap, setPrayerVerseMap] = useState(() => new Map());
     const [bookVerseMap, setBookVerseMap] = useState(() => new Map());
     const [isLoading, setIsLoading] = useState(false);
+    const [loadError, setLoadError] = useState('');
     const navigate = useNavigate();
 
     if (!uiContext) return null;
@@ -69,6 +26,7 @@ const CommentariesModal = () => {
             document.body.style.overflow = 'unset';
             setSavedNotes([]);
             setIsLoading(false);
+            setLoadError('');
             return () => {
                 document.body.style.overflow = 'unset';
             };
@@ -79,19 +37,26 @@ const CommentariesModal = () => {
         const loadNotes = async () => {
             document.body.style.overflow = 'hidden';
             setIsLoading(true);
+            setLoadError('');
 
-            const [prayersResponse, bookResponse] = await Promise.all([fetch(prayersDataUrl), fetch(bookDataUrl)]);
-            const [prayersData, bookData] = await Promise.all([prayersResponse.json(), bookResponse.json()]);
+            try {
+                const [prayersResponse, bookResponse] = await Promise.all([fetch(prayersDataUrl), fetch(bookDataUrl)]);
+                const [prayersData, bookData] = await Promise.all([prayersResponse.json(), bookResponse.json()]);
 
-            if (!isMounted) return;
+                if (!isMounted) return;
 
-            const nextPrayerVerseMap = buildVerseMap(prayersData.flatMap((chapter) => chapter.verses.map((verse) => verse)));
-            const nextBookVerseMap = buildVerseMap(flattenVerses(bookData));
+                const nextPrayerVerseMap = buildVerseMap(prayersData.flatMap((chapter) => chapter.verses.map((verse) => verse)));
+                const nextBookVerseMap = buildVerseMap(flattenVerses(bookData));
 
-            setPrayerVerseMap(nextPrayerVerseMap);
-            setBookVerseMap(nextBookVerseMap);
-            setSavedNotes(buildSavedNotes({ prayerVerseMap: nextPrayerVerseMap, bookVerseMap: nextBookVerseMap }));
-            setIsLoading(false);
+                setPrayerVerseMap(nextPrayerVerseMap);
+                setBookVerseMap(nextBookVerseMap);
+                setSavedNotes(buildSavedNotes({ prayerVerseMap: nextPrayerVerseMap, bookVerseMap: nextBookVerseMap, storage: localStorage }));
+            } catch (error) {
+                if (!isMounted) return;
+                setLoadError('메모 목록을 불러오는 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+            } finally {
+                if (isMounted) setIsLoading(false);
+            }
         };
 
         loadNotes();
@@ -177,6 +142,11 @@ const CommentariesModal = () => {
                                         <div className="h-14 w-14 rounded-full border border-gold-border/20 bg-gold-surface/30" />
                                         <p className="mt-5 font-serif text-lg text-charcoal-main">Collecting your saved reflections</p>
                                         <p className="mt-2 max-w-sm text-sm leading-7">기도문과 본문 메모를 차분히 정리해서 보여주고 있습니다.</p>
+                                    </div>
+                                ) : loadError ? (
+                                    <div className="empty-state-card flex min-h-[320px] flex-col items-center justify-center rounded-[1.8rem] px-6 py-12 text-center text-charcoal-muted/70">
+                                        <p className="mt-5 font-serif text-lg text-charcoal-main">Unable to Load Notes</p>
+                                        <p className="mt-2 max-w-md text-sm leading-7">{loadError}</p>
                                     </div>
                                 ) : savedNotes.length === 0 ? (
                                     <div className="empty-state-card flex min-h-[320px] flex-col items-center justify-center rounded-[1.8rem] px-6 py-12 text-center text-charcoal-muted/70">

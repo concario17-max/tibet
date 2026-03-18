@@ -8,7 +8,14 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build:data:book": "node scripts/parse_book_text.js",
+    "build:data:prayers": "node scripts/extract_prayers.js",
+    "build:data:lexicon": "node parseLexicon.cjs",
+    "build:data:albums": "node rebuild_albums.cjs",
+    "validate:data": "node scripts/validate_generated_data.js",
+    "regen:data": "npm run build:data:book && npm run build:data:prayers && npm run build:data:lexicon && npm run validate:data"
   },
   "dependencies": {
     "framer-motion": "^11.18.2",
@@ -20,6 +27,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
+    "@types/node": "^24.3.0",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.7.0",
@@ -31,6 +39,7 @@
     "jsdom": "^28.1.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
+    "typescript": "^5.9.2",
     "vite": "^5.2.0",
     "vitest": "^4.0.18"
   }

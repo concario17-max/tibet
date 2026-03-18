@@ -59,7 +59,7 @@ const ReadingPanel = ({ verse, globalIndex, hideAudio = false, onPrevious, onNex
                 </motion.div>
 
                 <motion.div variants={itemVariants}>
-                    <TibetanSection tibetan={verse.text.tibetan} pronunciation={verse.text.pronunciation} />
+                    <TibetanSection tibetan={verse.text.tibetan} />
                 </motion.div>
 
                 {!hideAudio && (
