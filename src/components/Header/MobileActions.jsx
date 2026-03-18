@@ -6,7 +6,7 @@ const MobileActions = ({ isReadingMode, toggleSidebar, toggleReflections }) => {
         <>
             {/* 왼쪽 모바일 토글 (독서 모드 전용) */}
             {isReadingMode && (
-                <div className="flex justify-start lg:hidden mr-4">
+                <div className="flex justify-start mr-4">
                     <button
                         onClick={toggleSidebar}
                         className="p-2 -ml-2 rounded-lg hover:bg-gold-surface dark:hover:bg-dark-surface text-gold-primary dark:text-gold-light transition-colors"
