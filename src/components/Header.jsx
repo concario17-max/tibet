@@ -17,8 +17,9 @@ const Header = () => {
         toggleSidebar: () => {},
         toggleRightPanelMode: () => {},
         rightPanelMode: 'reflections',
+        isSidebarOpen: true,
     };
-    const { toggleSidebar, toggleRightPanelMode, rightPanelMode } = uiContext;
+    const { toggleSidebar, toggleRightPanelMode, rightPanelMode, isSidebarOpen } = uiContext;
 
     const themeContext = useTheme() || { theme: 'light', toggleTheme: () => {} };
     const { theme, toggleTheme } = themeContext;
@@ -34,6 +35,14 @@ const Header = () => {
 
     if (isHome || isAlbum) return null;
 
+    const desktopContentOffset = isReadingMode
+        ? {
+              '--header-left-offset': isSidebarOpen ? '400px' : '0px',
+              '--header-right-offset': isSidebarOpen ? '400px' : '800px',
+              '--header-rail-padding': '24px',
+          }
+        : undefined;
+
     return (
         <header
             className={`fixed top-0 left-0 z-50 w-full border-b border-gold-primary/10 transition-colors duration-500 dark:border-dark-border/50 ${
@@ -42,13 +51,22 @@ const Header = () => {
                     : 'bg-sand-primary/68 backdrop-blur-lg dark:bg-dark-bg/72'
             }`}
         >
-            <div className="mx-auto flex h-15 w-full items-center justify-between px-4 sm:h-16 sm:px-6">
-                <div className="flex min-w-0 flex-1 items-center gap-1 text-text-primary dark:text-dark-text-primary sm:gap-2">
+            <div
+                className="flex h-[60px] w-full items-center justify-between px-4 sm:h-16 sm:px-6 xl:ml-[var(--header-left-offset)] xl:mr-[var(--header-right-offset)] xl:px-0"
+                style={desktopContentOffset}
+            >
+                <div
+                    className="flex min-w-0 items-center gap-1 text-text-primary dark:text-dark-text-primary sm:gap-2"
+                    style={desktopContentOffset ? { paddingLeft: 'var(--header-rail-padding)' } : undefined}
+                >
                     <MobileActions isReadingMode={isReadingMode} toggleSidebar={toggleSidebar} />
                     <Branding isReadingMode={isReadingMode} />
                 </div>
 
-                <div className="ml-2 flex shrink-0 items-center gap-1.5 sm:ml-3 sm:gap-3">
+                <div
+                    className="ml-2 flex shrink-0 items-center justify-end gap-1.5 sm:ml-3 sm:gap-3"
+                    style={desktopContentOffset ? { paddingRight: 'var(--header-rail-padding)' } : undefined}
+                >
                     {isReadingMode ? (
                         <button
                             onClick={toggleRightPanelMode}
