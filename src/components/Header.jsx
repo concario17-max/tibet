@@ -36,35 +36,32 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-50 px-4 sm:px-8 flex items-center transition-all duration-500 border-b border-sand-tertiary dark:border-dark-border/50 ${
-                scrolled ? 'glass-panel py-2' : 'bg-transparent py-2 sm:py-3'
-            } ${isReadingMode ? 'bg-white/80 dark:bg-[#070707]/80 backdrop-blur-md' : ''}`}
+            className={`glass-panel fixed top-0 left-0 z-50 w-full border-b border-gold-primary/20 shadow-sm transition-colors duration-500 dark:border-dark-border/60 ${
+                scrolled || isReadingMode ? 'bg-white/80 backdrop-blur-md dark:bg-[#070707]/80' : 'bg-white/72 backdrop-blur-md dark:bg-[#070707]/72'
+            }`}
         >
-            <div className="flex-1 flex justify-start">
-                <MobileActions isReadingMode={isReadingMode} toggleSidebar={toggleSidebar} />
-            </div>
+            <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-3 sm:px-5">
+                <div className="flex min-w-0 flex-1 items-center gap-1 text-text-primary dark:text-dark-text-primary sm:gap-2">
+                    <MobileActions isReadingMode={isReadingMode} toggleSidebar={toggleSidebar} />
+                    <Branding isReadingMode={isReadingMode} />
+                </div>
 
-            <div className="flex-none">
-                <Branding isReadingMode={isReadingMode} />
-            </div>
-
-            <div className="flex-1 flex justify-end items-center gap-4">
-                {isReadingMode ? (
-                    <>
+                <div className="ml-2 flex shrink-0 items-center gap-1.5 sm:ml-3 sm:gap-3">
+                    {isReadingMode ? (
                         <button
                             onClick={toggleRightPanelMode}
-                            className="inline-flex items-center gap-2 rounded-full border border-gold-border/40 bg-white/80 px-4 py-2 text-[12px] font-bold tracking-[0.14em] text-[#9A7B4F] shadow-sm transition-colors hover:bg-gold-surface/45 dark:border-[#333] dark:bg-dark-surface dark:text-gold-light dark:hover:bg-dark-bg/80"
+                            className="group inline-flex h-10 items-center gap-2 rounded-full border border-gold-primary/18 bg-white/78 px-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-gold-primary shadow-[0_10px_24px_-20px_rgba(166,139,92,0.9)] backdrop-blur-sm transition-all duration-300 hover:border-gold-primary/35 hover:bg-gold-surface/80 dark:border-dark-border/70 dark:bg-dark-surface/80 dark:text-gold-light dark:hover:border-gold-primary/30 dark:hover:bg-dark-bg/80 sm:h-11 sm:px-4 sm:text-[11px] sm:tracking-[0.18em]"
                         >
-                            <span className="uppercase">
-                                {rightPanelMode === 'reflections' ? 'COMMENTARY' : 'REFLECTIONS'}
+                            <span className="flex h-5 w-5 items-center justify-center rounded-full border border-gold-primary/20 bg-white/85 text-[#8A7756] transition-colors group-hover:border-gold-primary/35 group-hover:text-gold-primary dark:border-dark-border dark:bg-dark-bg/70 dark:text-gold-light">
+                                <span className="material-symbols-outlined text-[14px]">swap_horiz</span>
                             </span>
-                            <span className="material-symbols-outlined text-[14px]">swap_horiz</span>
+                            <span className="hidden min-[420px]:inline">
+                                {rightPanelMode === 'reflections' ? 'Commentary' : 'Reflections'}
+                            </span>
                         </button>
-                        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-                    </>
-                ) : (
-                    <div className="w-[40px]" />
-                )}
+                    ) : null}
+                    <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+                </div>
             </div>
         </header>
     );

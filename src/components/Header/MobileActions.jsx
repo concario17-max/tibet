@@ -5,10 +5,10 @@ const MobileActions = ({ isReadingMode, toggleSidebar }) => {
     return (
         <>
             {isReadingMode && (
-                <div className="flex justify-start mr-4">
+                <div className="mr-2 flex justify-start sm:mr-3">
                     <button
                         onClick={toggleSidebar}
-                        className="p-2 -ml-2 rounded-lg hover:bg-gold-surface dark:hover:bg-dark-surface text-gold-primary dark:text-gold-light transition-colors"
+                        className="-ml-1 shrink-0 rounded-xl p-2 text-gold-primary transition-all duration-300 hover:bg-gold-surface/50 dark:text-gold-light dark:hover:bg-dark-surface/50"
                     >
                         <Menu className="w-6 h-6" />
                     </button>

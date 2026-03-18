@@ -1,12 +1,15 @@
 import React from 'react';
+import { BookOpenText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Branding = () => {
     return (
-        <div className="flex items-center justify-center pointer-events-auto">
-            <Link to="/" className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity">
-                <span className="material-symbols-outlined text-gold-primary text-[24px] sm:text-[28px]">auto_stories</span>
-                <span className="font-serif text-[14px] sm:text-[17px] tracking-[0.1em] sm:tracking-[0.15em] text-charcoal-main dark:text-dark-text-primary font-bold uppercase mt-0.5 whitespace-nowrap">
+        <div className="pointer-events-auto flex items-center justify-center">
+            <Link to="/" className="group flex min-w-0 items-center gap-1 truncate sm:gap-2.5">
+                <span className="flex shrink-0 items-center justify-center text-gold-primary opacity-90 transition-transform duration-700 group-hover:rotate-6">
+                    <BookOpenText className="h-6 w-6 sm:h-7 sm:w-7" />
+                </span>
+                <span className="mt-0.5 truncate font-serif text-[18px] font-medium tracking-[0.03em] text-charcoal-main transition-colors group-hover:text-gold-primary dark:text-dark-text-primary sm:text-[24px] sm:tracking-[0.04em]">
                     The Bardo Thodol
                 </span>
             </Link>
