@@ -1,10 +1,9 @@
 import React from 'react';
-import { Menu, Edit3 } from 'lucide-react';
+import { Menu } from 'lucide-react';
 
-const MobileActions = ({ isReadingMode, toggleSidebar, toggleReflections }) => {
+const MobileActions = ({ isReadingMode, toggleSidebar }) => {
     return (
         <>
-            {/* 왼쪽 모바일 토글 (독서 모드 전용) */}
             {isReadingMode && (
                 <div className="flex justify-start mr-4">
                     <button
@@ -12,18 +11,6 @@ const MobileActions = ({ isReadingMode, toggleSidebar, toggleReflections }) => {
                         className="p-2 -ml-2 rounded-lg hover:bg-gold-surface dark:hover:bg-dark-surface text-gold-primary dark:text-gold-light transition-colors"
                     >
                         <Menu className="w-6 h-6" />
-                    </button>
-                </div>
-            )}
-
-            {/* 모바일 우측 토글 (독서 모드 전용) */}
-            {isReadingMode && (
-                <div className="flex xl:hidden">
-                    <button
-                        onClick={toggleReflections}
-                        className="p-2 -mr-2 rounded-lg hover:bg-gold-surface dark:hover:bg-dark-surface text-gold-primary dark:text-gold-light transition-colors"
-                    >
-                        <Edit3 className="w-5 h-5" />
                     </button>
                 </div>
             )}

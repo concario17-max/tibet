@@ -7,6 +7,7 @@ const isDesktopLayout = () => typeof window !== 'undefined' && window.matchMedia
 export const UIProvider = ({ children }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(isDesktopLayout);
     const [isReflectionsOpen, setIsReflectionsOpen] = useState(false);
+    const [rightPanelMode, setRightPanelMode] = useState('reflections');
     const [isCompendiumOpen, setIsCompendiumOpen] = useState(false);
     const [isCommentariesOpen, setIsCommentariesOpen] = useState(false);
     const [isLexiconOpen, setIsLexiconOpen] = useState(false);
@@ -27,6 +28,10 @@ export const UIProvider = ({ children }) => {
 
     const toggleSidebar = React.useCallback(() => setIsSidebarOpen((prev) => !prev), []);
     const toggleReflections = React.useCallback(() => setIsReflectionsOpen((prev) => !prev), []);
+    const toggleRightPanelMode = React.useCallback(() => {
+        setRightPanelMode((prev) => (prev === 'reflections' ? 'commentary' : 'reflections'));
+        setIsReflectionsOpen(true);
+    }, []);
 
     const closeAllDrawers = React.useCallback(() => {
         setIsSidebarOpen(false);
@@ -39,6 +44,9 @@ export const UIProvider = ({ children }) => {
         toggleSidebar,
         isReflectionsOpen,
         setIsReflectionsOpen,
+        rightPanelMode,
+        setRightPanelMode,
+        toggleRightPanelMode,
         isCompendiumOpen,
         setIsCompendiumOpen,
         isCommentariesOpen,
@@ -49,7 +57,7 @@ export const UIProvider = ({ children }) => {
         closeAllDrawers,
         activeVerse,
         setActiveVerse,
-    }), [isSidebarOpen, isReflectionsOpen, isCompendiumOpen, isCommentariesOpen, isLexiconOpen, toggleSidebar, toggleReflections, closeAllDrawers, activeVerse]);
+    }), [isSidebarOpen, isReflectionsOpen, rightPanelMode, isCompendiumOpen, isCommentariesOpen, isLexiconOpen, toggleSidebar, toggleReflections, toggleRightPanelMode, closeAllDrawers, activeVerse]);
 
     return (
         <UIContext.Provider value={providerValue}>
