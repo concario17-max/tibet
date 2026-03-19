@@ -89,7 +89,7 @@ const CommentariesModal = () => {
     };
 
     const handleDeleteNote = (note) => {
-        if (!window.confirm(`Delete saved reflection ${note.id}?`)) return;
+        if (!window.confirm(`Delete saved note ${note.id}?`)) return;
 
         localStorage.removeItem(note.noteKey);
         setSavedNotes((prev) => prev.filter((entry) => entry.noteKey !== note.noteKey));
@@ -125,7 +125,7 @@ const CommentariesModal = () => {
                                                 <BookMarked className="h-5 w-5" />
                                             </div>
                                             <div>
-                                                <h2 className="serif-title text-2xl text-[#9A7B4F] font-medium tracking-[0.08em]">My Reflections</h2>
+                                                <h2 className="serif-title text-2xl text-[#9A7B4F] font-medium tracking-[0.08em]">Commentary Notes</h2>
                                                 <p className="mt-1 text-sm text-charcoal-muted">Notes from the text and prayer journeys, gathered in one place.</p>
                                             </div>
                                         </div>
@@ -140,7 +140,7 @@ const CommentariesModal = () => {
                                 {isLoading ? (
                                     <div className="empty-state-card flex min-h-[320px] flex-col items-center justify-center rounded-[1.8rem] px-6 py-12 text-center text-charcoal-muted/75">
                                         <div className="h-14 w-14 rounded-full border border-gold-border/20 bg-gold-surface/30" />
-                                        <p className="mt-5 font-serif text-lg text-charcoal-main">Collecting your saved reflections</p>
+                                        <p className="mt-5 font-serif text-lg text-charcoal-main">Collecting your saved notes</p>
                                         <p className="mt-2 max-w-sm text-sm leading-7">기도문과 본문 메모를 차분히 정리해서 보여주고 있습니다.</p>
                                     </div>
                                 ) : loadError ? (

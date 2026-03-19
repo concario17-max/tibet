@@ -6,8 +6,7 @@ const isDesktopLayout = () => typeof window !== 'undefined' && window.matchMedia
 
 export const UIProvider = ({ children }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(isDesktopLayout);
-    const [isReflectionsOpen, setIsReflectionsOpen] = useState(false);
-    const [rightPanelMode, setRightPanelMode] = useState('reflections');
+    const [isCommentaryOpen, setIsCommentaryOpen] = useState(isDesktopLayout);
     const [isCompendiumOpen, setIsCompendiumOpen] = useState(false);
     const [isCommentariesOpen, setIsCommentariesOpen] = useState(false);
     const [isLexiconOpen, setIsLexiconOpen] = useState(false);
@@ -27,37 +26,30 @@ export const UIProvider = ({ children }) => {
     }, [activeVerse]);
 
     const toggleSidebar = React.useCallback(() => setIsSidebarOpen((prev) => !prev), []);
-    const toggleReflections = React.useCallback(() => setIsReflectionsOpen((prev) => !prev), []);
-    const toggleRightPanelMode = React.useCallback(() => {
-        setRightPanelMode((prev) => (prev === 'reflections' ? 'commentary' : 'reflections'));
-        setIsReflectionsOpen(true);
-    }, []);
+    const toggleCommentaryPanel = React.useCallback(() => setIsCommentaryOpen((prev) => !prev), []);
 
     const closeAllDrawers = React.useCallback(() => {
         setIsSidebarOpen(false);
-        setIsReflectionsOpen(false);
+        setIsCommentaryOpen(false);
     }, []);
 
     const providerValue = React.useMemo(() => ({
         isSidebarOpen,
         setIsSidebarOpen,
         toggleSidebar,
-        isReflectionsOpen,
-        setIsReflectionsOpen,
-        rightPanelMode,
-        setRightPanelMode,
-        toggleRightPanelMode,
+        isCommentaryOpen,
+        setIsCommentaryOpen,
+        toggleCommentaryPanel,
         isCompendiumOpen,
         setIsCompendiumOpen,
         isCommentariesOpen,
         setIsCommentariesOpen,
         isLexiconOpen,
         setIsLexiconOpen,
-        toggleReflections,
         closeAllDrawers,
         activeVerse,
         setActiveVerse,
-    }), [isSidebarOpen, isReflectionsOpen, rightPanelMode, isCompendiumOpen, isCommentariesOpen, isLexiconOpen, toggleSidebar, toggleReflections, toggleRightPanelMode, closeAllDrawers, activeVerse]);
+    }), [isSidebarOpen, isCommentaryOpen, isCompendiumOpen, isCommentariesOpen, isLexiconOpen, toggleSidebar, toggleCommentaryPanel, closeAllDrawers, activeVerse]);
 
     return (
         <UIContext.Provider value={providerValue}>
