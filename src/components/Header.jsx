@@ -35,9 +35,10 @@ const Header = () => {
 
     if (isHome || isAlbum) return null;
 
-    const desktopContentOffset = isReadingMode
+    const desktopRailOffset = isReadingMode
         ? {
-              '--header-right-offset': isCommentaryOpen ? (isSidebarOpen ? '400px' : '800px') : '0px',
+              '--header-left-offset': '400px',
+              '--header-right-offset': '400px',
               '--header-rail-padding': '24px',
           }
         : undefined;
@@ -52,11 +53,11 @@ const Header = () => {
         >
             <div
                 className="flex h-[60px] w-full items-center justify-between px-4 sm:h-16 sm:px-6 xl:px-0"
-                style={desktopContentOffset}
+                style={desktopRailOffset}
             >
                 <div
                     className="flex min-w-0 items-center gap-1 text-text-primary dark:text-dark-text-primary sm:gap-2"
-                    style={desktopContentOffset ? { paddingLeft: 'var(--header-rail-padding)' } : undefined}
+                    style={desktopRailOffset ? { marginLeft: 'var(--header-left-offset)', paddingLeft: 'var(--header-rail-padding)' } : undefined}
                 >
                     <MobileActions isReadingMode={isReadingMode} toggleSidebar={toggleSidebar} />
                     <Branding isReadingMode={isReadingMode} />
@@ -64,7 +65,7 @@ const Header = () => {
 
                 <div
                     className="ml-2 flex shrink-0 items-center justify-end gap-1.5 sm:ml-3 sm:gap-3"
-                    style={desktopContentOffset ? { marginRight: 'var(--header-right-offset)', paddingRight: 'var(--header-rail-padding)' } : undefined}
+                    style={desktopRailOffset ? { marginRight: 'var(--header-right-offset)', paddingRight: 'var(--header-rail-padding)' } : undefined}
                 >
                     {isReadingMode ? (
                         <button
