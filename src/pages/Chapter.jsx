@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import prayersData from '../data/prayers.json';
 import { useUI } from '../context/UIContext';
 import { flattenVerses } from '../utils/textUtils';
@@ -22,6 +22,15 @@ const StatePanel = ({ kicker, title, description }) => (
 const Chapter = () => {
     const { activeVerse, setActiveVerse } = useUI() || {};
     const flatVerses = useMemo(() => flattenVerses(prayersData), []);
+
+    useEffect(() => {
+        if (!setActiveVerse || flatVerses.length === 0) return;
+
+        const hasValidActiveVerse = activeVerse && flatVerses.some((verse) => verse.id === activeVerse.id);
+        if (!hasValidActiveVerse) {
+            setActiveVerse(flatVerses[0]);
+        }
+    }, [activeVerse, flatVerses, setActiveVerse]);
 
     const handleNavigate = (direction) => {
         if (!activeVerse || !setActiveVerse) return;

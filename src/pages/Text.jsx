@@ -58,6 +58,15 @@ const Text = () => {
 
     const flatVerses = useMemo(() => flattenVerses(bookData), [bookData]);
 
+    useEffect(() => {
+        if (isLoading || flatVerses.length === 0) return;
+
+        const hasValidActiveVerse = activeTextVerse && flatVerses.some((verse) => verse.id === activeTextVerse.id);
+        if (!hasValidActiveVerse) {
+            setActiveTextVerse(flatVerses[0]);
+        }
+    }, [activeTextVerse, flatVerses, isLoading]);
+
     const handleNavigate = (direction) => {
         if (!activeTextVerse) return;
         const currentIndex = flatVerses.findIndex((verse) => verse.id === activeTextVerse.id);
