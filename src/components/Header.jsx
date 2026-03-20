@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useUI } from '../context/UIContext';
 import { useTheme } from '../context/ThemeContext';
+import { DESKTOP_FRAME_COLUMNS_OPEN } from './ui/desktopFrame';
 import Branding from './Header/Branding';
 import ThemeToggle from './Header/ThemeToggle';
 import MobileActions from './Header/MobileActions';
@@ -22,14 +23,12 @@ const Header = () => {
     const uiContext = useUI() || {
         toggleSidebar: () => {},
         toggleCommentaryPanel: () => {},
-        desktopGridColumns: '20% 60% 20%',
         isMobileCommentaryOpen: false,
         isDesktopCommentaryOpen: true,
     };
     const {
         toggleSidebar,
         toggleCommentaryPanel,
-        desktopGridColumns,
         isMobileCommentaryOpen,
         isDesktopCommentaryOpen,
     } = uiContext;
@@ -48,7 +47,7 @@ const Header = () => {
 
     if (isHome || isAlbum) return null;
 
-    const desktopGridStyle = isReadingMode ? { '--desktop-frame-columns': desktopGridColumns } : undefined;
+    const desktopGridStyle = isReadingMode ? { '--desktop-frame-columns': DESKTOP_FRAME_COLUMNS_OPEN } : undefined;
 
     return (
         <header
