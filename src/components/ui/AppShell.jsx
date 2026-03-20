@@ -10,13 +10,13 @@ const AppShell = ({ sidebar, rightPanel, children, desktopGridColumns }) => {
             <div className="pointer-events-none fixed inset-0 z-[-1] bg-grid-slate-900/[0.04] bg-[bottom_1px_center] transition-opacity duration-500 dark:bg-grid-slate-100/[0.03]" />
 
             <div
-                className={`relative flex h-full w-full flex-1 overflow-hidden ${
+                className={`relative flex h-full min-h-0 w-full flex-1 overflow-hidden ${
                     desktopGridColumns ? 'xl:grid xl:[grid-template-columns:var(--desktop-frame-columns)]' : ''
                 }`}
                 style={desktopGridStyle}
             >
                 {sidebar}
-                <div className={`min-w-0 flex-1 ${desktopGridColumns ? 'xl:col-start-2 xl:w-full' : ''}`}>
+                <div className={`flex min-h-0 min-w-0 flex-1 flex-col ${desktopGridColumns ? 'xl:col-start-2 xl:w-full' : ''}`}>
                     {children}
                 </div>
                 {rightPanel}
