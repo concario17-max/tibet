@@ -3,10 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUpRight, BookMarked, Edit3, Trash2, X } from 'lucide-react';
 import { useUI } from '../context/UIContext';
-import { flattenVerses } from '../utils/textUtils';
-import { buildSavedNotes, buildVerseMap, NOTE_META } from '../utils/commentaryNotes';
-import prayersDataUrl from '../data/prayers.json?url';
-import bookDataUrl from '../data/book.json?url';
+import { NOTE_META } from '../utils/commentaryNotes';
+import { loadCommentaryLibrary } from '../lib/commentaryLibrary';
 
 const CommentariesModal = () => {
     const uiContext = useUI();
@@ -40,20 +38,15 @@ const CommentariesModal = () => {
             setLoadError('');
 
             try {
-                const [prayersResponse, bookResponse] = await Promise.all([fetch(prayersDataUrl), fetch(bookDataUrl)]);
-                const [prayersData, bookData] = await Promise.all([prayersResponse.json(), bookResponse.json()]);
-
+                const library = await loadCommentaryLibrary();
                 if (!isMounted) return;
 
-                const nextPrayerVerseMap = buildVerseMap(prayersData.flatMap((chapter) => chapter.verses.map((verse) => verse)));
-                const nextBookVerseMap = buildVerseMap(flattenVerses(bookData));
-
-                setPrayerVerseMap(nextPrayerVerseMap);
-                setBookVerseMap(nextBookVerseMap);
-                setSavedNotes(buildSavedNotes({ prayerVerseMap: nextPrayerVerseMap, bookVerseMap: nextBookVerseMap, storage: localStorage }));
+                setPrayerVerseMap(library.prayerVerseMap);
+                setBookVerseMap(library.bookVerseMap);
+                setSavedNotes(library.savedNotes);
             } catch (error) {
                 if (!isMounted) return;
-                setLoadError('메모 목록을 불러오는 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+                setLoadError('Unable to load your saved notes right now. Please try again.');
             } finally {
                 if (isMounted) setIsLoading(false);
             }
@@ -67,7 +60,10 @@ const CommentariesModal = () => {
         };
     }, [isCommentariesOpen]);
 
-    const emptyHint = useMemo(() => `${NOTE_META.prayer.emptyHint} ${NOTE_META.book.emptyHint}`, []);
+    const emptyHint = useMemo(
+        () => `${NOTE_META.prayer.emptyHint} ${NOTE_META.book.emptyHint}`,
+        [],
+    );
 
     const handleJumpToNote = (note) => {
         if (note.type === 'prayer') {
@@ -108,13 +104,13 @@ const CommentariesModal = () => {
                         onClick={() => setIsCommentariesOpen(false)}
                     />
 
-                    <div className="fixed inset-0 z-[101] flex items-center justify-center p-3 sm:p-6 pointer-events-none">
+                    <div className="fixed inset-0 z-[101] flex items-center justify-center p-3 pointer-events-none sm:p-6">
                         <motion.div
                             initial={{ y: 20, opacity: 0, scale: 0.95 }}
                             animate={{ y: 0, opacity: 1, scale: 1 }}
                             exit={{ y: 20, opacity: 0, scale: 0.95 }}
                             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                            className="modal-shell w-full max-w-4xl max-h-[90vh] flex flex-col rounded-[2rem] pointer-events-auto overflow-hidden"
+                            className="modal-shell flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-[2rem] pointer-events-auto"
                         >
                             <div className="modal-header shrink-0 px-5 py-4 sm:px-8 sm:py-6">
                                 <div className="flex items-start justify-between gap-4">
@@ -125,23 +121,27 @@ const CommentariesModal = () => {
                                                 <BookMarked className="h-5 w-5" />
                                             </div>
                                             <div>
-                                                <h2 className="serif-title text-2xl text-[#9A7B4F] font-medium tracking-[0.08em]">Commentary Notes</h2>
-                                                <p className="mt-1 text-sm text-charcoal-muted">Notes from the text and prayer journeys, gathered in one place.</p>
+                                                <h2 className="serif-title text-2xl font-medium tracking-[0.08em] text-[#9A7B4F]">Commentary Notes</h2>
+                                                <p className="mt-1 text-sm text-charcoal-muted">
+                                                    Notes from the text and prayer journeys, gathered in one place.
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
                                     <button onClick={() => setIsCommentariesOpen(false)} className="modal-close rounded-full p-2">
-                                        <X className="w-5 h-5" />
+                                        <X className="h-5 w-5" />
                                     </button>
                                 </div>
                             </div>
 
-                            <div className="modal-body flex-1 overflow-y-auto p-5 sm:p-8 custom-scrollbar">
+                            <div className="modal-body custom-scrollbar flex-1 overflow-y-auto p-5 sm:p-8">
                                 {isLoading ? (
                                     <div className="empty-state-card flex min-h-[320px] flex-col items-center justify-center rounded-[1.8rem] px-6 py-12 text-center text-charcoal-muted/75">
                                         <div className="h-14 w-14 rounded-full border border-gold-border/20 bg-gold-surface/30" />
                                         <p className="mt-5 font-serif text-lg text-charcoal-main">Collecting your saved notes</p>
-                                        <p className="mt-2 max-w-sm text-sm leading-7">기도문과 본문 메모를 차분히 정리해서 보여주고 있습니다.</p>
+                                        <p className="mt-2 max-w-sm text-sm leading-7">
+                                            Notes from the reading panels are being gathered for you now.
+                                        </p>
                                     </div>
                                 ) : loadError ? (
                                     <div className="empty-state-card flex min-h-[320px] flex-col items-center justify-center rounded-[1.8rem] px-6 py-12 text-center text-charcoal-muted/70">
@@ -151,7 +151,7 @@ const CommentariesModal = () => {
                                 ) : savedNotes.length === 0 ? (
                                     <div className="empty-state-card flex min-h-[320px] flex-col items-center justify-center rounded-[1.8rem] px-6 py-12 text-center text-charcoal-muted/70">
                                         <Edit3 className="h-12 w-12 opacity-35 text-gold-primary/60" />
-                                        <p className="mt-5 font-serif text-lg text-charcoal-main">아직 저장된 메모가 없습니다</p>
+                                        <p className="mt-5 font-serif text-lg text-charcoal-main">No saved notes yet</p>
                                         <p className="mt-2 max-w-md text-sm leading-7">{emptyHint}</p>
                                     </div>
                                 ) : (

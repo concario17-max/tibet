@@ -67,8 +67,8 @@ const Chapter = () => {
             ) : (
                 <StatePanel
                     kicker="Select A Prayer"
-                    title="?쎄퀬 ?띠? 湲곕룄臾몄쓣 ?좏깮??二쇱꽭??"
-                    description="?쇱そ 硫붾돱?먯꽌 ?κ낵 援ъ젅??怨좊Ⅴ硫??곕쿋?몄뼱 ?먮Ц, 踰덉뿭, ?ㅻ뵒?ㅺ? ?④퍡 ?대┰?덈떎."
+                    title="Choose a prayer to begin"
+                    description="Open a chapter from the left panel to start reading, then move through the prayers one verse at a time."
                 />
             )}
         </AppShell>

@@ -1,6 +1,7 @@
 /**
+ * @typedef {'prayer' | 'book'} NoteType
  * @typedef {{ id: string, chapterTitle?: string, title?: string }} VerseReference
- * @typedef {{ id: string, type: 'prayer' | 'book', noteKey: string, content: string, title: string }} SavedNote
+ * @typedef {{ id: string, type: NoteType, noteKey: string, content: string, title: string }} SavedNote
  */
 
 export const NOTE_PREFIXES = {
@@ -11,13 +12,20 @@ export const NOTE_PREFIXES = {
 export const NOTE_META = {
     prayer: {
         label: 'Prayer',
-        emptyHint: '기도문 읽기 화면에서 남긴 메모가 이곳에 모입니다.',
+        emptyHint: 'Notes saved while reading the prayer page appear here.',
     },
     book: {
         label: 'Text',
-        emptyHint: '본문 읽기 화면에서 남긴 메모가 이곳에 모입니다.',
+        emptyHint: 'Notes saved while reading the text page appear here.',
     },
 };
+
+/**
+ * @param {NoteType} type
+ * @param {string} verseId
+ * @returns {string}
+ */
+export const getNoteStorageKey = (type, verseId) => `${NOTE_PREFIXES[type]}${verseId}`;
 
 /**
  * @param {VerseReference[]} verses
@@ -51,7 +59,7 @@ export const buildSavedNotes = ({ prayerVerseMap, bookVerseMap, storage }) => {
 
                 notes.push({
                     id,
-                    type: /** @type {'prayer' | 'book'} */ (type),
+                    type: /** @type {NoteType} */ (type),
                     noteKey: key,
                     content,
                     title: verse?.chapterTitle || verse?.title || 'Untitled',

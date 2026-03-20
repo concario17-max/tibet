@@ -28,7 +28,7 @@ const Text = () => {
         try {
             const saved = localStorage.getItem('tibet_active_text_verse');
             return saved ? JSON.parse(saved) : null;
-        } catch (e) {
+        } catch (error) {
             return null;
         }
     });
@@ -88,15 +88,22 @@ const Text = () => {
 
     return (
         <AppShell
-            sidebar={<LeftSidebar onSelectVerse={setActiveTextVerse} activeVerseId={activeTextVerse?.id} prayers={bookData} isPrayerPage={false} />}
+            sidebar={
+                <LeftSidebar
+                    onSelectVerse={setActiveTextVerse}
+                    activeVerseId={activeTextVerse?.id}
+                    prayers={bookData}
+                    isPrayerPage={false}
+                />
+            }
             rightPanel={<RightSidebar activeVerseId={activeTextVerse?.id} storagePrefix="book" />}
             desktopGridColumns={desktopGridColumns}
         >
             {isLoading ? (
                 <StatePanel
                     kicker="Loading Text"
-                    title="蹂몃Ц??以鍮꾪븯怨??덉뒿?덈떎"
-                    description="湲??쎄린 ?먮쫫???꾪빐 蹂몃Ц ?곗씠?곗? 踰덉뿭??李⑤텇??遺덈윭?ㅺ퀬 ?덉뒿?덈떎."
+                    title="Preparing the reading space"
+                    description="The text is loading now. Your last passage will be restored as soon as the data is ready."
                 />
             ) : activeTextVerse ? (
                 <ReadingPanel
@@ -110,8 +117,8 @@ const Text = () => {
             ) : (
                 <StatePanel
                     kicker="Select A Passage"
-                    title="?쎄퀬 ?띠? 援ъ젅???좏깮??二쇱꽭??"
-                    description="?쇱そ 硫붾돱?먯꽌 ?κ낵 援ъ젅??怨좊Ⅴ硫?蹂몃Ц, 踰덉뿭, 硫붾え ?곸뿭???섎굹???명씉?쇰줈 ?대┰?덈떎."
+                    title="Choose a passage to begin"
+                    description="Open a chapter from the left panel to start reading, then move through the text one passage at a time."
                 />
             )}
         </AppShell>

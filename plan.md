@@ -1,111 +1,87 @@
-# Tibet Remediation Plan
-
-Updated: 2026-03-18
-Status: completed
+# Tibet Cleanup Plan
 
 ## Goal
 
-Stabilize the project so that content rendering, data regeneration, and future maintenance are reliable.
+Address the concrete problems identified during research without changing behavior blindly. The completed work prioritizes correctness, text quality, maintainability, and duplication reduction.
 
-## Workstreams
+## Todo List
 
-### 1. Source Encoding Cleanup
+- [x] Validate the research report against the current codebase one more time before implementation starts.
+- [x] Make a file-by-file inventory of user-visible corrupted text.
+- [x] Separate true source-data corruption from terminal-only display artifacts.
+- [x] Audit all pages, modals, and reading components for broken copy, separators, and labels.
+- [x] Decide whether damaged text should be repaired in source JSON, in component copy, or in both.
 
-- [x] Audit user-facing copy and corrupted source labels
-- [x] Normalize reading-page empty states and prayer copy
-- [x] Normalize modal copy where the app still referenced removed or corrupted content
-- [x] Clean sidebar source files that still contained corrupted labels or comments
-- [x] Verify the major reading flows no longer expose mojibake in the touched components
+- [x] Review `src/data/book.json` for corrupted English, Korean, and Tibetan strings.
+- [x] Review `src/data/prayers.json` for corrupted chapter names, titles, and verse text.
+- [x] Review `src/data/albums.json` for corrupted descriptions and labels.
+- [x] Review `src/data/lexicon.json` for malformed terms or definitions.
+- [x] Define a safe normalization strategy for data files before bulk edits.
 
-### 2. Book Data Pipeline Hardening
+- [x] Audit `src/index.css` for broken pseudo-content and typography-related text artifacts.
+- [x] Audit reading UI components for damaged decorative strings:
+  - `src/components/Reading/ReadingHeader.jsx`
+  - `src/components/Reading/TibetanSection.jsx`
+  - `src/components/Reading/TranslationSection.jsx`
+- [x] Audit empty-state copy in:
+  - `src/pages/Text.jsx`
+  - `src/pages/Chapter.jsx`
+  - `src/components/CommentariesModal.jsx`
+  - `src/components/CompendiumModal.jsx`
+  - `src/components/LexiconModal.jsx`
 
-- [x] Review `book/2.txt` label formats and confirm mixed `English:` / `* English:` input
-- [x] Refactor book parsing logic into a reusable pipeline module
-- [x] Preserve multi-translator and Tibetan merge behavior
-- [x] Add fallback-verse detection so `Verse {n}` output fails validation
-- [x] Rebuild `src/data/book.json`
-- [x] Validate zero fallback English verses remain
+- [x] Trace the current note-writing path end to end.
+- [x] Confirm whether note creation still exists in live UI or only note browsing remains.
+- [x] If note creation is dead, decide whether to restore it or remove dormant editor components.
+- [x] Audit `src/components/Sidebar/NoteEditor.jsx` and `src/components/Sidebar/ReflectionActions.jsx` for live dependencies.
+- [x] Remove or reconnect dead note-editing code only after confirming intended product behavior.
 
-### 3. Prayer Data Pipeline Hardening
+- [x] Compare `src/pages/components/RightSidebar.jsx` and `src/components/CommentariesModal.jsx`.
+- [x] Extract shared note-loading logic if duplication is purely mechanical.
+- [x] Keep presentation differences while consolidating shared data-fetching and localStorage parsing.
+- [x] Remove unused props from `RightSidebar` call sites if they are no longer needed.
 
-- [x] Review prayer section header formats across `Prayer/*.txt`
-- [x] Refactor prayer parsing logic into a reusable pipeline module
-- [x] Normalize prayer title labels in generator source
-- [x] Add expected prayer verse-count validation
-- [x] Rebuild `src/data/prayers.json`
-- [x] Verify chapter 4 and all other prayer chapters generate expected verse counts
+- [x] Audit `src/components/PlayerContainer.jsx` and `src/components/Header/ChapterNavigator.jsx` for true dead-code status.
+- [x] Search imports and runtime references before deleting or refactoring dormant files.
+- [x] Decide whether each unused component should be removed, documented, or revived.
 
-### 4. Prayer Pronunciation Pipeline Reconciliation
+- [x] Recheck desktop and mobile panel behavior after any text or component cleanup.
+- [x] Recheck header alignment against the default reading frame after cleanup.
+- [x] Recheck reading-panel scroll behavior after cleanup.
+- [x] Recheck saved-note navigation from sidebar and modal.
+- [x] Recheck album playback request flow into `GlobalPlayer`.
 
-- [x] Inspect obsolete pronunciation patch scripts
-- [x] Decide on canonical behavior: pronunciation intentionally removed from runtime
-- [x] Remove obsolete pronunciation patch files
-- [x] Remove pronunciation UI rendering path and copy promises
-- [x] Document the current pronunciation stance in the pipeline docs
+- [x] Run `npm run build` after each major cleanup batch.
+- [x] Run targeted tests for utility changes:
+  - `src/utils/commentaryNotes.test.js`
+  - `src/utils/textUtils.test.js`
+  - `src/utils/generatedContentValidators.test.js`
+  - `src/hooks/useAudioPlayer.test.jsx`
+- [x] If data files are edited, run `scripts/validate_generated_data.js` or the equivalent package script.
 
-### 5. Lexicon Parser Reliability
+- [x] Write a short post-cleanup summary documenting:
+  - what text issues were fixed
+  - what dead code was removed or retained
+  - what duplication was consolidated
+  - what risks remain
 
-- [x] Keep current lexicon parser as canonical generator
-- [x] Add validation for suspiciously long lexicon terms
-- [x] Rebuild `src/data/lexicon.json`
-- [x] Verify lexicon validation passes
+## Implementation Order
 
-### 6. Notes And Local Persistence QA
+1. Text and encoding audit
+2. Data-source cleanup strategy
+3. UI copy and label repair
+4. Note-system path audit
+5. Duplicate note-loading refactor
+6. Dead-code audit and cleanup
+7. Regression verification
+8. Final documentation update
 
-- [x] Extract note aggregation logic into a reusable utility
-- [x] Add automated coverage for prayer/book note key aggregation
-- [x] Keep prayer/text note prefixes aligned with the reading sidebars
-- [x] Add load-error handling to `CommentariesModal`
-- [x] Verify note aggregation, title lookup, and jump metadata through tests and runtime review
+## Completion Notes
 
-### 7. UI Consistency And Copy Pass
-
-- [x] Review empty states for reading screens
-- [x] Review loading-state copy for `/text`
-- [x] Remove pronunciation claims from prayer-related copy
-- [x] Keep modal and reading copy aligned with current feature set
-
-### 8. Regression Test Expansion
-
-- [x] Add tests for `flattenVerses`
-- [x] Add tests for note-key aggregation logic
-- [x] Add tests for fallback-verse detection and prayer-count validation
-- [x] Add tests for mixed English label parsing in the book pipeline
-- [x] Add tests for prayer section-header parsing and prayer audio URL generation
-- [x] Keep the existing audio hook tests passing
-
-### 9. Regeneration Workflow Documentation
-
-- [x] Expose regeneration tasks in `package.json`
-- [x] Add `typecheck` script
-- [x] Add `validate:data` script
-- [x] Add `regen:data` script chain
-- [x] Document source-of-truth inputs, outputs, and regeneration order in `DATA_PIPELINE.md`
-- [x] Document that generated JSON files are source-controlled artifacts
-
-### 10. Final Verification And Release Prep
-
-- [x] Run `npm run typecheck`
-- [x] Run `npm run regen:data`
-- [x] Run `npm test -- --run`
-- [x] Run `npm run build`
-- [x] Update `research.md` to match the current implementation
-- [x] Prepare the repository for final commit and push
-
-## Summary Of What Changed
-
-- Book and prayer parsing now live in reusable pipeline modules under `scripts/lib/`
-- Generated data now has explicit validation instead of silent fallback behavior
-- Prayer pronunciation is intentionally out of scope for the current runtime
-- Notes aggregation is extracted into a reusable utility with tests
-- Typecheck, regeneration, and validation are first-class npm scripts
-- Pipeline documentation now lives in `DATA_PIPELINE.md`
-
-## Done Definition
-
-- [x] No touched user-facing flow still exposes known corrupted copy
-- [x] `book.json` regenerates without fallback-only verses
-- [x] `prayers.json` regenerates without missing chapters or empty verse sets
-- [x] Pronunciation behavior is intentionally removed and documented
-- [x] Notes and commentaries logic is regression-tested
-- [x] Typecheck, tests, regeneration, and build all pass
+- Local UI copy and decorative separator damage were repaired in the reading header, Tibetan divider, translation divider, modal copy, empty states, note editor, and `index.css`.
+- The current-verse note-writing flow was restored inside the right commentary panel, using the passed `activeVerseId` and `storagePrefix` to save and clear notes.
+- Shared note-loading logic now lives in `src/lib/commentaryLibrary.js` and is reused by both `RightSidebar` and `CommentariesModal`.
+- Truly unused components were removed: `src/components/PlayerContainer.jsx`, `src/components/Header/ChapterNavigator.jsx`, and `src/components/Sidebar/ReflectionActions.jsx`.
+- `src/components/Sidebar/NoteEditor.jsx` was retained and reconnected to live UI.
+- Generated JSON datasets were reviewed and found to contain broader content-quality and encoding issues. Because they are generated artifacts and the corruption is widespread, this pass intentionally avoided unsafe bulk edits and instead limited source fixes to confirmed local UI strings.
+- Verification completed with repeated `tsc --noEmit`, `npm run build`, and `npm test -- --run`.
