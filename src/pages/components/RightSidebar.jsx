@@ -6,6 +6,7 @@ import { flattenVerses } from '../../utils/textUtils';
 import { buildSavedNotes, buildVerseMap, NOTE_META } from '../../utils/commentaryNotes';
 import prayersDataUrl from '../../data/prayers.json?url';
 import bookDataUrl from '../../data/book.json?url';
+import SidebarLayout from '../../components/ui/SidebarLayout';
 
 const RightSidebar = () => {
     const [savedNotes, setSavedNotes] = useState([]);
@@ -16,19 +17,18 @@ const RightSidebar = () => {
     const navigate = useNavigate();
 
     const uiContext = useUI() || {
-        isCommentaryOpen: true,
-        setIsCommentaryOpen: () => {},
-        isSidebarOpen: true,
+        isMobileCommentaryOpen: false,
+        isDesktopCommentaryOpen: true,
+        setActiveMobileRightPanel: () => {},
         setActiveVerse: () => {},
     };
     const {
-        isCommentaryOpen,
-        setIsCommentaryOpen,
-        isSidebarOpen,
+        isMobileCommentaryOpen,
+        isDesktopCommentaryOpen,
+        setActiveMobileRightPanel,
         setActiveVerse,
     } = uiContext;
-
-    const desktopWidthClass = isSidebarOpen ? 'xl:w-[400px]' : 'xl:w-[800px]';
+    const isCommentaryOpen = isMobileCommentaryOpen || isDesktopCommentaryOpen;
 
     useEffect(() => {
         if (!isCommentaryOpen) {
@@ -71,11 +71,14 @@ const RightSidebar = () => {
         };
     }, [isCommentaryOpen]);
 
+    const closeMobilePanel = () => setActiveMobileRightPanel?.(null);
+
     const handleJumpToNote = (noteItem) => {
         if (noteItem.type === 'prayer') {
             const targetVerse = prayerVerseMap.get(noteItem.id);
             if (!targetVerse) return;
 
+            closeMobilePanel();
             setActiveVerse?.(targetVerse);
             navigate('/chapter');
             return;
@@ -84,6 +87,7 @@ const RightSidebar = () => {
         const targetVerse = bookVerseMap.get(noteItem.id);
         if (!targetVerse) return;
 
+        closeMobilePanel();
         localStorage.setItem('tibet_active_text_verse', JSON.stringify(targetVerse));
         navigate('/text');
     };
@@ -98,22 +102,18 @@ const RightSidebar = () => {
     const emptyHint = useMemo(() => 'Saved notes from the text and prayer pages will appear here.', []);
 
     return (
-        <>
-            {isCommentaryOpen && (
-                <div
-                    className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm xl:hidden transition-opacity duration-300"
-                    onClick={() => setIsCommentaryOpen(false)}
-                />
-            )}
-
-            <aside
-                className={`fixed inset-y-0 right-0 z-50 w-[90vw] bg-white/80 font-inter backdrop-blur-xl transition-all duration-500 dark:bg-dark-bg/95 sm:w-[400px] xl:sticky xl:top-16 xl:h-[calc(100vh-64px)] ${
-                    isCommentaryOpen ? 'translate-x-0 overflow-hidden border-l border-gold-primary/20 shadow-2xl dark:border-dark-border/50 xl:translate-x-0 xl:shadow-none' : 'translate-x-full xl:w-0 xl:translate-x-10 xl:border-none xl:opacity-0'
-                } ${isCommentaryOpen ? desktopWidthClass : ''}`}
-            >
+        <SidebarLayout
+            isOpen={isMobileCommentaryOpen}
+            isDesktopOpen={isDesktopCommentaryOpen}
+            onClose={closeMobilePanel}
+            position="right"
+            mobileWidthClass="w-[90vw] sm:w-[400px]"
+            desktopClassName="xl:w-full"
+        >
+            <div className="flex h-full flex-col">
                 <div className="absolute right-4 top-4 z-50 xl:hidden">
                     <button
-                        onClick={() => setIsCommentaryOpen(false)}
+                        onClick={closeMobilePanel}
                         className="rounded-full p-2 text-text-secondary transition-colors hover:bg-gold-surface dark:text-dark-text-secondary dark:hover:bg-dark-surface"
                     >
                         <X className="h-5 w-5" />
@@ -196,8 +196,8 @@ const RightSidebar = () => {
                         )}
                     </div>
                 </div>
-            </aside>
-        </>
+            </div>
+        </SidebarLayout>
     );
 };
 

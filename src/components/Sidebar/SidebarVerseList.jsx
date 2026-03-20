@@ -31,7 +31,7 @@ const SidebarVerseList = ({ prayers, expandedChapter, activeVerseId, verseGlobal
                             key={verse.id}
                             onClick={() => {
                                 if (onSelectVerse) onSelectVerse(verse);
-                                if (window.innerWidth < 1024) setIsSidebarOpen(false);
+                                if (window.innerWidth < 1280) setIsSidebarOpen(false);
                             }}
                             className={`w-full flex items-start text-left gap-3 px-3 py-2.5 rounded-lg text-sm transition-all ${isActive
                                 ? 'bg-white/60 border border-gold-primary/30 text-text-primary font-medium shadow-sm dark:bg-dark-bg/60 dark:border-gold-primary/20 dark:text-gold-light'

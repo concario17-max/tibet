@@ -3,13 +3,11 @@ import { useUI } from '../../context/UIContext';
 import SidebarHeader from '../../components/Sidebar/SidebarHeader';
 import SidebarChapterList from '../../components/Sidebar/SidebarChapterList';
 import SidebarVerseList from '../../components/Sidebar/SidebarVerseList';
+import SidebarLayout from '../../components/ui/SidebarLayout';
 
 const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId, isPrayerPage = false }) => {
-    const uiContext = useUI() || { isSidebarOpen: true, setIsSidebarOpen: () => {} };
-    const { isSidebarOpen, setIsSidebarOpen } = uiContext;
-    const desktopSidebarClasses = isSidebarOpen
-        ? 'xl:w-[400px] xl:translate-x-0 xl:opacity-100 xl:pointer-events-auto'
-        : 'xl:w-0 xl:-translate-x-full xl:opacity-0 xl:pointer-events-none xl:overflow-hidden xl:border-r-0';
+    const uiContext = useUI() || { isMobileSidebarOpen: false, setIsMobileSidebarOpen: () => {}, isDesktopSidebarOpen: true };
+    const { isMobileSidebarOpen, setIsMobileSidebarOpen, isDesktopSidebarOpen } = uiContext;
 
     const verseGlobalIndices = useMemo(() => {
         const map = {};
@@ -75,20 +73,16 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId, isPrayerPage = fal
     }, [activeVerseId, expandedChapter, prayers]);
 
     return (
-        <>
-            {isSidebarOpen ? (
-                <div
-                    className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-100 transition-opacity duration-300 lg:hidden"
-                    onClick={() => setIsSidebarOpen(false)}
-                />
-            ) : null}
-
-            <aside
-                className={`fixed inset-y-0 left-0 z-50 flex h-full w-80 flex-col bg-white/80 font-inter backdrop-blur-xl transition-all duration-500 dark:bg-dark-bg/95 lg:sticky lg:top-16 lg:h-[calc(100vh-64px)] lg:translate-x-0 xl:shrink-0 ${
-                    isSidebarOpen ? 'translate-x-0 overflow-hidden shadow-2xl lg:shadow-none' : '-translate-x-full'
-                } ${desktopSidebarClasses} border-r border-gold-primary/20 dark:border-dark-border/50`}
-            >
-                <SidebarHeader setIsSidebarOpen={setIsSidebarOpen} />
+        <SidebarLayout
+            isOpen={isMobileSidebarOpen}
+            isDesktopOpen={isDesktopSidebarOpen}
+            onClose={() => setIsMobileSidebarOpen(false)}
+            position="left"
+            mobileWidthClass="w-80"
+            desktopClassName="xl:w-full"
+        >
+            <div className="flex h-full flex-col">
+                <SidebarHeader setIsSidebarOpen={setIsMobileSidebarOpen} />
 
                 <SidebarChapterList
                     prayers={prayers}
@@ -103,10 +97,10 @@ const LeftSidebar = ({ prayers, onSelectVerse, activeVerseId, isPrayerPage = fal
                     activeVerseId={activeVerseId}
                     verseGlobalIndices={verseGlobalIndices}
                     onSelectVerse={onSelectVerse}
-                    setIsSidebarOpen={setIsSidebarOpen}
+                    setIsSidebarOpen={setIsMobileSidebarOpen}
                 />
-            </aside>
-        </>
+            </div>
+        </SidebarLayout>
     );
 };
 

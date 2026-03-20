@@ -1,5 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import bookDataUrl from '../data/book.json?url';
+import { useUI } from '../context/UIContext';
+import AppShell from '../components/ui/AppShell';
 import LeftSidebar from './components/LeftSidebar';
 import ReadingPanel from './components/ReadingPanel';
 import RightSidebar from './components/RightSidebar';
@@ -9,7 +11,7 @@ const StatePanel = ({ kicker, title, description }) => (
     <div className="flex h-full w-full flex-1 items-center justify-center p-6 sm:p-8">
         <div className="empty-state-card max-w-lg rounded-[2rem] px-8 py-10 text-center shadow-[0_30px_70px_rgba(120,93,48,0.08)]">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-gold-border/25 bg-gold-surface/35 text-gold-deep shadow-inner">
-                <span className="font-serif text-2xl">✦</span>
+                <span className="font-serif text-2xl">T</span>
             </div>
             <p className="mt-5 font-inter text-[10px] font-semibold uppercase tracking-[0.4em] text-gold-deep/72">{kicker}</p>
             <h3 className="mt-4 font-serif text-[1.8rem] leading-tight text-text-primary">{title}</h3>
@@ -19,6 +21,7 @@ const StatePanel = ({ kicker, title, description }) => (
 );
 
 const Text = () => {
+    const { desktopGridColumns } = useUI() || { desktopGridColumns: '20% 60% 20%' };
     const [bookData, setBookData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [activeTextVerse, setActiveTextVerse] = useState(() => {
@@ -84,37 +87,34 @@ const Text = () => {
     const hasNext = currentIndex !== -1 && currentIndex < flatVerses.length - 1;
 
     return (
-        <div className="relative z-10 flex h-screen min-h-screen w-full overflow-hidden bg-sand-primary transition-colors duration-500 dark:bg-dark-bg xl:bg-transparent dark:xl:bg-transparent">
-            <div className="fixed inset-0 pointer-events-none bg-grid-slate-900/[0.04] bg-[bottom_1px_center] transition-opacity duration-500 dark:bg-grid-slate-100/[0.03] z-[-1]" />
-
-            <LeftSidebar onSelectVerse={setActiveTextVerse} activeVerseId={activeTextVerse?.id} prayers={bookData} isPrayerPage={false} />
-
+        <AppShell
+            sidebar={<LeftSidebar onSelectVerse={setActiveTextVerse} activeVerseId={activeTextVerse?.id} prayers={bookData} isPrayerPage={false} />}
+            rightPanel={<RightSidebar activeVerseId={activeTextVerse?.id} storagePrefix="book" />}
+            desktopGridColumns={desktopGridColumns}
+        >
             {isLoading ? (
                 <StatePanel
                     kicker="Loading Text"
-                    title="본문을 준비하고 있습니다"
-                    description="긴 읽기 흐름을 위해 본문 데이터와 번역을 차분히 불러오고 있습니다."
+                    title="蹂몃Ц??以鍮꾪븯怨??덉뒿?덈떎"
+                    description="湲??쎄린 ?먮쫫???꾪빐 蹂몃Ц ?곗씠?곗? 踰덉뿭??李⑤텇??遺덈윭?ㅺ퀬 ?덉뒿?덈떎."
                 />
             ) : activeTextVerse ? (
-                <>
-                    <ReadingPanel
-                        key={`text-${activeTextVerse.id}`}
-                        verse={activeTextVerse}
-                        globalIndex={currentIndex + 1}
-                        hideAudio={true}
-                        onPrevious={hasPrev ? () => handleNavigate('prev') : null}
-                        onNext={hasNext ? () => handleNavigate('next') : null}
-                    />
-                    <RightSidebar activeVerseId={activeTextVerse.id} storagePrefix="book" />
-                </>
+                <ReadingPanel
+                    key={`text-${activeTextVerse.id}`}
+                    verse={activeTextVerse}
+                    globalIndex={currentIndex + 1}
+                    hideAudio={true}
+                    onPrevious={hasPrev ? () => handleNavigate('prev') : null}
+                    onNext={hasNext ? () => handleNavigate('next') : null}
+                />
             ) : (
                 <StatePanel
                     kicker="Select A Passage"
-                    title="읽고 싶은 구절을 선택해 주세요"
-                    description="왼쪽 메뉴에서 장과 구절을 고르면 본문, 번역, 메모 영역이 하나의 호흡으로 열립니다."
+                    title="?쎄퀬 ?띠? 援ъ젅???좏깮??二쇱꽭??"
+                    description="?쇱そ 硫붾돱?먯꽌 ?κ낵 援ъ젅??怨좊Ⅴ硫?蹂몃Ц, 踰덉뿭, 硫붾え ?곸뿭???섎굹???명씉?쇰줈 ?대┰?덈떎."
                 />
             )}
-        </div>
+        </AppShell>
     );
 };
 

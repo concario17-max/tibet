@@ -3,7 +3,7 @@ import { X } from 'lucide-react';
 
 const SidebarHeader = ({ setIsSidebarOpen }) => {
     return (
-        <div className="lg:hidden flex items-center justify-between p-4 border-b border-gold-border/30 dark:border-[#333] shrink-0">
+        <div className="xl:hidden flex items-center justify-between p-4 border-b border-gold-border/30 dark:border-[#333] shrink-0">
             <span className="font-crimson font-bold text-lg text-text-primary dark:text-dark-text-primary">챕터 목록</span>
             <button
                 onClick={() => setIsSidebarOpen(false)}
